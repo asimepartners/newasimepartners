@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ═══════════════════════════════════════════════════════════════
+   Asime Partners — Typography & layout system
+   Poppins (site-wide)
+   ═══════════════════════════════════════════════════════════════ */
+
+:root,
+[data-bs-theme=light] {
+  /* Font families */
+  --font-display: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-title: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Bootstrap 5 — override compiled defaults */
+  --bs-font-sans-serif: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --bs-body-font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Type scale (professional 1.25 modular) */
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.875rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: clamp(2.125rem, 3.8vw, 3rem);
+  --text-5xl: clamp(2.5rem, 5vw, 3.75rem);
+  --text-hero: clamp(2.35rem, 5.25vw, 4.25rem);
+
+  /* Line height */
+  --leading-none: 1;
+  --leading-tight: 1.12;
+  --leading-snug: 1.28;
+  --leading-normal: 1.55;
+  --leading-relaxed: 1.72;
+
+  /* Letter spacing */
+  --tracking-tighter: -0.045em;
+  --tracking-tight: -0.03em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.06em;
+  --tracking-wider: 0.14em;
+
+  /* Layout — full-width sections with modest side margins */
+  --layout-max: 100%;
+  --layout-narrow: 42rem;
+  --layout-prose: 40rem;
+  --layout-gutter: clamp(1rem, 2.5vw, 1.75rem);
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.5rem;
+  --space-8: 3.5rem;
+}
+
+/* ── Document base ─────────────────────────────────────────── */
+html {
+  font-family: var(--font-body);
+  font-size: 100%;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+}
+
+body,
+#root {
+  font-family: var(--font-body);
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-body);
+}
+
+#root *,
+.wf-main,
+.wf-main *,
+.wf-ft,
+.wf-ft * {
+  font-family: inherit;
+}
+
+body {
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+}
+
+.wf-main {
+  font-variant-numeric: proportional-nums;
+}
+
+/* ── Heading hierarchy ───────────────────────────────────────── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: inherit;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--text-hero); font-weight: 700; letter-spacing: var(--tracking-tighter); }
+h2 { font-size: var(--text-4xl); font-weight: 600; }
+h3 { font-size: var(--text-2xl); font-weight: 600; line-height: var(--leading-snug); }
+h4 { font-size: var(--text-xl); font-weight: 600; line-height: var(--leading-snug); }
+h5 { font-size: var(--text-lg); font-weight: 600; }
+h6 { font-size: var(--text-md); font-weight: 600; letter-spacing: var(--tracking-wide); text-transform: uppercase; }
+
+p {
+  margin: 0 0 var(--space-5);
+  max-width: var(--layout-prose);
+  line-height: var(--leading-relaxed);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Layout: containers & sections ─────────────────────────── */
+.wf-main .container,
+main .container,
+.wf-ft .container {
+  width: 100%;
+  max-width: var(--layout-max);
+  padding-left: var(--layout-gutter);
+  padding-right: var(--layout-gutter);
+}
+
+.wf-section {
+  padding-top: var(--section-py, clamp(5.5rem, 12vw, 10rem));
+  padding-bottom: var(--section-py, clamp(5.5rem, 12vw, 10rem));
+}
+
+.wf-section-header {
+  margin-bottom: var(--space-7);
+  max-width: var(--layout-narrow);
+}
+
+.wf-section-header--wide {
+  max-width: var(--layout-prose);
+}
+
+.wf-stack-sm > * + * { margin-top: var(--space-3); }
+.wf-stack-md > * + * { margin-top: var(--space-5); }
+.wf-stack-lg > * + * { margin-top: var(--space-7); }
+
+/* ── Semantic type roles ─────────────────────────────────────── */
+.wf-display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--page-heading, var(--jz-dark));
+  text-wrap: balance;
+}
+
+.wf-display-lg {
+  font-size: var(--text-5xl);
+  letter-spacing: var(--tracking-tighter);
+}
+
+.wf-lead {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  line-height: var(--leading-relaxed);
+  color: var(--jz-grey);
+  max-width: var(--layout-prose);
+}
+
+.wf-prose {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  font-weight: 400;
+  line-height: var(--leading-relaxed);
+  color: var(--page-text, var(--jz-grey));
+  max-width: var(--layout-prose);
+}
+
+.wf-prose + .wf-prose {
+  margin-top: var(--space-4);
+}
+
+.wf-prose-light {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  font-weight: 400;
+  line-height: var(--leading-relaxed);
+  color: rgba(255, 255, 255, 0.82);
+  max-width: var(--layout-prose);
+}
+
+.wf-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-xs);
+  line-height: var(--leading-none);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--jz-blue);
+}
+
+.wf-label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--jz-grey);
+}
+
+.wf-caption {
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--jz-grey);
+}
+
+.wf-card-heading {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--jz-dark);
+}
+
+.wf-card-body {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--jz-grey);
+}
+
+/* ── Hero typography ─────────────────────────────────────────── */
+.wf-hero-purpose-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: var(--space-5);
+}
+
+.wf-hero-h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-hero);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tighter);
+  color: var(--jz-white);
+  text-wrap: balance;
+}
+
+.wf-hero-h1--purpose {
+  font-size: var(--text-hero);
+  line-height: var(--leading-tight);
+}
+
+.wf-hero-sub {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  line-height: var(--leading-relaxed);
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 36rem;
+  margin-top: var(--space-6);
+}
+
+/* ── Business pillars & CB sections ──────────────────────────── */
+/* Pillar typography lives in custom.css (.wf-pillar-*) */
+
+.wf-cb-people-statement {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+}
+
+.wf-cb-work-title,
+.wf-cb-insight-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-snug);
+}
+
+/* ── Footer & nav text ───────────────────────────────────────── */
+.wf-nav-link,
+.wf-mega-link,
+.wf-ft-col a {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+}
+
+.wf-mega-group-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight);
+}
+
+/* ── Buttons: consistent UI type ─────────────────────────────── */
+.wf-btn,
+.wf-mega-cta {
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+}

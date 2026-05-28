@@ -1,0 +1,344 @@
+/* ═══════════════════════════════════════════════════════════════
+   Site-wide black page theme
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --jz-border: rgba(255, 255, 255, 0.12);
+  --jz-off: #111111;
+  --jz-surface: #0a0a0a;
+  --page-text: rgba(255, 255, 255, 0.72);
+  --page-heading: #ffffff;
+  --page-muted: rgba(255, 255, 255, 0.55);
+}
+
+html {
+  background: #000;
+}
+
+body {
+  background: #000;
+  color: var(--page-text);
+}
+
+.wf-main,
+.wf-ft {
+  background: #000;
+  color: var(--page-text);
+}
+
+/* ── Global headings & prose ─────────────────────────────────── */
+.wf-main .wf-display,
+.wf-main .wf-bl-pillar-title,
+.wf-main .wf-bl-pillar-lead,
+.wf-main .wf-cb-work-title,
+.wf-main .wf-cb-insights-title,
+.wf-main .wf-cb-people-statement,
+.wf-main .wf-card-heading,
+.wf-main .wf-how-invest-title,
+.wf-main .wf-wwu-title,
+.wf-main h2,
+.wf-main h3 {
+  color: var(--page-heading);
+}
+
+.wf-main .wf-prose,
+.wf-main .wf-bl-pillar-desc,
+.wf-main .wf-cb-work-desc,
+.wf-main .wf-card-body,
+.wf-main .wf-how-invest-prose,
+.wf-main .wf-wwu-prose {
+  color: var(--page-text);
+}
+
+.wf-main .wf-bl-pillar-lead,
+.wf-main .wf-cb-work-country {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.wf-main .wf-bl-pillar-platform-name,
+.wf-main .wf-cb-insight-date,
+.wf-main .wf-cb-insight-read,
+.wf-main .wf-cb-insight-title,
+.wf-main .wf-cb-insight-type {
+  color: var(--page-heading);
+}
+
+/* ── Section backgrounds ─────────────────────────────────────── */
+.wf-business-lines,
+.wf-cb-work,
+.wf-cb-insights,
+.wf-cb-people,
+.wf-cb-numbers,
+.wf-section,
+.wf-section-grey,
+.wf-section-how-we-invest,
+.wf-section-cta {
+  background: #000 !important;
+}
+
+.wf-capabilities,
+.wf-capabilities .wf-capabilities-section {
+  background: #000 !important;
+}
+
+.wf-geographies {
+  background: #000 !important;
+}
+
+.wf-geographies .wf-display,
+.wf-geographies .wf-prose-on-blue,
+.wf-geographies .wf-franco-num {
+  color: var(--page-heading);
+}
+
+.wf-geographies .wf-eyebrow {
+  color: var(--page-muted);
+}
+
+.wf-geographies .wf-franco-label {
+  color: var(--page-muted);
+}
+
+/* ── Business lines (Advisory / Management) ─────────────────── */
+.wf-bl-pillar-eyebrow {
+  color: var(--page-muted);
+}
+
+.wf-bl-pillar-platform:hover .wf-bl-pillar-platform-name {
+  color: var(--page-heading);
+}
+
+.wf-bl-pillar-platform-desc {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.wf-bl-pillar-cta {
+  color: var(--page-text);
+}
+
+.wf-bl-pillar-cta:hover {
+  color: var(--page-heading);
+}
+
+/* ── Highlighted work ──────────────────────────────────────────── */
+.wf-cb-work-list,
+.wf-cb-work-item {
+  border-color: var(--jz-border);
+}
+
+.wf-cb-work-item:hover {
+  background: var(--jz-off);
+}
+
+/* ── Our people ────────────────────────────────────────────────── */
+.wf-cb-people-dot {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ── Capabilities cards ────────────────────────────────────────── */
+.wf-diligence-card {
+  background: var(--jz-surface);
+  border-color: var(--jz-border);
+}
+
+.wf-diligence-card:hover {
+  background: #141414;
+}
+
+.wf-main .wf-card-minimal,
+.wf-main .wf-how-invest-card {
+  background: var(--jz-surface);
+  border-color: var(--jz-border);
+}
+
+.wf-main .wf-card-minimal:hover,
+.wf-main .wf-how-invest-card:hover {
+  background: #141414;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Insight cards ─────────────────────────────────────────────── */
+.wf-cb-insight-body {
+  background: var(--jz-surface);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.wf-cb-insight-title,
+.wf-cb-insight-read,
+.wf-cb-insight-date,
+.wf-cb-insight-type {
+  color: var(--page-heading);
+}
+
+.wf-cb-insights-viewall {
+  color: var(--page-heading);
+}
+
+.wf-cb-insights-viewall:hover {
+  color: var(--page-heading);
+}
+
+/* ── Apply CTA (full section) ─────────────────────────────────── */
+.wf-section-cta--full {
+  background: #000 !important;
+}
+
+.wf-wwu-card {
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 0%, rgba(255, 255, 255, 0.06), transparent 58%),
+    #000;
+  border-color: var(--jz-border);
+}
+
+.wf-main .wf-wwu-eyebrow {
+  color: var(--page-muted);
+}
+
+.wf-main .wf-wwu-title {
+  color: var(--page-heading);
+}
+
+.wf-main .wf-wwu-prose {
+  color: var(--page-text);
+}
+
+.wf-main .wf-wwu-contact {
+  color: var(--page-heading);
+}
+
+.wf-wwu-path {
+  border-color: var(--jz-border);
+}
+
+.wf-main .wf-wwu-path-label {
+  color: var(--page-heading);
+}
+
+.wf-main .wf-wwu-path-hint {
+  color: var(--page-muted);
+}
+
+.wf-wwu-path-icon {
+  background: var(--jz-white);
+  color: #000;
+}
+
+.wf-wwu-path:hover .wf-wwu-path-icon {
+  background: #000;
+  color: var(--jz-white);
+}
+
+/* ── Virtues (already dark band) ───────────────────────────────── */
+.wf-cb-virtues {
+  background: #000 !important;
+}
+
+.wf-cb-virtues .wf-display {
+  color: var(--page-heading);
+}
+
+.wf-cb-virtues-link {
+  color: var(--page-text);
+}
+
+.wf-cb-virtues-link:hover {
+  color: var(--page-heading);
+}
+
+/* ── Navbar (scrolled / inner pages) ───────────────────────────── */
+.wf-nav--scrolled {
+  background: rgba(0, 0, 0, 0.88);
+  border-bottom-color: var(--jz-border);
+}
+
+.wf-nav--scrolled .wf-brand-wordmark-img {
+  filter: brightness(0) invert(1);
+}
+
+.wf-nav--scrolled .wf-mega-trigger {
+  color: var(--jz-white);
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Footer ────────────────────────────────────────────────────── */
+.wf-ft {
+  background: #000;
+  color: var(--page-text);
+  border-top: 1px solid var(--jz-border);
+}
+
+.wf-ft-col-label,
+.wf-ft-office-city {
+  color: var(--page-heading);
+}
+
+.wf-ft-desc,
+.wf-ft-link,
+.wf-ft-office-line,
+.wf-ft-copy,
+.wf-ft-follow {
+  color: var(--page-text);
+}
+
+.wf-ft-link:hover {
+  color: var(--page-heading);
+}
+
+.wf-ft-logo {
+  filter: brightness(0) invert(1);
+}
+
+.wf-ft-body,
+.wf-ft-bar {
+  border-color: var(--jz-border);
+}
+
+/* ── Cookie banner ─────────────────────────────────────────────── */
+.wf-cookie-banner {
+  background: var(--jz-surface);
+  border-color: var(--jz-border);
+  color: var(--page-text);
+}
+
+.wf-cookie-banner strong {
+  color: var(--page-heading);
+}
+
+/* ── Privacy page ──────────────────────────────────────────────── */
+.wf-privacy-page {
+  background: #000;
+  color: var(--page-text);
+}
+
+.wf-privacy-page .wf-display,
+.wf-privacy-page .wf-privacy-section-title {
+  color: var(--page-heading);
+}
+
+.wf-privacy-page .wf-prose,
+.wf-privacy-page .wf-privacy-body {
+  color: var(--page-text);
+}
+
+.wf-privacy-logo {
+  filter: brightness(0) invert(1);
+}
+
+.wf-privacy-section-block {
+  border-top-color: var(--jz-border);
+}
+
+.wf-privacy-table {
+  background: var(--jz-surface);
+}
+
+.wf-privacy-table th,
+.wf-privacy-table td {
+  border-color: var(--jz-border);
+  color: var(--page-text);
+}
+
+.wf-privacy-table code {
+  color: var(--page-heading);
+}

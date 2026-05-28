@@ -1,0 +1,325 @@
+/* ═══════════════════════════════════════════════════════════════
+   Site-wide UI refinement — modern, professional, monochrome
+   ═══════════════════════════════════════════════════════════════ */
+
+::selection {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+/* ── Typography & labels ─────────────────────────────────────── */
+.wf-main .wf-eyebrow,
+.wf-eyebrow,
+.wf-eyebrow-yellow,
+.wf-eyebrow-dark .wf-eyebrow,
+#ventures .wf-eyebrow,
+#thesis .wf-eyebrow,
+#framework .wf-eyebrow,
+#framework.wf-advisory-section .wf-eyebrow,
+#how-we-invest .wf-eyebrow,
+#insights .wf-eyebrow,
+#questions .wf-eyebrow,
+.wf-qa-section .wf-eyebrow {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.wf-main .wf-display,
+.wf-main h2 {
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.wf-main .wf-prose {
+  color: rgba(255, 255, 255, 0.68);
+  max-width: 40rem;
+}
+
+.wf-hero-accent,
+.wf-main .wf-hero-accent {
+  color: rgba(255, 255, 255, 0.72) !important;
+  text-shadow: none;
+}
+
+.wf-hr {
+  height: 1px !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  opacity: 1 !important;
+}
+
+/* ── Navigation ─────────────────────────────────────────────── */
+.wf-nav--scrolled {
+  background: rgba(0, 0, 0, 0.9) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+}
+
+.wf-nav--scrolled .wf-mega-trigger {
+  color: var(--jz-white) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+.wf-nav--over-hero .wf-btn-nav {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+.wf-nav--over-hero .wf-btn-nav:hover {
+  background: rgba(255, 255, 255, 0.88) !important;
+  color: #000 !important;
+}
+
+/* ── Hero CTA ───────────────────────────────────────────────── */
+.wf-btn-primary-hero {
+  background: #fff !important;
+  color: #000 !important;
+  border-radius: var(--radius-full) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase;
+  animation: none !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25) !important;
+}
+
+.wf-btn-primary-hero::before {
+  display: none !important;
+}
+
+.wf-btn-primary-hero:hover {
+  background: rgba(255, 255, 255, 0.92) !important;
+  color: #000 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35) !important;
+}
+
+.wf-hero-purpose-eyebrow {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.wf-hero-sub {
+  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: 0.02em;
+}
+
+/* ── Sections ───────────────────────────────────────────────── */
+.wf-section-grey {
+  background: #000 !important;
+}
+
+.wf-section {
+  border-top: 1px solid transparent;
+}
+
+.wf-business-lines,
+.wf-cb-work,
+.wf-cb-people,
+.wf-cb-insights,
+.wf-cb-numbers {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.wf-cb-work-head,
+.wf-cb-insights-head {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+/* ── Cards & surfaces ───────────────────────────────────────── */
+.wf-diligence-card,
+.wf-card-minimal,
+.wf-cb-virtue-card,
+.wf-cb-insight-card {
+  border-radius: var(--radius-lg);
+}
+
+.wf-diligence-card,
+.wf-card-minimal {
+  padding: clamp(1.75rem, 3vw, 2.25rem);
+}
+
+.wf-cb-insight-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.wf-cb-insight-card:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.wf-cb-insight-banner,
+.wf-cb-insight-banner--green,
+.wf-cb-insight-banner--navy {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.wf-cb-insight-body {
+  border: none !important;
+  padding: 1.35rem 1.35rem 1.5rem;
+}
+
+/* ── Links & accents ─────────────────────────────────────────── */
+.wf-cb-work-more {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.wf-cb-work-more:hover,
+.wf-cb-insights-viewall:hover,
+.wf-ft-link:hover,
+.wf-cb-virtues-link:hover {
+  color: #fff !important;
+}
+
+.wf-cb-insights-viewall {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.wf-cb-people-accent {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.wf-cb-people-dot.is-active {
+  background: #fff !important;
+}
+
+/* ── By the numbers ─────────────────────────────────────────── */
+.wf-cb-numbers {
+  background: #000 !important;
+  min-height: min(70dvh, 800px);
+}
+
+.wf-cb-numbers-heading {
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.wf-cb-work-platform {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* ── Capabilities ───────────────────────────────────────────── */
+.wf-capabilities-watermark-img {
+  opacity: 0.04 !important;
+}
+
+.wf-diligence-card .wf-eyebrow,
+.wf-card-minimal .wf-card-heading {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.wf-diligence-card:hover,
+.wf-card-minimal:hover {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-2px);
+}
+
+/* ── Mega menu ──────────────────────────────────────────────── */
+.wf-mega-panel {
+  background: #0a0a0a !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wf-mega-cta--primary {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+.wf-mega-cta--primary:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #000 !important;
+}
+
+.wf-mega-group-title {
+  color: #fff;
+}
+
+.wf-mega-link {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.wf-mega-link:hover {
+  color: #fff;
+}
+
+/* ── Geographies map stats ──────────────────────────────────── */
+.wf-geographies .wf-franco-num {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* ── Virtues grid ───────────────────────────────────────────── */
+.wf-cb-virtues-link {
+  color: rgba(255, 255, 255, 0.72);
+  text-underline-offset: 0.2em;
+}
+
+.wf-cb-virtue-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.wf-cb-virtue-card:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ── Highlighted work list ──────────────────────────────────── */
+.wf-cb-work-item {
+  border-color: rgba(255, 255, 255, 0.1);
+  transition: background 0.2s ease;
+}
+
+.wf-cb-work-item:hover {
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+.wf-cb-work-title {
+  font-weight: 600;
+}
+
+/* ── Business pillars ─────────────────────────────────────────── */
+.wf-bl-pillar {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.wf-ft {
+  background: #000 !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wf-ft-col-label {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.wf-ft-desc,
+.wf-ft-link,
+.wf-ft-office-line,
+.wf-ft-copy,
+.wf-ft-follow {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.wf-ft-social {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ── Cookie banner ───────────────────────────────────────────── */
+.wf-cookie-btn-primary {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+.wf-cookie-btn-primary:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
