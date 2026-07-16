@@ -64,25 +64,28 @@ export default function Navbar() {
         transition={springSnappy}
       >
         <nav
-          className={`navbar navbar-expand-lg fixed-top wf-nav wf-nav--transparent${overHero || menuOpen ? ' wf-nav--over-hero' : ' wf-nav--scrolled'}`}
+          className={`wf-nav${overHero || menuOpen ? ' wf-nav--over-hero' : ' wf-nav--scrolled'}`}
         >
-          <div className="container">
-            <a className="navbar-brand wf-brand" href="#" onClick={closeMenu}>
+          <div className="wf-nav-pill">
+            <a className="wf-brand" href="#" onClick={closeMenu}>
               <img src={siteBrand.logoWordmark} alt={siteBrand.name} className="wf-brand-wordmark-img" />
             </a>
 
-            <div className="wf-nav-actions d-flex align-items-center">
+            <div className="wf-nav-actions">
               <button
                 type="button"
                 className="wf-mega-trigger"
                 aria-expanded={menuOpen}
                 aria-controls="site-mega-menu"
+                aria-label={menuOpen ? 'Close menu' : 'Open menu'}
                 onClick={() => setMenuOpen((open) => !open)}
               >
-                <span className="wf-mega-trigger-label">{menuOpen ? 'Close' : 'Menu'}</span>
+                <span className="wf-mega-trigger-label">
+                  {menuOpen ? 'Close' : 'Menu'}
+                </span>
                 <HugeiconsIcon
                   icon={menuOpen ? Cancel01Icon : Menu01Icon}
-                  size={22}
+                  size={24}
                   strokeWidth={2}
                   color="currentColor"
                 />
@@ -107,7 +110,7 @@ export default function Navbar() {
               transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="wf-mega-panel-head">
-                <img src={siteBrand.logoWordmark} alt="" className="wf-mega-panel-logo" />
+                <img src={siteBrand.logo} alt="" className="wf-mega-panel-logo" />
                 <div className="wf-mega-panel-head-actions">
                   <a href="#apply" className="wf-mega-cta wf-mega-cta--primary" onClick={closeMenu}>
                     Apply Now

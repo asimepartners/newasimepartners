@@ -3,7 +3,6 @@ import Hero from './components/Hero'
 import BusinessPillars from './components/BusinessPillars'
 import OurPeople from './components/OurPeople'
 import HighlightedWork from './components/HighlightedWork'
-import OurVirtues from './components/OurVirtues'
 import ByTheNumbers from './components/ByTheNumbers'
 import Capabilities from './components/Capabilities'
 import Geographies from './components/Geographies'
@@ -21,7 +20,6 @@ export default function App() {
         <BusinessPillars />
         <OurPeople />
         <HighlightedWork />
-        <OurVirtues />
         <ByTheNumbers />
         <Capabilities />
         <Geographies />

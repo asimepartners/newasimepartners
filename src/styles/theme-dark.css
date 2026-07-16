@@ -64,8 +64,6 @@ body {
 }
 
 /* ── Section backgrounds ─────────────────────────────────────── */
-.wf-business-lines,
-.wf-cb-work,
 .wf-cb-insights,
 .wf-cb-people,
 .wf-cb-numbers,
@@ -73,6 +71,10 @@ body {
 .wf-section-grey,
 .wf-section-how-we-invest,
 .wf-section-cta {
+  background: #000 !important;
+}
+
+.wf-about {
   background: #000 !important;
 }
 
@@ -100,34 +102,61 @@ body {
 }
 
 /* ── Business lines (Advisory / Management) ─────────────────── */
-.wf-bl-pillar-eyebrow {
-  color: var(--page-muted);
+.wf-lines,
+.wf-business-lines {
+  background: #000 !important;
 }
 
-.wf-bl-pillar-platform:hover .wf-bl-pillar-platform-name {
-  color: var(--page-heading);
+.wf-lines-intro-title,
+.wf-lines-panel-title {
+  color: #fff;
 }
 
-.wf-bl-pillar-platform-desc {
-  color: rgba(255, 255, 255, 0.55);
+.wf-lines-panel-lead {
+  color: rgba(255, 255, 255, 0.88);
 }
 
-.wf-bl-pillar-cta {
-  color: var(--page-text);
+.wf-lines-panel-desc {
+  color: rgba(255, 255, 255, 0.58);
 }
 
-.wf-bl-pillar-cta:hover {
-  color: var(--page-heading);
+.wf-lines-cta {
+  color: #fff;
 }
 
-/* ── Highlighted work ──────────────────────────────────────────── */
-.wf-cb-work-list,
-.wf-cb-work-item {
-  border-color: var(--jz-border);
+.wf-lines-cta:hover {
+  color: #fff;
 }
 
-.wf-cb-work-item:hover {
-  background: var(--jz-off);
+/* ── Highlighted work — case study cards ───────────────────────── */
+.wf-work,
+.wf-cb-work {
+  background: #000 !important;
+}
+
+.wf-main .wf-work-title,
+.wf-work-title {
+  color: #fff !important;
+}
+
+.wf-main .wf-case-question,
+.wf-case-question {
+  color: #111 !important;
+}
+
+.wf-main .wf-case-category,
+.wf-case-category {
+  color: #4A63E8 !important;
+}
+
+.wf-main .wf-case-country,
+.wf-case-country {
+  color: rgba(17, 17, 17, 0.4) !important;
+}
+
+.wf-main .wf-case-desc,
+.wf-case-desc {
+  color: rgba(17, 17, 17, 0.6) !important;
 }
 
 /* ── Our people ────────────────────────────────────────────────── */
@@ -184,14 +213,12 @@ body {
 }
 
 .wf-wwu-card {
-  background:
-    radial-gradient(ellipse 70% 55% at 50% 0%, rgba(255, 255, 255, 0.06), transparent 58%),
-    #000;
+  background: #000;
   border-color: var(--jz-border);
 }
 
 .wf-main .wf-wwu-eyebrow {
-  color: var(--page-muted);
+  color: var(--hero-lime, #FCD116);
 }
 
 .wf-main .wf-wwu-title {
@@ -207,7 +234,7 @@ body {
 }
 
 .wf-wwu-path {
-  border-color: var(--jz-border);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .wf-main .wf-wwu-path-label {
@@ -219,13 +246,8 @@ body {
 }
 
 .wf-wwu-path-icon {
-  background: var(--jz-white);
-  color: #000;
-}
-
-.wf-wwu-path:hover .wf-wwu-path-icon {
-  background: #000;
-  color: var(--jz-white);
+  background: var(--hero-lime, #FCD116);
+  color: #111;
 }
 
 /* ── Virtues (already dark band) ───────────────────────────────── */
@@ -245,53 +267,35 @@ body {
   color: var(--page-heading);
 }
 
-/* ── Navbar (scrolled / inner pages) ───────────────────────────── */
+/* ── Navbar (floating white pill) ──────────────────────────────── */
 .wf-nav--scrolled {
-  background: rgba(0, 0, 0, 0.88);
-  border-bottom-color: var(--jz-border);
+  background: transparent;
+  border-bottom: none;
 }
 
-.wf-nav--scrolled .wf-brand-wordmark-img {
-  filter: brightness(0) invert(1);
-}
-
-.wf-nav--scrolled .wf-mega-trigger {
-  color: var(--jz-white);
-  border-color: rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.08);
-}
-
-/* ── Footer ────────────────────────────────────────────────────── */
+/* ── Footer — newsletter card + light footer ───────────────────── */
 .wf-ft {
   background: #000;
-  color: var(--page-text);
-  border-top: 1px solid var(--jz-border);
+  color: #fff;
+  border-top: none;
 }
 
-.wf-ft-col-label,
-.wf-ft-office-city {
-  color: var(--page-heading);
+.wf-ft-col-label {
+  color: #fff;
 }
 
 .wf-ft-desc,
 .wf-ft-link,
-.wf-ft-office-line,
-.wf-ft-copy,
-.wf-ft-follow {
-  color: var(--page-text);
+.wf-ft-copy {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .wf-ft-link:hover {
-  color: var(--page-heading);
+  color: #fff;
 }
 
 .wf-ft-logo {
-  filter: brightness(0) invert(1);
-}
-
-.wf-ft-body,
-.wf-ft-bar {
-  border-color: var(--jz-border);
+  filter: none;
 }
 
 /* ── Cookie banner ─────────────────────────────────────────────── */
@@ -322,7 +326,7 @@ body {
 }
 
 .wf-privacy-logo {
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 .wf-privacy-section-block {

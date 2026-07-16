@@ -15,7 +15,7 @@ function PrivacyPage() {
         <div className="container wf-privacy-container">
           <div className="wf-privacy-topbar">
             <a href="/" className="wf-privacy-brand" aria-label="Asime Partners home">
-              <img src={siteBrand.logoWordmark} alt={siteBrand.name} className="wf-privacy-logo" />
+              <img src={siteBrand.logo} alt={siteBrand.name} className="wf-privacy-logo" />
             </a>
             <a href="/" className="wf-privacy-backlink">Back to home</a>
           </div>

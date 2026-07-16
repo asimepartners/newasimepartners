@@ -1,90 +1,106 @@
+import { HugeiconsIcon } from '@hugeicons/react'
+import { ArrowRight01Icon } from '@hugeicons/core-free-icons'
 import {
+  advisoryFocusAreas,
   businessLines,
   investmentPlatforms,
   type InvestmentPlatform,
 } from '@/data/content'
-import { AnimatedSection, FadeUp } from './Motion'
+import { AnimatedSection, FadeUp, StaggerParent, StaggerItem, motion } from './Motion'
 
 type PillarLine = (typeof businessLines)['advisory']
 
 function PillarCta({ href, label }: { href: string; label: string }) {
   return (
-    <a href={href} className="wf-bl-pillar-cta">
+    <motion.a
+      href={href}
+      className="wf-lines-cta"
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ type: 'spring', stiffness: 400, damping: 22 }}
+    >
       <span>{label}</span>
-      <span className="wf-bl-pillar-cta-arrow" aria-hidden>
-        →
+      <span className="wf-lines-cta-icon" aria-hidden="true">
+        <HugeiconsIcon icon={ArrowRight01Icon} size={18} strokeWidth={2.5} />
       </span>
-    </a>
+    </motion.a>
   )
 }
 
-function BusinessPillar({
+function LinePanel({
   id,
-  variant,
+  index,
   line,
   platforms,
-  fadeIndex = 0,
 }: {
   id: string
-  variant: 'advisory' | 'management'
+  index: string
   line: PillarLine
   platforms?: InvestmentPlatform[]
-  fadeIndex?: number
 }) {
   return (
-    <FadeUp index={fadeIndex} className="wf-business-lines-item">
-      <article id={id} className={`wf-bl-pillar wf-bl-pillar--${variant}`}>
-        <div className="wf-bl-pillar-visual">
-          <img
-            src={line.image}
-            alt={line.imageAlt}
-            className="wf-bl-pillar-img"
-            loading="lazy"
-          />
+    <article id={id} className="wf-lines-panel">
+      <div className="wf-lines-panel-media">
+        <img src={line.image} alt={line.imageAlt} className="wf-lines-panel-img" loading="lazy" />
+      </div>
+
+      <div className="wf-lines-panel-body">
+        <div className="wf-lines-panel-meta">
+          <span className="wf-lines-panel-index">{index}</span>
+          <span className="wf-lines-panel-eyebrow">{line.eyebrow}</span>
         </div>
-        <div className="wf-bl-pillar-content">
-          <div className="wf-bl-pillar-head">
-            <span className="wf-eyebrow wf-bl-pillar-eyebrow">{line.eyebrow}</span>
-            <h2 className="wf-bl-pillar-title">{line.title}</h2>
-            <p className="wf-bl-pillar-lead">{line.summary}</p>
-          </div>
-          <p className="wf-bl-pillar-desc">{line.description}</p>
-          {platforms && platforms.length > 0 && (
-            <ul className="wf-bl-pillar-platforms">
-              {platforms.map((platform) => (
-                <li key={platform.name}>
-                  <a href={platform.href} className="wf-bl-pillar-platform">
-                    <span className="wf-bl-pillar-platform-name">{platform.name}</span>
-                    <span className="wf-bl-pillar-platform-desc">{platform.description}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )}
-          <PillarCta href={line.href} label={line.cta} />
-        </div>
-      </article>
-    </FadeUp>
+
+        <h2 className="wf-lines-panel-title">{line.title}</h2>
+        <p className="wf-lines-panel-lead">{line.summary}</p>
+        <p className="wf-lines-panel-desc">{line.description}</p>
+
+        {platforms && platforms.length > 0 ? (
+          <ul className="wf-lines-platforms">
+            {platforms.map((platform) => (
+              <li key={platform.name}>
+                <a href={platform.href} className="wf-lines-platform">
+                  {platform.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+
+        <PillarCta href={line.href} label={line.cta} />
+      </div>
+    </article>
   )
 }
 
 export default function BusinessPillars() {
   return (
-    <AnimatedSection className="wf-section wf-business-lines">
-      <div className="container wf-business-lines-inner">
-        <BusinessPillar
-          id="advisory"
-          variant="advisory"
-          line={businessLines.advisory}
-          fadeIndex={0}
-        />
-        <BusinessPillar
-          id="management"
-          variant="management"
-          line={businessLines.management}
-          platforms={investmentPlatforms}
-          fadeIndex={1}
-        />
+    <AnimatedSection className="wf-lines">
+      <div className="wf-lines-inner">
+        <FadeUp className="wf-lines-intro">
+          <span className="wf-lines-intro-eyebrow">What we do</span>
+          <h2 className="wf-lines-intro-title">
+            Advisory and capital platforms built for African growth
+          </h2>
+        </FadeUp>
+
+        <StaggerParent className="wf-lines-grid">
+          <StaggerItem>
+            <LinePanel
+              id="advisory"
+              index="01"
+              line={businessLines.advisory}
+              platforms={advisoryFocusAreas}
+            />
+          </StaggerItem>
+          <StaggerItem>
+            <LinePanel
+              id="management"
+              index="02"
+              line={businessLines.management}
+              platforms={investmentPlatforms}
+            />
+          </StaggerItem>
+        </StaggerParent>
       </div>
     </AnimatedSection>
   )

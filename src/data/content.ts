@@ -5,8 +5,8 @@
 
 export const siteBrand = {
   name: "Asime Partners",
-  logo: "/asime-logo-transparent.png",
-  logoWordmark: "/asime-wordmark.png",
+  logo: "/Asime.jpeg",
+  logoWordmark: "/MainLogo.jpeg",
   tagline: "Venture Capital | Private Credit | Angel Investing | Investment Advisory",
   email: "info@asimepartners.com",
   linkedin: "https://linkedin.com/company/asimepartners",
@@ -44,12 +44,28 @@ export interface FaqItem {
 /* ── Hero ────────────────────────────────────────────────── */
 
 export const heroContent = {
-  eyebrow: "At the core of Asime Partners is our purpose",
-  headline: "Unleashing Africa's Potential",
+  headline: "Unleashing Africa’s Potential",
   headlineAccent: "",
-  subheadline: "Alternatives | Advisory | AI & Innovations",
-  ctaSecondary: { label: "Apply Now", href: "#apply" },
+  subheadline:
+    "Building the trust and bond that unlocks global capital for frontier market alternative strategies.",
+  ctaPrimary: { label: "GET IN TOUCH", href: "#apply" },
+  ctaNav: { label: "Apply Now", href: "#apply" },
+  scrollLabel: "SCROLL DOWN",
+  focusAreas:
+    "Climate & Impact | Alternative Investments | AI Systems | M&A Advisory | Executive Training",
+  image: "/images/01.jpg",
+  imageAlt:
+    "Business partners reviewing strategy together in a professional office setting",
 };
+
+export const primaryNavLinks = [
+  { label: "Home", href: "#" },
+  { label: "What We Do", href: "#advisory" },
+  { label: "About", href: "#our-people" },
+  { label: "Work", href: "#our-work" },
+  { label: "Insights", href: "#insights" },
+  { label: "Contact", href: "#apply" },
+] as const;
 
 export const navGroups = [
   {
@@ -130,6 +146,29 @@ export interface InvestmentPlatform {
   href: string;
 }
 
+export const advisoryFocusAreas: InvestmentPlatform[] = [
+  {
+    name: "Climate & Impact",
+    description: "Advisory for climate-aligned and impact-driven investments across Africa.",
+    href: "#capabilities",
+  },
+  {
+    name: "Alternative Investments",
+    description: "Structuring and diligence across private markets and alternative assets.",
+    href: "#capabilities",
+  },
+  {
+    name: "AI Systems",
+    description: "Technology and AI systems advisory for modern, scalable organizations.",
+    href: "#capabilities",
+  },
+  {
+    name: "M&A Advisory",
+    description: "Mergers, acquisitions, and transaction advisory for growing businesses.",
+    href: "#capabilities",
+  },
+];
+
 export const investmentPlatforms: InvestmentPlatform[] = [
   {
     name: "Chale Fund",
@@ -173,6 +212,45 @@ export const ourPeopleStatements: MissionStatement[] = [
   },
 ];
 
+export const aboutContent = {
+  eyebrow: "ABOUT US",
+  title: "Unveiling Our Identity,\nVision and Values",
+  subheading:
+    "We are an Africa-focused alternative investment fund manager committed to driving positive financial, social and economic change across Anglophone and Francophone Africa.",
+  image: "/images/about-agritech.png",
+  imageAlt:
+    "Aerial view of precision agricultural machines working across green crop fields",
+  vision: {
+    label: "Vision",
+    body: "Unleashing Africa’s Potential by leveraging the latest technologies",
+  },
+  mission: {
+    label: "Mission",
+    body: "Provide better risk-adjusted return and impact by investing in and supporting enterprises built by underrepresented founders and teams across Africa, especially youth, women and people with disability.",
+  },
+  values: {
+    label: "Values",
+    items: [
+      { label: "People", full: "People & Relationships", icon: "people" as const },
+      { label: "Inclusivity", full: "Diversity & Inclusivity", icon: "inclusivity" as const },
+      { label: "Resilience", full: "Disruptive & Resilient", icon: "resilience" as const },
+      { label: "Innovation", full: "Technology & Innovation", icon: "innovation" as const },
+    ],
+  },
+  cta: { label: "Know More About Us", href: "#apply" },
+  meaning: {
+    label: "What Asime means",
+    quote:
+      'Asime means "in the hand" or "the market" in Ewe, a West African language. By extension, the expression "Asi le Asime" means hand in hand, therefore a relationship based on Trust and Bond, in a way "my Word is my Bond" and the handshake seals the relationship.',
+    attribution: "Sewu-Steve Tawia",
+    role: "Managing Partner",
+  },
+  narrative: [
+    "We are an Africa-focused alternative investment fund manager. We are committed to driving positive financial, social and economic change. We develop responsible and impactful investment strategies that help promote youth, women and underrepresented people (people with disability, rural and displaced). We work at the nexus Climate, Gender, AI/ML and Accessibility to create jobs for all.",
+    "Founded in 2015, Asime Partners has been recognized as a preferred early stage investment and tech M&A advisory firm with a reputation for successful global and local partnerships across Africa, both Anglophone and Francophone. We pride ourselves as the first true early venture capital investor in Ghana, with deep experience in technology across Fintech, Agritech, Retailtech, Digital Identity, Insuretech, AI/ML, Cybersecurity, Climate tech, Creative Industry tech, Beauty tech and Sports tech.",
+  ],
+};
+
 export interface HighlightedWorkItem {
   platform: string;
   country: string;
@@ -183,9 +261,37 @@ export interface HighlightedWorkItem {
 
 export const highlightedWorkIntro = {
   eyebrow: "Highlighted Work",
-  headline: "We combine local presence and networks",
-  headlineAccent: "with reach across Africa",
+  headline: "Our case studies:",
+  headlineAccent: "at the heart of our missions",
 };
+
+export interface CaseStudy {
+  category: string;
+  question: string;
+  href: string;
+  media: "spheres" | "turbine" | "waveform";
+}
+
+export const caseStudies: CaseStudy[] = [
+  {
+    category: "Investment Advisory",
+    question: "How do you establish yourself in a new market after an international acquisition?",
+    href: "#advisory",
+    media: "spheres",
+  },
+  {
+    category: "Alternative Investments",
+    question: "How can costs be sustainably optimized to create positive impact?",
+    href: "#apply",
+    media: "turbine",
+  },
+  {
+    category: "M&A Advisory",
+    question: "How do you reconcile standardized design with personalized products?",
+    href: "#capabilities",
+    media: "waveform",
+  },
+];
 
 export const highlightedWork: HighlightedWorkItem[] = [
   {
@@ -246,14 +352,9 @@ export const virtuesIntro = {
 };
 
 export const virtues: Virtue[] = [
-  { title: "We are", phrase: "biased to action" },
-  { title: "We think", phrase: "deliberately" },
-  { title: "We never", phrase: "compromise on integrity" },
-  { title: "We expect", phrase: "excellence" },
-  { title: "We", phrase: "authentically care" },
-  { title: "We can", phrase: "all belong here" },
-  { title: "We act with", phrase: "humility" },
-  { title: "We prioritize", phrase: "results" },
+  { title: "We build", phrase: "People & Relationships" },
+  { title: "We champion", phrase: "Diversity & Inclusivity" },
+  { title: "We stay", phrase: "Disruptive & Resilient" },
 ];
 
 export type ByTheNumbersIcon = "waves" | "orbit" | "star";
@@ -280,8 +381,8 @@ export const groupIntro = {
   eyebrow: "Asime Partners",
   headline: "Our Mission",
   body: [
-    "Asime Partners exists to unleash Africa's potential — deploying venture capital, private credit, angel investing, and investment advisory services for sustainable growth in underserved markets.",
-    "We use a gender-smart approach across our work, facilitating investments that deliver financial returns while improving economic opportunity for women and communities.",
+    "Provide better risk-adjusted return and impact by investing in and supporting enterprises built by underrepresented founders and teams across Africa, especially youth, women and people with disability.",
+    "We work at the nexus of Climate, Gender, AI/ML and Accessibility to create jobs for all.",
   ],
 };
 
@@ -299,6 +400,23 @@ export const advisoryIntro = {
   eyebrow: "Investment Advisory",
   headline: "Trusted advisors across the capital stack",
   body: "We help businesses boost their performance, increase growth and enhance the developmental impact of their operations through tailored business development support and investment advisory services.",
+};
+
+export const footerLead = {
+  headline: "Let's unleash Africa's",
+  headlineAccent: "potential together.",
+  cta: { label: "Get in touch", href: "#apply" },
+};
+
+export const newsletterContent = {
+  heading: "Subscribe to our\nnewsletter",
+  body: "Be the first to receive insights, updates, and expert perspectives on investing and building across Africa.",
+  label: "Stay up to date",
+  placeholder: "Enter your email",
+  button: "Subscribe",
+  finePrintLead: "By subscribing you agree to our",
+  privacyLabel: "Privacy Policy",
+  privacyHref: "/privacy",
 };
 
 export const footerColumns = {

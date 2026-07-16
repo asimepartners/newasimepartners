@@ -11,6 +11,7 @@
   --font-display: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-body: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-title: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Space Mono', ui-monospace, monospace;
 
   /* Bootstrap 5 — override compiled defaults */
   --bs-font-sans-serif: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -278,6 +279,16 @@ main .container,
   line-height: var(--leading-tight);
 }
 
+.wf-hero-h1--advisory {
+  font-size: clamp(1.25rem, 4.1vw, 3.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  max-width: none;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+}
+
 .wf-hero-sub {
   font-family: var(--font-body);
   font-size: var(--text-lg);
@@ -286,6 +297,15 @@ main .container,
   color: rgba(255, 255, 255, 0.72);
   max-width: 36rem;
   margin-top: var(--space-6);
+}
+
+.wf-hero-sub--advisory {
+  font-size: clamp(1.15rem, 1.9vw, 1.5rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 40rem;
+  margin-top: 1.5rem;
+  text-align: center;
 }
 
 /* ── Business pillars & CB sections ──────────────────────────── */

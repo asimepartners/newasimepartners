@@ -47,20 +47,11 @@ export default function ApplyCta() {
     <AnimatedSection id="apply" className="wf-section-cta wf-section-cta--full">
       <div className="wf-wwu-card">
         <div className="wf-wwu-shell">
-          <div className="container wf-wwu-inner">
+          <div className="wf-wwu-inner">
             <FadeUp className="wf-wwu-header">
               <span className="wf-wwu-eyebrow">Work With Us</span>
               <h2 className="wf-display wf-wwu-title">{applyCta.headline}</h2>
               <p className="wf-prose wf-wwu-prose">{applyCta.body}</p>
-              <motion.a
-                href={`mailto:${siteBrand.email}`}
-                className="wf-wwu-contact"
-                whileHover={{ x: 4 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 22 }}
-              >
-                Email us directly
-                <HugeiconsIcon icon={ArrowRight01Icon} size={16} strokeWidth={2.5} />
-              </motion.a>
             </FadeUp>
 
             <StaggerParent className="wf-wwu-paths wf-wwu-paths--full">
@@ -72,15 +63,23 @@ export default function ApplyCta() {
                     whileHover={{ y: -6 }}
                     transition={{ type: 'spring', stiffness: 320, damping: 24 }}
                   >
-                    <span className="wf-wwu-path-icon">
-                      <HugeiconsIcon icon={path.icon} size={28} strokeWidth={1.6} color="currentColor" />
+                    <span className="wf-wwu-path-top">
+                      <span className="wf-wwu-path-icon">
+                        <HugeiconsIcon icon={path.icon} size={26} strokeWidth={1.7} color="currentColor" />
+                      </span>
+                      <span className="wf-wwu-path-num" aria-hidden="true">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
                     </span>
                     <span className="wf-wwu-path-copy">
                       <span className="wf-wwu-path-label">{path.label}</span>
                       <span className="wf-wwu-path-hint">{path.hint}</span>
                     </span>
-                    <span className="wf-wwu-path-arrow" aria-hidden="true">
-                      <HugeiconsIcon icon={ArrowRight01Icon} size={20} strokeWidth={2.5} />
+                    <span className="wf-wwu-path-cta" aria-hidden="true">
+                      <span className="wf-wwu-path-cta-text">Learn more</span>
+                      <span className="wf-wwu-path-arrow">
+                        <HugeiconsIcon icon={ArrowRight01Icon} size={18} strokeWidth={2.5} />
+                      </span>
                     </span>
                   </motion.a>
                 </StaggerItem>

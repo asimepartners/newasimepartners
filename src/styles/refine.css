@@ -34,9 +34,9 @@
   max-width: 40rem;
 }
 
-.wf-hero-accent,
-.wf-main .wf-hero-accent {
-  color: rgba(255, 255, 255, 0.72) !important;
+.wf-hero .wf-hero-accent,
+.wf-main .wf-hero .wf-hero-accent {
+  color: var(--hero-lime, #FCD116) !important;
   text-shadow: none;
 }
 
@@ -46,28 +46,13 @@
   opacity: 1 !important;
 }
 
-/* ── Navigation ─────────────────────────────────────────────── */
-.wf-nav--scrolled {
-  background: rgba(0, 0, 0, 0.9) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-}
-
-.wf-nav--scrolled .wf-mega-trigger {
-  color: var(--jz-white) !important;
-  border-color: rgba(255, 255, 255, 0.2) !important;
-  background: rgba(255, 255, 255, 0.06) !important;
-}
-
-.wf-nav--over-hero .wf-btn-nav {
-  background: #fff !important;
-  color: #000 !important;
-}
-
-.wf-nav--over-hero .wf-btn-nav:hover {
-  background: rgba(255, 255, 255, 0.88) !important;
-  color: #000 !important;
+/* ── Navigation (floating white pill) ───────────────────────── */
+.wf-nav--scrolled,
+.wf-nav--over-hero {
+  background: transparent !important;
+  border-bottom: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 /* ── Hero CTA ───────────────────────────────────────────────── */
@@ -102,21 +87,26 @@
   letter-spacing: 0.02em;
 }
 
+.wf-hero-sub--advisory {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
 /* ── Sections ───────────────────────────────────────────────── */
 .wf-section-grey {
   background: #000 !important;
 }
 
-.wf-section {
-  border-top: 1px solid transparent;
-}
-
+.wf-section,
+.wf-lines,
 .wf-business-lines,
+.wf-about,
+.wf-work,
 .wf-cb-work,
+.wf-numbers,
 .wf-cb-people,
 .wf-cb-insights,
 .wf-cb-numbers {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: none !important;
 }
 
 .wf-cb-work-head,
@@ -167,8 +157,13 @@
 }
 
 /* ── Links & accents ─────────────────────────────────────────── */
+.wf-work-arrow,
 .wf-cb-work-more {
-  color: rgba(255, 255, 255, 0.65) !important;
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.wf-work-item:hover .wf-work-arrow {
+  color: #111 !important;
 }
 
 .wf-cb-work-more:hover,
@@ -191,9 +186,19 @@
 }
 
 /* ── By the numbers ─────────────────────────────────────────── */
+.wf-numbers,
 .wf-cb-numbers {
+  background: transparent !important;
+  min-height: auto;
+}
+
+.wf-numbers {
   background: #000 !important;
-  min-height: min(70dvh, 800px);
+}
+
+.wf-main .wf-numbers-title,
+.wf-main .wf-numbers-value {
+  color: #fff !important;
 }
 
 .wf-cb-numbers-heading {
@@ -201,6 +206,7 @@
   letter-spacing: -0.03em;
 }
 
+.wf-work-platform,
 .wf-cb-work-platform {
   color: rgba(255, 255, 255, 0.5) !important;
 }
@@ -271,47 +277,55 @@
   background: rgba(255, 255, 255, 0.04);
 }
 
-/* ── Highlighted work list ──────────────────────────────────── */
-.wf-cb-work-item {
-  border-color: rgba(255, 255, 255, 0.1);
-  transition: background 0.2s ease;
-}
-
-.wf-cb-work-item:hover {
-  background: rgba(255, 255, 255, 0.04) !important;
-}
-
-.wf-cb-work-title {
+/* ── Highlighted work — case study cards ────────────────────── */
+.wf-main .wf-work-title {
   font-weight: 600;
+  color: #fff !important;
 }
 
-/* ── Business pillars ─────────────────────────────────────────── */
-.wf-bl-pillar {
-  border-bottom-color: rgba(255, 255, 255, 0.08);
+.wf-main .wf-case-question {
+  color: #111 !important;
 }
 
-/* ── Footer ─────────────────────────────────────────────────── */
+.wf-main .wf-case-category {
+  color: #4A63E8 !important;
+}
+
+/* ── Business lines ─────────────────────────────────────────── */
+.wf-lines-panel {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: #111;
+}
+
+.wf-main .wf-lines-intro-title,
+.wf-main .wf-lines-panel-title {
+  color: #fff;
+}
+
+.wf-main .wf-lines-panel-lead {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* ── Footer — newsletter card + light footer ─────────────────── */
 .wf-ft {
   background: #000 !important;
-  color: rgba(255, 255, 255, 0.65) !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff !important;
+  border-top: none !important;
 }
 
 .wf-ft-col-label {
-  color: rgba(255, 255, 255, 0.45) !important;
+  color: #fff !important;
 }
 
 .wf-ft-desc,
 .wf-ft-link,
-.wf-ft-office-line,
-.wf-ft-copy,
-.wf-ft-follow {
-  color: rgba(255, 255, 255, 0.65) !important;
+.wf-ft-copy {
+  color: rgba(255, 255, 255, 0.6) !important;
 }
 
 .wf-ft-social {
-  border-color: rgba(255, 255, 255, 0.15);
-  color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
 }
 
 /* ── Cookie banner ───────────────────────────────────────────── */
