@@ -308,6 +308,52 @@ main .container,
   text-align: center;
 }
 
+.wf-hero-typeline {
+  margin-top: 1.1rem;
+  text-align: center;
+  min-height: 1.6em;
+}
+
+.wf-hero-type {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: clamp(1.35rem, 2.6vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--hero-lime, #FCD116);
+}
+
+.wf-hero-type-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: 3px;
+  background: var(--hero-lime, #FCD116);
+  animation: wf-hero-caret-blink 1s steps(1) infinite;
+}
+
+@keyframes wf-hero-caret-blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .wf-hero-type-caret {
+    animation: none !important;
+    opacity: 1;
+  }
+}
+
 /* ── Business pillars & CB sections ──────────────────────────── */
 /* Pillar typography lives in custom.css (.wf-pillar-*) */
 

@@ -16,6 +16,7 @@ export interface ThesisArea {
   icon: string;
   title: string;
   description: string;
+  image?: string;
 }
 
 export interface ConveyorStep {
@@ -50,6 +51,7 @@ export const heroContent = {
     "Building the trust and bond that unlocks global capital for frontier market alternative strategies.",
   ctaPrimary: { label: "GET IN TOUCH", href: "#apply" },
   ctaNav: { label: "Apply Now", href: "#apply" },
+  typingText: "Alternative Investments, Advisory, Tech & AI Systems",
   scrollLabel: "SCROLL DOWN",
   focusAreas:
     "Climate & Impact | Alternative Investments | AI Systems | M&A Advisory | Executive Training",
@@ -78,7 +80,7 @@ export const navGroups = [
     ],
   },
   {
-    label: "Investment Advisory",
+    label: "Advisory",
     href: "#advisory",
     children: [
       { label: "Capabilities", href: "#capabilities" },
@@ -88,13 +90,22 @@ export const navGroups = [
     ],
   },
   {
-    label: "Investment Management",
+    label: "Investment",
     href: "#management",
     children: [
       { label: "Chale Fund", href: "#apply" },
       { label: "Venture Capital", href: "#management" },
       { label: "Private Credit", href: "#management" },
       { label: "Angel Investing", href: "#management" },
+    ],
+  },
+  {
+    label: "Technology",
+    href: "#advisory",
+    children: [
+      { label: "AI Systems", href: "#advisory" },
+      { label: "Data & Analytics", href: "#advisory" },
+      { label: "Digital Platforms", href: "#advisory" },
     ],
   },
   {
@@ -137,6 +148,17 @@ export const businessLines = {
     cta: "Apply now",
     image: "/images/02.jpg",
     imageAlt: "Investment management",
+  },
+  tech: {
+    eyebrow: "Technology",
+    title: "Tech & AI",
+    summary: "Intelligent systems for modern investing.",
+    description:
+      "AI-driven tools, data platforms, and digital infrastructure that power smarter decisions across our advisory and investment work.",
+    href: "#advisory",
+    cta: "Explore technology",
+    image: "/images/01.jpg",
+    imageAlt: "Technology and AI systems",
   },
 };
 
@@ -189,6 +211,24 @@ export const investmentPlatforms: InvestmentPlatform[] = [
     name: "Angel Investing",
     description: "Selective angel capital for founders building inclusive, scalable businesses.",
     href: "#apply",
+  },
+];
+
+export const techPlatforms: InvestmentPlatform[] = [
+  {
+    name: "AI Systems",
+    description: "AI models and automation that augment investment and advisory workflows.",
+    href: "#advisory",
+  },
+  {
+    name: "Data & Analytics",
+    description: "Data platforms turning market signals into actionable intelligence.",
+    href: "#advisory",
+  },
+  {
+    name: "Digital Platforms",
+    description: "Scalable digital infrastructure for portfolios and clients.",
+    href: "#advisory",
   },
 ];
 
@@ -389,11 +429,13 @@ export const groupIntro = {
 export const capabilitiesIntro = {
   eyebrow: "Capabilities",
   headline: "What we deliver for investors and founders",
+  lead: "From capital deployment to hands-on advisory, we cover the full spectrum growth-stage businesses and investors need to scale with confidence.",
 };
 
 export const sectorsIntro = {
   eyebrow: "Sectors",
   headline: "Where we invest and advise",
+  lead: "We concentrate where capital creates the most durable, inclusive returns across the African continent.",
 };
 
 export const advisoryIntro = {
@@ -519,30 +561,35 @@ export const thesisAreas: ThesisArea[] = [
     title: "Climate & Impact",
     description:
       "Investing at the intersection of climate resilience and social impact — deploying capital to ventures and SMEs that create measurable environmental and community outcomes across Africa.",
+    image: "/images/about-agritech.png",
   },
   {
     icon: "📈",
     title: "Alternative Investments",
     description:
       "Access to non-traditional asset classes and structures — private credit, co-investments, and tailored vehicles for investors seeking diversified exposure to African markets.",
+    image: "/sectors/Investment.jpg",
   },
   {
     icon: "🤖",
     title: "AI Systems",
     description:
       "Supporting technology-enabled businesses and AI-driven solutions that improve operational efficiency, decision-making, and scale for SMEs and growth-stage companies.",
+    image: "/sectors/ai.jpg",
   },
   {
     icon: "🤝",
     title: "M&A Advisory",
     description:
       "Strategic buy-side and sell-side support — due diligence, valuation, deal structuring, and transaction execution for investors and business owners across African markets.",
+    image: "/sectors/MA.jpg",
   },
   {
     icon: "🎓",
     title: "Executive Training",
     description:
       "Capacity building and leadership development for founders, executives, and investment teams — equipping leaders to navigate growth, governance, and capital markets in Africa.",
+    image: "/sectors/executive-coaching-center-for-creative-leadership-ccl.jpg",
   },
 ];
 
@@ -687,6 +734,30 @@ export const francoSection = {
     "Senegal",
     "Rwanda",
   ],
+};
+
+export interface GeoLocation {
+  key: string;
+  label: string;
+  color: string;
+  left: number;
+  top: number;
+  z?: number;
+  size?: "sm";
+}
+
+export const geoContent = {
+  eyebrow: "Geographies",
+  headline: "A global network for African opportunity",
+  lead: "From West Africa to Europe and East Asia, we connect capital and expertise across borders to unlock growth in frontier markets.",
+  mapSrc: "/images/dotted-world.svg",
+  locations: [
+    { key: "ghana", label: "Ghana", color: "#F5A623", left: 49.2, top: 59.34, z: 3, size: "sm" },
+    { key: "kenya", label: "Kenya", color: "#3FB53F", left: 59.81, top: 62.55, z: 1 },
+    { key: "luxemburg", label: "Luxemburg", color: "#3B7DED", left: 51.4, top: 30.47, z: 1 },
+    { key: "us", label: "US", color: "#F0403D", left: 21.96, top: 38.49, z: 1 },
+    { key: "southafrica", label: "South Africa", color: "#3FD4E8", left: 56.3, top: 80.5, z: 1 },
+  ] as GeoLocation[],
 };
 
 /* ── Insights ────────────────────────────────────────────── */

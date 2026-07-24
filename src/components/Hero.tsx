@@ -1,7 +1,42 @@
+import { useEffect, useState } from 'react'
 import { HugeiconsIcon } from '@hugeicons/react'
 import { ArrowDown01Icon } from '@hugeicons/core-free-icons'
 import { heroContent } from '@/data/content'
 import { FadeUp, BlurIn, motion } from './Motion'
+
+const prefersReducedMotion =
+  typeof window !== 'undefined' &&
+  window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+
+function Typewriter({ text }: { text: string }) {
+  const [count, setCount] = useState(prefersReducedMotion ? text.length : 0)
+  const [deleting, setDeleting] = useState(false)
+
+  useEffect(() => {
+    if (prefersReducedMotion) return
+
+    const full = text.length
+    let delay = deleting ? 35 : 80
+    if (!deleting && count === full) delay = 2000
+    else if (deleting && count === 0) delay = 600
+
+    const timer = setTimeout(() => {
+      if (!deleting && count < full) setCount(count + 1)
+      else if (!deleting && count === full) setDeleting(true)
+      else if (deleting && count > 0) setCount(count - 1)
+      else setDeleting(false)
+    }, delay)
+
+    return () => clearTimeout(timer)
+  }, [count, deleting, text])
+
+  return (
+    <span className="wf-hero-type" aria-label={text}>
+      <span aria-hidden="true">{text.slice(0, count)}</span>
+      <span className="wf-hero-type-caret" aria-hidden="true" />
+    </span>
+  )
+}
 
 export default function Hero() {
   return (
@@ -11,6 +46,8 @@ export default function Hero() {
           src={heroContent.image}
           alt=""
           className="wf-hero-photo"
+          decoding="async"
+          fetchPriority="high"
           initial={{ scale: 1.08 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
@@ -34,6 +71,12 @@ export default function Hero() {
 
           <FadeUp index={1}>
             <p className="wf-hero-sub wf-hero-sub--advisory">{heroContent.subheadline}</p>
+          </FadeUp>
+
+          <FadeUp index={2}>
+            <p className="wf-hero-typeline">
+              <Typewriter text={heroContent.typingText} />
+            </p>
           </FadeUp>
         </div>
 

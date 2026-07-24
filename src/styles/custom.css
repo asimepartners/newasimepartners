@@ -184,7 +184,7 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  width: min(100%, 74rem);
+  width: min(100%, 92rem);
   padding: 0.55rem 0.65rem 0.55rem 1.35rem;
   background: #fff;
   border-radius: 999px;
@@ -1959,6 +1959,387 @@ a { text-decoration: none; color: inherit; }
   height: 46px;
 }
 
+/* ── Capabilities (redesign) ─────────────────────────────── */
+.wf-cap2,
+.wf-sec2 {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+.wf-cap2-inner,
+.wf-sec2-inner {
+  width: min(100% - 2 * var(--layout-gutter, 1.5rem), 100rem);
+  margin-inline: auto;
+}
+
+.wf-cap2-head,
+.wf-sec2-head {
+  max-width: 46rem;
+  margin-bottom: clamp(2.25rem, 4vw, 3.25rem);
+}
+
+.wf-cap2-eyebrow,
+.wf-sec2-eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--hero-lime);
+}
+
+.wf-cap2-title,
+.wf-sec2-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #fff;
+}
+
+.wf-cap2-lead,
+.wf-sec2-lead {
+  margin: 1.1rem 0 0;
+  font-size: clamp(1rem, 1.5vw, 1.18rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.wf-cap2-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 1.8vw, 1.5rem);
+}
+
+.wf-cap2-card {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.75rem, 2.4vw, 2.4rem);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  overflow: hidden;
+  transition: border-color 0.4s var(--ease-smooth), background 0.4s var(--ease-smooth);
+}
+
+.wf-cap2-card:hover {
+  border-color: rgba(252, 209, 22, 0.55);
+  background: linear-gradient(180deg, rgba(252, 209, 22, 0.08), rgba(255, 255, 255, 0.02));
+}
+
+.wf-cap2-card-index {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--hero-lime);
+}
+
+.wf-cap2-card-label {
+  margin-top: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.wf-cap2-card-title {
+  margin: 0.5rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.7vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.wf-cap2-card-body {
+  margin: 0.85rem 0 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.wf-cap2-card-line {
+  margin-top: auto;
+  display: block;
+  height: 2px;
+  width: 2.5rem;
+  margin-top: 1.5rem;
+  background: var(--hero-lime);
+  border-radius: 2px;
+  transform-origin: left;
+  transform: scaleX(0.5);
+  opacity: 0.5;
+  transition: transform 0.45s var(--ease-smooth), opacity 0.45s var(--ease-smooth);
+}
+
+.wf-cap2-card:hover .wf-cap2-card-line {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* ── Sectors (redesign — image cards) ────────────────────── */
+.wf-sec2-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: clamp(0.75rem, 1.4vw, 1.25rem);
+}
+
+.wf-sec2-grid > * {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: none;
+}
+
+.wf-sec2-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.4s var(--ease-smooth), background 0.4s var(--ease-smooth);
+}
+
+.wf-sec2-card:hover {
+  border-color: rgba(252, 209, 22, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.wf-sec2-card-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.wf-sec2-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 0.7s var(--ease-smooth);
+}
+
+.wf-sec2-card:hover .wf-sec2-card-img {
+  transform: scale(1.08);
+}
+
+.wf-sec2-card-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+.wf-sec2-card-icon {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  line-height: 1;
+  background: rgba(12, 12, 12, 0.6);
+  border: 1px solid rgba(252, 209, 22, 0.4);
+  backdrop-filter: blur(6px);
+}
+
+.wf-sec2-card-body {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.4rem, 2vw, 1.85rem);
+}
+
+.wf-sec2-card-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.7vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.wf-sec2-card-text {
+  margin: 0.75rem 0 0;
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+@media (max-width: 1100px) {
+  .wf-sec2-grid {
+    flex-wrap: wrap;
+  }
+
+  .wf-sec2-grid > * {
+    flex: 1 1 15rem;
+    max-width: 24rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .wf-cap2-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575.98px) {
+  .wf-cap2-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wf-sec2-grid > * {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+}
+
+/* ── Geographies (dotted world map) ──────────────────────── */
+.wf-geo {
+  background: #000;
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  overflow: hidden;
+}
+
+.wf-geo-inner {
+  width: min(100% - 2 * var(--layout-gutter, 1.5rem), 78rem);
+  margin-inline: auto;
+}
+
+.wf-geo-head {
+  max-width: 46rem;
+  margin: 0 auto clamp(2rem, 4vw, 3rem);
+  text-align: center;
+}
+
+.wf-geo-eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--hero-lime);
+}
+
+.wf-geo-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  color: #fff;
+}
+
+.wf-geo-lead {
+  margin: 1rem auto 0;
+  max-width: 40rem;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.wf-geo-map {
+  position: relative;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.wf-geo-map-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0.85;
+}
+
+.wf-geo-pin {
+  position: absolute;
+  width: clamp(22px, 2.6vw, 34px);
+  height: auto;
+  aspect-ratio: 24 / 32;
+  translate: -50% -100%;
+  transform-origin: bottom center;
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.45));
+  pointer-events: none;
+}
+
+.wf-geo-pin--sm {
+  width: clamp(19px, 2.2vw, 30px);
+}
+
+.wf-geo-pin-label {
+  position: absolute;
+  bottom: calc(100% + 3px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.12rem 0.45rem;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.6);
+  font-family: var(--font-mono);
+  font-size: clamp(0.6rem, 0.9vw, 0.8rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  line-height: 1.3;
+  pointer-events: none;
+  backdrop-filter: blur(2px);
+}
+
+.wf-geo-legend {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  gap: clamp(0.9rem, 2vw, 1.4rem) clamp(1.5rem, 4vw, 3.5rem);
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.wf-geo-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.wf-geo-legend-dot {
+  width: 0.95rem;
+  height: 0.95rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.wf-geo-legend-label {
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 640px) {
+  .wf-geo-legend {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
 /* ── 13. Francophone ────────────────────────────────────────── */
 .wf-franco-bg-circle {
   position: absolute;
@@ -2760,8 +3141,8 @@ a { text-decoration: none; color: inherit; }
   display: inline-block;
   margin-bottom: 0.85rem;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--hero-lime);
@@ -2770,18 +3151,24 @@ a { text-decoration: none; color: inherit; }
 .wf-lines-intro-title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.85rem, 3.4vw, 2.65rem);
+  font-size: clamp(1.35rem, 2.4vw, 1.9rem);
   font-weight: 700;
   letter-spacing: -0.035em;
-  line-height: 1.15;
+  line-height: 1.2;
   color: #fff;
 }
 
 .wf-lines-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(1.25rem, 2.5vw, 1.75rem);
   align-items: stretch;
+}
+
+@media (max-width: 960px) {
+  .wf-lines-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .wf-lines-panel {

@@ -33,7 +33,7 @@ export default function Insights() {
               >
                 <a href={card.href} className="wf-cb-insight-card-link">
                   <div className="wf-cb-insight-media">
-                    <img src={card.image} alt="" className="wf-cb-insight-img" loading="lazy" />
+                    <img src={card.image} alt="" className="wf-cb-insight-img" loading="lazy" decoding="async" />
                   </div>
                   <div className={`wf-cb-insight-banner wf-cb-insight-banner--${card.bannerTone}`}>
                     {card.platform}

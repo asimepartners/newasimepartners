@@ -1,15 +1,17 @@
+import { lazy, Suspense } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import BusinessPillars from './components/BusinessPillars'
-import OurPeople from './components/OurPeople'
-import HighlightedWork from './components/HighlightedWork'
-import ByTheNumbers from './components/ByTheNumbers'
-import Capabilities from './components/Capabilities'
-import Geographies from './components/Geographies'
-import Insights from './components/Insights'
-import ApplyCta from './components/ApplyCta'
-import Footer from './components/Footer'
-import CookieBanner from './components/CookieBanner'
+
+const OurPeople = lazy(() => import('./components/OurPeople'))
+const HighlightedWork = lazy(() => import('./components/HighlightedWork'))
+const ByTheNumbers = lazy(() => import('./components/ByTheNumbers'))
+const Capabilities = lazy(() => import('./components/Capabilities'))
+const Geographies = lazy(() => import('./components/Geographies'))
+const Insights = lazy(() => import('./components/Insights'))
+const ApplyCta = lazy(() => import('./components/ApplyCta'))
+const Footer = lazy(() => import('./components/Footer'))
+const CookieBanner = lazy(() => import('./components/CookieBanner'))
 
 export default function App() {
   return (
@@ -18,16 +20,20 @@ export default function App() {
       <main className="wf-main">
         <Hero />
         <BusinessPillars />
-        <OurPeople />
-        <HighlightedWork />
-        <ByTheNumbers />
-        <Capabilities />
-        <Geographies />
-        <Insights />
-        <ApplyCta />
+        <Suspense fallback={null}>
+          <OurPeople />
+          <HighlightedWork />
+          <ByTheNumbers />
+          <Capabilities />
+          <Geographies />
+          <Insights />
+          <ApplyCta />
+        </Suspense>
       </main>
-      <Footer />
-      <CookieBanner />
+      <Suspense fallback={null}>
+        <Footer />
+        <CookieBanner />
+      </Suspense>
     </>
   )
 }

@@ -4,6 +4,7 @@ import {
   advisoryFocusAreas,
   businessLines,
   investmentPlatforms,
+  techPlatforms,
   type InvestmentPlatform,
 } from '@/data/content'
 import { AnimatedSection, FadeUp, StaggerParent, StaggerItem, motion } from './Motion'
@@ -41,7 +42,7 @@ function LinePanel({
   return (
     <article id={id} className="wf-lines-panel">
       <div className="wf-lines-panel-media">
-        <img src={line.image} alt={line.imageAlt} className="wf-lines-panel-img" loading="lazy" />
+        <img src={line.image} alt={line.imageAlt} className="wf-lines-panel-img" loading="lazy" decoding="async" />
       </div>
 
       <div className="wf-lines-panel-body">
@@ -98,6 +99,14 @@ export default function BusinessPillars() {
               index="02"
               line={businessLines.management}
               platforms={investmentPlatforms}
+            />
+          </StaggerItem>
+          <StaggerItem>
+            <LinePanel
+              id="technology"
+              index="03"
+              line={businessLines.tech}
+              platforms={techPlatforms}
             />
           </StaggerItem>
         </StaggerParent>
