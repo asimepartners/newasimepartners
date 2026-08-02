@@ -64,6 +64,8 @@ html {
   font-family: var(--font-body);
   font-size: 100%;
   scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;

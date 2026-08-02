@@ -55,7 +55,7 @@
 body {
   color: rgba(255, 255, 255, 0.72);
   background: #000;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 ::selection {
@@ -2416,8 +2416,8 @@ a { text-decoration: none; color: inherit; }
 }
 
 .wf-team-avatar {
-  width: 5.5rem;
-  height: 5.5rem;
+  width: 13rem;
+  height: 13rem;
   margin-bottom: 1.35rem;
   border-radius: 50%;
   overflow: hidden;

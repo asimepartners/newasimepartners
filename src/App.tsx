@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import BusinessPillars from './components/BusinessPillars'
+import { useSmoothScroll } from './hooks/useSmoothScroll'
 
 const OurPeople = lazy(() => import('./components/OurPeople'))
 const HighlightedWork = lazy(() => import('./components/HighlightedWork'))
@@ -15,6 +16,8 @@ const Footer = lazy(() => import('./components/Footer'))
 const CookieBanner = lazy(() => import('./components/CookieBanner'))
 
 export default function App() {
+  useSmoothScroll()
+
   return (
     <>
       <Navbar />
