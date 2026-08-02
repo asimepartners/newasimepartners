@@ -324,6 +324,11 @@ main .container,
   color: var(--hero-lime, #FCD116);
 }
 
+.wf-hero-type-word {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
 .wf-hero-type-caret {
   display: inline-block;
   width: 2px;

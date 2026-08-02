@@ -293,17 +293,20 @@
 
 /* ── Business lines ─────────────────────────────────────────── */
 .wf-lines-panel {
-  border-color: rgba(255, 255, 255, 0.1);
-  background: #111;
+  border-color: rgba(0, 0, 0, 0.08);
+  background: #fff;
 }
 
-.wf-main .wf-lines-intro-title,
-.wf-main .wf-lines-panel-title {
+.wf-main .wf-lines-intro-title {
   color: #fff;
 }
 
+.wf-main .wf-lines-panel-title {
+  color: #0f0f0f;
+}
+
 .wf-main .wf-lines-panel-lead {
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(15, 15, 15, 0.78);
 }
 
 /* ── Footer — newsletter card + light footer ─────────────────── */

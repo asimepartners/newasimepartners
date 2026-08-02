@@ -52,6 +52,7 @@ export const heroContent = {
   ctaPrimary: { label: "GET IN TOUCH", href: "#apply" },
   ctaNav: { label: "Apply Now", href: "#apply" },
   typingText: "Alternative Investments, Advisory, Tech & AI Systems",
+  typingPhrases: ["Alternative Investments", "Advisory", "Tech & AI Systems"],
   scrollLabel: "SCROLL DOWN",
   focusAreas:
     "Climate & Impact | Alternative Investments | AI Systems | M&A Advisory | Executive Training",
@@ -269,7 +270,7 @@ export const aboutContent = {
     body: "Provide better risk-adjusted return and impact by investing in and supporting enterprises built by underrepresented founders and teams across Africa, especially youth, women and people with disability.",
   },
   values: {
-    label: "Values",
+    label: "Core Values",
     items: [
       { label: "People", full: "People & Relationships", icon: "people" as const },
       { label: "Inclusivity", full: "Diversity & Inclusivity", icon: "inclusivity" as const },
@@ -758,6 +759,48 @@ export const geoContent = {
     { key: "us", label: "US", color: "#F0403D", left: 21.96, top: 38.49, z: 1 },
     { key: "southafrica", label: "South Africa", color: "#3FD4E8", left: 56.3, top: 80.5, z: 1 },
   ] as GeoLocation[],
+};
+
+/* ── Team ────────────────────────────────────────────────── */
+
+export interface TeamMember {
+  name: string;
+  role: string;
+  bio?: string;
+  image?: string;
+  linkedin?: string;
+}
+
+export const teamContent = {
+  eyebrow: "Our Team",
+  headline: "The people behind Asime Partners",
+  lead: "A mission-driven team with deep investment, advisory, and technology expertise across Africa and beyond.",
+  members: [
+    {
+      name: "Sewu-Steve Tawia",
+      role: "Managing Partner",
+      bio: "Leads investment strategy and partnerships, pioneering early-stage venture and tech M&A advisory across Africa.",
+      linkedin: "https://linkedin.com/company/asimepartners",
+    },
+    {
+      name: "Ama Mensah",
+      role: "Partner, Advisory",
+      bio: "Drives M&A, due diligence, and transaction advisory for investors and growth-stage businesses.",
+      linkedin: "https://linkedin.com/company/asimepartners",
+    },
+    {
+      name: "Kwame Osei",
+      role: "Head of Investments",
+      bio: "Oversees venture, private credit, and impact deployment across gender-inclusive SMEs.",
+      linkedin: "https://linkedin.com/company/asimepartners",
+    },
+    {
+      name: "Naomi Adeyemi",
+      role: "Head of Technology & AI",
+      bio: "Builds the AI systems and data platforms powering smarter investment and advisory decisions.",
+      linkedin: "https://linkedin.com/company/asimepartners",
+    },
+  ] as TeamMember[],
 };
 
 /* ── Insights ────────────────────────────────────────────── */

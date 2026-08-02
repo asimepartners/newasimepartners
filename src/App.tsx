@@ -8,6 +8,7 @@ const HighlightedWork = lazy(() => import('./components/HighlightedWork'))
 const ByTheNumbers = lazy(() => import('./components/ByTheNumbers'))
 const Capabilities = lazy(() => import('./components/Capabilities'))
 const Geographies = lazy(() => import('./components/Geographies'))
+const Team = lazy(() => import('./components/Team'))
 const Insights = lazy(() => import('./components/Insights'))
 const ApplyCta = lazy(() => import('./components/ApplyCta'))
 const Footer = lazy(() => import('./components/Footer'))
@@ -26,8 +27,9 @@ export default function App() {
           <ByTheNumbers />
           <Capabilities />
           <Geographies />
-          <Insights />
+          <Team />
           <ApplyCta />
+          <Insights />
         </Suspense>
       </main>
       <Suspense fallback={null}>

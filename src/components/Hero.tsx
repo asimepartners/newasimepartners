@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { AnimatePresence } from 'motion/react'
 import { HugeiconsIcon } from '@hugeicons/react'
 import { ArrowDown01Icon } from '@hugeicons/core-free-icons'
 import { heroContent } from '@/data/content'
@@ -8,32 +9,36 @@ const prefersReducedMotion =
   typeof window !== 'undefined' &&
   window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
 
-function Typewriter({ text }: { text: string }) {
-  const [count, setCount] = useState(prefersReducedMotion ? text.length : 0)
-  const [deleting, setDeleting] = useState(false)
+function Typewriter({ phrases }: { phrases: string[] }) {
+  const [index, setIndex] = useState(0)
 
   useEffect(() => {
     if (prefersReducedMotion) return
+    const timer = setInterval(() => {
+      setIndex((i) => (i + 1) % phrases.length)
+    }, 2600)
+    return () => clearInterval(timer)
+  }, [phrases])
 
-    const full = text.length
-    let delay = deleting ? 35 : 80
-    if (!deleting && count === full) delay = 2000
-    else if (deleting && count === 0) delay = 600
-
-    const timer = setTimeout(() => {
-      if (!deleting && count < full) setCount(count + 1)
-      else if (!deleting && count === full) setDeleting(true)
-      else if (deleting && count > 0) setCount(count - 1)
-      else setDeleting(false)
-    }, delay)
-
-    return () => clearTimeout(timer)
-  }, [count, deleting, text])
+  if (prefersReducedMotion) {
+    return <span className="wf-hero-type">{phrases.join(' · ')}</span>
+  }
 
   return (
-    <span className="wf-hero-type" aria-label={text}>
-      <span aria-hidden="true">{text.slice(0, count)}</span>
-      <span className="wf-hero-type-caret" aria-hidden="true" />
+    <span className="wf-hero-type" aria-label={phrases.join(', ')}>
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={index}
+          className="wf-hero-type-word"
+          aria-hidden="true"
+          initial={{ opacity: 0, y: 14, filter: 'blur(6px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          exit={{ opacity: 0, y: -14, filter: 'blur(6px)' }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {phrases[index]}
+        </motion.span>
+      </AnimatePresence>
     </span>
   )
 }
@@ -75,7 +80,7 @@ export default function Hero() {
 
           <FadeUp index={2}>
             <p className="wf-hero-typeline">
-              <Typewriter text={heroContent.typingText} />
+              <Typewriter phrases={heroContent.typingPhrases} />
             </p>
           </FadeUp>
         </div>
@@ -88,9 +93,6 @@ export default function Hero() {
             </a>
           </FadeUp>
 
-          <FadeUp index={4}>
-            <p className="wf-hero-focus">{heroContent.focusAreas}</p>
-          </FadeUp>
         </div>
       </div>
     </section>
