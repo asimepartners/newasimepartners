@@ -920,6 +920,7 @@ export const teamContent = {
       name: "Prince Krampah",
       role: "AI/ML Engineer",
       bio: "Tanzania — Belgium.",
+      image: "/images/Team/prince.png",
     },
     {
       name: "James Caulley Hanson",
