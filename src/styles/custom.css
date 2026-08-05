@@ -161,14 +161,13 @@ a { text-decoration: none; color: inherit; }
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1200;
   transition: transform 0.4s var(--ease-smooth);
-  will-change: transform;
 }
 
 .wf-nav-header.is-hidden {
-  transform: translateY(-100%);
-  pointer-events: none;
+  transform: none;
+  pointer-events: auto;
 }
 
 .wf-nav {
@@ -3708,7 +3707,7 @@ a { text-decoration: none; color: inherit; }
   flex-direction: column;
   min-height: 100%;
   background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: none;
   border-radius: 3px;
   overflow: hidden;
 }

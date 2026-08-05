@@ -293,7 +293,7 @@
 
 /* ── Business lines ─────────────────────────────────────────── */
 .wf-lines-panel {
-  border-color: rgba(0, 0, 0, 0.08);
+  border: none;
   background: #fff;
 }
 

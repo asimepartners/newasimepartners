@@ -51,8 +51,8 @@ export const heroContent = {
     "Building the trust and bond that unlocks global capital for frontier market alternative strategies.",
   ctaPrimary: { label: "GET IN TOUCH", href: "#apply" },
   ctaNav: { label: "Apply Now", href: "#apply" },
-  typingText: "Alternative Investments, Advisory, Tech & AI Systems",
-  typingPhrases: ["Alternative Investments", "Advisory", "Tech & AI Systems"],
+  typingText: "Alternative Investments, Advisory, Technology & AI",
+  typingPhrases: ["Alternative Investments", "Advisory", "Technology & AI"],
   scrollLabel: "SCROLL DOWN",
   focusAreas:
     "Climate & Impact | Alternative Investments | AI Systems | M&A Advisory | Executive Training",
@@ -130,7 +130,7 @@ export const navGroups = [
 export const businessLines = {
   advisory: {
     eyebrow: "Advisory",
-    title: "Investment Advisory",
+    title: "Advisory",
     summary: "Trusted advisors across Africa.",
     description:
       "M&A advisory, due diligence, and investment structuring for investors and growing businesses.",
@@ -140,8 +140,8 @@ export const businessLines = {
     imageAlt: "Investment advisory",
   },
   management: {
-    eyebrow: "Management",
-    title: "Investment Management",
+    eyebrow: "Alternative Investments",
+    title: "Alternative Investments",
     summary: "Capital deployed through focused platforms.",
     description:
       "Venture, credit, and impact pathways for gender-inclusive SMEs and high-potential ventures.",
@@ -247,7 +247,7 @@ export interface ServiceDetail {
 }
 
 export const advisoryDetail: ServiceDetail = {
-  eyebrow: "Investment Advisory",
+  eyebrow: "Advisory",
   headline: "Advisory across the investment lifecycle",
   items: [
     {
@@ -284,7 +284,7 @@ export const advisoryDetail: ServiceDetail = {
 };
 
 export const managementDetail: ServiceDetail = {
-  eyebrow: "Investment Management",
+  eyebrow: "Alternative Investments",
   headline: "Alternative investments across our platforms",
   intro:
     "Alternative investments are asset classes that aren’t stocks, bonds, or cash. These kinds of investments differ from traditional investment types because they aren’t easily sold or converted into cash. It’s also common for alternative investments to be referred to as alternative assets. Examples are: hedge funds, art collections or indexes, real estate investments and trusts (REITs), structured products etc.",
@@ -894,16 +894,22 @@ export const teamContent = {
       linkedin: "https://www.linkedin.com/in/stevetawia",
     },
     {
-      name: "Abena Opoku-Acquah",
-      role: "Principal — West Africa",
-      image: "/images/Team/Abena.jpg",
-      linkedin: "https://www.linkedin.com/in/abenaopokuacquah/",
+      name: "Benson Njiru",
+      role: "MD East Africa",
+      image: "/images/Team/Benson.jpg",
+      linkedin: "https://www.linkedin.com/in/benson-njiru-njagi/",
     },
     {
       name: "Freda Egyir",
       role: "Chief of Staff & Project Management",
-      image: "/images/Team/Freda.jpg",
+      image: "/images/Team/Freda.jpg?v=2",
       linkedin: "https://www.linkedin.com/in/freda-egyir-4408161a1/",
+    },
+    {
+      name: "Abena Opoku-Acquah",
+      role: "Principal — West Africa",
+      image: "/images/Team/Abena.jpg",
+      linkedin: "https://www.linkedin.com/in/abenaopokuacquah/",
     },
     {
       name: "Emmanuel Devi",
@@ -928,12 +934,6 @@ export const teamContent = {
       role: "Investment Analyst & Media and Communications",
       image: "/images/Team/Seyram.jpg",
       linkedin: "https://www.linkedin.com/in/seyram-ametepeh/",
-    },
-    {
-      name: "Benson Njiru",
-      role: "MD East Africa",
-      image: "/images/Team/Benson.jpg",
-      linkedin: "https://www.linkedin.com/in/benson-njiru-njagi/",
     },
     {
       name: "Betty Nduku",

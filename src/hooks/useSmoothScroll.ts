@@ -17,6 +17,8 @@ export function useSmoothScroll() {
       syncTouch: false,
     })
 
+    ;(window as Window & { __lenis?: Lenis }).__lenis = lenis
+
     let rafId = requestAnimationFrame(function raf(time: number) {
       lenis.raf(time)
       rafId = requestAnimationFrame(raf)
@@ -42,6 +44,8 @@ export function useSmoothScroll() {
     return () => {
       document.removeEventListener('click', handleAnchorClick)
       cancelAnimationFrame(rafId)
+      const win = window as Window & { __lenis?: Lenis }
+      if (win.__lenis === lenis) delete win.__lenis
       lenis.destroy()
     }
   }, [])
