@@ -1,12 +1,5 @@
 import { HugeiconsIcon } from '@hugeicons/react'
-import {
-  ArrowRight01Icon,
-  AiInnovation01Icon,
-  AiNetworkIcon,
-  Briefcase01Icon,
-  ChartIncreaseIcon,
-} from '@hugeicons/core-free-icons'
-import type { IconSvgElement } from '@hugeicons/react'
+import { ArrowRight01Icon } from '@hugeicons/core-free-icons'
 import { applyCta, siteBrand } from '@/data/content'
 import { AnimatedSection, FadeUp, StaggerParent, StaggerItem, motion } from './Motion'
 
@@ -14,31 +7,31 @@ const workWithUsPaths: {
   label: string
   hint: string
   href: string
-  icon: IconSvgElement
+  image: string
 }[] = [
   {
     label: 'Partner With Us',
     hint: 'Co-investments & strategic collaboration',
     href: '#work-with-us',
-    icon: AiNetworkIcon,
+    image: '/images/more/partner.jpg',
   },
   {
     label: 'Apply to Chale Fund',
     hint: 'Impact capital for qualifying ventures',
     href: `mailto:${siteBrand.email}?subject=Chale%20Fund%20Application`,
-    icon: ChartIncreaseIcon,
+    image: '/images/more/apply.jpeg',
   },
   {
     label: 'Apply as Tech Startup',
     hint: 'Venture & angel investment pathways',
     href: `mailto:${siteBrand.email}?subject=Tech%20Startup%20Application`,
-    icon: AiInnovation01Icon,
+    image: '/images/more/startup.jpg',
   },
   {
     label: 'Apply SME/MSME/SGB',
     hint: 'Growth capital & advisory support',
     href: `mailto:${siteBrand.email}?subject=SME%2FMSME%2FSGB%20Application`,
-    icon: Briefcase01Icon,
+    image: '/images/more/SME.jpg',
   },
 ]
 
@@ -65,7 +58,7 @@ export default function ApplyCta() {
                   >
                     <span className="wf-wwu-path-top">
                       <span className="wf-wwu-path-icon">
-                        <HugeiconsIcon icon={path.icon} size={26} strokeWidth={1.7} color="currentColor" />
+                        <img src={path.image} alt="" loading="lazy" decoding="async" />
                       </span>
                       <span className="wf-wwu-path-num" aria-hidden="true">
                         {String(index + 1).padStart(2, '0')}

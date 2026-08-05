@@ -28,9 +28,6 @@ export default function Capabilities() {
                       loading="lazy"
                       decoding="async"
                     />
-                    <span className="wf-sec2-card-icon" aria-hidden="true">
-                      {area.icon}
-                    </span>
                   </div>
                   <div className="wf-sec2-card-body">
                     <h3 className="wf-sec2-card-title">{area.title}</h3>

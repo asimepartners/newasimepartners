@@ -3,7 +3,9 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import BusinessPillars from './components/BusinessPillars'
 import { useSmoothScroll } from './hooks/useSmoothScroll'
+import { advisoryDetail, managementDetail, techDetail } from './data/content'
 
+const AdvisoryDetail = lazy(() => import('./components/AdvisoryDetail'))
 const OurPeople = lazy(() => import('./components/OurPeople'))
 const HighlightedWork = lazy(() => import('./components/HighlightedWork'))
 const ByTheNumbers = lazy(() => import('./components/ByTheNumbers'))
@@ -25,12 +27,15 @@ export default function App() {
         <Hero />
         <BusinessPillars />
         <Suspense fallback={null}>
+          <AdvisoryDetail id="advisory-detail" content={advisoryDetail} />
+          <AdvisoryDetail id="management-detail" content={managementDetail} />
+          <AdvisoryDetail id="tech-detail" content={techDetail} />
           <OurPeople />
+          <Team />
           <HighlightedWork />
           <ByTheNumbers />
           <Capabilities />
           <Geographies />
-          <Team />
           <ApplyCta />
           <Insights />
         </Suspense>

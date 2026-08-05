@@ -1,12 +1,6 @@
 import { HugeiconsIcon } from '@hugeicons/react'
 import { ArrowRight01Icon } from '@hugeicons/core-free-icons'
-import {
-  advisoryFocusAreas,
-  businessLines,
-  investmentPlatforms,
-  techPlatforms,
-  type InvestmentPlatform,
-} from '@/data/content'
+import { businessLines } from '@/data/content'
 import { AnimatedSection, FadeUp, StaggerParent, StaggerItem, motion } from './Motion'
 
 type PillarLine = (typeof businessLines)['advisory']
@@ -32,12 +26,10 @@ function LinePanel({
   id,
   index,
   line,
-  platforms,
 }: {
   id: string
   index: string
   line: PillarLine
-  platforms?: InvestmentPlatform[]
 }) {
   return (
     <article id={id} className="wf-lines-panel">
@@ -52,20 +44,6 @@ function LinePanel({
         </div>
 
         <h2 className="wf-lines-panel-title">{line.title}</h2>
-        <p className="wf-lines-panel-lead">{line.summary}</p>
-        <p className="wf-lines-panel-desc">{line.description}</p>
-
-        {platforms && platforms.length > 0 ? (
-          <ul className="wf-lines-platforms">
-            {platforms.map((platform) => (
-              <li key={platform.name}>
-                <a href={platform.href} className="wf-lines-platform">
-                  {platform.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        ) : null}
 
         <PillarCta href={line.href} label={line.cta} />
       </div>
@@ -86,28 +64,13 @@ export default function BusinessPillars() {
 
         <StaggerParent className="wf-lines-grid">
           <StaggerItem>
-            <LinePanel
-              id="advisory"
-              index="01"
-              line={businessLines.advisory}
-              platforms={advisoryFocusAreas}
-            />
+            <LinePanel id="advisory" index="01" line={businessLines.advisory} />
           </StaggerItem>
           <StaggerItem>
-            <LinePanel
-              id="management"
-              index="02"
-              line={businessLines.management}
-              platforms={investmentPlatforms}
-            />
+            <LinePanel id="management" index="02" line={businessLines.management} />
           </StaggerItem>
           <StaggerItem>
-            <LinePanel
-              id="technology"
-              index="03"
-              line={businessLines.tech}
-              platforms={techPlatforms}
-            />
+            <LinePanel id="technology" index="03" line={businessLines.tech} />
           </StaggerItem>
         </StaggerParent>
       </div>

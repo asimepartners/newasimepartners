@@ -134,8 +134,8 @@ export const businessLines = {
     summary: "Trusted advisors across Africa.",
     description:
       "M&A advisory, due diligence, and investment structuring for investors and growing businesses.",
-    href: "#capabilities",
-    cta: "View capabilities",
+    href: "#advisory-detail",
+    cta: "Read More",
     image: "/images/01.jpg",
     imageAlt: "Investment advisory",
   },
@@ -145,20 +145,20 @@ export const businessLines = {
     summary: "Capital deployed through focused platforms.",
     description:
       "Venture, credit, and impact pathways for gender-inclusive SMEs and high-potential ventures.",
-    href: "#apply",
-    cta: "Apply now",
+    href: "#management-detail",
+    cta: "Read More",
     image: "/images/02.jpg",
     imageAlt: "Investment management",
   },
   tech: {
     eyebrow: "Technology",
-    title: "Tech & AI",
+    title: "Technology & AI",
     summary: "Intelligent systems for modern investing.",
     description:
       "AI-driven tools, data platforms, and digital infrastructure that power smarter decisions across our advisory and investment work.",
-    href: "#advisory",
-    cta: "Explore technology",
-    image: "/images/01.jpg",
+    href: "#tech-detail",
+    cta: "Read More",
+    image: "/sectors/ai.jpg",
     imageAlt: "Technology and AI systems",
   },
 };
@@ -233,6 +233,117 @@ export const techPlatforms: InvestmentPlatform[] = [
   },
 ];
 
+export interface ServiceDetailItem {
+  icon: string;
+  title: string;
+  body: string;
+}
+
+export interface ServiceDetail {
+  eyebrow: string;
+  headline: string;
+  intro?: string;
+  items: ServiceDetailItem[];
+}
+
+export const advisoryDetail: ServiceDetail = {
+  eyebrow: "Investment Advisory",
+  headline: "Advisory across the investment lifecycle",
+  items: [
+    {
+      icon: "manda",
+      title: "M&A and Valuation",
+      body: "Buy and sell side M&A advisory, covering local and international cross-border mergers and acquisitions, typically on transaction values between $5M and $500M. Investment business valuation determines a company's worth by analyzing its financial performance, assets, and market conditions (DCF, VC method, EV/EBITDA, EV/GMV etc.). It helps investors make informed decisions and companies assess their value for fundraising or mergers.",
+    },
+    {
+      icon: "diligence",
+      title: "Capital Raising & Due Diligence",
+      body: "Our team of experts conducts comprehensive due diligence to assess potential investments for capital raising or private equity funds. This involves risk assessment and mitigation, market analysis, as well as legal and regulatory checks. Our advisors provide essential information to enable informed investment decisions, minimizing risks and ensuring alignment with the unique needs and challenges of the African market.",
+    },
+    {
+      icon: "modelling",
+      title: "Financial Modelling",
+      body: "Financial modelling is essentially creating a mathematical representation of a business's financial performance. For startups and SMEs, it's a crucial tool for predicting future performance, making informed decisions, and securing funding. It involves forecasting, scenario analysis and decision making based on financial information.",
+    },
+    {
+      icon: "francophone",
+      title: "Francophone Africa",
+      body: "Africa is home to the largest French-speaking population globally (300M) and there are 21 Francophone countries out of the continent's 54, creating immense potential for trade and cross-border investment. With our investment and operating experience across Francophone Africa, we can support startups to scale into those countries, notably Senegal, Côte d'Ivoire, Benin, Togo, DRC, Cameroon and Madagascar.",
+    },
+    {
+      icon: "cfo",
+      title: "Fractional CFO Services",
+      body: "Fractional CFO services provide startups and SMEs with part-time access to a seasoned financial expert. This cost-effective solution offers strategic financial guidance, including budgeting, forecasting, fundraising support, and financial analysis, without the commitment of a full-time CFO.",
+    },
+    {
+      icon: "prepost",
+      title: "Pre-Investment & Post-Investment",
+      body: "Pre-investment support helps startups and SMEs prepare for funding by offering business plan development, financial modeling, and market research assistance. Post-investment support continues the partnership by providing mentorship, strategic guidance, operational support, and access to networks to help businesses grow and succeed.",
+    },
+  ],
+};
+
+export const managementDetail: ServiceDetail = {
+  eyebrow: "Investment Management",
+  headline: "Alternative investments across our platforms",
+  intro:
+    "Alternative investments are asset classes that aren’t stocks, bonds, or cash. These kinds of investments differ from traditional investment types because they aren’t easily sold or converted into cash. It’s also common for alternative investments to be referred to as alternative assets. Examples are: hedge funds, art collections or indexes, real estate investments and trusts (REITs), structured products etc.",
+  items: [
+    {
+      icon: "advisory",
+      title: "Strategic Investment Advisory",
+      body: "We advise African and international family offices, funds, fund of funds, corporate ventures, pension funds and governments on alternative investment opportunities in Africa and beyond. We have a track record spanning Europe, the GCC and Africa across private markets (private equity, private debt, venture capital, venture debt, angel investments etc.), digital assets & finance, Islamic finance, green finance, climate finance and more.",
+    },
+    {
+      icon: "venture",
+      title: "Venture Capital",
+      body: "Venture Capital (VC) is funding provided to startups and SMEs with high growth potential. It involves private investors exchanging capital for an ownership stake, aiming for substantial returns through company growth or acquisition. VC firms offer not only capital but also expertise and networks to support business development.",
+    },
+    {
+      icon: "credit",
+      title: "Private Credit",
+      body: "Private Credit is non-bank lending to startups and SMEs. It offers alternative financing options, often providing more flexibility and quicker access to funds compared to traditional bank loans. Private Credit investors exchange capital for debt instruments, expecting returns through interest payments.",
+    },
+    {
+      icon: "angel",
+      title: "Angel Investing & Syndicates",
+      body: "Angel investing involves individual investors providing seed capital to early-stage startups. Angel syndicates are groups of angel investors who pool resources and expertise to co-invest in promising ventures. This funding stage often precedes larger VC investments, offering crucial support for startups to validate their business model and achieve initial growth milestones.",
+    },
+    {
+      icon: "impact",
+      title: "Impact Investing",
+      body: "Impact investing focuses on generating both financial returns and positive social or environmental impact. It supports startups and SMEs addressing societal challenges like climate change or inequality. Investors prioritize companies with measurable impact metrics alongside financial performance, aiming to create a sustainable and equitable future.",
+    },
+    {
+      icon: "islamic",
+      title: "Islamic Finance",
+      body: "Islamic Finance offers financial solutions for startups and SMEs aligned with Shariah principles. It emphasizes risk-sharing, profit-loss sharing, and avoiding interest (riba). Common Islamic financing models include Mudarabah (profit-sharing), Musharakah (joint venture), and Murabaha (cost-plus sale).",
+    },
+  ],
+};
+
+export const techDetail: ServiceDetail = {
+  eyebrow: "Technology & AI",
+  headline: "Intelligent systems for modern businesses",
+  items: [
+    {
+      icon: "ai-sme",
+      title: "AI for SMEs / Startups",
+      body: "Accelerate your startup or SME with our AI-powered efficiency program: a rapid 5-day diagnostic pinpoints high-impact tasks, then we deploy plug-and-play chatbots, auto-marketing, and no-code workflows using Copilot, Gemini, Zapier, or UiPath. You get measurable gains — 30–60% faster processes and lower costs — backed by cloud credits, grant guidance, and built-in data governance. Let's unlock smarter operations in just 30 days.",
+    },
+    {
+      icon: "ai-systems",
+      title: "AI Systems",
+      body: "We provide AI systems for SMEs and startups. We deploy intelligent AI agents that connect departments, automate complex tasks, and work continuously to drive unprecedented efficiency and innovation. Our AI systems include AI chatbots, AI marketing automation, AI no-code workflows, AI data governance, and AI cloud credits. We work with you to identify the specific needs of your organization and develop a customized plan to meet those needs.",
+    },
+    {
+      icon: "ai-talent",
+      title: "AI Talent",
+      body: "We provide outsourced AI talent. Our other services include AI talent development, AI talent management, AI talent retention, and AI talent assessment. We work with you to identify the specific skills and competencies needed for your organization and develop a customized plan to meet those needs.",
+    },
+  ],
+};
+
 export interface MissionStatement {
   lead: string;
   accent: string;
@@ -278,7 +389,7 @@ export const aboutContent = {
       { label: "Innovation", full: "Technology & Innovation", icon: "innovation" as const },
     ],
   },
-  cta: { label: "Know More About Us", href: "#apply" },
+  cta: { label: "Know More About Us", href: "#team" },
   meaning: {
     label: "What Asime means",
     quote:
