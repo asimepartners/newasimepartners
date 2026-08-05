@@ -54,7 +54,7 @@ export default function Team() {
                     rel="noopener noreferrer"
                     aria-label={`${member.name} on LinkedIn`}
                   >
-                    <HugeiconsIcon icon={Linkedin01Icon} size={18} strokeWidth={2} />
+                    <HugeiconsIcon icon={Linkedin01Icon} size={24} strokeWidth={2} />
                   </a>
                 </div>
               </motion.article>

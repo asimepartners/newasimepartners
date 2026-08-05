@@ -366,7 +366,7 @@ export const ourPeopleStatements: MissionStatement[] = [
 
 export const aboutContent = {
   eyebrow: "ABOUT US",
-  title: "Unveiling Our Identity,\nVision and Values",
+  title: "Unveiling Our Identity, Vision and Values",
   subheading:
     "We are an Africa-focused alternative investment fund manager committed to driving positive financial, social and economic change across Anglophone and Francophone Africa.",
   image: "/images/about-agritech.png",

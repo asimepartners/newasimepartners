@@ -48,7 +48,7 @@
   --layout-max: 100%;
   --layout-narrow: 42rem;
   --layout-prose: 40rem;
-  --layout-gutter: clamp(1rem, 2.5vw, 1.75rem);
+  --layout-gutter: clamp(0.6rem, 1vw, 0.95rem);
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -62,7 +62,7 @@
 /* ── Document base ─────────────────────────────────────────── */
 html {
   font-family: var(--font-body);
-  font-size: 100%;
+  font-size: 106.25%;
   scroll-behavior: smooth;
   scroll-padding-top: 6.5rem;
   overflow-x: clip;

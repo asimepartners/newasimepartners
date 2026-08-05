@@ -12,13 +12,9 @@ export default function HighlightedWork() {
 
       <div className="wf-work-inner">
         <FadeUp className="wf-work-head">
-          <span className="wf-work-mark" aria-hidden="true">
-            <HugeiconsIcon icon={PlusSignIcon} size={40} strokeWidth={1} />
-          </span>
+          <span className="wf-work-eyebrow">{highlightedWorkIntro.eyebrow}</span>
           <h2 className="wf-work-title">
-            {highlightedWorkIntro.headline}
-            <br />
-            {highlightedWorkIntro.headlineAccent}
+            {highlightedWorkIntro.headline} {highlightedWorkIntro.headlineAccent}
           </h2>
         </FadeUp>
 
