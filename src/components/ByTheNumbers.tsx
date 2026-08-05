@@ -6,10 +6,11 @@ export default function ByTheNumbers() {
     <AnimatedSection id="numbers" className="wf-numbers">
       <div className="wf-numbers-media" aria-hidden="true">
         <img
-          src="/images/numbers-bg.png"
+          src="/images/numbers-bg.jpg"
           alt=""
           className="wf-numbers-media-img"
           loading="lazy"
+          decoding="async"
         />
         <div className="wf-numbers-media-overlay" />
       </div>

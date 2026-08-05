@@ -59,7 +59,6 @@
   --space-8: 3.5rem;
 }
 
-/* ── Document base ─────────────────────────────────────────── */
 html {
   font-family: var(--font-body);
   font-size: 106.25%;
@@ -149,8 +148,8 @@ main .container,
 }
 
 .wf-section {
-  padding-top: var(--section-py, clamp(5.5rem, 12vw, 10rem));
-  padding-bottom: var(--section-py, clamp(5.5rem, 12vw, 10rem));
+  padding-top: var(--section-py, clamp(2.5rem, 5vw, 4rem));
+  padding-bottom: var(--section-py, clamp(2.5rem, 5vw, 4rem));
 }
 
 .wf-section-header {

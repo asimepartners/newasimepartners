@@ -369,7 +369,7 @@ export const aboutContent = {
   title: "Unveiling Our Identity, Vision and Values",
   subheading:
     "We are an Africa-focused alternative investment fund manager committed to driving positive financial, social and economic change across Anglophone and Francophone Africa.",
-  image: "/images/about-agritech.png",
+  image: "/images/about-agritech.jpg",
   imageAlt:
     "Aerial view of precision agricultural machines working across green crop fields",
   vision: {
@@ -673,7 +673,7 @@ export const thesisAreas: ThesisArea[] = [
     title: "Climate & Impact",
     description:
       "Investing at the intersection of climate resilience and social impact — deploying capital to ventures and SMEs that create measurable environmental and community outcomes across Africa.",
-    image: "/images/about-agritech.png",
+    image: "/images/about-agritech.jpg",
   },
   {
     icon: "📈",
@@ -890,61 +890,61 @@ export const teamContent = {
     {
       name: "Sewu-Steve Tawia",
       role: "Global MD & West Africa",
-      image: "/images/Team/Sewu.png",
+      image: "/images/Team/Sewu.jpg",
       linkedin: "https://www.linkedin.com/in/stevetawia",
     },
     {
       name: "Abena Opoku-Acquah",
       role: "Principal — West Africa",
-      image: "/images/Team/Abena.png",
+      image: "/images/Team/Abena.jpg",
       linkedin: "https://www.linkedin.com/in/abenaopokuacquah/",
     },
     {
       name: "Freda Egyir",
       role: "Chief of Staff & Project Management",
-      image: "/images/Team/Freda.png",
+      image: "/images/Team/Freda.jpg",
       linkedin: "https://www.linkedin.com/in/freda-egyir-4408161a1/",
     },
     {
       name: "Emmanuel Devi",
       role: "Head of Engineering & AI",
-      image: "/images/Team/Emmauel.png",
+      image: "/images/Team/Emmauel.jpg",
       linkedin: "https://www.linkedin.com/in/emmanuel-devi-428721244/",
     },
     {
       name: "Prince Krampah",
       role: "AI/ML Engineer",
-      image: "/images/Team/prince.png",
+      image: "/images/Team/prince.jpg",
       linkedin: "https://www.linkedin.com/in/princekrampah/",
     },
     {
       name: "James Hanson",
       role: "Investment Associate & Financial Modelling",
-      image: "/images/Team/james.png",
+      image: "/images/Team/james.jpg",
       linkedin: "https://www.linkedin.com/in/jameshanson27/",
     },
     {
       name: "Seyram Ametepeh",
       role: "Investment Analyst & Media and Communications",
-      image: "/images/Team/Seyram.png",
+      image: "/images/Team/Seyram.jpg",
       linkedin: "https://www.linkedin.com/in/seyram-ametepeh/",
     },
     {
       name: "Benson Njiru",
       role: "MD East Africa",
-      image: "/images/Team/Benson.png",
+      image: "/images/Team/Benson.jpg",
       linkedin: "https://www.linkedin.com/in/benson-njiru-njagi/",
     },
     {
       name: "Betty Nduku",
       role: "Investment Analyst — East Africa",
-      image: "/images/Team/Betty.png",
+      image: "/images/Team/Betty.jpg",
       linkedin: "https://www.linkedin.com/in/betty-nduku-095733150/",
     },
     {
       name: "Prudence Mbolu",
       role: "Investment Analyst & Project Management",
-      image: "/images/Team/Prudence.png",
+      image: "/images/Team/Prudence.jpg",
       linkedin: "https://www.linkedin.com/in/prudence-mbolu/",
     },
   ] as TeamMember[],

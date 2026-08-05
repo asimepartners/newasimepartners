@@ -43,8 +43,8 @@
   --radius-xl: 32px;
   --radius-full: 9999px;
 
-  --section-py: clamp(5.5rem, 12vw, 10rem);
-  --section-py-lg: clamp(6.5rem, 14vw, 12rem);
+  --section-py: clamp(2.5rem, 5vw, 4rem);
+  --section-py-lg: clamp(3rem, 6vw, 5rem);
 }
 
 /* ── 2. Global reset / base ─────────────────────────────────── */
@@ -1965,7 +1965,7 @@ a { text-decoration: none; color: inherit; }
   position: relative;
   z-index: 1;
   background: transparent;
-  padding: clamp(4rem, 8vw, 7rem) 0;
+  padding: clamp(2.25rem, 4.5vw, 3.75rem) 0;
 }
 
 .wf-cap2-inner,
@@ -2223,7 +2223,7 @@ a { text-decoration: none; color: inherit; }
 /* ── Geographies (dotted world map) ──────────────────────── */
 .wf-geo {
   background: #000;
-  padding: clamp(4rem, 8vw, 7rem) 0;
+  padding: clamp(2.25rem, 4.5vw, 3.75rem) 0;
   overflow: hidden;
 }
 
@@ -2350,7 +2350,7 @@ a { text-decoration: none; color: inherit; }
 /* ── Team ────────────────────────────────────────────────── */
 .wf-team {
   background: #000;
-  padding: clamp(4rem, 8vw, 7rem) 0;
+  padding: clamp(2.25rem, 4.5vw, 3.75rem) 0;
 }
 
 .wf-team-inner {
@@ -2507,7 +2507,7 @@ a { text-decoration: none; color: inherit; }
 /* ── Investment Advisory — detail section ────────────────── */
 .wf-adv {
   background: #000;
-  padding: clamp(4rem, 8vw, 7rem) 0;
+  padding: clamp(2.25rem, 4.5vw, 3.75rem) 0;
 }
 
 .wf-adv-inner {
@@ -2617,7 +2617,7 @@ a { text-decoration: none; color: inherit; }
 /* ── Latest News & Insights (redesign) ───────────────────── */
 .wf-news2 {
   background: #000;
-  padding: clamp(4rem, 8vw, 7rem) 0;
+  padding: clamp(2.25rem, 4.5vw, 3.75rem) 0;
 }
 
 .wf-news2-inner {
@@ -2988,7 +2988,7 @@ a { text-decoration: none; color: inherit; }
   position: relative;
   width: 100%;
   background: #000;
-  padding: clamp(4.5rem, 9vw, 7.5rem) clamp(1.5rem, 3vw, 2rem);
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 3vw, 2rem);
   border-top: none;
   border-bottom: none;
   overflow: hidden;
@@ -3653,7 +3653,7 @@ a { text-decoration: none; color: inherit; }
 /* Business lines — Advisory & Management dual panels */
 .wf-lines {
   background: #000;
-  padding: clamp(4.5rem, 9vw, 7.5rem) 0;
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
   border-top: none;
 }
 
@@ -3879,13 +3879,13 @@ a { text-decoration: none; color: inherit; }
 .wf-about-shell {
   width: min(100% - 2 * var(--layout-gutter), 90rem);
   margin: 0 auto;
-  padding: clamp(4rem, 8vw, 7rem) 0;
+  padding: clamp(2.25rem, 4.5vw, 3.75rem) 0;
 }
 
 .wf-about-top {
   width: min(100% - 2 * var(--layout-gutter), 88rem);
   margin: 0 auto;
-  padding: clamp(3.5rem, 7vw, 5rem) 0 0;
+  padding: clamp(2rem, 4vw, 3rem) 0 0;
   position: relative;
   z-index: 2;
 }
@@ -4183,7 +4183,7 @@ a { text-decoration: none; color: inherit; }
   position: relative;
   isolation: isolate;
   background: var(--work-navy);
-  padding: clamp(4.5rem, 8vw, 7rem) 0;
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
   border-top: none;
   overflow: hidden;
 }
@@ -4452,7 +4452,7 @@ a { text-decoration: none; color: inherit; }
   position: relative;
   isolation: isolate;
   background: #000;
-  padding: clamp(4.5rem, 9vw, 7.5rem) 0;
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
   border-top: none;
   overflow: hidden;
 }
@@ -4823,7 +4823,7 @@ a { text-decoration: none; color: inherit; }
   .wf-ft-grid--cb { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
   .wf-cb-virtues-grid { grid-template-columns: repeat(2, 1fr); }
   .wf-work {
-    padding: clamp(3.25rem, 8vw, 4.5rem) 0;
+    padding: clamp(2rem, 5vw, 3rem) 0;
   }
 
   .wf-work-item {
@@ -4869,7 +4869,7 @@ a { text-decoration: none; color: inherit; }
     align-items: start;
   }
   .wf-numbers {
-    padding: clamp(3.25rem, 8vw, 4.5rem) 0;
+    padding: clamp(2rem, 5vw, 3rem) 0;
   }
 
   .wf-numbers-grid {
@@ -4903,7 +4903,7 @@ a { text-decoration: none; color: inherit; }
   }
 
   .wf-lines {
-    padding: clamp(3.25rem, 8vw, 4.5rem) 0;
+    padding: clamp(2rem, 5vw, 3rem) 0;
   }
 
   .wf-lines-grid {
