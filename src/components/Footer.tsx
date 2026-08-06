@@ -43,7 +43,7 @@ export default function Footer() {
           <div className="wf-ft-lower">
             <div className="wf-ft-brand-block">
               <a href="#" className="wf-ft-brand">
-                <img src={siteBrand.logo} alt={siteBrand.name} className="wf-ft-logo" />
+                <img src="/asime-logo-white.png" alt={siteBrand.name} className="wf-ft-logo" />
               </a>
               <p className="wf-ft-desc">{siteBrand.tagline}</p>
               <div className="wf-ft-socials">

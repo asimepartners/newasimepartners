@@ -312,40 +312,34 @@ body {
   color: var(--page-heading);
 }
 
-/* ── Privacy page ──────────────────────────────────────────────── */
+/* ── Privacy page (kept light for readability) ─────────────────── */
 .wf-privacy-page {
-  background: #000;
-  color: var(--page-text);
+  background: #fafafa !important;
+  color: #1a1a1a !important;
 }
 
-.wf-privacy-page .wf-display,
-.wf-privacy-page .wf-privacy-section-title {
-  color: var(--page-heading);
+.wf-privacy-page .wf-privacy-title,
+.wf-privacy-page .wf-privacy-section-title,
+.wf-privacy-page .wf-privacy-definition dt {
+  color: #0f0f0f !important;
 }
 
-.wf-privacy-page .wf-prose,
-.wf-privacy-page .wf-privacy-body {
-  color: var(--page-text);
+.wf-privacy-page .wf-privacy-body,
+.wf-privacy-page .wf-privacy-list,
+.wf-privacy-page .wf-privacy-definition dd,
+.wf-privacy-page .wf-privacy-updated {
+  color: rgba(15, 15, 15, 0.78) !important;
 }
 
 .wf-privacy-logo {
   filter: none;
+  mix-blend-mode: normal;
 }
 
 .wf-privacy-section-block {
-  border-top-color: var(--jz-border);
+  border-top-color: rgba(15, 23, 42, 0.1);
 }
 
-.wf-privacy-table {
-  background: var(--jz-surface);
-}
-
-.wf-privacy-table th,
-.wf-privacy-table td {
-  border-color: var(--jz-border);
-  color: var(--page-text);
-}
-
-.wf-privacy-table code {
-  color: var(--page-heading);
+.wf-privacy-backlink {
+  color: #1a1a1a !important;
 }

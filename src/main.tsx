@@ -8,9 +8,13 @@ import './styles/theme-dark.css'
 import './styles/typography.css'
 import './styles/refine.css'
 import App from './App'
+import { dismissPreloader } from './utils/dismissPreloader'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
   </StrictMode>,
 )
+
+dismissPreloader()
+

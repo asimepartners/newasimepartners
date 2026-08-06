@@ -97,7 +97,7 @@ export default function Navbar() {
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="wf-mega-panel-head">
-              <img src={siteBrand.logo} alt="" className="wf-mega-panel-logo" />
+              <img src="/asime-logo-white.png" alt="" className="wf-mega-panel-logo" />
               <div className="wf-mega-panel-head-actions">
                 <button type="button" className="wf-mega-close" onClick={closeMenu} aria-label="Close menu">
                   <HugeiconsIcon icon={Cancel01Icon} size={22} strokeWidth={2} />
