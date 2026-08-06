@@ -1,5 +1,5 @@
 /* ────────────────────────────────────────────────────────────
-   Asime Partners — CMS-ready data layer
+   Asime Partners, CMS-ready data layer
    Content sourced from https://asimepartners.com/
    ──────────────────────────────────────────────────────────── */
 
@@ -144,7 +144,7 @@ export const businessLines = {
     title: "Alternative Investments",
     summary: "Capital deployed through focused platforms.",
     description:
-      "Venture, credit, and impact pathways for gender-inclusive SMEs and high-potential ventures.",
+      "Venture, credit, and impact pathways for gender inclusive SMEs and high potential ventures.",
     href: "#management-detail",
     cta: "Read More",
     image: "/images/02.jpg",
@@ -155,7 +155,7 @@ export const businessLines = {
     title: "Technology & AI",
     summary: "Intelligent systems for modern investing.",
     description:
-      "AI-driven tools, data platforms, and digital infrastructure that power smarter decisions across our advisory and investment work.",
+      "AI driven tools, data platforms, and digital infrastructure that power smarter decisions across our advisory and investment work.",
     href: "#tech-detail",
     cta: "Read More",
     image: "/sectors/ai.jpg",
@@ -172,7 +172,7 @@ export interface InvestmentPlatform {
 export const advisoryFocusAreas: InvestmentPlatform[] = [
   {
     name: "Climate & Impact",
-    description: "Advisory for climate-aligned and impact-driven investments across Africa.",
+    description: "Advisory for climate aligned and impact driven investments across Africa.",
     href: "#capabilities",
   },
   {
@@ -195,12 +195,12 @@ export const advisoryFocusAreas: InvestmentPlatform[] = [
 export const investmentPlatforms: InvestmentPlatform[] = [
   {
     name: "Chale Fund",
-    description: "Impact-focused capital for gender-inclusive SMEs in Ghana and across Africa.",
+    description: "Impact focused capital for gender inclusive SMEs in Ghana and across Africa.",
     href: "#apply",
   },
   {
     name: "Venture Capital",
-    description: "Early and growth-stage investments in technology-enabled and impact ventures.",
+    description: "Early and growth stage investments in technology enabled and impact ventures.",
     href: "#apply",
   },
   {
@@ -253,7 +253,7 @@ export const advisoryDetail: ServiceDetail = {
     {
       icon: "manda",
       title: "M&A and Valuation",
-      body: "Buy and sell side M&A advisory, covering local and international cross-border mergers and acquisitions, typically on transaction values between $5M and $500M. Investment business valuation determines a company's worth by analyzing its financial performance, assets, and market conditions (DCF, VC method, EV/EBITDA, EV/GMV etc.). It helps investors make informed decisions and companies assess their value for fundraising or mergers.",
+      body: "Buy and sell side M&A advisory, covering local and international cross border mergers and acquisitions, typically on transaction values between $5M and $500M. Investment business valuation determines a company's worth by analyzing its financial performance, assets, and market conditions (DCF, VC method, EV/EBITDA, EV/GMV etc.). It helps investors make informed decisions and companies assess their value for fundraising or mergers.",
     },
     {
       icon: "diligence",
@@ -268,17 +268,17 @@ export const advisoryDetail: ServiceDetail = {
     {
       icon: "francophone",
       title: "Francophone Africa",
-      body: "Africa is home to the largest French-speaking population globally (300M) and there are 21 Francophone countries out of the continent's 54, creating immense potential for trade and cross-border investment. With our investment and operating experience across Francophone Africa, we can support startups to scale into those countries, notably Senegal, Côte d'Ivoire, Benin, Togo, DRC, Cameroon and Madagascar.",
+      body: "Africa is home to the largest French speaking population globally (300M) and there are 21 Francophone countries out of the continent's 54, creating immense potential for trade and cross border investment. With our investment and operating experience across Francophone Africa, we can support startups to scale into those countries, notably Senegal, Côte d'Ivoire, Benin, Togo, DRC, Cameroon and Madagascar.",
     },
     {
       icon: "cfo",
       title: "Fractional CFO Services",
-      body: "Fractional CFO services provide startups and SMEs with part-time access to a seasoned financial expert. This cost-effective solution offers strategic financial guidance, including budgeting, forecasting, fundraising support, and financial analysis, without the commitment of a full-time CFO.",
+      body: "Fractional CFO services provide startups and SMEs with part time access to a seasoned financial expert. This cost effective solution offers strategic financial guidance, including budgeting, forecasting, fundraising support, and financial analysis, without the commitment of a full time CFO.",
     },
     {
       icon: "prepost",
-      title: "Pre-Investment & Post-Investment",
-      body: "Pre-investment support helps startups and SMEs prepare for funding by offering business plan development, financial modeling, and market research assistance. Post-investment support continues the partnership by providing mentorship, strategic guidance, operational support, and access to networks to help businesses grow and succeed.",
+      title: "Pre Investment & Post Investment",
+      body: "Pre investment support helps startups and SMEs prepare for funding by offering business plan development, financial modeling, and market research assistance. Post investment support continues the partnership by providing mentorship, strategic guidance, operational support, and access to networks to help businesses grow and succeed.",
     },
   ],
 };
@@ -302,12 +302,12 @@ export const managementDetail: ServiceDetail = {
     {
       icon: "credit",
       title: "Private Credit",
-      body: "Private Credit is non-bank lending to startups and SMEs. It offers alternative financing options, often providing more flexibility and quicker access to funds compared to traditional bank loans. Private Credit investors exchange capital for debt instruments, expecting returns through interest payments.",
+      body: "Private Credit is non bank lending to startups and SMEs. It offers alternative financing options, often providing more flexibility and quicker access to funds compared to traditional bank loans. Private Credit investors exchange capital for debt instruments, expecting returns through interest payments.",
     },
     {
       icon: "angel",
       title: "Angel Investing & Syndicates",
-      body: "Angel investing involves individual investors providing seed capital to early-stage startups. Angel syndicates are groups of angel investors who pool resources and expertise to co-invest in promising ventures. This funding stage often precedes larger VC investments, offering crucial support for startups to validate their business model and achieve initial growth milestones.",
+      body: "Angel investing involves individual investors providing seed capital to early stage startups. Angel syndicates are groups of angel investors who pool resources and expertise to co invest in promising ventures. This funding stage often precedes larger VC investments, offering crucial support for startups to validate their business model and achieve initial growth milestones.",
     },
     {
       icon: "impact",
@@ -317,7 +317,7 @@ export const managementDetail: ServiceDetail = {
     {
       icon: "islamic",
       title: "Islamic Finance",
-      body: "Islamic Finance offers financial solutions for startups and SMEs aligned with Shariah principles. It emphasizes risk-sharing, profit-loss sharing, and avoiding interest (riba). Common Islamic financing models include Mudarabah (profit-sharing), Musharakah (joint venture), and Murabaha (cost-plus sale).",
+      body: "Islamic Finance offers financial solutions for startups and SMEs aligned with Shariah principles. It emphasizes risk sharing, profit loss sharing, and avoiding interest (riba). Common Islamic financing models include Mudarabah (profit sharing), Musharakah (joint venture), and Murabaha (cost plus sale).",
     },
   ],
 };
@@ -329,12 +329,12 @@ export const techDetail: ServiceDetail = {
     {
       icon: "ai-sme",
       title: "AI for SMEs / Startups",
-      body: "Accelerate your startup or SME with our AI-powered efficiency program: a rapid 5-day diagnostic pinpoints high-impact tasks, then we deploy plug-and-play chatbots, auto-marketing, and no-code workflows using Copilot, Gemini, Zapier, or UiPath. You get measurable gains — 30–60% faster processes and lower costs — backed by cloud credits, grant guidance, and built-in data governance. Let's unlock smarter operations in just 30 days.",
+      body: "Accelerate your startup or SME with our AI powered efficiency program: a rapid 5 day diagnostic pinpoints high impact tasks, then we deploy plug and play chatbots, auto marketing, and no code workflows using Copilot, Gemini, Zapier, or UiPath. You get measurable gains, 30 to 60% faster processes and lower costs, backed by cloud credits, grant guidance, and built in data governance. Let's unlock smarter operations in just 30 days.",
     },
     {
       icon: "ai-systems",
       title: "AI Systems",
-      body: "We provide AI systems for SMEs and startups. We deploy intelligent AI agents that connect departments, automate complex tasks, and work continuously to drive unprecedented efficiency and innovation. Our AI systems include AI chatbots, AI marketing automation, AI no-code workflows, AI data governance, and AI cloud credits. We work with you to identify the specific needs of your organization and develop a customized plan to meet those needs.",
+      body: "We provide AI systems for SMEs and startups. We deploy intelligent AI agents that connect departments, automate complex tasks, and work continuously to drive unprecedented efficiency and innovation. Our AI systems include AI chatbots, AI marketing automation, AI no code workflows, AI data governance, and AI cloud credits. We work with you to identify the specific needs of your organization and develop a customized plan to meet those needs.",
     },
     {
       icon: "ai-talent",
@@ -351,15 +351,15 @@ export interface MissionStatement {
 
 export const ourPeopleStatements: MissionStatement[] = [
   {
-    lead: "Our team of mission-driven professionals ",
-    accent: "brings deep investment and business-building expertise across Africa.",
+    lead: "Our team of mission driven professionals ",
+    accent: "brings deep investment and business building expertise across Africa.",
   },
   {
     lead: "We build solutions to the challenges that ",
     accent: "inhibit capital flows to underserved markets and communities.",
   },
   {
-    lead: "We connect investors to impact-driven opportunities that ",
+    lead: "We connect investors to impact driven opportunities that ",
     accent: "promote women's economic empowerment and inclusive growth.",
   },
 ];
@@ -368,7 +368,7 @@ export const aboutContent = {
   eyebrow: "ABOUT US",
   title: "Unveiling Our Identity, Vision and Values",
   subheading:
-    "We are an Africa-focused alternative investment fund manager committed to driving positive financial, social and economic change across Anglophone and Francophone Africa.",
+    "We are an Africa focused alternative investment fund manager committed to driving positive financial, social and economic change across Anglophone and Francophone Africa.",
   image: "/images/about-agritech.jpg",
   imageAlt:
     "Aerial view of precision agricultural machines working across green crop fields",
@@ -378,7 +378,7 @@ export const aboutContent = {
   },
   mission: {
     label: "Mission",
-    body: "Provide better risk-adjusted return and impact by investing in and supporting enterprises built by underrepresented founders and teams across Africa, especially youth, women and people with disability.",
+    body: "Provide better risk adjusted return and impact by investing in and supporting enterprises built by underrepresented founders and teams across Africa, especially youth, women and people with disability.",
   },
   values: {
     label: "Core Values",
@@ -398,7 +398,7 @@ export const aboutContent = {
     role: "Managing Partner",
   },
   narrative: [
-    "We are an Africa-focused alternative investment fund manager. We are committed to driving positive financial, social and economic change. We develop responsible and impactful investment strategies that help promote youth, women and underrepresented people (people with disability, rural and displaced). We work at the nexus Climate, Gender, AI/ML and Accessibility to create jobs for all.",
+    "We are an Africa focused alternative investment fund manager. We are committed to driving positive financial, social and economic change. We develop responsible and impactful investment strategies that help promote youth, women and underrepresented people (people with disability, rural and displaced). We work at the nexus Climate, Gender, AI/ML and Accessibility to create jobs for all.",
     "Founded in 2015, Asime Partners has been recognized as a preferred early stage investment and tech M&A advisory firm with a reputation for successful global and local partnerships across Africa, both Anglophone and Francophone. We pride ourselves as the first true early venture capital investor in Ghana, with deep experience in technology across Fintech, Agritech, Retailtech, Digital Identity, Insuretech, AI/ML, Cybersecurity, Climate tech, Creative Industry tech, Beauty tech and Sports tech.",
   ],
 };
@@ -449,8 +449,8 @@ export const highlightedWork: HighlightedWorkItem[] = [
   {
     platform: "Investment Advisory",
     country: "Ghana",
-    title: "Gender-Smart SME Fund Structuring & Capital Mobilization",
-    description: "Advisory support for impact investors deploying capital into gender-inclusive SMEs across West Africa.",
+    title: "Gender Smart SME Fund Structuring & Capital Mobilization",
+    description: "Advisory support for impact investors deploying capital into gender inclusive SMEs across West Africa.",
     href: "#advisory",
   },
   {
@@ -463,15 +463,15 @@ export const highlightedWork: HighlightedWorkItem[] = [
   {
     platform: "Venture Capital",
     country: "Nigeria",
-    title: "Tech-Enabled Ventures in Climate & Digital Solutions",
-    description: "Venture backing for startups leveraging AI and climate-resilient models in African markets.",
+    title: "Tech Enabled Ventures in Climate & Digital Solutions",
+    description: "Venture backing for startups leveraging AI and climate resilient models in African markets.",
     href: "#apply",
   },
   {
     platform: "Investment Advisory",
     country: "Kenya",
-    title: "M&A and Transaction Advisory for Growth-Stage SMEs",
-    description: "End-to-end deal support including diligence, valuation, and structuring for cross-border transactions.",
+    title: "M&A and Transaction Advisory for Growth Stage SMEs",
+    description: "End to end deal support including diligence, valuation, and structuring for cross border transactions.",
     href: "#advisory",
   },
   {
@@ -533,7 +533,7 @@ export const groupIntro = {
   eyebrow: "Asime Partners",
   headline: "Our Mission",
   body: [
-    "Provide better risk-adjusted return and impact by investing in and supporting enterprises built by underrepresented founders and teams across Africa, especially youth, women and people with disability.",
+    "Provide better risk adjusted return and impact by investing in and supporting enterprises built by underrepresented founders and teams across Africa, especially youth, women and people with disability.",
     "We work at the nexus of Climate, Gender, AI/ML and Accessibility to create jobs for all.",
   ],
 };
@@ -541,7 +541,7 @@ export const groupIntro = {
 export const capabilitiesIntro = {
   eyebrow: "Capabilities",
   headline: "What we deliver for investors and founders",
-  lead: "From capital deployment to hands-on advisory, we cover the full spectrum growth-stage businesses and investors need to scale with confidence.",
+  lead: "From capital deployment to hands on advisory, we cover the full spectrum growth stage businesses and investors need to scale with confidence.",
 };
 
 export const sectorsIntro = {
@@ -584,7 +584,7 @@ export const footerColumns = {
   regions: [
     { label: "Ghana", href: "#geographies" },
     { label: "West Africa", href: "#geographies" },
-    { label: "Sub-Saharan Africa", href: "#geographies" },
+    { label: "Sub Saharan Africa", href: "#geographies" },
     { label: "East Africa", href: "#geographies" },
   ],
   resources: [
@@ -601,7 +601,7 @@ export const whatWeDoIntro = {
   eyebrow: "What We Do",
   headline: "Investing in Africa's",
   headlineAccent: "Inclusive Growth",
-  body: "Asime Partners deploys capital and advisory services across Africa — connecting investors to impact-driven opportunities in climate, alternative assets, technology, and inclusive SME growth.",
+  body: "Asime Partners deploys capital and advisory services across Africa, connecting investors to impact driven opportunities in climate, alternative assets, technology, and inclusive SME growth.",
 };
 
 export const whatWeDoPillars = [
@@ -609,7 +609,7 @@ export const whatWeDoPillars = [
     number: "01",
     label: "Inclusion",
     title: "Disability & Inclusion Investing",
-    body: "Our overall goal is to use a gender smart approach to facilitate investments into viable SMEs for a financial return as well as to improve women's access to quality employment, leadership opportunities and products and services that improve economic opportunities and social well-being for females in general.",
+    body: "Our overall goal is to use a gender smart approach to facilitate investments into viable SMEs for a financial return as well as to improve women's access to quality employment, leadership opportunities and products and services that improve economic opportunities and social well being for females in general.",
     href: "#thesis",
   },
   {
@@ -623,7 +623,7 @@ export const whatWeDoPillars = [
     number: "03",
     label: "Advisory",
     title: "Investment Advisory & Business Support",
-    body: "We help businesses boost their performance, increase growth and enhance the developmental impact of their operations through tailored business development support and investment advisory services — maximizing returns while aligning with your values.",
+    body: "We help businesses boost their performance, increase growth and enhance the developmental impact of their operations through tailored business development support and investment advisory services, maximizing returns while aligning with your values.",
     href: "#framework",
   },
 ];
@@ -634,7 +634,7 @@ export const thesisIntro = {
   eyebrow: "Our Focus",
   headline: "Capital, impact, and advisory for inclusive African enterprise",
   body: [
-    "Asime Partners connects capital to impact-driven investments that promote women's economic empowerment, gender equality, and sustainable SME growth across Ghana and the African continent.",
+    "Asime Partners connects capital to impact driven investments that promote women's economic empowerment, gender equality, and sustainable SME growth across Ghana and the African continent.",
     "We combine venture capital, private credit, angel investing, and investment advisory to unlock Africa's potential for investors, founders, and communities alike.",
   ],
 };
@@ -644,19 +644,19 @@ export const investmentThesisAreas: ThesisArea[] = [
     icon: "♿",
     title: "Disability & Inclusion Investing",
     description:
-      "Our overall goal is to use a gender smart approach to facilitate investments into viable SMEs for a financial return as well as to improve women's access to quality employment, leadership opportunities and products and services that improve economic opportunities and social well-being for females in general.",
+      "Our overall goal is to use a gender smart approach to facilitate investments into viable SMEs for a financial return as well as to improve women's access to quality employment, leadership opportunities and products and services that improve economic opportunities and social well being for females in general.",
   },
   {
     icon: "🌿",
     title: "Impact Investment & SME Fund Management",
     description:
-      "Our aim is to mobilize and invest capital to support the growth and development of gender inclusive SMEs in Ghana and other African countries. With our expertise in Impact Investing and Responsible Investment, we deploy investment strategies that intentionally create positive social or environmental impact as well as a financial return for investors. Our focus is to connect capital to impact-driven investments that promote women's economic empowerment and gender equality.",
+      "Our aim is to mobilize and invest capital to support the growth and development of gender inclusive SMEs in Ghana and other African countries. With our expertise in Impact Investing and Responsible Investment, we deploy investment strategies that intentionally create positive social or environmental impact as well as a financial return for investors. Our focus is to connect capital to impact driven investments that promote women's economic empowerment and gender equality.",
   },
   {
     icon: "📊",
     title: "Investment Advisory & Business Support Services",
     description:
-      "We help businesses boost their performance, increase growth and enhance the developmental impact of their operations through tailored business development support and investment advisory services. We work closely with you to understand your unique goals and risk tolerance, tailoring a strategy that maximizes returns while aligning with your values. The goal is to deliver tailored technical assistance and capacity building support to help you optimize your business, minimize risks, and seize opportunities in an ever-changing market.",
+      "We help businesses boost their performance, increase growth and enhance the developmental impact of their operations through tailored business development support and investment advisory services. We work closely with you to understand your unique goals and risk tolerance, tailoring a strategy that maximizes returns while aligning with your values. The goal is to deliver tailored technical assistance and capacity building support to help you optimize your business, minimize risks, and seize opportunities in an ever changing market.",
   },
 ];
 
@@ -672,35 +672,35 @@ export const thesisAreas: ThesisArea[] = [
     icon: "🌿",
     title: "Climate & Impact",
     description:
-      "Investing at the intersection of climate resilience and social impact — deploying capital to ventures and SMEs that create measurable environmental and community outcomes across Africa.",
+      "Investing at the intersection of climate resilience and social impact, deploying capital to ventures and SMEs that create measurable environmental and community outcomes across Africa.",
     image: "/images/about-agritech.jpg",
   },
   {
     icon: "📈",
     title: "Alternative Investments",
     description:
-      "Access to non-traditional asset classes and structures — private credit, co-investments, and tailored vehicles for investors seeking diversified exposure to African markets.",
+      "Access to non traditional asset classes and structures, private credit, co investments, and tailored vehicles for investors seeking diversified exposure to African markets.",
     image: "/sectors/Investment.jpg",
   },
   {
     icon: "🤖",
     title: "AI Systems",
     description:
-      "Supporting technology-enabled businesses and AI-driven solutions that improve operational efficiency, decision-making, and scale for SMEs and growth-stage companies.",
+      "Supporting technology enabled businesses and AI driven solutions that improve operational efficiency, decision making, and scale for SMEs and growth stage companies.",
     image: "/sectors/ai.jpg",
   },
   {
     icon: "🤝",
     title: "M&A Advisory",
     description:
-      "Strategic buy-side and sell-side support — due diligence, valuation, deal structuring, and transaction execution for investors and business owners across African markets.",
+      "Strategic buy side and sell side support, due diligence, valuation, deal structuring, and transaction execution for investors and business owners across African markets.",
     image: "/sectors/MA.jpg",
   },
   {
     icon: "🎓",
     title: "Executive Training",
     description:
-      "Capacity building and leadership development for founders, executives, and investment teams — equipping leaders to navigate growth, governance, and capital markets in Africa.",
+      "Capacity building and leadership development for founders, executives, and investment teams, equipping leaders to navigate growth, governance, and capital markets in Africa.",
     image: "/sectors/executive-coaching-center-for-creative-leadership-ccl.jpg",
   },
 ];
@@ -717,37 +717,37 @@ export const diligenceCards = [
     label: "Climate & Impact",
     title: "Climate & Impact Investing",
     description:
-      "Deploying capital to investments that intentionally create positive environmental and social impact alongside financial returns — with a focus on gender-inclusive SMEs across Ghana and Africa.",
+      "Deploying capital to investments that intentionally create positive environmental and social impact alongside financial returns, with a focus on gender inclusive SMEs across Ghana and Africa.",
   },
   {
     label: "Alternative Investments",
     title: "Alternative Investments",
     description:
-      "Structuring and managing alternative investment vehicles — including private credit and co-investment opportunities — for investors seeking diversified African market exposure.",
+      "Structuring and managing alternative investment vehicles, including private credit and co investment opportunities, for investors seeking diversified African market exposure.",
   },
   {
     label: "AI Systems",
     title: "AI Systems & Technology",
     description:
-      "Advising and supporting technology-enabled businesses leveraging AI and digital systems to improve efficiency, scale operations, and compete in evolving African markets.",
+      "Advising and supporting technology enabled businesses leveraging AI and digital systems to improve efficiency, scale operations, and compete in evolving African markets.",
   },
   {
     label: "M&A Advisory",
     title: "M&A Advisory",
     description:
-      "End-to-end transaction support including market analysis, due diligence, valuation, negotiation, and deal execution for investors and business owners.",
+      "End to end transaction support including market analysis, due diligence, valuation, negotiation, and deal execution for investors and business owners.",
   },
   {
     label: "Executive Training",
     title: "Executive Training",
     description:
-      "Tailored technical assistance and capacity building for founders and leadership teams — helping optimize operations, minimize risks, and seize opportunities in dynamic markets.",
+      "Tailored technical assistance and capacity building for founders and leadership teams, helping optimize operations, minimize risks, and seize opportunities in dynamic markets.",
   },
   {
     label: "Inclusion",
     title: "Disability & Inclusion Investing",
     description:
-      "A gender-smart approach to facilitating investments into viable SMEs — improving women's access to quality employment, leadership opportunities, and products that advance economic and social well-being.",
+      "A gender smart approach to facilitating investments into viable SMEs, improving women's access to quality employment, leadership opportunities, and products that advance economic and social well being.",
   },
 ];
 
@@ -756,10 +756,10 @@ export const diligenceCards = [
 export const innovationLabsIntro = {
   body: [
     "Partner with Asime Partners to access capital, advisory expertise, and a network built for inclusive growth across Africa.",
-    "Apply to Chale Fund: Impact-focused funding for qualifying ventures and SMEs.",
-    "Apply as a Tech Startup: For technology-enabled companies seeking venture or angel capital.",
+    "Apply to Chale Fund: Impact focused funding for qualifying ventures and SMEs.",
+    "Apply as a Tech Startup: For technology enabled companies seeking venture or angel capital.",
     "Apply SME/MSME/SGB: For small and growing businesses seeking growth capital and advisory support.",
-    "Partner With Us: For investors, institutions, and corporates looking to co-invest or collaborate on impact-driven opportunities.",
+    "Partner With Us: For investors, institutions, and corporates looking to co invest or collaborate on impact driven opportunities.",
   ],
 };
 
@@ -768,19 +768,19 @@ export const globalHealthInnovationAreas: ThesisArea[] = [
     icon: "🤝",
     title: "Partner With Us",
     description:
-      "Collaborate with Asime Partners on co-investments, fund structures, or strategic initiatives across venture capital, private credit, and impact investing in Africa.",
+      "Collaborate with Asime Partners on co investments, fund structures, or strategic initiatives across venture capital, private credit, and impact investing in Africa.",
   },
   {
     icon: "💰",
     title: "Apply to Chale Fund",
     description:
-      "Submit your application to the Chale Fund for impact-driven capital supporting gender-inclusive SMEs and ventures across Ghana and Africa.",
+      "Submit your application to the Chale Fund for impact driven capital supporting gender inclusive SMEs and ventures across Ghana and Africa.",
   },
   {
     icon: "🚀",
     title: "Apply as a Tech Startup",
     description:
-      "Technology startups seeking venture or angel investment — particularly in AI systems, climate tech, and digital solutions for African markets.",
+      "Technology startups seeking venture or angel investment, particularly in AI systems, climate tech, and digital solutions for African markets.",
   },
   {
     icon: "🏢",
@@ -795,7 +795,7 @@ export const conveyorSteps: ConveyorStep[] = [
     num: "01",
     title: "Discover",
     description:
-      "Identify high-potential SMEs and ventures aligned with our gender-smart and impact-driven investment mandate.",
+      "Identify high potential SMEs and ventures aligned with our gender smart and impact driven investment mandate.",
     tag: "Sourcing",
   },
   {
@@ -816,7 +816,7 @@ export const conveyorSteps: ConveyorStep[] = [
     num: "04",
     title: "Support",
     description:
-      "Hands-on advisory, capacity building, and business development support to help portfolio companies scale sustainably.",
+      "Hands on advisory, capacity building, and business development support to help portfolio companies scale sustainably.",
     tag: "Value Creation",
   },
   {
@@ -835,8 +835,8 @@ export const francoSection = {
   statLabel: "African Countries",
   headline: "Across Africa",
   body: [
-    "We invest and advise across Africa — with a primary focus on Ghana and expanding presence across key African markets.",
-    "Our gender-smart, impact-driven approach connects capital to viable SMEs and ventures that create lasting economic opportunity for women and underserved communities.",
+    "We invest and advise across Africa, with a primary focus on Ghana and expanding presence across key African markets.",
+    "Our gender smart, impact driven approach connects capital to viable SMEs and ventures that create lasting economic opportunity for women and underserved communities.",
   ],
   countries: [
     "Ghana",
@@ -885,7 +885,7 @@ export interface TeamMember {
 export const teamContent = {
   eyebrow: "Our Team",
   headline: "The people behind Asime Partners",
-  lead: "A mission-driven team with deep investment, advisory, and technology expertise across Africa and beyond.",
+  lead: "A mission driven team with deep investment, advisory, and technology expertise across Africa and beyond.",
   members: [
     {
       name: "Sewu-Steve Tawia",
@@ -906,8 +906,8 @@ export const teamContent = {
       linkedin: "https://www.linkedin.com/in/freda-egyir-4408161a1/",
     },
     {
-      name: "Abena Opoku-Acquah",
-      role: "Principal — West Africa",
+      name: "Abena Opoku Acquah",
+      role: "Principal, West Africa",
       image: "/images/Team/Abena.jpg",
       linkedin: "https://www.linkedin.com/in/abenaopokuacquah/",
     },
@@ -937,7 +937,7 @@ export const teamContent = {
     },
     {
       name: "Betty Nduku",
-      role: "Investment Analyst — East Africa",
+      role: "Investment Analyst, East Africa",
       image: "/images/Team/Betty.jpg",
       linkedin: "https://www.linkedin.com/in/betty-nduku-095733150/",
     },
@@ -985,7 +985,7 @@ export const insightCards: InsightCard[] = [
     bannerTone: "green",
     date: "23.04.2026",
     label: "Announcement",
-    title: "Inspired Evolution backs gender-smart venture growth through new investment",
+    title: "Inspired Evolution backs gender smart venture growth through new investment",
     href: "#management",
   },
   {
@@ -1006,19 +1006,19 @@ export const faqItems: FaqItem[] = [
     question: "What does Asime Partners do?",
     answer: [
       "Asime Partners is a venture capital, private credit, angel investing, and investment advisory firm focused on unleashing Africa's potential.",
-      "We offer Climate & Impact investing, Alternative Investments, AI Systems advisory, M&A Advisory, and Executive Training — with a core focus on disability & inclusion investing, impact investment & SME fund management, and investment advisory services.",
+      "We offer Climate & Impact investing, Alternative Investments, AI Systems advisory, M&A Advisory, and Executive Training, with a core focus on disability & inclusion investing, impact investment & SME fund management, and investment advisory services.",
     ],
   },
   {
     question: "Where do you invest?",
     answer: [
-      "We operate across Africa, with a primary focus on Ghana and other African countries. Our impact strategies target gender-inclusive SMEs that promote women's economic empowerment and gender equality.",
+      "We operate across Africa, with a primary focus on Ghana and other African countries. Our impact strategies target gender inclusive SMEs that promote women's economic empowerment and gender equality.",
     ],
   },
   {
     question: "What is Disability & Inclusion Investing?",
     answer: [
-      "We use a gender-smart approach to facilitate investments into viable SMEs for financial return while improving women's access to quality employment, leadership opportunities, and products and services that improve economic opportunities and social well-being.",
+      "We use a gender smart approach to facilitate investments into viable SMEs for financial return while improving women's access to quality employment, leadership opportunities, and products and services that improve economic opportunities and social well being.",
     ],
   },
   {
@@ -1031,7 +1031,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "What is Impact Investment & SME Fund Management?",
     answer: [
-      "We mobilize and invest capital to support the growth of gender-inclusive SMEs in Ghana and across Africa. Our strategies intentionally create positive social or environmental impact alongside financial returns for investors.",
+      "We mobilize and invest capital to support the growth of gender inclusive SMEs in Ghana and across Africa. Our strategies intentionally create positive social or environmental impact alongside financial returns for investors.",
     ],
   },
 ];
@@ -1053,8 +1053,8 @@ export const offices: Office[] = [
     lines: ["Accra, Ghana", "Primary market focus"],
   },
   {
-    city: "Pan-Africa",
-    lines: ["Pan-African investments", "Regional advisory presence"],
+    city: "Pan Africa",
+    lines: ["Pan African investments", "Regional advisory presence"],
   },
 ];
 

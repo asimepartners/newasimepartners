@@ -1,5 +1,17 @@
+import { useRef } from 'react'
 import { byTheNumbers } from '@/data/content'
+import { useCountUp } from '@/hooks/useCountUp'
 import { AnimatedSection, StaggerParent, StaggerItem, FadeUp } from './Motion'
+
+function StatValue({ value }: { value: string }) {
+  const ref = useRef<HTMLSpanElement>(null)
+  const display = useCountUp(ref, { value })
+  return (
+    <span ref={ref} className="wf-numbers-value">
+      {display}
+    </span>
+  )
+}
 
 export default function ByTheNumbers() {
   return (
@@ -30,7 +42,7 @@ export default function ByTheNumbers() {
               <span className="wf-numbers-index" aria-hidden="true">
                 {String(index + 1).padStart(2, '0')}
               </span>
-              <span className="wf-numbers-value">{stat.value}</span>
+              <StatValue value={stat.value} />
               <p className="wf-numbers-caption">{stat.caption}</p>
             </StaggerItem>
           ))}

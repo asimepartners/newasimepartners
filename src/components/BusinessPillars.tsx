@@ -2,23 +2,26 @@ import { HugeiconsIcon } from '@hugeicons/react'
 import { ArrowRight01Icon } from '@hugeicons/core-free-icons'
 import { businessLines } from '@/data/content'
 import { AnimatedSection, FadeUp, StaggerParent, StaggerItem, motion } from './Motion'
+import Magnetic from './Magnetic'
 
 type PillarLine = (typeof businessLines)['advisory']
 
 function PillarCta({ href, label }: { href: string; label: string }) {
   return (
-    <motion.a
-      href={href}
-      className="wf-lines-cta"
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      transition={{ type: 'spring', stiffness: 400, damping: 22 }}
-    >
-      <span>{label}</span>
-      <span className="wf-lines-cta-icon" aria-hidden="true">
-        <HugeiconsIcon icon={ArrowRight01Icon} size={18} strokeWidth={2.5} />
-      </span>
-    </motion.a>
+    <Magnetic strength={0.22} className="wf-lines-cta-magnetic">
+      <motion.a
+        href={href}
+        className="wf-lines-cta"
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ type: 'spring', stiffness: 400, damping: 22 }}
+      >
+        <span>{label}</span>
+        <span className="wf-lines-cta-icon" aria-hidden="true">
+          <HugeiconsIcon icon={ArrowRight01Icon} size={18} strokeWidth={2.5} />
+        </span>
+      </motion.a>
+    </Magnetic>
   )
 }
 

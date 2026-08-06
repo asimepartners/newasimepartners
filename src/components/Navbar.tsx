@@ -4,6 +4,7 @@ import { Menu01Icon, Cancel01Icon } from '@hugeicons/core-free-icons'
 import { AnimatePresence, motion } from 'motion/react'
 import { navGroups, siteBrand } from '@/data/content'
 import { springSnappy } from './Motion'
+import Magnetic from './Magnetic'
 
 export default function Navbar() {
   const [overHero, setOverHero] = useState(true)
@@ -57,24 +58,26 @@ export default function Navbar() {
             </a>
 
             <div className="wf-nav-actions">
-              <button
-                type="button"
-                className="wf-mega-trigger"
-                aria-expanded={menuOpen}
-                aria-controls="site-mega-menu"
-                aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-                onClick={() => setMenuOpen((open) => !open)}
-              >
-                <span className="wf-mega-trigger-label">
-                  {menuOpen ? 'Close' : 'Menu'}
-                </span>
-                <HugeiconsIcon
-                  icon={menuOpen ? Cancel01Icon : Menu01Icon}
-                  size={24}
-                  strokeWidth={2}
-                  color="currentColor"
-                />
-              </button>
+              <Magnetic strength={0.28}>
+                <button
+                  type="button"
+                  className="wf-mega-trigger"
+                  aria-expanded={menuOpen}
+                  aria-controls="site-mega-menu"
+                  aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                  onClick={() => setMenuOpen((open) => !open)}
+                >
+                  <span className="wf-mega-trigger-label">
+                    {menuOpen ? 'Close' : 'Menu'}
+                  </span>
+                  <HugeiconsIcon
+                    icon={menuOpen ? Cancel01Icon : Menu01Icon}
+                    size={24}
+                    strokeWidth={2}
+                    color="currentColor"
+                  />
+                </button>
+              </Magnetic>
             </div>
           </div>
         </nav>

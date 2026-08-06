@@ -119,7 +119,7 @@
 .wf-card-minimal,
 .wf-cb-virtue-card,
 .wf-cb-insight-card {
-  border-radius: var(--radius-lg);
+  border-radius: 3px;
 }
 
 .wf-diligence-card,
@@ -129,7 +129,7 @@
 
 .wf-cb-insight-card {
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-lg);
+  border-radius: 3px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.03);
   transition: border-color 0.25s ease, transform 0.25s ease;

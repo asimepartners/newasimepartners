@@ -2,6 +2,8 @@ import { lazy, Suspense } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import BusinessPillars from './components/BusinessPillars'
+import ScrollProgress from './components/ScrollProgress'
+import FilmGrain from './components/FilmGrain'
 import { useSmoothScroll } from './hooks/useSmoothScroll'
 import { advisoryDetail, managementDetail, techDetail } from './data/content'
 
@@ -22,6 +24,8 @@ export default function App() {
 
   return (
     <>
+      <ScrollProgress />
+      <FilmGrain />
       <Navbar />
       <main className="wf-main">
         <Hero />
