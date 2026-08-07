@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import BusinessPillars from './components/BusinessPillars'
 import ScrollProgress from './components/ScrollProgress'
 import FilmGrain from './components/FilmGrain'
+import ScrollToTop from './components/ScrollToTop'
 import { useSmoothScroll } from './hooks/useSmoothScroll'
 import { advisoryDetail, managementDetail, techDetail } from './data/content'
 
@@ -48,6 +49,7 @@ export default function App() {
         <Footer />
         <CookieBanner />
       </Suspense>
+      <ScrollToTop />
     </>
   )
 }

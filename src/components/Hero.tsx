@@ -5,59 +5,70 @@ import { ArrowDown01Icon } from '@hugeicons/core-free-icons'
 import { heroContent } from '@/data/content'
 import { FadeUp, BlurIn, motion } from './Motion'
 
+const CYCLE_MS = 3200
+const FADE_S = 0.7
+
 const prefersReducedMotion =
   typeof window !== 'undefined' &&
   window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
 
-function Typewriter({ phrases }: { phrases: string[] }) {
+export default function Hero() {
+  const slides = heroContent.slides ?? [heroContent.image]
+  const phrases = heroContent.typingPhrases
+  const cycleLength = Math.max(slides.length, phrases.length, 1)
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
-    if (prefersReducedMotion) return
-    const timer = setInterval(() => {
-      setIndex((i) => (i + 1) % phrases.length)
-    }, 2600)
-    return () => clearInterval(timer)
-  }, [phrases])
+    if (prefersReducedMotion || cycleLength < 2) return
+    const timer = window.setInterval(() => {
+      setIndex((i) => (i + 1) % cycleLength)
+    }, CYCLE_MS)
+    return () => window.clearInterval(timer)
+  }, [cycleLength])
 
-  if (prefersReducedMotion) {
-    return <span className="wf-hero-type">{phrases.join(' · ')}</span>
-  }
+  const slideSrc = slides[index % slides.length]
+  const phrase = phrases[index % phrases.length]
 
-  return (
-    <span className="wf-hero-type" aria-label={phrases.join(', ')}>
-      <AnimatePresence mode="wait">
-        <motion.span
-          key={index}
-          className="wf-hero-type-word"
-          aria-hidden="true"
-          initial={{ opacity: 0, y: 14, filter: 'blur(6px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          exit={{ opacity: 0, y: -14, filter: 'blur(6px)' }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        >
-          {phrases[index]}
-        </motion.span>
-      </AnimatePresence>
-    </span>
-  )
-}
-
-export default function Hero() {
   return (
     <section className="wf-hero wf-hero--advisory position-relative overflow-hidden" aria-label="Hero">
       <div className="wf-hero-media" aria-hidden="true">
-        <motion.img
-          src={heroContent.image}
-          alt=""
-          className="wf-hero-photo"
-          decoding="async"
-          fetchPriority="high"
-          initial={{ scale: 1.08 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
-        />
+        <AnimatePresence initial={false}>
+          <motion.img
+            key={slideSrc}
+            src={slideSrc}
+            alt=""
+            className="wf-hero-photo"
+            decoding="async"
+            fetchPriority={index === 0 ? 'high' : 'auto'}
+            initial={
+              prefersReducedMotion
+                ? { opacity: 1, scale: 1 }
+                : { opacity: 0, scale: 1.04 }
+            }
+            animate={{ opacity: 1, scale: 1 }}
+            exit={prefersReducedMotion ? undefined : { opacity: 0, scale: 1.01 }}
+            transition={{
+              opacity: { duration: FADE_S, ease: [0.22, 1, 0.36, 1] },
+              scale: { duration: CYCLE_MS / 1000, ease: 'linear' },
+            }}
+          />
+        </AnimatePresence>
         <div className="wf-hero-overlay" />
+
+        {slides.length > 1 && !prefersReducedMotion ? (
+          <div className="wf-hero-slider-dots">
+            {slides.map((src, i) => (
+              <button
+                key={src}
+                type="button"
+                className={`wf-hero-slider-dot${i === index % slides.length ? ' is-active' : ''}`}
+                onClick={() => setIndex(i)}
+                tabIndex={-1}
+                aria-label={`Show slide ${i + 1}`}
+              />
+            ))}
+          </div>
+        ) : null}
       </div>
 
       <div className="wf-hero-inner">
@@ -80,7 +91,25 @@ export default function Hero() {
 
           <FadeUp index={2}>
             <p className="wf-hero-typeline">
-              <Typewriter phrases={heroContent.typingPhrases} />
+              {prefersReducedMotion ? (
+                <span className="wf-hero-type">{phrases.join(' · ')}</span>
+              ) : (
+                <span className="wf-hero-type" aria-label={phrases.join(', ')}>
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={phrase}
+                      className="wf-hero-type-word"
+                      aria-hidden="true"
+                      initial={{ opacity: 0, y: 14, filter: 'blur(6px)' }}
+                      animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                      exit={{ opacity: 0, y: -14, filter: 'blur(6px)' }}
+                      transition={{ duration: FADE_S, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      {phrase}
+                    </motion.span>
+                  </AnimatePresence>
+                </span>
+              )}
             </p>
           </FadeUp>
         </div>
@@ -92,7 +121,6 @@ export default function Hero() {
               <HugeiconsIcon icon={ArrowDown01Icon} size={16} strokeWidth={2} />
             </a>
           </FadeUp>
-
         </div>
       </div>
     </section>

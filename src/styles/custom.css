@@ -719,15 +719,47 @@ a { text-decoration: none; color: inherit; }
   inset: 0;
   z-index: 0;
   overflow: hidden;
+  background: #0a0a0a;
 }
 
 .wf-hero-photo {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center center;
   display: block;
   transform-origin: center center;
+  will-change: opacity, transform;
+}
+
+.wf-hero-slider-dots {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(1.1rem, 2.5vw, 1.75rem);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  transform: translateX(-50%);
+  pointer-events: auto;
+}
+
+.wf-hero-slider-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: width 0.35s ease, background 0.35s ease;
+}
+
+.wf-hero-slider-dot.is-active {
+  width: 1.5rem;
+  background: #fff;
 }
 
 .wf-hero-overlay {
@@ -5362,6 +5394,53 @@ a { text-decoration: none; color: inherit; }
 .wf-main .wf-news2-title {
   color: #fff !important;
   font-weight: 500;
+}
+
+/* ── Scroll to top ──────────────────────────────────────────── */
+.wf-scroll-top {
+  position: fixed;
+  right: clamp(1rem, 2.5vw, 1.75rem);
+  bottom: clamp(1rem, 2.5vw, 1.75rem);
+  z-index: 1150;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.1rem;
+  height: 3.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 3px;
+  background: var(--hero-lime, #FCD116);
+  color: #111;
+  cursor: pointer;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition:
+    opacity 0.28s ease,
+    visibility 0.28s ease,
+    transform 0.28s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.wf-scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.wf-scroll-top:hover {
+  background: #e6bd0f;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.34);
+}
+
+.wf-privacy-page .wf-scroll-top {
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
 }
 
 /* ── Premium chrome: progress, grain, drawers ───────────────── */

@@ -56,9 +56,14 @@ export const heroContent = {
   scrollLabel: "SCROLL DOWN",
   focusAreas:
     "Climate & Impact | Alternative Investments | AI Systems | M&A Advisory | Executive Training",
-  image: "/images/01.jpg",
+  image: "/images/sliders/01.jpg",
   imageAlt:
     "Business partners reviewing strategy together in a professional office setting",
+  slides: [
+    "/images/sliders/01.jpg",
+    "/images/sliders/2.jpg",
+    "/images/sliders/3.jpg",
+  ],
 };
 
 export const primaryNavLinks = [

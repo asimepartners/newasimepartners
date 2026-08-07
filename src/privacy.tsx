@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { siteBrand } from '@/data/content'
 import { privacyPolicy, type PrivacyBlock } from '@/data/privacyPolicy'
 import { dismissPreloader } from '@/utils/dismissPreloader'
+import ScrollToTop from '@/components/ScrollToTop'
 import './styles/custom.css'
 import './styles/theme-dark.css'
 import './styles/typography.css'
@@ -76,6 +77,7 @@ function PrivacyPage() {
           </article>
         </div>
       </main>
+      <ScrollToTop />
     </div>
   )
 }
