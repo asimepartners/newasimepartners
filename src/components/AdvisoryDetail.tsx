@@ -15,11 +15,14 @@ import {
   SparklesIcon,
   AiBrain01Icon,
   UserStar01Icon,
+  ChartIncreaseIcon,
+  FlowConnectionIcon,
 } from '@hugeicons/core-free-icons'
 import type { ServiceDetail } from '@/data/content'
 import { AnimatedSection, FadeUp, StaggerParent, StaggerItem, motion } from './Motion'
 
 const ICONS: Record<string, typeof AnalyticsUpIcon> = {
+  overview: ChartIncreaseIcon,
   advisory: AnalyticsUpIcon,
   venture: Rocket01Icon,
   credit: BankIcon,
@@ -32,6 +35,7 @@ const ICONS: Record<string, typeof AnalyticsUpIcon> = {
   francophone: Globe02Icon,
   cfo: Briefcase01Icon,
   prepost: ArrowReloadHorizontalIcon,
+  workflow: FlowConnectionIcon,
   'ai-sme': SparklesIcon,
   'ai-systems': AiBrain01Icon,
   'ai-talent': UserStar01Icon,

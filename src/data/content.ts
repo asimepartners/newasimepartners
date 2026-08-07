@@ -58,11 +58,11 @@ export const heroContent = {
     "Climate & Impact | Alternative Investments | AI Systems | M&A Advisory | Executive Training",
   image: "/images/sliders/01.jpg",
   imageAlt:
-    "Business partners reviewing strategy together in a professional office setting",
+    "Asime Partners team and partners across advisory, industry, and technology",
   slides: [
     "/images/sliders/01.jpg",
-    "/images/sliders/2.jpg",
-    "/images/sliders/3.jpg",
+    "/images/sliders/02.jpg",
+    "/images/sliders/03.jpg",
   ],
 };
 
@@ -138,10 +138,10 @@ export const businessLines = {
     title: "Advisory",
     summary: "Trusted advisors across Africa.",
     description:
-      "M&A advisory, due diligence, and investment structuring for investors and growing businesses.",
+      "Our Business and Financial Advisory offers professional services to improve your performance, manage growth, and achieve strategic objectives by integrating financial analysis with operational and strategic guidance.",
     href: "#advisory-detail",
     cta: "Read More",
-    image: "/images/01.jpg",
+    image: "/images/advisory-card.jpg",
     imageAlt: "Investment advisory",
   },
   management: {
@@ -149,18 +149,18 @@ export const businessLines = {
     title: "Alternative Investments",
     summary: "Capital deployed through focused platforms.",
     description:
-      "Venture, credit, and impact pathways for gender inclusive SMEs and high potential ventures.",
+      "We offer professional service to high-net-worth individuals, family offices, or institutional clients to design, manage, and execute strategies involving non-traditional asset classes beyond public equities, bonds, and cash. These can include: Private Equity, Private Credit, Real Assets, Digital Assets and other Structured Products.",
     href: "#management-detail",
     cta: "Read More",
     image: "/images/02.jpg",
     imageAlt: "Investment management",
   },
   tech: {
-    eyebrow: "Technology",
+    eyebrow: "Technology & AI",
     title: "Technology & AI",
     summary: "Intelligent systems for modern investing.",
     description:
-      "AI driven tools, data platforms, and digital infrastructure that power smarter decisions across our advisory and investment work.",
+      "Our technology and AI Systems advisory offers a structured, expert-led engagement that you assess, plan, and implement AI and other advanced technology systems in a way that aligns with your strategic goals, risk tolerance, and operational realities. It starts with process mapping and automation, and combines technical domain expertise with business acumen to guide decision-making, governance, and execution to get to AI agents design and orchestration.",
     href: "#tech-detail",
     cta: "Read More",
     image: "/sectors/ai.jpg",
@@ -253,7 +253,7 @@ export interface ServiceDetail {
 
 export const advisoryDetail: ServiceDetail = {
   eyebrow: "Advisory",
-  headline: "Advisory across the investment lifecycle",
+  headline: "Advisory across the business, financial and investment lifecycle",
   items: [
     {
       icon: "manda",
@@ -291,9 +291,12 @@ export const advisoryDetail: ServiceDetail = {
 export const managementDetail: ServiceDetail = {
   eyebrow: "Alternative Investments",
   headline: "Alternative investments across our platforms",
-  intro:
-    "Alternative investments are asset classes that aren’t stocks, bonds, or cash. These kinds of investments differ from traditional investment types because they aren’t easily sold or converted into cash. It’s also common for alternative investments to be referred to as alternative assets. Examples are: hedge funds, art collections or indexes, real estate investments and trusts (REITs), structured products etc.",
   items: [
+    {
+      icon: "overview",
+      title: "Alternative Investment Landscape",
+      body: "Alternative investments or alternative assets (not stocks, bonds, or cash) differ from traditional investment because they aren’t easily sold or converted into cash, such as private equity, private credit, real assets, digital assets, hedge funds, art collections, real estate investments and trusts (REITs), structured products etc. Africa's alternative investment landscape exceeds US $2 trillion in institutional capital, driven by private equity and venture capital, infrastructure and climate finance, real estate and agribusiness, and high-growth sectors like renewable energy and private credit.",
+    },
     {
       icon: "advisory",
       title: "Strategic Investment Advisory",
@@ -331,6 +334,11 @@ export const techDetail: ServiceDetail = {
   eyebrow: "Technology & AI",
   headline: "Intelligent systems for modern businesses",
   items: [
+    {
+      icon: "workflow",
+      title: "Workflow & Process Automation",
+      body: "Workflow and process automation enables organisations to systematically replace manual, repetitive work with software-driven, rule-based processes to make operations faster, more accurate, and easier to manage. It dramatically improves the chances of AI Systems to be later adaptive, intelligent decision-making systems and agents.",
+    },
     {
       icon: "ai-sme",
       title: "AI for SMEs / Startups",
@@ -379,11 +387,11 @@ export const aboutContent = {
     "Aerial view of precision agricultural machines working across green crop fields",
   vision: {
     label: "Vision",
-    body: "Unleashing Africa’s Potential by leveraging the latest technologies",
+    body: "Unleash Africa’s potential",
   },
   mission: {
     label: "Mission",
-    body: "Provide better risk adjusted return and impact by investing in and supporting enterprises built by underrepresented founders and teams across Africa, especially youth, women and people with disability.",
+    body: "Be the most trusted, reputable and performant gateway to Africa.",
   },
   values: {
     label: "Core Values",
@@ -414,6 +422,7 @@ export interface HighlightedWorkItem {
   title: string;
   description: string;
   href: string;
+  image: string;
 }
 
 export const highlightedWorkIntro = {
@@ -457,6 +466,7 @@ export const highlightedWork: HighlightedWorkItem[] = [
     title: "Gender Smart SME Fund Structuring & Capital Mobilization",
     description: "Advisory support for impact investors deploying capital into gender inclusive SMEs across West Africa.",
     href: "#advisory",
+    image: "/images/work/01.jpg",
   },
   {
     platform: "Chale Fund",
@@ -464,6 +474,7 @@ export const highlightedWork: HighlightedWorkItem[] = [
     title: "Impact Investment for Inclusive SME Growth",
     description: "Mobilizing and managing capital for ventures that advance women's economic empowerment.",
     href: "#apply",
+    image: "/images/work/02.jpg",
   },
   {
     platform: "Venture Capital",
@@ -471,6 +482,7 @@ export const highlightedWork: HighlightedWorkItem[] = [
     title: "Tech Enabled Ventures in Climate & Digital Solutions",
     description: "Venture backing for startups leveraging AI and climate resilient models in African markets.",
     href: "#apply",
+    image: "/images/work/03.jpg",
   },
   {
     platform: "Investment Advisory",
@@ -478,6 +490,7 @@ export const highlightedWork: HighlightedWorkItem[] = [
     title: "M&A and Transaction Advisory for Growth Stage SMEs",
     description: "End to end deal support including diligence, valuation, and structuring for cross border transactions.",
     href: "#advisory",
+    image: "/images/work/04.jpg",
   },
   {
     platform: "Private Credit",
@@ -485,6 +498,7 @@ export const highlightedWork: HighlightedWorkItem[] = [
     title: "Working Capital Solutions for Scaling MSMEs",
     description: "Private credit facilities supporting operational growth for established small businesses.",
     href: "#apply",
+    image: "/images/work/05.jpg",
   },
   {
     platform: "Investment Advisory",
@@ -492,6 +506,7 @@ export const highlightedWork: HighlightedWorkItem[] = [
     title: "Executive Training & Capacity Building Programs",
     description: "Leadership development and technical assistance for founders navigating capital markets.",
     href: "#capabilities",
+    image: "/images/work/06.jpg",
   },
 ];
 
@@ -568,14 +583,15 @@ export const footerLead = {
 };
 
 export const newsletterContent = {
-  heading: "Subscribe to our\nnewsletter",
+  eyebrow: "Join the impact revolution",
+  heading: "Subscribe to our newsletter",
   body: "Be the first to receive insights, updates, and expert perspectives on investing and building across Africa.",
-  label: "Stay up to date",
   placeholder: "Enter your email",
   button: "Subscribe",
   finePrintLead: "By subscribing you agree to our",
   privacyLabel: "Privacy Policy",
   privacyHref: "/privacy",
+  image: "/images/newsletter-bg.jpg",
 };
 
 export const footerColumns = {
@@ -958,18 +974,17 @@ export const teamContent = {
 /* ── Insights ────────────────────────────────────────────── */
 
 export const insightsIntro = {
-  eyebrow: "Who We Are",
-  headline: "Building inclusive capital markets in Africa",
+  headlineAccent: "Insights",
+  headlineRest: "That Ignite Growth",
+  body: "Discover ideas, tips, and inspiration to fuel your learning journey and professional success.",
+  readMoreLabel: "Read more",
+  readMoreHref: "https://linkedin.com/company/asimepartners",
 };
-
-export type InsightBannerTone = "green" | "navy";
 
 export interface InsightCard {
   image: string;
   platform: string;
-  bannerTone: InsightBannerTone;
   date: string;
-  label: string;
   title: string;
   href: string;
 }
@@ -978,29 +993,44 @@ export const insightCards: InsightCard[] = [
   {
     image: "/news/1.jpeg",
     platform: "Chale Fund",
-    bannerTone: "green",
-    date: "12.05.2026",
-    label: "Announcement",
+    date: "May 12, 2026",
     title: "Asime Partners expands Chale Fund mandate across West Africa",
     href: "#apply",
   },
   {
     image: "/news/02.jpeg",
     platform: "Venture Capital",
-    bannerTone: "green",
-    date: "23.04.2026",
-    label: "Announcement",
+    date: "April 23, 2026",
     title: "Inspired Evolution backs gender smart venture growth through new investment",
     href: "#management",
   },
   {
     image: "/news/03.jpeg",
     platform: "Investment Advisory",
-    bannerTone: "navy",
-    date: "14.04.2026",
-    label: "Article",
+    date: "April 14, 2026",
     title: "What inclusive capital deployment reveals about real opportunity in emerging markets",
     href: "#capabilities",
+  },
+  {
+    image: "/images/more/startup.jpg",
+    platform: "Private Credit",
+    date: "March 28, 2026",
+    title: "How private credit is unlocking growth for African SMEs",
+    href: "#management",
+  },
+  {
+    image: "/images/more/partner.jpg",
+    platform: "Partnerships",
+    date: "March 10, 2026",
+    title: "Building investor partnerships that scale impact across Africa",
+    href: "#apply",
+  },
+  {
+    image: "/sectors/ai.jpg",
+    platform: "Technology & AI",
+    date: "February 18, 2026",
+    title: "Why AI systems are reshaping decision making for growing businesses",
+    href: "#technology",
   },
 ];
 

@@ -1,5 +1,5 @@
 import { HugeiconsIcon } from '@hugeicons/react'
-import { Linkedin01Icon } from '@hugeicons/core-free-icons'
+import { CircleArrowRight01Icon, Linkedin01Icon } from '@hugeicons/core-free-icons'
 import { footerColumns, newsletterContent, siteBrand } from '@/data/content'
 import { FadeIn } from './Motion'
 
@@ -9,19 +9,24 @@ export default function Footer() {
       <footer className="wf-ft">
         <div className="wf-ft-wrapper">
           <div className="wf-news-card">
+            <div className="wf-news-media" aria-hidden="true">
+              <img
+                src={newsletterContent.image}
+                alt=""
+                className="wf-news-media-img"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="wf-news-overlay" />
+            </div>
+
             <div className="wf-news-left">
-              <h2 className="wf-news-title">
-                {newsletterContent.heading.split('\n').map((line) => (
-                  <span key={line} style={{ display: 'block' }}>
-                    {line}
-                  </span>
-                ))}
-              </h2>
+              <span className="wf-news-eyebrow">{newsletterContent.eyebrow}</span>
+              <h2 className="wf-news-title">{newsletterContent.heading}</h2>
               <p className="wf-news-body">{newsletterContent.body}</p>
             </div>
 
             <div className="wf-news-right">
-              <span className="wf-news-label">{newsletterContent.label}</span>
               <form className="wf-news-row" onSubmit={(e) => e.preventDefault()}>
                 <input
                   className="wf-news-input"
@@ -30,7 +35,10 @@ export default function Footer() {
                   aria-label="Email address"
                 />
                 <button type="submit" className="wf-news-btn">
-                  {newsletterContent.button}
+                  <span className="wf-news-btn-icon" aria-hidden="true">
+                    <HugeiconsIcon icon={CircleArrowRight01Icon} size={20} strokeWidth={2} />
+                  </span>
+                  <span>{newsletterContent.button}</span>
                 </button>
               </form>
               <span className="wf-news-fine">

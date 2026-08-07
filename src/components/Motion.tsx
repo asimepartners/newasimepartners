@@ -23,12 +23,11 @@ const smoothEase = [0.22, 1, 0.36, 1] as const
 
 /* ── Variant presets ────────────────────────────────────── */
 const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 48, filter: 'blur(4px)' },
+  hidden: { opacity: 0, y: 28 },
   visible: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    transition: { ...springGentle, delay: i * 0.1 },
+    transition: { ...springGentle, delay: i * 0.08 },
   }),
 }
 
@@ -41,21 +40,19 @@ const fadeIn: Variants = {
 }
 
 const slideLeft: Variants = {
-  hidden: { opacity: 0, x: 64, filter: 'blur(6px)' },
+  hidden: { opacity: 0, x: 40 },
   visible: {
     opacity: 1,
     x: 0,
-    filter: 'blur(0px)',
     transition: { ...springGentle },
   },
 }
 
 const slideRight: Variants = {
-  hidden: { opacity: 0, x: -64, filter: 'blur(6px)' },
+  hidden: { opacity: 0, x: -40 },
   visible: {
     opacity: 1,
     x: 0,
-    filter: 'blur(0px)',
     transition: { ...springGentle },
   },
 }
@@ -66,22 +63,20 @@ const stagger: Variants = {
 }
 
 const scaleIn: Variants = {
-  hidden: { opacity: 0, scale: 0.9, filter: 'blur(8px)' },
+  hidden: { opacity: 0, scale: 0.94 },
   visible: {
     opacity: 1,
     scale: 1,
-    filter: 'blur(0px)',
     transition: { ...springSnappy },
   },
 }
 
 const blurIn: Variants = {
-  hidden: { opacity: 0, filter: 'blur(16px)', y: 12 },
+  hidden: { opacity: 0, y: 12 },
   visible: {
     opacity: 1,
-    filter: 'blur(0px)',
     y: 0,
-    transition: { duration: 1.1, ease: smoothEase },
+    transition: { duration: 0.7, ease: smoothEase },
   },
 }
 

@@ -1,9 +1,5 @@
-import { HugeiconsIcon } from '@hugeicons/react'
-import { PlusSignIcon } from '@hugeicons/core-free-icons'
 import { highlightedWork, highlightedWorkIntro } from '@/data/content'
 import { AnimatedSection, FadeUp, StaggerParent, StaggerItem, motion } from './Motion'
-
-const MEDIA_VARIANTS = ['spheres', 'turbine', 'waveform'] as const
 
 export default function HighlightedWork() {
   return (
@@ -27,6 +23,15 @@ export default function HighlightedWork() {
                 whileHover={{ y: -6 }}
                 transition={{ type: 'spring', stiffness: 320, damping: 26 }}
               >
+                <div className="wf-case-media">
+                  <img
+                    src={item.image}
+                    alt=""
+                    className="wf-case-media-img"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
                 <div className="wf-case-content">
                   <div className="wf-case-meta">
                     <span className="wf-case-category">{item.platform}</span>
@@ -34,14 +39,7 @@ export default function HighlightedWork() {
                   </div>
                   <h3 className="wf-case-question">{item.title}</h3>
                   <p className="wf-case-desc">{item.description}</p>
-                  <span className="wf-case-plus" aria-hidden="true">
-                    <HugeiconsIcon icon={PlusSignIcon} size={24} strokeWidth={2.5} />
-                  </span>
                 </div>
-                <div
-                  className={`wf-case-media wf-case-media--${MEDIA_VARIANTS[index % MEDIA_VARIANTS.length]}`}
-                  aria-hidden="true"
-                />
               </motion.a>
             </StaggerItem>
           ))}

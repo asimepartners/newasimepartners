@@ -5,10 +5,9 @@ import BusinessPillars from './components/BusinessPillars'
 import ScrollProgress from './components/ScrollProgress'
 import FilmGrain from './components/FilmGrain'
 import ScrollToTop from './components/ScrollToTop'
+import DeferredMount from './components/DeferredMount'
 import { useSmoothScroll } from './hooks/useSmoothScroll'
-import { advisoryDetail, managementDetail, techDetail } from './data/content'
 
-const AdvisoryDetail = lazy(() => import('./components/AdvisoryDetail'))
 const OurPeople = lazy(() => import('./components/OurPeople'))
 const HighlightedWork = lazy(() => import('./components/HighlightedWork'))
 const ByTheNumbers = lazy(() => import('./components/ByTheNumbers'))
@@ -19,6 +18,39 @@ const Insights = lazy(() => import('./components/Insights'))
 const ApplyCta = lazy(() => import('./components/ApplyCta'))
 const Footer = lazy(() => import('./components/Footer'))
 const CookieBanner = lazy(() => import('./components/CookieBanner'))
+
+const DeferredDetails = lazy(async () => {
+  const [{ default: AdvisoryDetail }, { advisoryDetail, managementDetail, techDetail }] =
+    await Promise.all([import('./components/AdvisoryDetail'), import('./data/content')])
+
+  return {
+    default: function Details() {
+      return (
+        <>
+          <AdvisoryDetail id="advisory-detail" content={advisoryDetail} />
+          <AdvisoryDetail id="management-detail" content={managementDetail} />
+          <AdvisoryDetail id="tech-detail" content={techDetail} />
+        </>
+      )
+    },
+  }
+})
+
+function LazyBelowFold() {
+  return (
+    <Suspense fallback={null}>
+      <DeferredDetails />
+      <OurPeople />
+      <Team />
+      <HighlightedWork />
+      <ByTheNumbers />
+      <Capabilities />
+      <Geographies />
+      <ApplyCta />
+      <Insights />
+    </Suspense>
+  )
+}
 
 export default function App() {
   useSmoothScroll()
@@ -31,24 +63,16 @@ export default function App() {
       <main className="wf-main">
         <Hero />
         <BusinessPillars />
-        <Suspense fallback={null}>
-          <AdvisoryDetail id="advisory-detail" content={advisoryDetail} />
-          <AdvisoryDetail id="management-detail" content={managementDetail} />
-          <AdvisoryDetail id="tech-detail" content={techDetail} />
-          <OurPeople />
-          <Team />
-          <HighlightedWork />
-          <ByTheNumbers />
-          <Capabilities />
-          <Geographies />
-          <ApplyCta />
-          <Insights />
-        </Suspense>
+        <DeferredMount>
+          <LazyBelowFold />
+        </DeferredMount>
       </main>
-      <Suspense fallback={null}>
-        <Footer />
-        <CookieBanner />
-      </Suspense>
+      <DeferredMount delayMs={400}>
+        <Suspense fallback={null}>
+          <Footer />
+          <CookieBanner />
+        </Suspense>
+      </DeferredMount>
       <ScrollToTop />
     </>
   )

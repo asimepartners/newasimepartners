@@ -47,6 +47,7 @@ function LinePanel({
         </div>
 
         <h2 className="wf-lines-panel-title">{line.title}</h2>
+        <p className="wf-lines-panel-desc">{line.description}</p>
 
         <PillarCta href={line.href} label={line.cta} />
       </div>

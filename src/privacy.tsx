@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { siteBrand } from '@/data/content'
@@ -6,9 +6,7 @@ import { privacyPolicy, type PrivacyBlock } from '@/data/privacyPolicy'
 import { dismissPreloader } from '@/utils/dismissPreloader'
 import ScrollToTop from '@/components/ScrollToTop'
 import './styles/custom.css'
-import './styles/theme-dark.css'
 import './styles/typography.css'
-import './styles/refine.css'
 
 function PrivacyBlocks({ blocks }: { blocks: PrivacyBlock[] }) {
   return (
@@ -48,10 +46,19 @@ function PrivacyBlocks({ blocks }: { blocks: PrivacyBlock[] }) {
 }
 
 function PrivacyPage() {
+  useEffect(() => {
+    document.documentElement.classList.add('wf-privacy-root')
+    document.body.classList.add('wf-privacy-root')
+    return () => {
+      document.documentElement.classList.remove('wf-privacy-root')
+      document.body.classList.remove('wf-privacy-root')
+    }
+  }, [])
+
   return (
     <div className="wf-privacy-page">
       <main className="wf-privacy-main">
-        <div className="container wf-privacy-container">
+        <div className="wf-privacy-container">
           <div className="wf-privacy-topbar">
             <a href="/" className="wf-privacy-brand" aria-label={`${siteBrand.name} home`}>
               <img src="/Main.png" alt={siteBrand.name} className="wf-privacy-logo" />
@@ -89,4 +96,3 @@ createRoot(document.getElementById('root')!).render(
 )
 
 dismissPreloader()
-
