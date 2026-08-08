@@ -695,6 +695,130 @@ a { text-decoration: none; color: inherit; }
   color: var(--jz-white);
 }
 
+/* ── They Trusted Us — logo marquee ─────────────────────────── */
+.wf-awards {
+  background: #000;
+  color: #fff;
+  padding: clamp(2.75rem, 5vw, 4rem) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.wf-awards-inner {
+  width: 100%;
+  margin-inline: auto;
+}
+
+.wf-awards-title,
+.wf-main .wf-awards-title {
+  margin: 0 0 clamp(1.75rem, 3.5vw, 2.5rem);
+  padding-inline: var(--layout-gutter, 1.5rem);
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #FCD116 !important;
+}
+
+.wf-awards-marquee {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.wf-awards-track {
+  display: flex;
+  width: max-content;
+  animation: wf-awards-scroll 32s linear infinite;
+  will-change: transform;
+}
+
+.wf-awards-marquee:hover .wf-awards-track {
+  animation-play-state: paused;
+}
+
+.wf-awards-row {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  flex-wrap: nowrap;
+  padding-right: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.wf-awards-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wf-awards-mark {
+  display: block;
+  color: #fff;
+  white-space: nowrap;
+  opacity: 0.95;
+  user-select: none;
+}
+
+.wf-awards-mark--serif {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.wf-awards-mark--sans {
+  font-family: var(--font-body);
+  font-size: clamp(0.82rem, 1.25vw, 0.95rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.wf-awards-mark--bold {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@keyframes wf-awards-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wf-awards-track {
+    animation: none;
+  }
+
+  .wf-awards-marquee {
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .wf-awards-track,
+  .wf-awards-row {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 1.25rem;
+    padding-right: 0;
+  }
+}
+
 /* ── 7. Hero — advisory full-bleed photographic ─────────────── */
 .wf-hero {
   position: relative;

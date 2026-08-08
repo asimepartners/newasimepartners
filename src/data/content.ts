@@ -66,6 +66,20 @@ export const heroContent = {
   ],
 };
 
+/* ── Awards & recognition ────────────────────────────────── */
+
+export const awardsContent = {
+  title: "They Trusted Us",
+  items: [
+    { name: "Acumen", mark: "Acumen", style: "serif" as const },
+    { name: "Industry Awards", mark: "Industry Awards", style: "serif" as const },
+    { name: "Impact Insights", mark: "Impact Insights", style: "sans" as const },
+    { name: "AESIS", mark: "AESIS", style: "bold" as const },
+    { name: "Collaborative Frontier Finance", mark: "CFF", style: "bold" as const },
+    { name: "Africa Finance Forum", mark: "Africa Finance", style: "sans" as const },
+  ],
+};
+
 export const primaryNavLinks = [
   { label: "Home", href: "#" },
   { label: "What We Do", href: "#advisory" },
