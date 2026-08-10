@@ -9,6 +9,7 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, 'index.html'),
         privacy: path.resolve(__dirname, 'privacy.html'),
+        portfolio: path.resolve(__dirname, 'portfolio.html'),
       },
     },
   },

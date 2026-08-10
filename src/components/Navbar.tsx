@@ -2,15 +2,31 @@ import { useEffect, useState } from 'react'
 import { HugeiconsIcon } from '@hugeicons/react'
 import { Menu01Icon, Cancel01Icon } from '@hugeicons/core-free-icons'
 import { AnimatePresence, motion } from 'motion/react'
-import { navGroups, siteBrand } from '@/data/content'
+import { navGroups, primaryNavLinks, siteBrand } from '@/data/content'
 import { springSnappy } from './Motion'
 import Magnetic from './Magnetic'
 
-export default function Navbar() {
-  const [overHero, setOverHero] = useState(true)
+type NavbarProps = {
+  /** `solid` keeps the scrolled dark bar (for inner pages like portfolio). */
+  variant?: 'home' | 'solid'
+}
+
+function resolveHref(href: string, variant: NavbarProps['variant']) {
+  if (variant !== 'solid') return href
+  if (href.startsWith('#')) return `/${href}`
+  return href
+}
+
+export default function Navbar({ variant = 'home' }: NavbarProps) {
+  const [overHero, setOverHero] = useState(variant === 'home')
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
+    if (variant === 'solid') {
+      setOverHero(false)
+      return
+    }
+
     const onScroll = () => {
       setOverHero(window.scrollY < window.innerHeight * 0.85)
     }
@@ -18,7 +34,7 @@ export default function Navbar() {
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [variant])
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
@@ -40,6 +56,8 @@ export default function Navbar() {
   }, [])
 
   const closeMenu = () => setMenuOpen(false)
+  const transparent = variant === 'home' && (overHero || menuOpen)
+  const homeHref = variant === 'solid' ? '/' : '#'
 
   return (
     <>
@@ -50,12 +68,31 @@ export default function Navbar() {
         transition={springSnappy}
       >
         <nav
-          className={`wf-nav${overHero || menuOpen ? ' wf-nav--over-hero' : ' wf-nav--scrolled'}`}
+          className={`wf-nav${transparent ? ' wf-nav--over-hero' : ' wf-nav--scrolled'}`}
+          aria-label="Primary"
         >
-          <div className="wf-nav-pill">
-            <a className="wf-brand" href="#" onClick={closeMenu}>
-              <img src={siteBrand.logoWordmark} alt={siteBrand.name} className="wf-brand-wordmark-img" />
+          <div className="wf-nav-bar">
+            <a className="wf-brand" href={homeHref} onClick={closeMenu}>
+              <img
+                src="/asime-logo-white.png"
+                alt={siteBrand.name}
+                className="wf-brand-wordmark-img"
+              />
             </a>
+
+            <ul className="wf-nav-links">
+              {primaryNavLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={resolveHref(link.href, variant)}
+                    className="wf-nav-link"
+                    onClick={closeMenu}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
 
             <div className="wf-nav-actions">
               <Magnetic strength={0.28}>
@@ -72,7 +109,7 @@ export default function Navbar() {
                   </span>
                   <HugeiconsIcon
                     icon={menuOpen ? Cancel01Icon : Menu01Icon}
-                    size={24}
+                    size={22}
                     strokeWidth={2}
                     color="currentColor"
                   />
@@ -108,13 +145,21 @@ export default function Navbar() {
             <div className="wf-mega-panel-body">
               {navGroups.map((group) => (
                 <div key={group.label} className="wf-mega-group">
-                  <a href={group.href} className="wf-mega-group-title" onClick={closeMenu}>
+                  <a
+                    href={resolveHref(group.href, variant)}
+                    className="wf-mega-group-title"
+                    onClick={closeMenu}
+                  >
                     {group.label}
                   </a>
                   <ul className="wf-mega-group-links">
                     {group.children.map((child) => (
                       <li key={child.label}>
-                        <a href={child.href} className="wf-mega-link" onClick={closeMenu}>
+                        <a
+                          href={resolveHref(child.href, variant)}
+                          className="wf-mega-link"
+                          onClick={closeMenu}
+                        >
                           {child.label}
                         </a>
                       </li>

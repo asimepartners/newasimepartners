@@ -56,13 +56,13 @@ export const heroContent = {
   scrollLabel: "SCROLL DOWN",
   focusAreas:
     "Climate & Impact | Alternative Investments | AI Systems | M&A Advisory | Executive Training",
-  image: "/images/sliders/01.jpg",
+  image: "/images/sliders/01.jpg?v=3",
   imageAlt:
     "Asime Partners team and partners across advisory, industry, and technology",
   slides: [
-    "/images/sliders/01.jpg",
-    "/images/sliders/02.jpg",
-    "/images/sliders/03.jpg",
+    "/images/sliders/01.jpg?v=3",
+    "/images/sliders/02.jpg?v=3",
+    "/images/sliders/03.jpg?v=3",
   ],
 };
 
@@ -81,13 +81,65 @@ export const awardsContent = {
 };
 
 export const primaryNavLinks = [
-  { label: "Home", href: "#" },
-  { label: "What We Do", href: "#advisory" },
-  { label: "About", href: "#our-people" },
-  { label: "Work", href: "#our-work" },
-  { label: "Insights", href: "#insights" },
-  { label: "Contact", href: "#apply" },
+  { label: "Platform", href: "#platform" },
+  { label: "Advisory", href: "#advisory" },
+  { label: "Alternatives", href: "#management-detail" },
+  { label: "Tech & AI", href: "#technology" },
+  { label: "Media", href: "#insights" },
+  { label: "About Us", href: "#our-people" },
 ] as const;
+
+/* ── Our Platform ────────────────────────────────────────── */
+
+export interface PlatformCard {
+  title: string;
+  category: string;
+  description: string;
+  href: string;
+  image: string;
+}
+
+export const platformIntro = {
+  title: "Our Platform",
+  body: "We’re a multi-strategy investment platform with an existing portfolio of assets across private markets in Africa.",
+  ctaLabel: "Explore our portfolio",
+  ctaHref: "/portfolio.html",
+};
+
+export const platformCards: PlatformCard[] = [
+  {
+    title: "Asime Ventures",
+    category: "Generalist Private Markets",
+    description:
+      "A diversified portfolio of 20+ initial angel investments. See our portfolio section.",
+    href: "#our-work",
+    image: "/images/platform/01-asime-ventures.jpg",
+  },
+  {
+    title: "Jaza Rift",
+    category: "Health & Bio Private Markets",
+    description:
+      "Digital health, Medtech and Biotech investment platform.",
+    href: "#management",
+    image: "/images/platform/02-jaza-rift.jpg",
+  },
+  {
+    title: "REIT",
+    category: "Listed and Unlisted Real Estate",
+    description:
+      "Diversified unlisted Real Estate portfolio to be listed in the near term.",
+    href: "#management",
+    image: "/images/platform/03-reit.jpg",
+  },
+  {
+    title: "Listed Assets & Digital Assets",
+    category: "Emerging Markets Public Markets",
+    description:
+      "Access to EM fund managers and potential for managed funds on behalf of clients across government bonds, African equities and corporate bonds. Stable coins, crypto and other digital assets exposed entities for strong liquidity FX and cashflow management.",
+    href: "#management-detail",
+    image: "/images/platform/04-listed-digital.jpg",
+  },
+];
 
 export const navGroups = [
   {

@@ -270,10 +270,10 @@ body {
   color: var(--page-heading);
 }
 
-/* ── Navbar (floating white pill) ──────────────────────────────── */
+/* ── Navbar — matches dark hero ──────────────────────────────── */
 .wf-nav--scrolled {
-  background: transparent;
-  border-bottom: none;
+  background: rgba(0, 0, 0, 0.82);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* ── Footer — newsletter card + light footer ───────────────────── */

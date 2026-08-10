@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Awards from './components/Awards'
+import OurPlatform from './components/OurPlatform'
 import BusinessPillars from './components/BusinessPillars'
 import ScrollProgress from './components/ScrollProgress'
 import FilmGrain from './components/FilmGrain'
@@ -64,6 +65,7 @@ export default function App() {
       <main className="wf-main">
         <Hero />
         <Awards />
+        <OurPlatform />
         <BusinessPillars />
         <DeferredMount>
           <LazyBelowFold />
