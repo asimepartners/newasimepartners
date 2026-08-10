@@ -19,7 +19,7 @@ export interface PortfolioCompany {
   platforms: PlatformTag[]
   sectors: SectorTag[]
   href?: string
-  logoScale?: "lg" | "xl"
+  logoScale?: "lg" | "xl" | "2xl"
 }
 
 export const portfolioPlatformTags: PlatformTag[] = [
@@ -70,7 +70,7 @@ export const portfolioCompanies: PortfolioCompany[] = [
     logo: "/images/portfolio/zuri-health.jpg",
     platforms: ["Jaza Rift"],
     sectors: ["digital health"],
-    logoScale: "lg",
+    logoScale: "2xl",
   },
   {
     name: "Orbit Health",

@@ -85,7 +85,7 @@ export const primaryNavLinks = [
   { label: "Advisory", href: "#advisory" },
   { label: "Alternatives", href: "#management-detail" },
   { label: "Tech & AI", href: "#technology" },
-  { label: "Media", href: "#insights" },
+  { label: "Media", href: "/media.html" },
   { label: "About Us", href: "#our-people" },
 ] as const;
 
@@ -182,8 +182,9 @@ export const navGroups = [
   },
   {
     label: "Insights",
-    href: "#insights",
+    href: "/media.html",
     children: [
+      { label: "Media", href: "/media.html" },
       { label: "Insights", href: "#insights" },
       { label: "Who We Are", href: "#our-people" },
     ],
