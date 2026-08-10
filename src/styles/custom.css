@@ -764,37 +764,24 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 4.5rem;
+  padding: 0.35rem 0.5rem;
 }
 
-.wf-awards-mark {
+.wf-awards-logo {
   display: block;
-  color: #fff;
-  white-space: nowrap;
-  opacity: 0.95;
-  user-select: none;
+  width: auto;
+  height: clamp(2.75rem, 4.5vw, 3.75rem);
+  max-width: min(11rem, 28vw);
+  object-fit: contain;
+  background: transparent;
+  opacity: 0.92;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-.wf-awards-mark--serif {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(1rem, 1.6vw, 1.3rem);
-  font-weight: 400;
-  letter-spacing: 0.02em;
-}
-
-.wf-awards-mark--sans {
-  font-family: var(--font-body);
-  font-size: clamp(0.82rem, 1.25vw, 0.95rem);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.wf-awards-mark--bold {
-  font-family: var(--font-display);
-  font-size: clamp(1.05rem, 1.7vw, 1.35rem);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+.wf-awards-item:hover .wf-awards-logo {
+  opacity: 1;
+  transform: scale(1.04);
 }
 
 @keyframes wf-awards-scroll {
@@ -2183,8 +2170,8 @@ a { text-decoration: none; color: inherit; }
   font-family: var(--font-mono);
   font-size: clamp(1.5rem, 2.6vw, 2.1rem);
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-transform: none;
   color: var(--hero-lime);
 }
 
@@ -2435,8 +2422,8 @@ a { text-decoration: none; color: inherit; }
   font-family: var(--font-mono);
   font-size: clamp(1.5rem, 2.6vw, 2.1rem);
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-transform: none;
   color: var(--hero-lime);
 }
 
@@ -2561,8 +2548,8 @@ a { text-decoration: none; color: inherit; }
   font-family: var(--font-mono);
   font-size: clamp(1.5rem, 2.6vw, 2.1rem);
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-transform: none;
   color: var(--hero-lime);
 }
 
@@ -2723,8 +2710,8 @@ a { text-decoration: none; color: inherit; }
   font-family: var(--font-mono);
   font-size: clamp(1.5rem, 2.6vw, 2.1rem);
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-transform: none;
   color: var(--hero-lime, #FCD116);
 }
 
@@ -3135,8 +3122,8 @@ a { text-decoration: none; color: inherit; }
   font-family: var(--font-mono);
   font-size: clamp(1.5rem, 2.6vw, 2.1rem);
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-transform: none;
   color: var(--hero-lime, #FCD116);
   margin-bottom: 1.15rem;
 }
@@ -3971,8 +3958,8 @@ body.wf-privacy-root {
   font-family: var(--font-mono);
   font-size: clamp(1.5rem, 2.6vw, 2.1rem);
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-transform: none;
   color: var(--hero-lime);
 }
 
@@ -4055,8 +4042,8 @@ body.wf-privacy-root {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-transform: none;
   color: rgba(15, 15, 15, 0.5);
 }
 
@@ -4068,6 +4055,7 @@ body.wf-privacy-root {
   letter-spacing: -0.03em;
   line-height: 1.15;
   color: #0f0f0f;
+  text-transform: none;
 }
 
 .wf-lines-panel-lead {
@@ -4200,8 +4188,8 @@ body.wf-privacy-root {
   font-family: var(--font-body);
   font-size: clamp(1.5rem, 2.6vw, 2.1rem);
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-transform: none;
   color: var(--hero-lime, #FCD116);
 }
 
@@ -4521,8 +4509,8 @@ body.wf-privacy-root {
   font-family: var(--font-mono);
   font-size: clamp(1.5rem, 2.6vw, 2.1rem);
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-transform: none;
   color: var(--hero-lime);
 }
 
@@ -4683,7 +4671,7 @@ body.wf-privacy-root {
 }
 
 .wf-platform-cards {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .wf-platform-foot {
@@ -4722,6 +4710,10 @@ body.wf-privacy-root {
 
 @media (max-width: 991.98px) {
   .wf-work-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wf-platform-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -4863,8 +4855,8 @@ body.wf-privacy-root {
   font-family: var(--font-mono);
   font-size: clamp(1.5rem, 2.6vw, 2.1rem);
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-transform: none;
   color: var(--hero-lime);
 }
 

@@ -60,9 +60,9 @@ export default function BusinessPillars() {
     <AnimatedSection className="wf-lines">
       <div className="wf-lines-inner">
         <FadeUp className="wf-lines-intro">
-          <span className="wf-lines-intro-eyebrow">What we do</span>
+          <span className="wf-lines-intro-eyebrow">What We Do</span>
           <h2 className="wf-lines-intro-title">
-            Advisory and capital platforms built for African growth
+            Advisory and Capital Platforms Built for African Growth
           </h2>
         </FadeUp>
 

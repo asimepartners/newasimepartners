@@ -71,12 +71,42 @@ export const heroContent = {
 export const awardsContent = {
   title: "They Trusted Us",
   items: [
-    { name: "Acumen", mark: "Acumen", style: "serif" as const },
-    { name: "Industry Awards", mark: "Industry Awards", style: "serif" as const },
-    { name: "Impact Insights", mark: "Impact Insights", style: "sans" as const },
-    { name: "AESIS", mark: "AESIS", style: "bold" as const },
-    { name: "Collaborative Frontier Finance", mark: "CFF", style: "bold" as const },
-    { name: "Africa Finance Forum", mark: "Africa Finance", style: "sans" as const },
+    {
+      name: "Mastercard",
+      logo: "/images/clients/mastercard.png",
+    },
+    {
+      name: "IFC — International Finance Corporation",
+      logo: "/images/clients/ifc.png",
+    },
+    {
+      name: "European Investment Fund",
+      logo: "/images/clients/european-investment-fund.png",
+    },
+    {
+      name: "Wellcome Trust",
+      logo: "/images/clients/wellcome-trust.png",
+    },
+    {
+      name: "Amref Health Africa",
+      logo: "/images/clients/amref.png",
+    },
+    {
+      name: "Africa Health Collaborative",
+      logo: "/images/clients/africa-health-collaborative.png",
+    },
+    {
+      name: "Impact Investing Ghana",
+      logo: "/images/clients/impact-investing-ghana.png",
+    },
+    {
+      name: "esquared.org.za",
+      logo: "/images/clients/esquared.png",
+    },
+    {
+      name: "Viktoria Business Angels Network",
+      logo: "/images/clients/vban.png",
+    },
   ],
 };
 
@@ -320,7 +350,7 @@ export interface ServiceDetail {
 
 export const advisoryDetail: ServiceDetail = {
   eyebrow: "Advisory",
-  headline: "Advisory across the business, financial and investment lifecycle",
+  headline: "Advisory Across the Business, Financial and Investment Lifecycle",
   items: [
     {
       icon: "manda",
@@ -357,7 +387,7 @@ export const advisoryDetail: ServiceDetail = {
 
 export const managementDetail: ServiceDetail = {
   eyebrow: "Alternative Investments",
-  headline: "Alternative investments across our platforms",
+  headline: "Alternative Investments Across Our Platforms",
   items: [
     {
       icon: "overview",
@@ -399,7 +429,7 @@ export const managementDetail: ServiceDetail = {
 
 export const techDetail: ServiceDetail = {
   eyebrow: "Technology & AI",
-  headline: "Intelligent systems for modern businesses",
+  headline: "Intelligent Systems for Modern Businesses",
   items: [
     {
       icon: "workflow",

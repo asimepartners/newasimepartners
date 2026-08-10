@@ -20,9 +20,13 @@ export default function Awards() {
                   className="wf-awards-item"
                   aria-hidden={index >= awardsContent.items.length}
                 >
-                  <span className={`wf-awards-mark wf-awards-mark--${item.style}`}>
-                    {item.mark}
-                  </span>
+                  <img
+                    src={item.logo}
+                    alt={index >= awardsContent.items.length ? '' : item.name}
+                    className="wf-awards-logo"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </li>
               ))}
             </ul>
