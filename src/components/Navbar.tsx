@@ -7,7 +7,7 @@ import { springSnappy } from './Motion'
 import Magnetic from './Magnetic'
 
 type NavbarProps = {
-  /** `solid` keeps the scrolled dark bar (for inner pages like portfolio). */
+  /** `solid` keeps the solid scrolled bar (for inner pages like portfolio). */
   variant?: 'home' | 'solid'
 }
 
@@ -74,7 +74,7 @@ export default function Navbar({ variant = 'home' }: NavbarProps) {
           <div className="wf-nav-bar">
             <a className="wf-brand" href={homeHref} onClick={closeMenu}>
               <img
-                src="/asime-logo-white.png"
+                src={transparent ? '/asime-logo-white.png' : '/Main.png'}
                 alt={siteBrand.name}
                 className="wf-brand-wordmark-img"
               />

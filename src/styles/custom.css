@@ -186,10 +186,33 @@ a { text-decoration: none; color: inherit; }
 }
 
 .wf-nav--scrolled {
-  background: rgba(0, 0, 0, 0.82);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: #fff;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.wf-nav--scrolled .wf-nav-link {
+  color: rgba(17, 17, 17, 0.82) !important;
+}
+
+.wf-nav--scrolled .wf-nav-link:hover {
+  color: #111 !important;
+}
+
+.wf-nav--scrolled .wf-mega-trigger {
+  border-color: rgba(17, 17, 17, 0.18);
+  background: rgba(17, 17, 17, 0.04);
+  color: #111;
+}
+
+.wf-nav--scrolled .wf-mega-trigger:hover {
+  background: rgba(17, 17, 17, 0.08);
+  border-color: rgba(17, 17, 17, 0.35);
+}
+
+.wf-nav--scrolled .wf-brand-wordmark-img {
+  height: clamp(52px, 6.5vw, 72px);
 }
 
 .wf-nav-bar {
@@ -5692,8 +5715,8 @@ body.wf-portfolio-root {
 
 /* Portfolio uses the shared home navbar in solid mode */
 .wf-portfolio-root .wf-nav--scrolled {
-  background: rgba(0, 0, 0, 0.92) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: #fff !important;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08) !important;
 }
 
 .wf-pf-hero {
@@ -6006,8 +6029,8 @@ body.wf-media-root {
 }
 
 .wf-media-root .wf-nav--scrolled {
-  background: rgba(0, 0, 0, 0.92) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: #fff !important;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08) !important;
 }
 
 .wf-media-hero {

@@ -55,10 +55,10 @@
 }
 
 .wf-nav--scrolled {
-  background: rgba(0, 0, 0, 0.82) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-  backdrop-filter: blur(14px) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
+  background: #fff !important;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 /* ── Hero CTA ───────────────────────────────────────────────── */
