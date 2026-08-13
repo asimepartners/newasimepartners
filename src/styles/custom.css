@@ -730,11 +730,18 @@ a { text-decoration: none; color: inherit; }
   color: #FCD116 !important;
 }
 
+.wf-awards-banner {
+  width: 100%;
+  background: #fff;
+  border-block: 1px solid rgba(255, 255, 255, 0.08);
+  padding: clamp(1.25rem, 2.5vw, 1.75rem) 0;
+}
+
 .wf-awards-marquee {
   position: relative;
   overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
 
 .wf-awards-track {
@@ -754,9 +761,9 @@ a { text-decoration: none; color: inherit; }
   padding: 0;
   display: flex;
   align-items: center;
-  gap: clamp(2.5rem, 5vw, 4.5rem);
+  gap: clamp(2.25rem, 4.5vw, 4rem);
   flex-wrap: nowrap;
-  padding-right: clamp(2.5rem, 5vw, 4.5rem);
+  padding-right: clamp(2.25rem, 4.5vw, 4rem);
 }
 
 .wf-awards-item {
@@ -764,18 +771,21 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 4.5rem;
-  padding: 0.35rem 0.5rem;
+  min-height: clamp(3.5rem, 6vw, 4.5rem);
+  padding: 0.25rem 0.35rem;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .wf-awards-logo {
   display: block;
   width: auto;
-  height: clamp(2.75rem, 4.5vw, 3.75rem);
-  max-width: min(11rem, 28vw);
+  height: clamp(2.5rem, 4vw, 3.5rem);
+  max-width: min(10rem, 28vw);
   object-fit: contain;
   background: transparent;
-  opacity: 0.92;
+  opacity: 0.95;
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 

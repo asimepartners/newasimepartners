@@ -73,45 +73,45 @@ export const awardsContent = {
   items: [
     {
       name: "Mastercard",
-      logo: "/images/clients/mastercard.png",
+      logo: "/images/clients/mastercard.png?v=2",
     },
     {
       name: "IFC — International Finance Corporation",
-      logo: "/images/clients/ifc.png",
+      logo: "/images/clients/ifc.png?v=2",
     },
     {
       name: "European Investment Fund",
-      logo: "/images/clients/european-investment-fund.png",
+      logo: "/images/clients/european-investment-fund.png?v=2",
     },
     {
       name: "Wellcome Trust",
-      logo: "/images/clients/wellcome-trust.png",
+      logo: "/images/clients/wellcome-trust.png?v=2",
     },
     {
       name: "Amref Health Africa",
-      logo: "/images/clients/amref.png",
+      logo: "/images/clients/amref.png?v=3",
     },
     {
       name: "Africa Health Collaborative",
-      logo: "/images/clients/africa-health-collaborative.png",
+      logo: "/images/clients/africa-health-collaborative.png?v=3",
     },
     {
       name: "Impact Investing Ghana",
-      logo: "/images/clients/impact-investing-ghana.png",
+      logo: "/images/clients/impact-investing-ghana.png?v=2",
     },
     {
       name: "esquared.org.za",
-      logo: "/images/clients/esquared.png",
+      logo: "/images/clients/esquared.png?v=2",
     },
     {
       name: "Viktoria Business Angels Network",
-      logo: "/images/clients/vban.png",
+      logo: "/images/clients/vban.png?v=2",
     },
   ],
 };
 
 export const primaryNavLinks = [
-  { label: "Platform", href: "#platform" },
+  { label: "Platforms", href: "#platform" },
   { label: "Advisory", href: "#advisory" },
   { label: "Alternatives", href: "#management-detail" },
   { label: "Tech & AI", href: "#technology" },
@@ -130,7 +130,7 @@ export interface PlatformCard {
 }
 
 export const platformIntro = {
-  title: "Our Platform",
+  title: "Our Platforms",
   body: "We’re a multi-strategy investment platform with an existing portfolio of assets across private markets in Africa.",
   ctaLabel: "Explore our portfolio",
   ctaHref: "/portfolio.html",
