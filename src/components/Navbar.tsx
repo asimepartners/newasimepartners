@@ -17,13 +17,23 @@ function resolveHref(href: string, variant: NavbarProps['variant']) {
   return href
 }
 
+function getSectionIds() {
+  return primaryNavLinks
+    .map((link) => link.href)
+    .filter((href): href is `#${string}` => href.startsWith('#'))
+    .map((href) => href.slice(1))
+}
+
 export default function Navbar({ variant = 'home' }: NavbarProps) {
   const [overHero, setOverHero] = useState(variant === 'home')
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeHref, setActiveHref] = useState('')
 
   useEffect(() => {
     if (variant === 'solid') {
       setOverHero(false)
+      const path = window.location.pathname
+      if (path.includes('media')) setActiveHref('/media.html')
       return
     }
 
@@ -34,6 +44,40 @@ export default function Navbar({ variant = 'home' }: NavbarProps) {
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
+  }, [variant])
+
+  useEffect(() => {
+    if (variant !== 'home') return
+
+    const sectionIds = getSectionIds()
+
+    const updateActive = () => {
+      const marker = (document.querySelector<HTMLElement>('.wf-nav-header')?.offsetHeight ?? 96) + 48
+      let current = ''
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id)
+        if (!el) continue
+        const top = el.getBoundingClientRect().top
+        if (top <= marker) current = `#${id}`
+      }
+
+      if (!current && window.location.hash) {
+        current = window.location.hash
+      }
+
+      setActiveHref(current)
+    }
+
+    updateActive()
+    window.addEventListener('scroll', updateActive, { passive: true })
+    window.addEventListener('hashchange', updateActive)
+    window.addEventListener('resize', updateActive)
+    return () => {
+      window.removeEventListener('scroll', updateActive)
+      window.removeEventListener('hashchange', updateActive)
+      window.removeEventListener('resize', updateActive)
+    }
   }, [variant])
 
   useEffect(() => {
@@ -81,17 +125,24 @@ export default function Navbar({ variant = 'home' }: NavbarProps) {
             </a>
 
             <ul className="wf-nav-links">
-              {primaryNavLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={resolveHref(link.href, variant)}
-                    className="wf-nav-link"
-                    onClick={closeMenu}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              {primaryNavLinks.map((link) => {
+                const isActive = activeHref === link.href
+                return (
+                  <li key={link.label}>
+                    <a
+                      href={resolveHref(link.href, variant)}
+                      className={`wf-nav-link${isActive ? ' wf-nav-link--active' : ''}`}
+                      aria-current={isActive ? 'true' : undefined}
+                      onClick={() => {
+                        if (link.href.startsWith('#')) setActiveHref(link.href)
+                        closeMenu()
+                      }}
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                )
+              })}
             </ul>
 
             <div className="wf-nav-actions">

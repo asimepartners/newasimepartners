@@ -56,10 +56,11 @@ export const heroContent = {
   scrollLabel: "SCROLL DOWN",
   focusAreas:
     "Climate & Impact | Alternative Investments | AI Systems | M&A Advisory | Executive Training",
-  image: "/images/sliders/01.jpg?v=3",
+  image: "/images/sliders/04.jpg?v=1",
   imageAlt:
     "Asime Partners team and partners across advisory, industry, and technology",
   slides: [
+    "/images/sliders/04.jpg?v=1",
     "/images/sliders/01.jpg?v=3",
     "/images/sliders/02.jpg?v=3",
     "/images/sliders/03.jpg?v=3",
@@ -139,7 +140,7 @@ export const platformIntro = {
 export const platformCards: PlatformCard[] = [
   {
     title: "Asime Ventures",
-    category: "Generalist Private Markets",
+    category: "Private Markets",
     description:
       "A diversified portfolio of 30+ initial angel investments. See our portfolio section. We have opportunities across infrastructure, Climate, Fintech, Mobility and Agribusiness.",
     href: "#our-work",
@@ -147,7 +148,7 @@ export const platformCards: PlatformCard[] = [
   },
   {
     title: "Jaza Rift",
-    category: "Health & Bio Private Markets",
+    category: "Health & Bio",
     description:
       "Digital health, Medtech and Biotech investment platform. We have opportunities across healthcare assets across Africa (Hospitals, Clinics, Pharma manufacturing etc.).",
     href: "#management",
@@ -232,10 +233,10 @@ export const navGroups = [
 export const businessLines = {
   advisory: {
     eyebrow: "Advisory",
-    title: "Advisory",
+    title: "Business & Financial Advisory",
     summary: "Trusted advisors across Africa.",
     description:
-      "Our Business and Financial Advisory offers professional services to improve your performance, manage growth, and achieve strategic objectives by integrating financial analysis with operational and strategic guidance.",
+      "Our professional services help organisations improve business and financial performance, manage growth, and achieve strategic objectives by integrating financial analysis with operational and strategic guidance. We support organisations to design, structure and launch funds of all types, including blended capital structures, impact funds and more complex investment vehicles.",
     href: "#advisory-detail",
     cta: "Read More",
     image: "/images/advisory-card.jpg",
@@ -246,7 +247,7 @@ export const businessLines = {
     title: "Alternative Investments",
     summary: "Capital deployed through focused platforms.",
     description:
-      "We offer professional service to high-net-worth individuals, family offices, or institutional clients to design, manage, and execute strategies involving non-traditional asset classes beyond public equities, bonds, and cash. These can include: Private Equity, Private Credit, Real Assets, Digital Assets and other Structured Products.",
+      "We offer professional services to high-net-worth individuals, family offices, or institutional clients to design, manage, and execute strategies involving non-traditional asset classes beyond public equities, bonds, and cash. These can include: Private Equity, Private Credit, Real Assets, Digital Assets and other Structured Products.",
     href: "#management-detail",
     cta: "Read More",
     image: "/images/02.jpg",
@@ -257,7 +258,7 @@ export const businessLines = {
     title: "Technology & AI",
     summary: "Intelligent systems for modern investing.",
     description:
-      "Our technology and AI Systems advisory offers a structured, expert-led engagement that you assess, plan, and implement AI and other advanced technology systems in a way that aligns with your strategic goals, risk tolerance, and operational realities. It starts with process mapping and automation, and combines technical domain expertise with business acumen to guide decision-making, governance, and execution to get to AI agents design and orchestration.",
+      "Our technology and AI Systems advisory offers a structured, expert-led engagement that helps you assess, plan, and implement AI and other advanced technology systems in a way that aligns with your strategic goals, risk tolerance, and operational realities. It starts with process mapping and automation, and combines technical domain expertise with business acumen to guide decision-making, governance, and execution to get to AI agents design and orchestration.",
     href: "#tech-detail",
     cta: "Read More",
     image: "/sectors/ai.jpg",

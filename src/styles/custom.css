@@ -20,9 +20,9 @@
   --gh-green-d:   #004D2E;
   --gh-black:     #1A1A1A;
 
-  /* Brand tokens — mapped from Ghana colors (replaces blue) */
-  --jz-blue:   var(--gh-green);
-  --jz-blue-d: var(--gh-green-d);
+  /* Brand tokens — yellow accent (replaces legacy blue/green) */
+  --jz-blue:   var(--gh-gold);
+  --jz-blue-d: var(--gh-gold-d);
   --jz-grey:   #404545;
   --jz-white:  #FFFFFF;
   --jz-yellow: var(--gh-gold);
@@ -622,6 +622,7 @@ a { text-decoration: none; color: inherit; }
 
 .wf-nav-link {
   display: inline-block;
+  position: relative;
   font-family: var(--font-body);
   font-size: 1.05rem;
   font-weight: 500;
@@ -632,8 +633,20 @@ a { text-decoration: none; color: inherit; }
   transition: color 0.25s var(--ease-smooth);
 }
 
-.wf-nav-link:hover {
+.wf-nav-link:hover,
+.wf-nav-link--active {
   color: var(--hero-lime, #FCD116) !important;
+}
+
+.wf-nav-link--active::after {
+  content: '';
+  position: absolute;
+  left: 0.2rem;
+  right: 0.2rem;
+  bottom: 0;
+  height: 2px;
+  background: var(--hero-lime, #FCD116);
+  border-radius: 999px;
 }
 
 .wf-btn-nav {
@@ -645,14 +658,15 @@ a { text-decoration: none; color: inherit; }
   padding: 0.55rem 1.4rem;
   border-radius: var(--radius-full);
   background: var(--jz-blue);
-  color: var(--jz-white) !important;
+  color: #111 !important;
   transition: all 0.4s var(--ease-smooth);
 }
 
 .wf-btn-nav:hover {
   background: var(--jz-blue-d);
+  color: #111 !important;
   transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(0,107,63,0.25);
+  box-shadow: 0 4px 20px rgba(252, 209, 22, 0.35);
 }
 
 /* ── 6. Buttons ─────────────────────────────────────────────── */
@@ -1870,7 +1884,7 @@ a { text-decoration: none; color: inherit; }
   position: relative;
   flex: 1;
   height: 2px;
-  background: linear-gradient(90deg, var(--jz-blue) 0%, rgba(0,107,63,0.2) 100%);
+  background: linear-gradient(90deg, var(--jz-blue) 0%, rgba(252, 209, 22, 0.2) 100%);
   margin-left: 0.5rem;
   overflow: hidden;
   transform-origin: left center;
@@ -2734,7 +2748,11 @@ a { text-decoration: none; color: inherit; }
 .wf-adv {
   background: #000;
   padding: clamp(2.25rem, 4.5vw, 3.75rem) 0;
-  scroll-margin-top: 6.5rem;
+  scroll-margin-top: 3.25rem;
+}
+
+#tech-detail {
+  scroll-margin-top: 3.25rem;
 }
 
 .wf-adv-inner {
@@ -4208,7 +4226,7 @@ body.wf-privacy-root {
 
 /* About — identity / vision / values layout */
 .wf-about {
-  --about-navy: #1B3A5C;
+  --about-navy: #C9A000;
   --about-green: #1E5A46;
   --about-heading: #FFFFFF;
   --about-body: rgba(255, 255, 255, 0.68);
@@ -4532,7 +4550,7 @@ body.wf-privacy-root {
 /* Highlighted Work — case study cards on deep navy */
 .wf-work {
   --work-navy: #000;
-  --work-blue: #4A63E8;
+  --work-blue: #C9A000;
   position: relative;
   isolation: isolate;
   background: var(--work-navy);
@@ -4816,7 +4834,7 @@ body.wf-privacy-root {
 
 /* Legacy hooks */
 .wf-cb-work {
-  background: var(--work-navy, #0D1B3E);
+  background: var(--work-navy, #000);
 }
 
 @media (max-width: 991.98px) {

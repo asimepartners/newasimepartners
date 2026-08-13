@@ -19,7 +19,7 @@ import {
   FlowConnectionIcon,
 } from '@hugeicons/core-free-icons'
 import type { ServiceDetail } from '@/data/content'
-import { AnimatedSection, FadeUp, StaggerParent, StaggerItem, motion } from './Motion'
+import { FadeUp, StaggerParent, StaggerItem, motion } from './Motion'
 
 const ICONS: Record<string, typeof AnalyticsUpIcon> = {
   overview: ChartIncreaseIcon,
@@ -43,7 +43,7 @@ const ICONS: Record<string, typeof AnalyticsUpIcon> = {
 
 export default function AdvisoryDetail({ id, content }: { id: string; content: ServiceDetail }) {
   return (
-    <AnimatedSection id={id} className="wf-adv">
+    <section id={id} className="wf-adv">
       <div className="wf-adv-inner">
         <FadeUp className="wf-adv-head">
           <span className="wf-adv-eyebrow">{content.eyebrow}</span>
@@ -69,6 +69,6 @@ export default function AdvisoryDetail({ id, content }: { id: string; content: S
           ))}
         </StaggerParent>
       </div>
-    </AnimatedSection>
+    </section>
   )
 }

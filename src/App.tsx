@@ -4,11 +4,13 @@ import Hero from './components/Hero'
 import Awards from './components/Awards'
 import OurPlatform from './components/OurPlatform'
 import BusinessPillars from './components/BusinessPillars'
+import AdvisoryDetail from './components/AdvisoryDetail'
 import ScrollProgress from './components/ScrollProgress'
 import FilmGrain from './components/FilmGrain'
 import ScrollToTop from './components/ScrollToTop'
 import DeferredMount from './components/DeferredMount'
 import { useSmoothScroll } from './hooks/useSmoothScroll'
+import { advisoryDetail, managementDetail, techDetail } from './data/content'
 
 const OurPeople = lazy(() => import('./components/OurPeople'))
 const HighlightedWork = lazy(() => import('./components/HighlightedWork'))
@@ -21,27 +23,9 @@ const ApplyCta = lazy(() => import('./components/ApplyCta'))
 const Footer = lazy(() => import('./components/Footer'))
 const CookieBanner = lazy(() => import('./components/CookieBanner'))
 
-const DeferredDetails = lazy(async () => {
-  const [{ default: AdvisoryDetail }, { advisoryDetail, managementDetail, techDetail }] =
-    await Promise.all([import('./components/AdvisoryDetail'), import('./data/content')])
-
-  return {
-    default: function Details() {
-      return (
-        <>
-          <AdvisoryDetail id="advisory-detail" content={advisoryDetail} />
-          <AdvisoryDetail id="management-detail" content={managementDetail} />
-          <AdvisoryDetail id="tech-detail" content={techDetail} />
-        </>
-      )
-    },
-  }
-})
-
 function LazyBelowFold() {
   return (
     <Suspense fallback={null}>
-      <DeferredDetails />
       <OurPeople />
       <Team />
       <HighlightedWork />
@@ -67,6 +51,9 @@ export default function App() {
         <Awards />
         <OurPlatform />
         <BusinessPillars />
+        <AdvisoryDetail id="advisory-detail" content={advisoryDetail} />
+        <AdvisoryDetail id="management-detail" content={managementDetail} />
+        <AdvisoryDetail id="tech-detail" content={techDetail} />
         <DeferredMount>
           <LazyBelowFold />
         </DeferredMount>

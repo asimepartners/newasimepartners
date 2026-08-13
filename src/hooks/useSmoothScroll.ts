@@ -1,7 +1,11 @@
 import { useEffect } from 'react'
 import Lenis from 'lenis'
 
-const NAV_OFFSET = 100
+function getNavOffset() {
+  const header = document.querySelector<HTMLElement>('.wf-nav-header')
+  const height = header?.getBoundingClientRect().height ?? 96
+  return Math.round(Math.max(height - 36, 48))
+}
 
 function waitForTarget(hash: string, timeoutMs = 2500): Promise<HTMLElement | null> {
   const existing = document.querySelector(hash)
@@ -27,19 +31,31 @@ function waitForTarget(hash: string, timeoutMs = 2500): Promise<HTMLElement | nu
   })
 }
 
+function alignTarget(target: HTMLElement, lenis?: Lenis | null) {
+  const offset = getNavOffset()
+
+  if (lenis) {
+    lenis.scrollTo(target, { offset: -offset, duration: 1.05 })
+    return
+  }
+
+  const top = target.getBoundingClientRect().top + window.scrollY - offset
+  window.scrollTo({ top, behavior: 'smooth' })
+}
+
 async function scrollToHash(hash: string, lenis?: Lenis | null) {
   const target = await waitForTarget(hash)
   if (!target) return
 
   history.pushState(null, '', hash)
 
-  if (lenis) {
-    lenis.scrollTo(target, { offset: -NAV_OFFSET, duration: 1.05 })
-    return
-  }
+  // Ensure lazy/layout content has painted before measuring.
+  await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
+  alignTarget(target, lenis)
 
-  const top = target.getBoundingClientRect().top + window.scrollY - NAV_OFFSET
-  window.scrollTo({ top, behavior: 'smooth' })
+  // Re-align after layout settles so the full section sits below the fixed nav.
+  window.setTimeout(() => alignTarget(target, lenis), 180)
+  window.setTimeout(() => alignTarget(target, lenis), 480)
 }
 
 export function useSmoothScroll() {
