@@ -15,8 +15,7 @@ const innovationIcons: IconSvgElement[] = [
 const ghanaCardColors = ['red', 'gold', 'green', 'red'] as const
 
 export default function InnovationLabs() {
-  const [introText, ...serviceItems] = innovationLabsIntro.body
-  const serviceCards = serviceItems.map((item) => {
+  const serviceCards = innovationLabsIntro.body.map((item) => {
     const separatorIndex = item.indexOf(':')
 
     if (separatorIndex === -1) {
@@ -36,19 +35,19 @@ export default function InnovationLabs() {
     <AnimatedSection id="work-with-us" className="wf-innovation-labs wf-section">
       <div className="container">
         <div className="wf-section-eyebrow-row">
-          <span className="wf-eyebrow">Work With Us</span>
+          <span className="wf-eyebrow">{innovationLabsIntro.eyebrow}</span>
           <div className="wf-hr" />
         </div>
 
         <div className="row mt-5">
           <div className="col-lg-5">
             <SlideRight>
-              <h2 className="wf-display">Partner & Apply</h2>
+              <h2 className="wf-display">{innovationLabsIntro.headline}</h2>
             </SlideRight>
           </div>
           <div className="col-lg-6 offset-lg-1 mt-4 mt-lg-0">
             <FadeUp>
-              <p className="wf-prose wf-prose-light">{introText}</p>
+              <p className="wf-prose wf-prose-light">{innovationLabsIntro.lead}</p>
             </FadeUp>
           </div>
         </div>

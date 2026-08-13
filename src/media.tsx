@@ -2,8 +2,26 @@ import { StrictMode, useEffect, useId, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { HugeiconsIcon } from '@hugeicons/react'
-import { Cancel01Icon, PlayIcon } from '@hugeicons/core-free-icons'
-import { mediaPage, mediaVideos, type MediaVideo } from '@/data/media'
+import { Cancel01Icon, Linkedin01Icon, PlayIcon, YoutubeIcon } from '@hugeicons/core-free-icons'
+import { mediaPage, mediaVideos, type MediaSocialChannel, type MediaVideo } from '@/data/media'
+
+function SubstackIcon({ size = 22 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
+    </svg>
+  )
+}
+
+function SocialIcon({ icon }: { icon: MediaSocialChannel['icon'] }) {
+  if (icon === 'linkedin') {
+    return <HugeiconsIcon icon={Linkedin01Icon} size={22} strokeWidth={2} />
+  }
+  if (icon === 'youtube') {
+    return <HugeiconsIcon icon={YoutubeIcon} size={22} strokeWidth={2} />
+  }
+  return <SubstackIcon size={20} />
+}
 import { dismissPreloader } from '@/utils/dismissPreloader'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -100,14 +118,23 @@ function MediaPage() {
               {mediaPage.title}
             </h1>
             <p className="wf-media-body">{mediaPage.body}</p>
-            <a
-              href={mediaPage.channelHref}
-              className="wf-media-channel"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {mediaPage.channelLabel}
-            </a>
+            <ul className="wf-media-socials" aria-label="Social media channels">
+              {mediaPage.socials.map((social) => (
+                <li key={social.label}>
+                  <a
+                    href={social.href}
+                    className="wf-media-social"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    title={social.label}
+                  >
+                    <SocialIcon icon={social.icon} />
+                    <span className="wf-media-social-label">{social.label}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 

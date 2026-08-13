@@ -42,7 +42,7 @@ export default function ApplyCta() {
         <div className="wf-wwu-shell">
           <div className="wf-wwu-inner">
             <FadeUp className="wf-wwu-header">
-              <span className="wf-wwu-eyebrow">Work With Us</span>
+              <span className="wf-wwu-eyebrow">{applyCta.eyebrow}</span>
               <h2 className="wf-display wf-wwu-title">{applyCta.headline}</h2>
               <p className="wf-prose wf-wwu-prose">{applyCta.body}</p>
             </FadeUp>

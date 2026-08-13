@@ -111,10 +111,10 @@ export const awardsContent = {
 };
 
 export const primaryNavLinks = [
-  { label: "Platforms", href: "#platform" },
+  { label: "Platform", href: "#platform" },
   { label: "Advisory", href: "#advisory" },
   { label: "Alternatives", href: "#management-detail" },
-  { label: "Tech & AI", href: "#technology" },
+  { label: "Tech & AI", href: "#tech-detail" },
   { label: "Media", href: "/media.html" },
   { label: "About Us", href: "#our-people" },
 ] as const;
@@ -130,7 +130,7 @@ export interface PlatformCard {
 }
 
 export const platformIntro = {
-  title: "Our Platforms",
+  title: "Our Platform",
   body: "We’re a multi-strategy investment platform with an existing portfolio of assets across private markets in Africa.",
   ctaLabel: "Explore our portfolio",
   ctaHref: "/portfolio.html",
@@ -154,18 +154,18 @@ export const platformCards: PlatformCard[] = [
     image: "/images/platform/02-jaza-rift.jpg",
   },
   {
-    title: "REIT",
-    category: "Listed and Unlisted Real Estate",
+    title: "Real Estate",
+    category: "Listed and Unlisted",
     description:
-      "Diversified unlisted Real Estate portfolio to be listed in the near term.",
+      "Diversified unlisted Real Estate portfolio to be listed in the near term. Commercial and Residential Real Estate. REITs in Kenya, Ghana, South Africa and Nigeria.",
     href: "#management",
-    image: "/images/platform/03-reit.jpg",
+    image: "/images/platform/03-reit.jpg?v=2",
   },
   {
-    title: "Listed Assets & Digital Assets",
-    category: "Emerging Markets Public Markets",
+    title: "Assets (Listed & Digital)",
+    category: "Public Markets",
     description:
-      "Access to EM fund managers and potential for managed funds on behalf of clients across government bonds, African equities and corporate bonds. Stable coins, crypto and other digital assets exposed entities for strong liquidity FX and cashflow management.",
+      "Government bonds, African equities and corporate bonds via reputable Emerging Markets fund managers. Stable coins, crypto and other digital assets.",
     href: "#management-detail",
     image: "/images/platform/04-listed-digital.jpg",
   },
@@ -872,8 +872,10 @@ export const diligenceCards = [
 /* ── Work With Us (Innovation Lab section) ───────────────── */
 
 export const innovationLabsIntro = {
+  eyebrow: "Work With Us",
+  headline: "Trust and Bond",
+  lead: "We build relationships based on trust and bond with people, not processes.",
   body: [
-    "Partner with Asime Partners to access capital, advisory expertise, and a network built for inclusive growth across Africa.",
     "Apply to Chale Fund: Impact focused funding for qualifying ventures and SMEs.",
     "Apply as a Tech Startup: For technology enabled companies seeking venture or angel capital.",
     "Apply SME/MSME/SGB: For small and growing businesses seeking growth capital and advisory support.",
@@ -1171,8 +1173,9 @@ export const faqItems: FaqItem[] = [
 /* ── Apply CTA ───────────────────────────────────────────── */
 
 export const applyCta = {
-  headline: "Work With Us",
-  body: "Partner with Asime Partners, apply to the Chale Fund, or submit your proposal as a tech startup or SME/MSME/SGB.",
+  eyebrow: "Work With Us",
+  headline: "Trust and Bond",
+  body: "We build relationships based on trust and bond with people, not processes.",
   buttonLabel: "Contact Us",
   buttonHref: "mailto:info@asimepartners.com",
 };

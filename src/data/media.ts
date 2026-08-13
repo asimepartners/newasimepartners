@@ -7,13 +7,36 @@ export interface MediaVideo {
   thumbnail: string
 }
 
+export type MediaSocialChannel = {
+  label: string
+  href: string
+  icon: "linkedin" | "substack" | "youtube"
+}
+
 export const mediaPage = {
   title: "Media",
-  body: "Watch Tales of an African CEO (TOAC) — conversations with founders, investors, and leaders shaping Africa’s tech and investment ecosystem.",
+  body: "Engage with our experts across our social media channels",
   heroImage: "/images/more/partner.jpg",
   channelLabel: "Watch on YouTube",
   channelHref: "https://www.youtube.com/@toac_show",
   watchLabel: "Watch",
+  socials: [
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/company/asimepartners",
+      icon: "linkedin",
+    },
+    {
+      label: "Substack",
+      href: "https://substack.com/@asimepartners",
+      icon: "substack",
+    },
+    {
+      label: "YouTube",
+      href: "https://www.youtube.com/@toac_show",
+      icon: "youtube",
+    },
+  ] satisfies MediaSocialChannel[],
 }
 
 /** Videos from https://www.youtube.com/@toac_show */
