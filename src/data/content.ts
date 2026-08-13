@@ -51,8 +51,8 @@ export const heroContent = {
     "Building the trust and bond that unlocks global capital for frontier market alternative strategies.",
   ctaPrimary: { label: "GET IN TOUCH", href: "#apply" },
   ctaNav: { label: "Apply Now", href: "#apply" },
-  typingText: "Alternative Investments, Advisory, Technology & AI",
-  typingPhrases: ["Alternative Investments", "Advisory", "Technology & AI"],
+  typingText: "Platform, Alternative Investments, Advisory, Technology & AI",
+  typingPhrases: ["Platform", "Alternative Investments", "Advisory", "Technology & AI"],
   scrollLabel: "SCROLL DOWN",
   focusAreas:
     "Climate & Impact | Alternative Investments | AI Systems | M&A Advisory | Executive Training",
