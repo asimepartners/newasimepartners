@@ -1,7 +1,8 @@
 import { HugeiconsIcon } from '@hugeicons/react'
 import { ArrowRight01Icon } from '@hugeicons/core-free-icons'
 import { insightCards, insightsIntro } from '@/data/content'
-import { AnimatedSection, FadeUp, StaggerParent, StaggerItem, motion } from './Motion'
+import { AnimatedSection, FadeUp, StaggerParent, StaggerItem } from './Motion'
+import PhotoCard from './PhotoCard'
 
 export default function Insights() {
   return (
@@ -15,26 +16,17 @@ export default function Insights() {
           <p className="wf-news2-sub">{insightsIntro.body}</p>
         </FadeUp>
 
-        <StaggerParent className="wf-news2-grid">
+        <StaggerParent className="wf-news2-grid wf-work-cards wf-photo-card-grid">
           {insightCards.map((card, index) => (
             <StaggerItem key={card.title} index={index}>
-              <motion.a
+              <PhotoCard
                 href={card.href}
-                className="wf-news2-card"
-                whileHover={{ y: -4 }}
-                transition={{ type: 'spring', stiffness: 320, damping: 26 }}
-              >
-                <div className="wf-news2-card-media">
-                  <img src={card.image} alt="" loading="lazy" decoding="async" />
-                </div>
-                <div className="wf-news2-card-body">
-                  <div className="wf-news2-meta">
-                    <time>{card.date}</time>
-                    <span className="wf-news2-cat">{card.platform}</span>
-                  </div>
-                  <h3 className="wf-news2-card-title">{card.title}</h3>
-                </div>
-              </motion.a>
+                image={card.image}
+                category={card.platform}
+                meta={card.date}
+                title={card.title}
+                cta="Read more"
+              />
             </StaggerItem>
           ))}
         </StaggerParent>

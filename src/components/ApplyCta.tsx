@@ -1,7 +1,6 @@
-import { HugeiconsIcon } from '@hugeicons/react'
-import { ArrowRight01Icon } from '@hugeicons/core-free-icons'
 import { applyCta, siteBrand } from '@/data/content'
-import { AnimatedSection, FadeUp, StaggerParent, StaggerItem, motion } from './Motion'
+import { AnimatedSection, FadeUp, StaggerParent, StaggerItem } from './Motion'
+import PhotoCard from './PhotoCard'
 
 const workWithUsPaths: {
   label: string
@@ -47,34 +46,17 @@ export default function ApplyCta() {
               <p className="wf-prose wf-wwu-prose">{applyCta.body}</p>
             </FadeUp>
 
-            <StaggerParent className="wf-wwu-paths wf-wwu-paths--full">
+            <StaggerParent className="wf-wwu-paths wf-wwu-paths--full wf-photo-card-grid">
               {workWithUsPaths.map((path, index) => (
-                <StaggerItem key={path.label} index={index} className="wf-wwu-path-col">
-                  <motion.a
+                <StaggerItem key={path.label} index={index}>
+                  <PhotoCard
                     href={path.href}
-                    className="wf-wwu-path"
-                    whileHover={{ y: -6 }}
-                    transition={{ type: 'spring', stiffness: 320, damping: 24 }}
-                  >
-                    <span className="wf-wwu-path-top">
-                      <span className="wf-wwu-path-icon">
-                        <img src={path.image} alt="" loading="lazy" decoding="async" />
-                      </span>
-                      <span className="wf-wwu-path-num" aria-hidden="true">
-                        {String(index + 1).padStart(2, '0')}
-                      </span>
-                    </span>
-                    <span className="wf-wwu-path-copy">
-                      <span className="wf-wwu-path-label">{path.label}</span>
-                      <span className="wf-wwu-path-hint">{path.hint}</span>
-                    </span>
-                    <span className="wf-wwu-path-cta" aria-hidden="true">
-                      <span className="wf-wwu-path-cta-text">Learn more</span>
-                      <span className="wf-wwu-path-arrow">
-                        <HugeiconsIcon icon={ArrowRight01Icon} size={18} strokeWidth={2.5} />
-                      </span>
-                    </span>
-                  </motion.a>
+                    image={path.image}
+                    category={String(index + 1).padStart(2, '0')}
+                    title={path.label}
+                    description={path.hint}
+                    cta="Learn more"
+                  />
                 </StaggerItem>
               ))}
             </StaggerParent>

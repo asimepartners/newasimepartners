@@ -26,6 +26,7 @@ import { dismissPreloader } from '@/utils/dismissPreloader'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ScrollToTop from '@/components/ScrollToTop'
+import PhotoCard from '@/components/PhotoCard'
 import './styles/custom.css'
 import './styles/typography.css'
 import './styles/theme-dark.css'
@@ -139,30 +140,20 @@ function MediaPage() {
         </section>
 
         <div className="wf-media-inner">
-          <ul className="wf-media-grid">
+          <ul className="wf-media-grid wf-photo-card-grid">
             {mediaVideos.map((video) => (
               <li key={video.id}>
-                <button
-                  type="button"
-                  className="wf-media-card"
+                <PhotoCard
+                  image={video.thumbnail}
+                  title={video.title}
+                  cta={mediaPage.watchLabel}
                   onClick={() => setActive(video)}
-                >
-                  <span className="wf-media-card-thumb">
-                    <img
-                      src={video.thumbnail}
-                      alt=""
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <span className="wf-media-card-play" aria-hidden="true">
+                  mediaOverlay={
+                    <span className="wf-photo-card-play" aria-hidden="true">
                       <HugeiconsIcon icon={PlayIcon} size={28} strokeWidth={2} />
                     </span>
-                  </span>
-                  <span className="wf-media-card-copy">
-                    <span className="wf-media-card-title">{video.title}</span>
-                    <span className="wf-media-card-watch">{mediaPage.watchLabel}</span>
-                  </span>
-                </button>
+                  }
+                />
               </li>
             ))}
           </ul>

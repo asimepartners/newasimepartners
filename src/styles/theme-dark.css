@@ -142,24 +142,32 @@ body {
   color: #fff !important;
 }
 
-.wf-main .wf-case-question,
-.wf-case-question {
-  color: #111 !important;
-}
-
 .wf-main .wf-case-category,
-.wf-case-category {
-  color: #C9A000 !important;
+.wf-case-category,
+.wf-main .wf-photo-card-category,
+.wf-photo-card-category {
+  color: var(--hero-lime, #FCD116) !important;
 }
 
-.wf-main .wf-case-country,
-.wf-case-country {
-  color: rgba(17, 17, 17, 0.4) !important;
+.wf-main .wf-case-question,
+.wf-case-question,
+.wf-main .wf-photo-card-title,
+.wf-photo-card-title {
+  color: #fff !important;
 }
 
 .wf-main .wf-case-desc,
-.wf-case-desc {
-  color: rgba(17, 17, 17, 0.6) !important;
+.wf-case-desc,
+.wf-main .wf-photo-card-desc,
+.wf-photo-card-desc {
+  color: rgba(255, 255, 255, 0.68) !important;
+}
+
+.wf-main .wf-case-country,
+.wf-case-country,
+.wf-main .wf-photo-card-meta-secondary,
+.wf-photo-card-meta-secondary {
+  color: rgba(255, 255, 255, 0.45) !important;
 }
 
 /* ── Our people ────────────────────────────────────────────────── */

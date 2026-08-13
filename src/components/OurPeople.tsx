@@ -1,7 +1,7 @@
 import { HugeiconsIcon } from '@hugeicons/react'
-import { CogIcon, HandHelpingIcon, ViewIcon } from '@hugeicons/core-free-icons'
+import { ArrowDown01Icon, CogIcon, HandHelpingIcon, ViewIcon } from '@hugeicons/core-free-icons'
 import { aboutContent } from '@/data/content'
-import { AnimatedSection, FadeUp, StaggerParent, StaggerItem, motion } from './Motion'
+import { AnimatedSection, FadeUp, StaggerParent, StaggerItem } from './Motion'
 
 export default function OurPeople() {
   return (
@@ -46,15 +46,12 @@ export default function OurPeople() {
         </StaggerParent>
 
         <FadeUp index={2} className="wf-about-cta-wrap">
-          <motion.a
-            href={aboutContent.cta.href}
-            className="wf-about-cta"
-            whileHover={{ y: -2, scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 22 }}
-          >
+          <a href={aboutContent.cta.href} className="wf-about-cta">
             {aboutContent.cta.label}
-          </motion.a>
+            <span className="wf-about-cta-arrow" aria-hidden="true">
+              <HugeiconsIcon icon={ArrowDown01Icon} size={18} strokeWidth={2.4} />
+            </span>
+          </a>
         </FadeUp>
       </div>
     </AnimatedSection>

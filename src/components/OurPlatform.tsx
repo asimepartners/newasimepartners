@@ -1,7 +1,8 @@
 import { HugeiconsIcon } from '@hugeicons/react'
 import { ArrowRight01Icon } from '@hugeicons/core-free-icons'
 import { platformCards, platformIntro } from '@/data/content'
-import { AnimatedSection, FadeUp, StaggerParent, StaggerItem, motion } from './Motion'
+import { AnimatedSection, FadeUp, StaggerParent, StaggerItem } from './Motion'
+import PhotoCard from './PhotoCard'
 
 export default function OurPlatform() {
   return (
@@ -17,27 +18,13 @@ export default function OurPlatform() {
         <StaggerParent className="wf-work-cards wf-platform-cards">
           {platformCards.map((item, index) => (
             <StaggerItem key={item.title} index={index}>
-              <motion.a
+              <PhotoCard
                 href={item.href}
-                className="wf-case-card"
-                whileHover={{ y: -6 }}
-                transition={{ type: 'spring', stiffness: 320, damping: 26 }}
-              >
-                <div className="wf-case-media">
-                  <img
-                    src={item.image}
-                    alt=""
-                    className="wf-case-media-img"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="wf-case-content">
-                  <span className="wf-case-category">{item.category}</span>
-                  <h3 className="wf-case-question">{item.title}</h3>
-                  <p className="wf-case-desc">{item.description}</p>
-                </div>
-              </motion.a>
+                image={item.image}
+                category={item.category}
+                title={item.title}
+                description={item.description}
+              />
             </StaggerItem>
           ))}
         </StaggerParent>

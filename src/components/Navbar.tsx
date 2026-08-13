@@ -20,7 +20,7 @@ function resolveHref(href: string, variant: NavbarProps['variant']) {
 function getSectionIds() {
   return primaryNavLinks
     .map((link) => link.href)
-    .filter((href): href is `#${string}` => href.startsWith('#'))
+    .filter((href) => href.startsWith('#'))
     .map((href) => href.slice(1))
 }
 

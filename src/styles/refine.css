@@ -289,18 +289,25 @@
   color: #fff !important;
 }
 
-.wf-main .wf-case-question {
-  color: #111 !important;
+.wf-main .wf-case-question,
+.wf-main .wf-photo-card-title {
+  color: #fff !important;
 }
 
-.wf-main .wf-case-category {
-  color: #C9A000 !important;
+.wf-main .wf-case-category,
+.wf-main .wf-photo-card-category {
+  color: var(--hero-lime, #FCD116) !important;
+}
+
+.wf-main .wf-case-desc,
+.wf-main .wf-photo-card-desc {
+  color: rgba(255, 255, 255, 0.68) !important;
 }
 
 /* ── Business lines ─────────────────────────────────────────── */
 .wf-lines-panel {
-  border: none;
-  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #0a0a0a;
 }
 
 .wf-main .wf-lines-intro-title {
@@ -308,7 +315,7 @@
 }
 
 .wf-main .wf-lines-panel-title {
-  color: #0f0f0f;
+  color: #fff;
 }
 
 .wf-main .wf-lines-panel-lead {
