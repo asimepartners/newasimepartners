@@ -4712,6 +4712,7 @@ body.wf-privacy-root {
 }
 
 .wf-platform-head {
+  width: 100%;
   max-width: min(100%, 72rem);
   margin: 0 auto clamp(2.5rem, 5vw, 3.75rem);
   text-align: center;
@@ -4727,14 +4728,20 @@ body.wf-privacy-root {
   line-height: 1.15;
   color: #FCD116 !important;
   white-space: normal;
+  text-align: center;
 }
 
 .wf-platform-body {
-  margin: 0 auto;
+  display: block;
+  width: 100%;
   max-width: none;
-  font-family: var(--font-body);
-  font-size: clamp(0.95rem, 1.35vw, 1.15rem);
-  line-height: 1.6;
+  margin: 0 auto;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  text-align: center;
   color: rgba(255, 255, 255, 0.78);
   white-space: nowrap;
 }
@@ -4742,12 +4749,40 @@ body.wf-privacy-root {
 @media (max-width: 900px) {
   .wf-platform-body {
     white-space: normal;
-    max-width: 40rem;
+    max-width: 36rem;
   }
+}
+
+.wf-platform .wf-work-inner {
+  width: min(100% - 2 * var(--layout-gutter), 100rem);
 }
 
 .wf-platform-cards {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2vw, 1.85rem);
+}
+
+.wf-platform .wf-case-media {
+  height: clamp(14rem, 20vw, 18rem);
+}
+
+.wf-platform .wf-case-content {
+  padding: clamp(1.6rem, 2.6vw, 2.25rem);
+}
+
+.wf-platform .wf-case-category {
+  font-size: 0.9rem;
+}
+
+.wf-platform .wf-case-question {
+  margin-top: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-size: clamp(1.35rem, 1.9vw, 1.7rem);
+}
+
+.wf-platform .wf-case-desc {
+  margin-top: 1rem;
+  font-size: 1.02rem;
+  line-height: 1.6;
 }
 
 .wf-platform-foot {

@@ -131,7 +131,7 @@ export interface PlatformCard {
 
 export const platformIntro = {
   title: "Our Platform",
-  body: "We’re a multi-strategy investment platform with an existing portfolio of assets across private markets in Africa.",
+  body: "We’re a multi-strategy impact and alternative investment platform for Africa.",
   ctaLabel: "Explore our portfolio",
   ctaHref: "/portfolio.html",
 };
@@ -141,7 +141,7 @@ export const platformCards: PlatformCard[] = [
     title: "Asime Ventures",
     category: "Generalist Private Markets",
     description:
-      "A diversified portfolio of 20+ initial angel investments. See our portfolio section.",
+      "A diversified portfolio of 30+ initial angel investments. See our portfolio section. We have opportunities across infrastructure, Climate, Fintech, Mobility and Agribusiness.",
     href: "#our-work",
     image: "/images/platform/01-asime-ventures.jpg",
   },
@@ -149,7 +149,7 @@ export const platformCards: PlatformCard[] = [
     title: "Jaza Rift",
     category: "Health & Bio Private Markets",
     description:
-      "Digital health, Medtech and Biotech investment platform.",
+      "Digital health, Medtech and Biotech investment platform. We have opportunities across healthcare assets across Africa (Hospitals, Clinics, Pharma manufacturing etc.).",
     href: "#management",
     image: "/images/platform/02-jaza-rift.jpg",
   },
