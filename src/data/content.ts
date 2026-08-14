@@ -48,7 +48,7 @@ export const heroContent = {
   headline: "Unleashing Africa’s Potential",
   headlineAccent: "",
   subheadline:
-    "Building the trust and bond that unlocks global capital for frontier market alternative strategies.",
+    "Trust and Bond that unlocks global capital for frontier markets alternative and impact investment strategies",
   ctaPrimary: { label: "GET IN TOUCH", href: "#apply" },
   ctaNav: { label: "Apply Now", href: "#apply" },
   typingText: "Platform, Alternative Investments, Advisory, Technology & AI",
@@ -56,11 +56,11 @@ export const heroContent = {
   scrollLabel: "SCROLL DOWN",
   focusAreas:
     "Climate & Impact | Alternative Investments | AI Systems | M&A Advisory | Executive Training",
-  image: "/images/sliders/04.jpg?v=1",
+  image: "/images/sliders/04.jpg?v=3",
   imageAlt:
     "Asime Partners team and partners across advisory, industry, and technology",
   slides: [
-    "/images/sliders/04.jpg?v=1",
+    "/images/sliders/04.jpg?v=3",
     "/images/sliders/01.jpg?v=3",
     "/images/sliders/02.jpg?v=3",
     "/images/sliders/03.jpg?v=3",
@@ -114,8 +114,8 @@ export const awardsContent = {
 export const primaryNavLinks = [
   { label: "Platform", href: "#platform" },
   { label: "Advisory", href: "#advisory" },
-  { label: "Alternatives", href: "#management-detail" },
-  { label: "Tech & AI", href: "#tech-detail" },
+  { label: "Alternatives", href: "#management" },
+  { label: "Tech & AI", href: "#technology" },
   { label: "Media", href: "/media.html" },
   { label: "About Us", href: "#our-people" },
 ] as const;
@@ -167,7 +167,7 @@ export const platformCards: PlatformCard[] = [
     category: "Public Markets",
     description:
       "Government bonds, African equities and corporate bonds via reputable Emerging Markets fund managers. Stable coins, crypto and other digital assets.",
-    href: "#management-detail",
+    href: "#management",
     image: "/images/platform/04-listed-digital.jpg",
   },
 ];
@@ -204,11 +204,11 @@ export const navGroups = [
   },
   {
     label: "Technology",
-    href: "#advisory",
+    href: "#technology",
     children: [
-      { label: "AI Systems", href: "#advisory" },
-      { label: "Data & Analytics", href: "#advisory" },
-      { label: "Digital Platforms", href: "#advisory" },
+      { label: "AI Systems", href: "#technology" },
+      { label: "Data & Analytics", href: "#technology" },
+      { label: "Digital Platforms", href: "#technology" },
     ],
   },
   {
@@ -237,7 +237,7 @@ export const businessLines = {
     summary: "Trusted advisors across Africa.",
     description:
       "Our professional services help organisations improve business and financial performance, manage growth, and achieve strategic objectives by integrating financial analysis with operational and strategic guidance. We support organisations to design, structure and launch funds of all types, including blended capital structures, impact funds and more complex investment vehicles.",
-    href: "#advisory-detail",
+    href: "#advisory",
     cta: "Read More",
     image: "/images/advisory-card.jpg",
     imageAlt: "Investment advisory",
@@ -248,7 +248,7 @@ export const businessLines = {
     summary: "Capital deployed through focused platforms.",
     description:
       "We offer professional services to high-net-worth individuals, family offices, or institutional clients to design, manage, and execute strategies involving non-traditional asset classes beyond public equities, bonds, and cash. These can include: Private Equity, Private Credit, Real Assets, Digital Assets and other Structured Products.",
-    href: "#management-detail",
+    href: "#management",
     cta: "Read More",
     image: "/images/02.jpg",
     imageAlt: "Investment management",
@@ -259,7 +259,7 @@ export const businessLines = {
     summary: "Intelligent systems for modern investing.",
     description:
       "Our technology and AI Systems advisory offers a structured, expert-led engagement that helps you assess, plan, and implement AI and other advanced technology systems in a way that aligns with your strategic goals, risk tolerance, and operational realities. It starts with process mapping and automation, and combines technical domain expertise with business acumen to guide decision-making, governance, and execution to get to AI agents design and orchestration.",
-    href: "#tech-detail",
+    href: "#technology",
     cta: "Read More",
     image: "/sectors/ai.jpg",
     imageAlt: "Technology and AI systems",
@@ -322,17 +322,17 @@ export const techPlatforms: InvestmentPlatform[] = [
   {
     name: "AI Systems",
     description: "AI models and automation that augment investment and advisory workflows.",
-    href: "#advisory",
+    href: "#technology",
   },
   {
     name: "Data & Analytics",
     description: "Data platforms turning market signals into actionable intelligence.",
-    href: "#advisory",
+    href: "#technology",
   },
   {
     name: "Digital Platforms",
     description: "Scalable digital infrastructure for portfolios and clients.",
-    href: "#advisory",
+    href: "#technology",
   },
 ];
 
@@ -665,7 +665,7 @@ export const capabilitiesIntro = {
 export const sectorsIntro = {
   eyebrow: "Sectors",
   headline: "Where we invest and advise",
-  lead: "We concentrate where capital creates the most durable, inclusive returns across the African continent.",
+  lead: "Our expertise spans multiple sectors across Africa, drawing on the team’s deep networks and experience across 37+ countries.",
 };
 
 export const advisoryIntro = {
@@ -717,7 +717,7 @@ export const footerColumns = {
 /* ── What We Do ──────────────────────────────────────────── */
 
 export const whatWeDoIntro = {
-  eyebrow: "What We Do",
+  eyebrow: "Our Capabilities",
   headline: "Investing in Africa's",
   headlineAccent: "Inclusive Growth",
   body: "Asime Partners deploys capital and advisory services across Africa, connecting investors to impact driven opportunities in climate, alternative assets, technology, and inclusive SME growth.",
@@ -782,45 +782,52 @@ export const investmentThesisAreas: ThesisArea[] = [
 /* ── Service Lines (How We Invest section) ───────────────── */
 
 export const howWeInvestIntro = {
-  title: "What We Do",
+  title: "Our Capabilities",
   body: "We offer integrated services across climate and impact, alternative investments, technology, transactions, and leadership development.",
 };
 
 export const thesisAreas: ThesisArea[] = [
   {
-    icon: "🌿",
-    title: "Climate & Impact",
+    icon: "💳",
+    title: "Financial Services",
     description:
-      "Investing at the intersection of climate resilience and social impact, deploying capital to ventures and SMEs that create measurable environmental and community outcomes across Africa.",
-    image: "/images/about-agritech.jpg",
-  },
-  {
-    icon: "📈",
-    title: "Alternative Investments",
-    description:
-      "Access to non traditional asset classes and structures, private credit, co investments, and tailored vehicles for investors seeking diversified exposure to African markets.",
+      "We have provided value added services to companies across Fintech, Insuretech & Web3. Our work in Fintech advisory focused on digital banking solutions, payment systems, and capital markets innovation. Our Insurtech advisory addressed insurance product design, risk modeling, and claims automation while our Web3 advisory covered stable coins for cross-border payments, blockchain integration, tokenization frameworks, and regulatory navigation for digital assets. Some of our team members are CDFP certified (Certified Digital Finance Professionals).",
     image: "/sectors/Investment.jpg",
   },
   {
-    icon: "🤖",
-    title: "AI Systems",
+    icon: "🩺",
+    title: "Healthcare",
     description:
-      "Supporting technology enabled businesses and AI driven solutions that improve operational efficiency, decision making, and scale for SMEs and growth stage companies.",
-    image: "/sectors/ai.jpg",
+      "We’re a leading advisor on Healthtech (Digital Health), Medtech (medical devices) & Biotech (and techbio covering drug development, genetic engineering, cell therapies and diagnostics) in Africa. We support organisations and startups to navigate regulatory approvals, market fit, go-to-market strategies and funding mix (grants, equity, debt) adequate for the stage.",
+    image: "/images/platform/02-jaza-rift.jpg",
   },
   {
-    icon: "🤝",
-    title: "M&A Advisory",
+    icon: "🌾",
+    title: "Agribusiness & Agritech",
     description:
-      "Strategic buy side and sell side support, due diligence, valuation, deal structuring, and transaction execution for investors and business owners across African markets.",
-    image: "/sectors/MA.jpg",
+      "Our track record includes advising and managing over $180M in commercial food production (farming, seed supply, processing, and distribution) agribusinesses and agritech, applying modern technology tools like AI, drones, and software to make farming more efficient and sustainable.",
+    image: "/images/about-agritech.jpg",
   },
   {
-    icon: "🎓",
-    title: "Executive Training",
+    icon: "⚡",
+    title: "Climate & Renewable Energy Finance",
     description:
-      "Capacity building and leadership development for founders, executives, and investment teams, equipping leaders to navigate growth, governance, and capital markets in Africa.",
-    image: "/sectors/executive-coaching-center-for-creative-leadership-ccl.jpg",
+      "We have provided a wide range of advice for diverse clients covering strategic, financial and operational challenges for climate and renewable energy, especially off-grid and on-grid energy solutions. This includes delivering strategic policy insights on development finance, delivering complex market and go-to-market studies and identifying and securing investment opportunities across emerging and frontier markets, especially Africa.",
+    image: "/images/engieer.jpg",
+  },
+  {
+    icon: "🕌",
+    title: "Islamic Finance",
+    description:
+      "Our team has experts with professional certifications such as Chartered Islamic Finance Executives (CIFE). This enables us to apply Shariah-compliant principles to market-leading corporate finance, financial planning, investment, and corporate finance, guiding clients to achieve their financial goals while adhering to ethical and religious standards.",
+    image: "/images/advisory-card.jpg",
+  },
+  {
+    icon: "🏗️",
+    title: "Infrastructure & Development Finance",
+    description:
+      "We provide expert services to our clients to understand, design and implement unique models of infrastructure in transport, energy and data (PPPs notably). We have built long-term relationships with DFIs, sovereign wealth funds, impact investors, credit funds and strategic corporates.",
+    image: "/images/focused-confident-female-factory-worker-operating-industrial-machine-touching-control-board-using-tablet.jpg",
   },
 ];
 
@@ -1203,5 +1210,5 @@ export const footerNav = {
     "Executive Training",
   ],
   network: ["Partner With Us", "Chale Fund", "Tech Startups", "SME/MSME/SGB"],
-  company: ["About", "What We Do", "Where We Work", "Contact"],
+  company: ["About", "Our Capabilities", "Where We Work", "Contact"],
 };

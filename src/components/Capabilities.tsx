@@ -4,7 +4,7 @@ import PhotoCard from './PhotoCard'
 
 export default function Capabilities() {
   return (
-    <div className="wf-capabilities">
+    <div id="capabilities" className="wf-capabilities">
       <AnimatedSection id="sectors" className="wf-sec2">
         <div className="wf-sec2-inner">
           <FadeUp className="wf-sec2-head">

@@ -13,7 +13,7 @@ export default function BusinessPillars() {
     <AnimatedSection className="wf-lines">
       <div className="wf-lines-inner">
         <FadeUp className="wf-lines-intro">
-          <span className="wf-lines-intro-eyebrow">What We Do</span>
+          <span className="wf-lines-intro-eyebrow">Our Capabilities</span>
           <h2 className="wf-lines-intro-title">
             Advisory and Capital Platforms Built for African Growth
           </h2>
@@ -23,7 +23,6 @@ export default function BusinessPillars() {
           {pillars.map(({ id, index, line }) => (
             <StaggerItem key={id}>
               <PhotoCard
-                id={id}
                 href={line.href}
                 image={line.image}
                 imageAlt={line.imageAlt}

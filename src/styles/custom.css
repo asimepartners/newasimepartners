@@ -2331,7 +2331,7 @@ a { text-decoration: none; color: inherit; }
 
 .wf-sec2-grid.wf-photo-card-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(1rem, 1.6vw, 1.35rem);
   align-items: stretch;
 }
@@ -2470,7 +2470,7 @@ a { text-decoration: none; color: inherit; }
   }
 
   .wf-sec2-grid.wf-photo-card-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .wf-sec2-grid.wf-photo-card-grid > * {
@@ -2826,7 +2826,9 @@ a { text-decoration: none; color: inherit; }
   scroll-margin-top: 3.25rem;
 }
 
-#tech-detail {
+#advisory,
+#management,
+#technology {
   scroll-margin-top: 3.25rem;
 }
 
@@ -4420,15 +4422,17 @@ body.wf-privacy-root {
   text-align: center;
   height: 100%;
   padding: clamp(2rem, 3vw, 2.75rem) clamp(1.5rem, 2.5vw, 2.25rem);
-  background: #fff !important;
-  border: none;
+  background: #0a0a0a !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 3px;
-  box-shadow: none;
-  transition: transform 0.4s var(--ease-smooth);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  transition: transform 0.4s var(--ease-smooth), border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .wf-ab3-card:hover {
   transform: translateY(-6px);
+  border-color: rgba(252, 209, 22, 0.55);
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.55);
 }
 
 .wf-ab3-icon {
@@ -4450,14 +4454,14 @@ body.wf-privacy-root {
   font-size: clamp(1.25rem, 2vw, 1.6rem);
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: #14181f !important;
+  color: #fff !important;
 }
 
 .wf-about .wf-ab3-card-body {
   margin: 0;
   font-size: clamp(0.95rem, 1.3vw, 1.05rem);
   line-height: 1.6;
-  color: rgba(20, 24, 31, 0.66) !important;
+  color: rgba(255, 255, 255, 0.68) !important;
 }
 
 .wf-ab3-values {
@@ -4473,7 +4477,7 @@ body.wf-privacy-root {
   font-size: clamp(0.95rem, 1.3vw, 1.05rem);
   font-weight: 500;
   line-height: 1.4;
-  color: rgba(20, 24, 31, 0.75) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
 }
 
 @media (max-width: 860px) {

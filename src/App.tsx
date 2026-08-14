@@ -51,9 +51,9 @@ export default function App() {
         <Awards />
         <OurPlatform />
         <BusinessPillars />
-        <AdvisoryDetail id="advisory-detail" content={advisoryDetail} />
-        <AdvisoryDetail id="management-detail" content={managementDetail} />
-        <AdvisoryDetail id="tech-detail" content={techDetail} />
+        <AdvisoryDetail id="advisory" content={advisoryDetail} />
+        <AdvisoryDetail id="management" content={managementDetail} />
+        <AdvisoryDetail id="technology" content={techDetail} />
         <DeferredMount>
           <LazyBelowFold />
         </DeferredMount>

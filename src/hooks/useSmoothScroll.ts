@@ -1,22 +1,42 @@
 import { useEffect } from 'react'
 import Lenis from 'lenis'
 
+const HASH_ALIASES: Record<string, string> = {
+  '#advisory-detail': '#advisory',
+  '#management-detail': '#management',
+  '#tech-detail': '#technology',
+  '#tech': '#technology',
+}
+
+function resolveHash(hash: string) {
+  return HASH_ALIASES[hash] ?? hash
+}
+
 function getNavOffset() {
   const header = document.querySelector<HTMLElement>('.wf-nav-header')
   const height = header?.getBoundingClientRect().height ?? 96
   return Math.round(Math.max(height - 36, 48))
 }
 
+function findByHash(hash: string): HTMLElement | null {
+  const id = decodeURIComponent(hash.replace(/^#/, ''))
+  if (!id) return null
+  const el = document.getElementById(id)
+  return el instanceof HTMLElement ? el : null
+}
+
 function waitForTarget(hash: string, timeoutMs = 2500): Promise<HTMLElement | null> {
-  const existing = document.querySelector(hash)
-  if (existing instanceof HTMLElement) return Promise.resolve(existing)
+  const existing = findByHash(hash)
+  if (existing) return Promise.resolve(existing)
+
+  window.dispatchEvent(new Event('asime:mount-deferred'))
 
   return new Promise((resolve) => {
     const started = performance.now()
 
     const tryFind = () => {
-      const el = document.querySelector(hash)
-      if (el instanceof HTMLElement) {
+      const el = findByHash(hash)
+      if (el) {
         resolve(el)
         return
       }
@@ -35,6 +55,7 @@ function alignTarget(target: HTMLElement, lenis?: Lenis | null) {
   const offset = getNavOffset()
 
   if (lenis) {
+    lenis.start()
     lenis.scrollTo(target, { offset: -offset, duration: 1.05 })
     return
   }
@@ -44,16 +65,15 @@ function alignTarget(target: HTMLElement, lenis?: Lenis | null) {
 }
 
 async function scrollToHash(hash: string, lenis?: Lenis | null) {
-  const target = await waitForTarget(hash)
+  const resolved = resolveHash(hash)
+  const target = await waitForTarget(resolved)
   if (!target) return
 
-  history.pushState(null, '', hash)
+  history.pushState(null, '', resolved)
 
-  // Ensure lazy/layout content has painted before measuring.
   await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
   alignTarget(target, lenis)
 
-  // Re-align after layout settles so the full section sits below the fixed nav.
   window.setTimeout(() => alignTarget(target, lenis), 180)
   window.setTimeout(() => alignTarget(target, lenis), 480)
 }
@@ -62,7 +82,6 @@ export function useSmoothScroll() {
   useEffect(() => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const coarsePointer = window.matchMedia('(pointer: coarse), (max-width: 991.98px)').matches
-    // Skip Lenis on coarse pointers / small screens — native scroll feels snappier.
     const useLenis = !reducedMotion && !coarsePointer
 
     let lenis: Lenis | null = null
@@ -88,6 +107,8 @@ export function useSmoothScroll() {
       if (url.pathname !== window.location.pathname || !url.hash || url.hash === '#') return
 
       event.preventDefault()
+      document.body.style.overflow = ''
+      lenis?.start()
       void scrollToHash(url.hash, lenis)
     }
 

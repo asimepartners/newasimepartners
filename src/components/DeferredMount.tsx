@@ -16,6 +16,8 @@ export default function DeferredMount({
 
     const enable = () => setReady(true)
 
+    window.addEventListener('asime:mount-deferred', enable)
+
     const ric = (window as Window & {
       requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number
       cancelIdleCallback?: (id: number) => void
@@ -28,6 +30,7 @@ export default function DeferredMount({
     }
 
     return () => {
+      window.removeEventListener('asime:mount-deferred', enable)
       const cic = (window as Window & { cancelIdleCallback?: (id: number) => void }).cancelIdleCallback
       if (idleId !== undefined && typeof cic === 'function') cic(idleId)
       if (timeoutId !== undefined) clearTimeout(timeoutId)
