@@ -88,7 +88,7 @@ function ContactPage() {
                 <span>{contactPage.messageLabel}</span>
                 <textarea
                   name="message"
-                  rows={6}
+                  rows={4}
                   required
                   placeholder={contactPage.messagePlaceholder}
                 />
