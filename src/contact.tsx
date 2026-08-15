@@ -1,10 +1,11 @@
-import { StrictMode, useEffect, useState, type FormEvent } from 'react'
+import { StrictMode, useEffect, useRef, useState, type FormEvent } from 'react'
 import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { contactPage, siteBrand } from '@/data/content'
 import { dismissPreloader } from '@/utils/dismissPreloader'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { executeRecaptchaV3 } from '@/components/RecaptchaV3'
 import ScrollToTop from '@/components/ScrollToTop'
 import './styles/custom.css'
 import './styles/typography.css'
@@ -13,6 +14,9 @@ import './styles/refine.css'
 
 function ContactPage() {
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
+  const closeRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     document.documentElement.classList.add('wf-contact-root')
@@ -23,16 +27,72 @@ function ContactPage() {
     }
   }, [])
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  useEffect(() => {
+    if (!sent) return
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    closeRef.current?.focus()
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setSent(false)
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [sent])
+
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    const data = new FormData(event.currentTarget)
+    if (sending) return
+
+    const form = event.currentTarget
+    const data = new FormData(form)
     const name = String(data.get('name') ?? '').trim()
     const email = String(data.get('email') ?? '').trim()
     const message = String(data.get('message') ?? '').trim()
-    const subject = encodeURIComponent(`Website enquiry from ${name}`)
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)
-    window.location.href = `mailto:${siteBrand.email}?subject=${subject}&body=${body}`
-    setSent(true)
+    const honey = String(data.get('_honey') ?? '').trim()
+
+    if (honey) {
+      setError('')
+      setSent(true)
+      form.reset()
+      return
+    }
+
+    setSending(true)
+    setError('')
+
+    try {
+      const token = await executeRecaptchaV3(contactPage.recaptchaSiteKey, 'contact')
+      if (!token) throw new Error('captcha')
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          token,
+        }),
+      })
+
+      const result = (await response.json()) as { success?: boolean | string; message?: string }
+      const ok = response.ok && (result.success === true || result.success === 'true')
+      if (!ok) throw new Error(result.message || 'Send failed')
+
+      form.reset()
+      setSent(true)
+    } catch {
+      setError(contactPage.sendErrorLabel)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -73,6 +133,14 @@ function ContactPage() {
             <h3 className="wf-contact-form-title">{contactPage.formTitle}</h3>
 
             <form className="wf-contact-form" onSubmit={onSubmit}>
+              <input
+                type="text"
+                name="_honey"
+                className="wf-contact-honey"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
               <div className="wf-contact-form-row">
                 <label className="wf-contact-field">
                   <span>{contactPage.nameLabel}</span>
@@ -94,16 +162,23 @@ function ContactPage() {
                 />
               </label>
 
-              <label className="wf-contact-verify">
-                <input type="checkbox" name="verify" required />
-                <span>I am not a robot</span>
-              </label>
+              <p className="wf-contact-recaptcha-note">
+                This site is protected by reCAPTCHA and the Google{' '}
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">
+                  Privacy Policy
+                </a>{' '}
+                and{' '}
+                <a href="https://policies.google.com/terms" target="_blank" rel="noreferrer">
+                  Terms of Service
+                </a>{' '}
+                apply.
+              </p>
 
-              <button type="submit" className="wf-contact-submit">
-                {contactPage.submitLabel}
+              <button type="submit" className="wf-contact-submit" disabled={sending}>
+                {sending ? contactPage.submittingLabel : contactPage.submitLabel}
               </button>
 
-              {sent ? <p className="wf-contact-sent">{contactPage.sentLabel}</p> : null}
+              {error ? <p className="wf-contact-error" role="alert">{error}</p> : null}
             </form>
           </div>
         </section>
@@ -157,6 +232,31 @@ function ContactPage() {
 
       <Footer />
       <ScrollToTop />
+
+      {sent ? (
+        <div className="wf-contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-success-title">
+          <button
+            type="button"
+            className="wf-contact-modal-backdrop"
+            aria-label="Close"
+            onClick={() => setSent(false)}
+          />
+          <div className="wf-contact-modal-panel">
+            <h2 id="contact-success-title" className="wf-contact-modal-title">
+              {contactPage.sentTitle}
+            </h2>
+            <p className="wf-contact-modal-body">{contactPage.sentLabel}</p>
+            <button
+              ref={closeRef}
+              type="button"
+              className="wf-contact-submit"
+              onClick={() => setSent(false)}
+            >
+              {contactPage.sentCloseLabel}
+            </button>
+          </div>
+        </div>
+      ) : null}
     </div>
   )
 }
