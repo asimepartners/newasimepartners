@@ -1,6 +1,6 @@
 import { HugeiconsIcon } from '@hugeicons/react'
 import { CircleArrowRight01Icon, Linkedin01Icon } from '@hugeicons/core-free-icons'
-import { footerColumns, newsletterContent, siteBrand } from '@/data/content'
+import { footerColumns, footerLegal, newsletterContent, siteBrand } from '@/data/content'
 import { FadeIn } from './Motion'
 
 export default function Footer() {
@@ -62,15 +62,25 @@ export default function Footer() {
                   aria-label="LinkedIn"
                   className="wf-ft-social"
                 >
-                  <HugeiconsIcon icon={Linkedin01Icon} size={16} strokeWidth={1.5} />
+                  <HugeiconsIcon icon={Linkedin01Icon} size={22} strokeWidth={1.5} />
+                </a>
+                <a
+                  href={siteBrand.x}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="X"
+                  className="wf-ft-social"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.739L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
+                  </svg>
                 </a>
               </div>
             </div>
 
             <div className="wf-ft-columns">
               <div className="wf-ft-col">
-                <h4 className="wf-ft-col-label">Our Businesses</h4>
-                {footerColumns.businesses.map((item) => (
+                {footerColumns.explore.map((item) => (
                   <a key={item.label} href={item.href} className="wf-ft-link">
                     {item.label}
                   </a>
@@ -78,23 +88,8 @@ export default function Footer() {
               </div>
 
               <div className="wf-ft-col">
-                <h4 className="wf-ft-col-label">Regions</h4>
-                {footerColumns.regions.map((item) => (
+                {footerColumns.connect.map((item) => (
                   <a key={item.label} href={item.href} className="wf-ft-link">
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-
-              <div className="wf-ft-col">
-                <h4 className="wf-ft-col-label">Resources</h4>
-                {footerColumns.resources.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    className="wf-ft-link"
-                    {...(item.href.endsWith('.html') ? { target: '_blank', rel: 'noreferrer' } : {})}
-                  >
                     {item.label}
                   </a>
                 ))}
@@ -103,8 +98,17 @@ export default function Footer() {
           </div>
 
           <div className="wf-ft-baseline">
-            <span className="wf-ft-copy">© {new Date().getFullYear()} {siteBrand.name}</span>
-            <a href={`mailto:${siteBrand.email}`} className="wf-ft-copy-link">{siteBrand.email}</a>
+            <span className="wf-ft-copy">{footerLegal.copyright}</span>
+            <div className="wf-ft-legal-links">
+              <a href="/privacy.html" className="wf-ft-copy-link">Privacy Policy</a>
+              <a href="/terms.html" className="wf-ft-copy-link">Terms of Service</a>
+            </div>
+          </div>
+
+          <div className="wf-ft-legal">
+            {footerLegal.paragraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+            ))}
           </div>
         </div>
       </footer>

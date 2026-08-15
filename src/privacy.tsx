@@ -1,12 +1,15 @@
 import { StrictMode, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { siteBrand } from '@/data/content'
 import { privacyPolicy, type PrivacyBlock } from '@/data/privacyPolicy'
 import { dismissPreloader } from '@/utils/dismissPreloader'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 import ScrollToTop from '@/components/ScrollToTop'
 import './styles/custom.css'
 import './styles/typography.css'
+import './styles/theme-dark.css'
+import './styles/refine.css'
 
 function PrivacyBlocks({ blocks }: { blocks: PrivacyBlock[] }) {
   return (
@@ -57,26 +60,16 @@ function PrivacyPage() {
 
   return (
     <div className="wf-privacy-page">
+      <Navbar variant="solid" />
+
       <main className="wf-privacy-main">
         <div className="wf-privacy-container">
-          <div className="wf-privacy-topbar">
-            <a href="/" className="wf-privacy-brand" aria-label={`${siteBrand.name} home`}>
-              <img src="/Main.png" alt={siteBrand.name} className="wf-privacy-logo" />
-            </a>
-            <a href="/" className="wf-privacy-backlink">
-              Back to home
-            </a>
-          </div>
-
           <article className="wf-privacy-content">
-            <span className="wf-privacy-eyebrow">Legal</span>
             <h1 className="wf-privacy-title">{privacyPolicy.title}</h1>
-            <p className="wf-privacy-updated">{privacyPolicy.updatedAt}</p>
 
             <div className="wf-privacy-layout">
               {privacyPolicy.sections.map((section) => (
                 <section key={section.title} className="wf-privacy-section-block">
-                  <h2 className="wf-privacy-section-title">{section.title}</h2>
                   <PrivacyBlocks blocks={section.blocks} />
                 </section>
               ))}
@@ -84,6 +77,8 @@ function PrivacyPage() {
           </article>
         </div>
       </main>
+
+      <Footer />
       <ScrollToTop />
     </div>
   )

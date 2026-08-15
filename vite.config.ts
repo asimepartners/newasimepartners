@@ -11,6 +11,8 @@ export default defineConfig({
         privacy: path.resolve(__dirname, 'privacy.html'),
         portfolio: path.resolve(__dirname, 'portfolio.html'),
         media: path.resolve(__dirname, 'media.html'),
+        contact: path.resolve(__dirname, 'contact.html'),
+        terms: path.resolve(__dirname, 'terms.html'),
       },
     },
   },

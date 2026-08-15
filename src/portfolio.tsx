@@ -15,6 +15,7 @@ import { dismissPreloader } from '@/utils/dismissPreloader'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ScrollToTop from '@/components/ScrollToTop'
+import { motion } from '@/components/Motion'
 import './styles/custom.css'
 import './styles/typography.css'
 import './styles/theme-dark.css'
@@ -193,10 +194,18 @@ function PortfolioPage() {
 
           {filtered.length > 0 ? (
             <ul className="wf-pf-grid">
-              {filtered.map((company) => (
-                <li
+              {filtered.map((company, index) => (
+                <motion.li
                   key={company.name}
                   className={`wf-pf-item${company.logoScale ? ` wf-pf-item--${company.logoScale}` : ''}`}
+                  initial={{ opacity: 0, y: 36, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.25 }}
+                  transition={{
+                    duration: 0.55,
+                    delay: (index % 8) * 0.07,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
                 >
                   <img
                     src={company.logo}
@@ -206,7 +215,7 @@ function PortfolioPage() {
                     decoding="async"
                     title={company.name}
                   />
-                </li>
+                </motion.li>
               ))}
             </ul>
           ) : (

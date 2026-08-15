@@ -1,6 +1,6 @@
 /* ── Portfolio companies ─────────────────────────────────── */
 
-export type PlatformTag = "Asime Ventures" | "Jaza Rift" | "REIT" | "Assets"
+export type PlatformTag = "Asime Ventures" | "Jaza Rift" | "Real Estate" | "Assets"
 
 export type SectorTag =
   | "digital health"
@@ -11,7 +11,6 @@ export type SectorTag =
   | "agritech"
   | "insuretech"
   | "climatech"
-  | "mobility"
 
 export interface PortfolioCompany {
   name: string
@@ -25,7 +24,7 @@ export interface PortfolioCompany {
 export const portfolioPlatformTags: PlatformTag[] = [
   "Asime Ventures",
   "Jaza Rift",
-  "REIT",
+  "Real Estate",
   "Assets",
 ]
 
@@ -38,7 +37,6 @@ export const portfolioSectorTags: SectorTag[] = [
   "agritech",
   "insuretech",
   "climatech",
-  "mobility",
 ]
 
 export const portfolioPage = {
@@ -90,7 +88,7 @@ export const portfolioCompanies: PortfolioCompany[] = [
     name: "Wahu",
     logo: "/images/portfolio/wahu.webp",
     platforms: ["Asime Ventures"],
-    sectors: ["mobility", "climatech"],
+    sectors: ["climatech"],
   },
   {
     name: "FreezeLink",
@@ -192,7 +190,7 @@ export const portfolioCompanies: PortfolioCompany[] = [
     name: "Rent to Own",
     logo: "/images/portfolio/rent-to-own.png",
     platforms: ["Asime Ventures"],
-    sectors: ["fintech", "mobility"],
+    sectors: ["fintech"],
     logoScale: "lg",
   },
   {
@@ -255,11 +253,5 @@ export const portfolioCompanies: PortfolioCompany[] = [
     logo: "/images/portfolio/plural.jpeg",
     platforms: ["Jaza Rift"],
     sectors: ["digital health"],
-  },
-  {
-    name: "Kena Health",
-    logo: "/images/portfolio/kena-health.webp",
-    platforms: ["Jaza Rift"],
-    sectors: ["digital health", "medtech"],
   },
 ]

@@ -7,9 +7,10 @@ export const siteBrand = {
   name: "Asime Partners",
   logo: "/Asime.jpeg",
   logoWordmark: "/MainLogo.jpeg",
-  tagline: "Venture Capital | Private Credit | Angel Investing | Investment Advisory",
+  tagline: "Structuring Alternative Capital. Modeling Impact Value. Driving Strategic Growth.",
   email: "info@asimepartners.com",
   linkedin: "https://linkedin.com/company/asimepartners",
+  x: "https://x.com/asimepartners",
 };
 
 export interface ThesisArea {
@@ -244,7 +245,7 @@ export const businessLines = {
   },
   management: {
     eyebrow: "Alternative Investments",
-    title: "Alternative Investments",
+    title: "Allocate from 5% to 25% to African Alpha",
     summary: "Capital deployed through focused platforms.",
     description:
       "We offer professional services to high-net-worth individuals, family offices, or institutional clients to design, manage, and execute strategies involving non-traditional asset classes beyond public equities, bonds, and cash. These can include: Private Equity, Private Credit, Real Assets, Digital Assets and other Structured Products.",
@@ -254,8 +255,8 @@ export const businessLines = {
     imageAlt: "Investment management",
   },
   tech: {
-    eyebrow: "Technology & AI",
-    title: "Technology & AI",
+    eyebrow: "Technology and AI",
+    title: "Workflow automation and AI systems",
     summary: "Intelligent systems for modern investing.",
     description:
       "Our technology and AI Systems advisory offers a structured, expert-led engagement that helps you assess, plan, and implement AI and other advanced technology systems in a way that aligns with your strategic goals, risk tolerance, and operational realities. It starts with process mapping and automation, and combines technical domain expertise with business acumen to guide decision-making, governance, and execution to get to AI agents design and orchestration.",
@@ -351,37 +352,38 @@ export interface ServiceDetail {
 
 export const advisoryDetail: ServiceDetail = {
   eyebrow: "Advisory",
-  headline: "Advisory Across the Business, Financial and Investment Lifecycle",
+  headline:
+    "Since 2015, our business and financial advisory team has been designing innovative and solution-driven financial structures in multiple geographies stages and sectors across Africa and other frontier and emerging markets, combining local insights with global expertise.",
   items: [
     {
-      icon: "manda",
-      title: "M&A and Valuation",
-      body: "Buy and sell side M&A advisory, covering local and international cross border mergers and acquisitions, typically on transaction values between $5M and $500M. Investment business valuation determines a company's worth by analyzing its financial performance, assets, and market conditions (DCF, VC method, EV/EBITDA, EV/GMV etc.). It helps investors make informed decisions and companies assess their value for fundraising or mergers.",
-    },
-    {
-      icon: "diligence",
-      title: "Capital Raising & Due Diligence",
-      body: "Our team of experts conducts comprehensive due diligence to assess potential investments for capital raising or private equity funds. This involves risk assessment and mitigation, market analysis, as well as legal and regulatory checks. Our advisors provide essential information to enable informed investment decisions, minimizing risks and ensuring alignment with the unique needs and challenges of the African market.",
+      icon: "fund",
+      title: "Fund Design and Structuring",
+      body: "We bridge African investment potential with global capital markets by designing world-class fund structures across Europe, Middle East and the Americas. Our consulting services map your private equity, infrastructure, or liquid strategies to robust European (UCITS, AIFMD) and US/Cayman frameworks (Delaware LPs, Cayman Segregated Portfolio Companies). Utilizing premium global vehicles, we architect compliant, tax-efficient platforms that unlock cross-border distribution and maximize international investor mobilization. We specialise in blended capital structures with catalytic capital, permanent or evergreen vehicles for long-term capital preservation and impact.",
     },
     {
       icon: "modelling",
-      title: "Financial Modelling",
-      body: "Financial modelling is essentially creating a mathematical representation of a business's financial performance. For startups and SMEs, it's a crucial tool for predicting future performance, making informed decisions, and securing funding. It involves forecasting, scenario analysis and decision making based on financial information.",
-    },
-    {
-      icon: "francophone",
-      title: "Francophone Africa",
-      body: "Africa is home to the largest French speaking population globally (300M) and there are 21 Francophone countries out of the continent's 54, creating immense potential for trade and cross border investment. With our investment and operating experience across Francophone Africa, we can support startups to scale into those countries, notably Senegal, Côte d'Ivoire, Benin, Togo, DRC, Cameroon and Madagascar.",
+      title: "Advanced Financial Modelling & Valuation",
+      body: "Our combined global experience and deep local expertise in Africa, enables us to deliver robust, institutional-grade and dynamic financial models that translate complex business data into clear, actionable strategic insights tailored to African realities. By combining meticulous multi-scenario forecasting with industry-standard valuation methodologies (DCF, VC method, EV/EBITDA, EV/GMV, comparable companies, and precedent transactions), we help you accurately determine asset value, mitigate transactional risk, and optimize capital allocation. Whether you are navigating an M&A transaction, raising capital, or planning long-term corporate strategy, our precise financial architecture provides the clarity needed to execute high-stakes decisions with absolute confidence.",
     },
     {
       icon: "cfo",
       title: "Fractional CFO Services",
-      body: "Fractional CFO services provide startups and SMEs with part time access to a seasoned financial expert. This cost effective solution offers strategic financial guidance, including budgeting, forecasting, fundraising support, and financial analysis, without the commitment of a full time CFO.",
+      body: "Accelerate your growth with strategic financial leadership on demand, especially for startups, scale ups and SMEs/SGBs. We integrate seamlessly into your executive team to manage cash flow, optimize capital structure, and drive financial strategy. Get the sophisticated insights and oversight of a seasoned corporate CFO, tailored to your company's scale and budget.",
     },
     {
-      icon: "prepost",
-      title: "Pre Investment & Post Investment",
-      body: "Pre investment support helps startups and SMEs prepare for funding by offering business plan development, financial modeling, and market research assistance. Post investment support continues the partnership by providing mentorship, strategic guidance, operational support, and access to networks to help businesses grow and succeed.",
+      icon: "manda",
+      title: "M&A Advisory & Transaction Services",
+      body: "Navigate high-stakes $5 to $100M corporate transactions with confidence. We provide comprehensive buy-side and sell-side advisory, including deep financial due diligence, deal structuring, and rigorous synergy valuation. Our experts protect your economic interests and maximize total value from letter of intent through post-closing integration.",
+    },
+    {
+      icon: "risk",
+      title: "Risk Management & Advisory",
+      body: "Protect your company or fund from systemic volatility and unexpected financial threats. We identify, quantify, and mitigate complex balance sheet or fund investments risks, liquidity constraints, and operational vulnerabilities. Our team builds proactive mitigation frameworks that ensure capital preservation, business continuity, and regulatory compliance. We have experience in family office, funds, fund of funds and sovereign wealth funds risk and portfolio management.",
+    },
+    {
+      icon: "raise",
+      title: "Capital Raising Support & Investor Relations",
+      body: "Secure the funding your business needs to scale effectively. We prepare companies for institutional investment by refining pitch narratives, building comprehensive data rooms, and structuring debt or equity instruments. We sit on your side of the table to help you attract the right capital partners on the best possible terms. We focus on capital raises of $2M or more for startups, and $5M or more for small and growing businesses in Africa.",
     },
   ],
 };
@@ -692,26 +694,59 @@ export const newsletterContent = {
   image: "/images/newsletter-bg.jpg",
 };
 
+export const footerLegal = {
+  copyright:
+    "Copyright © 2026 Asime Partners. All Rights reserved. Website design & build by Data Leap Technologies.",
+  paragraphs: [
+    "This website is operated and issued by Asime Partners Limited. No company in the Asime Partners is registered as an investment adviser in the United States, and this website should not be viewed as a solicitation of prospective investment advisory clients or investors from the United States.",
+    "The information contained in this website is for general information purposes only. The information is provided by Asime Partners Limited, and whilst we endeavour to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk. In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.",
+    "Through this website you are able to link to other websites which are not under the control of Asime Partners Limited. We have no control over the nature, content and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them. Every effort is made to keep the website up and running smoothly. However, Asime Partners Limited takes no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control.",
+  ],
+};
+
 export const footerColumns = {
-  businesses: [
-    { label: "Asime Partners", href: "#group" },
-    { label: "Chale Fund", href: "#apply" },
-    { label: "Venture Capital", href: "#management" },
-    { label: "Private Credit", href: "#management" },
-    { label: "Angel Investing", href: "#management" },
+  explore: [
+    { label: "Home", href: "/" },
+    { label: "Platform", href: "/#platform" },
+    { label: "Capabilities", href: "/#our-capabilities" },
+    { label: "Insights", href: "/#insights" },
   ],
-  regions: [
-    { label: "Ghana", href: "#geographies" },
-    { label: "West Africa", href: "#geographies" },
-    { label: "Sub Saharan Africa", href: "#geographies" },
-    { label: "East Africa", href: "#geographies" },
+  connect: [
+    { label: "Team", href: "/#team" },
+    { label: "Contact", href: "/contact.html" },
+    { label: "Join Us", href: "/#apply" },
   ],
-  resources: [
-    { label: "Insights", href: "#insights" },
-    { label: "Working with Us", href: "#apply" },
-    { label: "Apply Now", href: "#apply" },
-    { label: "Privacy", href: "/privacy" },
+};
+
+export const contactPage = {
+  title: "Contact Us",
+  heading: "Contact us",
+  intro:
+    "To get in touch, please fill out the general enquiries form below, or send an email to",
+  complaints:
+    "Any general or whistleblower complaints should be reported to",
+  formTitle: "General Enquiries",
+  nameLabel: "Full Name",
+  emailLabel: "Email Address",
+  messageLabel: "Message",
+  messagePlaceholder: "Example Text",
+  submitLabel: "Submit",
+  sentLabel: "Thank you. Your email client will open so you can send your message.",
+  heroImage: "/images/platform/03-reit.jpg",
+  officesTitle: "Offices",
+  offices: [
+    {
+      city: "Accra",
+      lines: ["Asime Partners", "Accra, Ghana", "info@asimepartners.com"],
+      pin: { left: 49.2, top: 59.34 },
+    },
+    {
+      city: "Nairobi",
+      lines: ["Asime Partners", "Nairobi, Kenya", "info@asimepartners.com"],
+      pin: { left: 59.81, top: 62.55 },
+    },
   ],
+  mapSrc: "/images/dotted-world.svg",
 };
 
 /* ── What We Do ──────────────────────────────────────────── */
@@ -791,14 +826,14 @@ export const thesisAreas: ThesisArea[] = [
     icon: "💳",
     title: "Financial Services",
     description:
-      "We have provided value added services to companies across Fintech, Insuretech & Web3. Our work in Fintech advisory focused on digital banking solutions, payment systems, and capital markets innovation. Our Insurtech advisory addressed insurance product design, risk modeling, and claims automation while our Web3 advisory covered stable coins for cross-border payments, blockchain integration, tokenization frameworks, and regulatory navigation for digital assets. Some of our team members are CDFP certified (Certified Digital Finance Professionals).",
+      "We provide value-added advisory services across Fintech, Insurtech, and Web3, covering digital banking, payments, capital markets innovation, insurance product design, risk modelling, claims automation, stablecoins, blockchain, tokenization, and digital asset regulation. Several team members are Certified Digital Finance Professionals (CDFP), bringing specialized expertise in digital finance and emerging technologies.",
     image: "/sectors/Investment.jpg",
   },
   {
     icon: "🩺",
     title: "Healthcare",
     description:
-      "We’re a leading advisor on Healthtech (Digital Health), Medtech (medical devices) & Biotech (and techbio covering drug development, genetic engineering, cell therapies and diagnostics) in Africa. We support organisations and startups to navigate regulatory approvals, market fit, go-to-market strategies and funding mix (grants, equity, debt) adequate for the stage.",
+      "We’re a leading advisor on Healthtech (Digital Health), Medtech (medical devices) & Biotech (and techbio) covering drug development, genetic engineering, cell therapies and diagnostics in Africa. We support organisations and startups to navigate regulatory approvals (local FDA, US FDA, CE Mark, WHO Prequalification, ISO 15189, ISO 20387, ISO 17043), market fit analysis, go-to-market strategies and funding mix (grants, equity, debt) adequate for each stage.",
     image: "/images/platform/02-jaza-rift.jpg",
   },
   {
@@ -812,12 +847,12 @@ export const thesisAreas: ThesisArea[] = [
     icon: "⚡",
     title: "Climate & Renewable Energy Finance",
     description:
-      "We have provided a wide range of advice for diverse clients covering strategic, financial and operational challenges for climate and renewable energy, especially off-grid and on-grid energy solutions. This includes delivering strategic policy insights on development finance, delivering complex market and go-to-market studies and identifying and securing investment opportunities across emerging and frontier markets, especially Africa.",
+      "We have managed more than $180M worth of programs in Climate and Renewable Energy, and advised a wide range of clients from strategic, financial and operational to technology focused challenges for climate and renewable energy (including off-grid and on-grid energy solutions). This includes delivering strategic policy insights on climate resilience and climate mitigation, and identifying and securing investment opportunities across emerging and frontier markets.",
     image: "/images/engieer.jpg",
   },
   {
     icon: "🕌",
-    title: "Islamic Finance",
+    title: "Islamic Finance & Shariah compliant investments",
     description:
       "Our team has experts with professional certifications such as Chartered Islamic Finance Executives (CIFE). This enables us to apply Shariah-compliant principles to market-leading corporate finance, financial planning, investment, and corporate finance, guiding clients to achieve their financial goals while adhering to ethical and religious standards.",
     image: "/images/advisory-card.jpg",
@@ -826,7 +861,7 @@ export const thesisAreas: ThesisArea[] = [
     icon: "🏗️",
     title: "Infrastructure & Development Finance",
     description:
-      "We provide expert services to our clients to understand, design and implement unique models of infrastructure in transport, energy and data (PPPs notably). We have built long-term relationships with DFIs, sovereign wealth funds, impact investors, credit funds and strategic corporates.",
+      "We provide expert services to our clients to understand, design and implement unique models of infrastructure, notably for transport, energy and data/cloud (PPPs notably). We have built long-term relationships with DFIs, sovereign wealth funds, impact investors, credit funds and strategic corporates.",
     image: "/images/focused-confident-female-factory-worker-operating-industrial-machine-touching-control-board-using-tablet.jpg",
   },
 ];
