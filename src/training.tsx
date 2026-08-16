@@ -46,7 +46,6 @@ function TrainingPage() {
                 <StaggerItem key={item.title} index={index}>
                   <PhotoCard
                     image={item.image}
-                    category={String(index + 1).padStart(2, '0')}
                     title={item.title}
                     description={item.body}
                     titleAs="h2"

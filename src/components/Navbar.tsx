@@ -34,6 +34,7 @@ export default function Navbar({ variant = 'home' }: NavbarProps) {
       setOverHero(false)
       const path = window.location.pathname
       if (path.includes('media')) setActiveHref('/media.html')
+      else if (path.includes('training')) setActiveHref('/training.html')
       return
     }
 

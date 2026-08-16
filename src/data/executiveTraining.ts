@@ -33,9 +33,14 @@ export const executiveTrainingPage = {
   ],
   items: [
     {
-      title: 'Investor Education',
+      title: 'Certification Training',
+      image: '/images/Investor/analyzing-business-activity.jpg',
+      body: 'Professionals of all walks of life can get prepared for certifications such as CFA (Investments), CAIA (Alternative Investments), CIFE (Islamic Finance), CDFP (Digital Finance & Crypto/Web3), PRINCE2 (Project Management), FMVA (via the Corporate Finance Institute). We also support many others via our Customised Training.',
+    },
+    {
+      title: 'Investment Manager Training',
       image: '/images/Investor/investor.jpg',
-      body: 'We provide investors with the tools they need to best invest and manage their portfolios on behalf of their members, savers and beneficiaries. This isn’t just about providing advice and insight, but about empowering you with the executive training, technical and leadership skills development.',
+      body: 'We provide investors with the tools they need to best invest, create value and manage the risk in their portfolios. This isn’t just about providing advice and insight, but about empowering you with executive training, technical and leadership skills development. Our team has delivered multiple Aspen - ANDE Investment Manager Training across Africa over the past 5 years.',
     },
     {
       title: 'Advanced Master Classes',
@@ -43,9 +48,19 @@ export const executiveTrainingPage = {
       body: 'In collaboration with leading academic institutions in Ghana and beyond, our Advanced Master Classes are exclusive training sessions run by Asime Partners experts, covering a wide range of subjects relevant to the investment industry in Ghana and beyond. Targeted at investment professionals and institutional investors, these Masterclasses are an opportunity to share our thought leadership, insights and innovation with a select audience.',
     },
     {
+      title: 'Angel Investing',
+      image: '/images/Investor/angel.jpg',
+      body: 'Master the complexities of the African startup ecosystem under the direct guidance of veteran venture capitalist and angel investor, our premium training program equips individuals, fund managers, corporate executives, and aspiring angel investors with practical, battlefield-tested frameworks. Learn firsthand how to evaluate early-stage startups, structure cross-border deals across Anglophone and Francophone markets, manage currency volatility, and guide founders from seed stage to institutional readiness.',
+    },
+    {
       title: 'Customised Training',
       image: '/images/Investor/custom.jpg',
-      body: 'Institutional investors (pension funds, corporate funds, etc.) have a fiduciary duty to members to ensure the long-term sustainability of the funds they manage. Looking at the unique requirements and skill level of attendees, Asime Partners can curate on request a customisable curriculum suited to your unique requirements.',
+      body: 'We support Institutional investors (pension funds, corporate funds, etc.), who have a fiduciary duty to members to ensure the long-term sustainability of the funds they manage. Looking at the unique requirements and skill level of clients, we can curate on request a customisable curriculum suited to your unique requirements. We also support Continued Professional Development (CPDs).',
+    },
+    {
+      title: 'Risk Management',
+      image: '/images/Investor/risk.jpg',
+      body: 'We equip senior leaders, sovereign funds, and fund-of-funds managers with the advanced governance frameworks, tail-risk modeling, and operational due diligence needed to protect public and private capital. We turn risk management into a proactive tool for long-term institutional survival. We train professionals on FRM (Financial Risk Management) and internal risk processes.',
     },
   ],
 }

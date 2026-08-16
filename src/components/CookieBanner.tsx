@@ -44,7 +44,7 @@ export default function CookieBanner() {
       >
         <div className="wf-cookie-copy">
           <span className="wf-cookie-eyebrow">Cookies</span>
-          <h3 className="wf-cookie-title">We use cookies to improve your experience.</h3>
+          <h3 className="wf-cookie-title">We use cookies to improve your experience</h3>
           <p className="wf-cookie-text">
             We use essential cookies to make this site work and optional analytics cookies to understand how visitors use Asime Partners.
           </p>

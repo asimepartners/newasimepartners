@@ -337,14 +337,6 @@
   border-top: none !important;
 }
 
-@media (max-width: 575.98px) {
-  .wf-ft {
-    background-size: 190% auto !important;
-    background-position: center top !important;
-    background-repeat: repeat-y !important;
-  }
-}
-
 .wf-ft-col-label {
   color: #fff !important;
 }

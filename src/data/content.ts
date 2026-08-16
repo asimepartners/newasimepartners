@@ -61,14 +61,14 @@ export const heroContent = {
   scrollLabel: "SCROLL DOWN",
   focusAreas:
     "Climate & Impact | Alternatives & Impact | AI Systems | M&A Advisory | Executive Training",
-  image: "/images/sliders/04.jpg?v=4",
+  image: "/images/sliders/04.jpg?v=5",
   imageAlt:
     "Asime Partners team and partners across advisory, industry, and technology",
   slides: [
-    "/images/sliders/04.jpg?v=4",
-    "/images/sliders/01.jpg?v=4",
-    "/images/sliders/02.jpg?v=4",
-    "/images/sliders/03.jpg?v=4",
+    "/images/sliders/04.jpg?v=5",
+    "/images/sliders/01.jpg?v=5",
+    "/images/sliders/02.jpg?v=5",
+    "/images/sliders/03.jpg?v=5",
   ],
 };
 
@@ -238,7 +238,7 @@ export const businessLines = {
   advisory: {
     eyebrow: "Advisory",
     title: "Business & Financial Advisory",
-    summary: "Trusted advisors across Africa.",
+    summary: "Trusted advisors across Africa",
     description:
       "Our professional services help organisations improve business and financial performance, manage growth, and achieve strategic objectives by integrating financial analysis with operational and strategic guidance. We support organisations to design, structure and launch funds of all types, including blended capital structures, impact funds and more complex investment vehicles.",
     href: "#advisory",
@@ -249,7 +249,7 @@ export const businessLines = {
   management: {
     eyebrow: "Alternatives & Impact",
     title: "Allocate from 5% to 25% to African Alpha",
-    summary: "Capital deployed through focused platforms.",
+    summary: "Capital deployed through focused platforms",
     description:
       "We offer professional services to high-net-worth individuals, family offices, or institutional clients to design, manage, and execute strategies involving non-traditional asset classes beyond public equities, bonds, and cash. These can include: Private Equity, Private Credit, Real Assets, Digital Assets and other Structured Products.",
     href: "#management",
@@ -260,7 +260,7 @@ export const businessLines = {
   tech: {
     eyebrow: "Technology and AI",
     title: "Workflow automation and AI systems",
-    summary: "Intelligent systems for modern investing.",
+    summary: "Intelligent systems for modern investing",
     description:
       "Our technology and AI Systems advisory offers a structured, expert-led engagement that helps you assess, plan, and implement AI and other advanced technology systems in a way that aligns with your strategic goals, risk tolerance, and operational realities. It starts with process mapping and automation, and combines technical domain expertise with business acumen to guide decision-making, governance, and execution to get to AI agents design and orchestration.",
     href: "#technology",
@@ -494,7 +494,7 @@ export const aboutContent = {
   },
   mission: {
     label: "Mission",
-    body: "Be the most trusted, reputable and performant gateway to Africa.",
+    body: "Be the most trusted, reputable and performant gateway to Africa",
   },
   values: {
     label: "Core Values",
@@ -639,32 +639,32 @@ export type ByTheNumbersIcon = "waves" | "orbit" | "star";
 export const byTheNumbers = [
   {
     value: "12+",
-    caption: "Years of experience.",
+    caption: "Years of experience in impact investing and alternative investments in Africa",
     icon: "waves" as ByTheNumbersIcon,
   },
   {
     value: "$2.5bn+",
-    caption: "Value of investments supported.",
+    caption: "Value of investments supported in Agribusiness, Fintech, Renewable Energy, Climate and Healthcare",
     icon: "orbit" as ByTheNumbersIcon,
   },
   {
     value: "$400M+",
-    caption: "Managed over the past 12 years, with $120M directly raised by our team. $1.2bn+ advised in total over the past 15 years across Africa.",
+    caption: "Managed across Africa, with $120M directly raised by our team",
     icon: "star" as ByTheNumbersIcon,
   },
   {
     value: "6",
-    caption: "sectors of expertise, covering Financial Services, Healthcare, Agribusiness & Agritech, Climate & Renewable Energy Finance, Islamic Finance & Shariah compliant investments, and Infrastructure & Development Finance.",
+    caption: "sectors of expertise, covering Financial Services, Healthcare, Agribusiness & Agritech, Climate & Renewable Energy Finance, Islamic Finance & Shariah compliant investments, and Infrastructure & Development Finance",
     icon: "waves" as ByTheNumbersIcon,
   },
   {
     value: "37+",
-    caption: "Countries in Africa where we have networks to support our clients across Francophone, Lusophone and Anglophone countries in East Africa, West Africa, Central Africa and Southern Africa.",
+    caption: "Countries in Africa where we have networks to support our clients across Francophone, Lusophone and Anglophone countries",
     icon: "orbit" as ByTheNumbersIcon,
   },
   {
     value: "4,000+",
-    caption: "Investment opportunities screened.",
+    caption: "Investment opportunities screened from pre-seed early stage startups to large scale infrastructure and climate opportunities",
     icon: "star" as ByTheNumbersIcon,
   },
 ];
@@ -698,7 +698,7 @@ export const advisoryIntro = {
 
 export const footerLead = {
   headline: "Let's unleash Africa's",
-  headlineAccent: "potential together.",
+  headlineAccent: "potential together",
   cta: { label: "Get in touch", href: "#apply" },
 };
 
