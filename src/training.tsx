@@ -7,6 +7,8 @@ import Navbar from '@/components/Navbar'
 import Awards from '@/components/Awards'
 import Footer from '@/components/Footer'
 import ScrollToTop from '@/components/ScrollToTop'
+import PhotoCard from '@/components/PhotoCard'
+import { StaggerParent, StaggerItem } from '@/components/Motion'
 import './styles/custom.css'
 import './styles/typography.css'
 import './styles/theme-dark.css'
@@ -34,23 +36,24 @@ function TrainingPage() {
           </h1>
         </section>
 
-        <Awards />
+        <Awards title="Certifications" items={executiveTrainingPage.certifications} />
 
-        <section className="wf-stages-main wf-training-body">
-          <div className="wf-stages-inner">
-            <div className="wf-stages-grid">
-              {executiveTrainingPage.items.map((item) => (
-                <article key={item.title} className="wf-stages-card wf-stages-card--photo">
-                  <div className="wf-stages-card-media">
-                    <img src={item.image} alt="" loading="lazy" decoding="async" />
-                  </div>
-                  <div className="wf-stages-card-copy">
-                    <h2 className="wf-stages-card-title">{item.title}</h2>
-                    <p className="wf-stages-card-body">{item.body}</p>
-                  </div>
-                </article>
+        <section className="wf-work wf-training-work" aria-label="Executive training programs">
+          <div className="wf-work-grid-lines" aria-hidden="true" />
+          <div className="wf-work-inner">
+            <StaggerParent className="wf-work-cards">
+              {executiveTrainingPage.items.map((item, index) => (
+                <StaggerItem key={item.title} index={index}>
+                  <PhotoCard
+                    image={item.image}
+                    category={String(index + 1).padStart(2, '0')}
+                    title={item.title}
+                    description={item.body}
+                    titleAs="h2"
+                  />
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerParent>
           </div>
         </section>
       </main>

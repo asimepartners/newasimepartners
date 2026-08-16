@@ -1,6 +1,36 @@
 export const executiveTrainingPage = {
   title: 'Executive Training',
   heroImage: '/images/platform/Asime Partners - Acumen Workshops_15.jpg',
+  certifications: [
+    {
+      name: 'CAIA',
+      logo: '/images/Certifications/caia-logo.png',
+    },
+    {
+      name: 'Ethica Institute',
+      logo: '/images/Certifications/ethica-institute-logo.png',
+    },
+    {
+      name: 'PRINCE2',
+      logo: '/images/Certifications/prince2-logo.svg',
+    },
+    {
+      name: 'Aspen Institute',
+      logo: '/images/Certifications/Aspen_Institute_Logo_-_New_Brand.webp',
+    },
+    {
+      name: 'PR Newswire',
+      logo: '/images/Certifications/pr-newswire-associated0.jpg',
+    },
+    {
+      name: 'Certification Partner',
+      logo: '/images/Certifications/images.png',
+    },
+    {
+      name: 'Professional Credential',
+      logo: '/images/Certifications/logo.webp',
+    },
+  ],
   items: [
     {
       title: 'Investor Education',

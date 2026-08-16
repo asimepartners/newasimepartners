@@ -328,7 +328,11 @@
 
 /* ── Footer — newsletter card + light footer ─────────────────── */
 .wf-ft {
-  background: #000 !important;
+  background-color: #000 !important;
+  background-image: url('/images/mega.jpg') !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
   color: #fff !important;
   border-top: none !important;
 }

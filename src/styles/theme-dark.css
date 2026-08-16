@@ -22,8 +22,11 @@ body {
 
 .wf-main,
 .wf-ft {
-  background: #000;
   color: var(--page-text);
+}
+
+.wf-main {
+  background: #000;
 }
 
 /* ── Global headings & prose ─────────────────────────────────── */

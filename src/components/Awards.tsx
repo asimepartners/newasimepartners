@@ -1,14 +1,28 @@
 import { awardsContent } from '@/data/content'
 import { AnimatedSection, FadeUp } from './Motion'
 
-export default function Awards() {
-  const track = [...awardsContent.items, ...awardsContent.items]
+type AwardItem = {
+  name: string
+  logo: string
+}
+
+type AwardsProps = {
+  title?: string
+  items?: readonly AwardItem[]
+}
+
+export default function Awards({
+  title = awardsContent.title,
+  items = awardsContent.items,
+}: AwardsProps) {
+  const list = [...items]
+  const track = [...list, ...list]
 
   return (
-    <AnimatedSection className="wf-awards" aria-label={awardsContent.title}>
+    <AnimatedSection className="wf-awards" aria-label={title}>
       <div className="wf-awards-inner">
         <FadeUp>
-          <h2 className="wf-awards-title">{awardsContent.title}</h2>
+          <h2 className="wf-awards-title">{title}</h2>
         </FadeUp>
 
         <FadeUp index={1} className="wf-awards-banner">
@@ -19,11 +33,11 @@ export default function Awards() {
                   <li
                     key={`${item.name}-${index}`}
                     className="wf-awards-item"
-                    aria-hidden={index >= awardsContent.items.length}
+                    aria-hidden={index >= list.length}
                   >
                     <img
                       src={item.logo}
-                      alt={index >= awardsContent.items.length ? '' : item.name}
+                      alt={index >= list.length ? '' : item.name}
                       className="wf-awards-logo"
                       loading="lazy"
                       decoding="async"

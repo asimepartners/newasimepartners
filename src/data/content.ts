@@ -121,6 +121,7 @@ export const primaryNavLinks = [
   { label: "Advisory", href: "#advisory" },
   { label: "Alternatives", href: "#management" },
   { label: "Tech & AI", href: "#technology" },
+  { label: "Executive Training", href: "/training.html" },
   { label: "Media", href: "/media.html" },
   { label: "About Us", href: "#our-people" },
 ] as const;
