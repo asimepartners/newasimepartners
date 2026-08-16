@@ -4002,11 +4002,29 @@ a { text-decoration: none; color: inherit; }
 @media (max-width: 575.98px) {
   .wf-ft {
     padding: 1rem;
+    background-size: 190% auto;
+    background-position: center top;
+    background-repeat: repeat-y;
+  }
+
+  .wf-ft::before {
+    background: rgba(0, 0, 0, 0.92);
   }
 
   .wf-news-card {
     padding: 1.5rem 1.15rem;
     border-radius: 3px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .wf-ft {
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .wf-ft::before {
+    background: rgba(0, 0, 0, 0.86);
   }
 }
 
