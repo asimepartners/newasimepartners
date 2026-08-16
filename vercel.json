@@ -4,7 +4,9 @@
   "outputDirectory": "dist",
   "installCommand": "npm ci",
   "rewrites": [
-    { "source": "/privacy", "destination": "/privacy.html" }
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/stages", "destination": "/stages.html" },
+    { "source": "/training", "destination": "/training.html" }
   ],
   "headers": [
     {

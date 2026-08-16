@@ -235,7 +235,11 @@
 
 /* ── Mega menu ──────────────────────────────────────────────── */
 .wf-mega-panel {
-  background: #0a0a0a !important;
+  background-color: #000 !important;
+  background-image: url('/images/mega.jpg') !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 

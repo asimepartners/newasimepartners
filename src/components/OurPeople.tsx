@@ -16,7 +16,7 @@ export default function OurPeople() {
         <StaggerParent className="wf-ab3-grid">
           <StaggerItem className="wf-ab3-card">
             <span className="wf-ab3-icon" aria-hidden="true">
-              <HugeiconsIcon icon={ViewIcon} size={34} strokeWidth={1.8} color="currentColor" />
+              <HugeiconsIcon icon={ViewIcon} size={26} strokeWidth={1.8} color="currentColor" />
             </span>
             <h3 className="wf-ab3-card-title">{aboutContent.vision.label}</h3>
             <p className="wf-ab3-card-body">{aboutContent.vision.body}</p>
@@ -24,15 +24,15 @@ export default function OurPeople() {
 
           <StaggerItem className="wf-ab3-card">
             <span className="wf-ab3-icon" aria-hidden="true">
-              <HugeiconsIcon icon={CogIcon} size={34} strokeWidth={1.8} color="currentColor" />
+              <HugeiconsIcon icon={CogIcon} size={26} strokeWidth={1.8} color="currentColor" />
             </span>
             <h3 className="wf-ab3-card-title">{aboutContent.mission.label}</h3>
             <p className="wf-ab3-card-body">{aboutContent.mission.body}</p>
           </StaggerItem>
 
-          <StaggerItem className="wf-ab3-card">
+          <StaggerItem className="wf-ab3-card" id="our-values">
             <span className="wf-ab3-icon" aria-hidden="true">
-              <HugeiconsIcon icon={HandHelpingIcon} size={34} strokeWidth={1.8} color="currentColor" />
+              <HugeiconsIcon icon={HandHelpingIcon} size={26} strokeWidth={1.8} color="currentColor" />
             </span>
             <h3 className="wf-ab3-card-title">{aboutContent.values.label}</h3>
             <ul className="wf-ab3-values" aria-label={aboutContent.values.label}>

@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Awards from './components/Awards'
+import ByTheNumbers from './components/ByTheNumbers'
 import OurPlatform from './components/OurPlatform'
 import BusinessPillars from './components/BusinessPillars'
 import AdvisoryDetail from './components/AdvisoryDetail'
@@ -14,7 +15,6 @@ import { advisoryDetail, managementDetail, techDetail } from './data/content'
 
 const OurPeople = lazy(() => import('./components/OurPeople'))
 const HighlightedWork = lazy(() => import('./components/HighlightedWork'))
-const ByTheNumbers = lazy(() => import('./components/ByTheNumbers'))
 const Capabilities = lazy(() => import('./components/Capabilities'))
 const Geographies = lazy(() => import('./components/Geographies'))
 const Team = lazy(() => import('./components/Team'))
@@ -29,7 +29,6 @@ function LazyBelowFold() {
       <OurPeople />
       <Team />
       <HighlightedWork />
-      <ByTheNumbers />
       <Capabilities />
       <Geographies />
       <ApplyCta />
@@ -49,6 +48,7 @@ export default function App() {
       <main className="wf-main">
         <Hero />
         <Awards />
+        <ByTheNumbers />
         <OurPlatform />
         <BusinessPillars />
         <AdvisoryDetail id="advisory" content={advisoryDetail} />

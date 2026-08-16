@@ -317,12 +317,24 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background: #000;
+  isolation: isolate;
+  background: #000 url('/images/mega.jpg') center / cover no-repeat;
   color: var(--jz-white);
   box-shadow: none;
 }
 
+.wf-mega-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.86);
+}
+
 .wf-mega-panel-head {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -330,7 +342,7 @@ a { text-decoration: none; color: inherit; }
   flex: 0 0 auto;
   padding: clamp(1rem, 3vw, 1.75rem) clamp(1.25rem, 5vw, 3rem);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  background: #000;
+  background: transparent;
 }
 
 .wf-mega-panel-head-actions {
@@ -377,6 +389,8 @@ a { text-decoration: none; color: inherit; }
 }
 
 .wf-mega-panel-body {
+  position: relative;
+  z-index: 1;
   flex: 1 1 auto;
   min-height: 0;
   overflow-x: hidden;
@@ -402,7 +416,7 @@ a { text-decoration: none; color: inherit; }
   }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1200px) {
   .wf-mega-panel-body {
     grid-template-columns: repeat(5, 1fr);
   }
@@ -452,13 +466,15 @@ a { text-decoration: none; color: inherit; }
 }
 
 .wf-mega-panel-foot {
+  position: relative;
+  z-index: 1;
   flex: 0 0 auto;
   padding: clamp(1rem, 2.5vw, 1.5rem) clamp(1.25rem, 5vw, 3rem);
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  background: #000;
+  background: transparent;
 }
 
 .wf-mega-panel .wf-mega-email {
@@ -2831,7 +2847,13 @@ a { text-decoration: none; color: inherit; }
 
 #advisory,
 #management,
-#technology {
+#technology,
+#our-values,
+#private-markets,
+#health-bio,
+#real-estate,
+#public-markets,
+#executive-training {
   scroll-margin-top: 3.25rem;
 }
 
@@ -2868,7 +2890,8 @@ a { text-decoration: none; color: inherit; }
   white-space: nowrap;
 }
 
-#advisory .wf-adv-title {
+#advisory .wf-adv-title,
+#management .wf-adv-title {
   white-space: normal;
   max-width: 54rem;
   margin-inline: auto;
@@ -4443,14 +4466,16 @@ body.wf-privacy-root {
 
 .wf-about-sub {
   margin: 1.25rem auto 0;
-  max-width: none;
+  max-width: 54rem;
   font-family: var(--font-body);
   font-size: clamp(0.95rem, 1.25vw, 1.15rem);
   font-weight: 400;
   line-height: 1.7;
   letter-spacing: 0;
-  text-align: center;
-  white-space: nowrap;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  white-space: normal;
   color: var(--about-body);
 }
 
@@ -4476,7 +4501,7 @@ body.wf-privacy-root {
   align-items: center;
   text-align: center;
   height: 100%;
-  padding: clamp(2rem, 3vw, 2.75rem) clamp(1.5rem, 2.5vw, 2.25rem);
+  padding: clamp(1.25rem, 2vw, 1.7rem) clamp(1.1rem, 2vw, 1.6rem);
   background: #0a0a0a !important;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 3px;
@@ -4494,9 +4519,9 @@ body.wf-privacy-root {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 5rem;
-  height: 5rem;
-  margin-bottom: 1.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: 0.85rem;
   border-radius: 50%;
   background: var(--hero-lime, #FCD116);
   color: #14181f;
@@ -4504,9 +4529,9 @@ body.wf-privacy-root {
 }
 
 .wf-about .wf-ab3-card-title {
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.7rem;
   font-family: var(--font-display);
-  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-size: clamp(1.45rem, 2.3vw, 1.85rem);
   font-weight: 700;
   letter-spacing: -0.01em;
   color: #fff !important;
@@ -4514,9 +4539,9 @@ body.wf-privacy-root {
 
 .wf-about .wf-ab3-card-body {
   margin: 0;
-  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.68) !important;
+  font-size: clamp(1.12rem, 1.7vw, 1.32rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.78) !important;
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
@@ -4532,10 +4557,10 @@ body.wf-privacy-root {
 }
 
 .wf-about .wf-ab3-value-line {
-  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  font-size: clamp(1.12rem, 1.7vw, 1.32rem);
   font-weight: 500;
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.75) !important;
+  color: rgba(255, 255, 255, 0.78) !important;
 }
 
 @media (max-width: 860px) {
@@ -5360,13 +5385,17 @@ body.wf-privacy-root {
   min-height: 100%;
 }
 
-.wf-numbers-item:first-child {
+.wf-numbers-item:nth-child(3n + 1) {
   padding-left: 0;
 }
 
-.wf-numbers-item:last-child {
+.wf-numbers-item:nth-child(3n) {
   border-right: none;
   padding-right: 0;
+}
+
+.wf-numbers-item:nth-child(n + 4) {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .wf-numbers-index {
@@ -5389,7 +5418,7 @@ body.wf-privacy-root {
 
 .wf-numbers-caption {
   margin: 0;
-  max-width: 18rem;
+  max-width: 28rem;
   font-size: clamp(0.95rem, 1.2vw, 1.05rem);
   line-height: 1.55;
   color: rgba(255, 255, 255, 0.55);
@@ -5854,9 +5883,9 @@ body.wf-privacy-root {
 
   .wf-hero--advisory .wf-hero-sub--advisory {
     margin-top: 0.15rem;
-    max-width: 20rem;
-    font-size: 0.98rem;
-    line-height: 1.55;
+    max-width: none;
+    font-size: clamp(0.72rem, 3.2vw, 0.98rem);
+    line-height: 1.4;
     color: rgba(255, 255, 255, 0.88);
   }
 
@@ -7289,6 +7318,156 @@ body.wf-contact-root {
 
 @media (max-width: 560px) {
   .wf-contact-offices-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Stages page ────────────────────────────────────────────── */
+.wf-stages-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #000;
+  color: #fff;
+}
+
+.wf-training-hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: clamp(28rem, 72vh, 44rem);
+  overflow: hidden;
+}
+
+.wf-training-hero-media {
+  position: absolute;
+  inset: 0;
+}
+
+.wf-training-hero-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.wf-training-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.78) 100%);
+}
+
+.wf-training-hero-title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0 1.25rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #fff !important;
+  text-align: center;
+}
+
+.wf-training-body {
+  padding-top: clamp(2rem, 4vw, 3rem) !important;
+}
+
+.wf-stages-main {
+  padding: 9.5rem 0 3.5rem;
+}
+
+.wf-stages-inner {
+  width: min(100% - 2 * clamp(1.25rem, 4vw, 2.5rem), 92rem);
+  margin-inline: auto;
+}
+
+.wf-stages-head {
+  max-width: 46rem;
+  margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+.wf-stages-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.wf-stages-intro {
+  margin: 0.85rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.68);
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.wf-stages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 1.8vw, 1.5rem);
+}
+
+.wf-stages-card {
+  padding: clamp(1.35rem, 2vw, 1.85rem);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.wf-stages-card--photo {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.wf-stages-card-media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.wf-stages-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wf-stages-card-copy {
+  padding: clamp(1.2rem, 1.8vw, 1.6rem);
+}
+
+.wf-stages-card-title {
+  margin: 0 0 0.7rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--hero-lime, #FCD116);
+}
+
+.wf-stages-card-body {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.68);
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+@media (max-width: 900px) {
+  .wf-stages-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .wf-stages-grid {
     grid-template-columns: 1fr;
   }
 }

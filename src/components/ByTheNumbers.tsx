@@ -39,9 +39,6 @@ export default function ByTheNumbers() {
         <StaggerParent className="wf-numbers-grid">
           {byTheNumbers.map((stat, index) => (
             <StaggerItem key={stat.value} index={index} className="wf-numbers-item">
-              <span className="wf-numbers-index" aria-hidden="true">
-                {String(index + 1).padStart(2, '0')}
-              </span>
               <StatValue value={stat.value} />
               <p className="wf-numbers-caption">{stat.caption}</p>
             </StaggerItem>

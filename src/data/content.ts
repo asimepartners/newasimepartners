@@ -46,25 +46,29 @@ export interface FaqItem {
 /* ── Hero ────────────────────────────────────────────────── */
 
 export const heroContent = {
-  headline: "Unleashing Africa’s Potential",
+  headline: "Gateway to Africa’s Potential",
   headlineAccent: "",
   subheadline:
-    "Trust and Bond that unlocks global capital for frontier markets alternative and impact investment strategies",
+    "Trust and bond that unlocks global capital for frontier markets alternative and impact investment strategies",
+  subheadlineLines: [
+    "Trust and bond that unlocks global capital",
+    "for frontier markets alternative and impact investment strategies",
+  ],
   ctaPrimary: { label: "GET IN TOUCH", href: "#apply" },
   ctaNav: { label: "Apply Now", href: "#apply" },
-  typingText: "Platform, Alternative Investments, Advisory, Technology & AI",
-  typingPhrases: ["Platform", "Alternative Investments", "Advisory", "Technology & AI"],
+  typingText: "Platform, Alternatives & Impact, Advisory, Technology & AI",
+  typingPhrases: ["Platform", "Alternatives & Impact", "Advisory", "Technology & AI"],
   scrollLabel: "SCROLL DOWN",
   focusAreas:
-    "Climate & Impact | Alternative Investments | AI Systems | M&A Advisory | Executive Training",
-  image: "/images/sliders/04.jpg?v=3",
+    "Climate & Impact | Alternatives & Impact | AI Systems | M&A Advisory | Executive Training",
+  image: "/images/sliders/04.jpg?v=4",
   imageAlt:
     "Asime Partners team and partners across advisory, industry, and technology",
   slides: [
-    "/images/sliders/04.jpg?v=3",
-    "/images/sliders/01.jpg?v=3",
-    "/images/sliders/02.jpg?v=3",
-    "/images/sliders/03.jpg?v=3",
+    "/images/sliders/04.jpg?v=4",
+    "/images/sliders/01.jpg?v=4",
+    "/images/sliders/02.jpg?v=4",
+    "/images/sliders/03.jpg?v=4",
   ],
 };
 
@@ -129,6 +133,7 @@ export interface PlatformCard {
   description: string;
   href: string;
   image: string;
+  id: string;
 }
 
 export const platformIntro = {
@@ -140,6 +145,7 @@ export const platformIntro = {
 
 export const platformCards: PlatformCard[] = [
   {
+    id: "private-markets",
     title: "Asime Ventures",
     category: "Private Markets",
     description:
@@ -148,6 +154,7 @@ export const platformCards: PlatformCard[] = [
     image: "/images/platform/01-asime-ventures.jpg",
   },
   {
+    id: "health-bio",
     title: "Jaza Rift",
     category: "Health & Bio",
     description:
@@ -156,6 +163,7 @@ export const platformCards: PlatformCard[] = [
     image: "/images/platform/02-jaza-rift.jpg",
   },
   {
+    id: "real-estate",
     title: "Real Estate",
     category: "Listed and Unlisted",
     description:
@@ -164,6 +172,7 @@ export const platformCards: PlatformCard[] = [
     image: "/images/platform/03-reit.jpg?v=2",
   },
   {
+    id: "public-markets",
     title: "Assets (Listed & Digital)",
     category: "Public Markets",
     description:
@@ -175,58 +184,51 @@ export const platformCards: PlatformCard[] = [
 
 export const navGroups = [
   {
-    label: "Asime Partners",
-    href: "#group",
+    label: "About Us",
+    href: "#our-people",
     children: [
-      { label: "Our Mission", href: "#group" },
-      { label: "Our Story", href: "#our-people" },
-      { label: "Our Offices", href: "#geographies" },
-    ],
-  },
-  {
-    label: "Advisory",
-    href: "#advisory",
-    children: [
-      { label: "Capabilities", href: "#capabilities" },
-      { label: "Geographies", href: "#geographies" },
-      { label: "Sectors", href: "#sectors" },
+      { label: "Our Values", href: "#our-values" },
+      { label: "Our People", href: "#team" },
       { label: "Our Work", href: "#our-work" },
+      { label: "Join Us", href: "/contact.html" },
+      { label: "Work with Us", href: "#apply" },
     ],
   },
   {
-    label: "Investment",
-    href: "#management",
+    label: "Platform",
+    href: "#platform",
     children: [
-      { label: "Chale Fund", href: "#apply" },
-      { label: "Venture Capital", href: "#management" },
-      { label: "Private Credit", href: "#management" },
-      { label: "Angel Investing", href: "#management" },
+      { label: "Private Markets", href: "#private-markets" },
+      { label: "Health & Bio", href: "#health-bio" },
+      { label: "Real Estate", href: "#real-estate" },
+      { label: "Public Markets", href: "#public-markets" },
     ],
   },
   {
-    label: "Technology",
-    href: "#technology",
+    label: "Capabilities",
+    href: "#our-capabilities",
     children: [
-      { label: "AI Systems", href: "#technology" },
-      { label: "Data & Analytics", href: "#technology" },
-      { label: "Digital Platforms", href: "#technology" },
+      { label: "Advisory", href: "#advisory" },
+      { label: "Alternatives", href: "#management" },
+      { label: "Tech & AI", href: "#technology" },
+    ],
+  },
+  {
+    label: "Scope",
+    href: "#sectors",
+    children: [
+      { label: "Sectors", href: "#sectors" },
+      { label: "Geographies", href: "#geographies" },
+      { label: "Stage", href: "/stages.html" },
     ],
   },
   {
     label: "Insights",
-    href: "/media.html",
+    href: "#insights",
     children: [
       { label: "Media", href: "/media.html" },
-      { label: "Insights", href: "#insights" },
-      { label: "Who We Are", href: "#our-people" },
-    ],
-  },
-  {
-    label: "Our Team",
-    href: "#apply",
-    children: [
-      { label: "Working with Us", href: "#apply" },
-      { label: "Apply Now", href: "#apply" },
+      { label: "Highlighted work", href: "#our-work" },
+      { label: "Executive Training", href: "/training.html" },
     ],
   },
 ] as const;
@@ -244,7 +246,7 @@ export const businessLines = {
     imageAlt: "Investment advisory",
   },
   management: {
-    eyebrow: "Alternative Investments",
+    eyebrow: "Alternatives & Impact",
     title: "Allocate from 5% to 25% to African Alpha",
     summary: "Capital deployed through focused platforms.",
     description:
@@ -357,13 +359,13 @@ export const advisoryDetail: ServiceDetail = {
   items: [
     {
       icon: "fund",
-      title: "Fund Design and Structuring",
-      body: "We bridge African investment potential with global capital markets by designing world-class fund structures across Europe, Middle East and the Americas. Our consulting services map your private equity, infrastructure, or liquid strategies to robust European (UCITS, AIFMD) and US/Cayman frameworks (Delaware LPs, Cayman Segregated Portfolio Companies). Utilizing premium global vehicles, we architect compliant, tax-efficient platforms that unlock cross-border distribution and maximize international investor mobilization. We specialise in blended capital structures with catalytic capital, permanent or evergreen vehicles for long-term capital preservation and impact.",
+      title: "Fund Design & Structuring",
+      body: "We bridge African investment potential with global capital markets by designing world-class fund structures across Europe, Middle East and the Americas. Our consulting services map your alternative investments, ESG/impact focused strategies to robust European (UCITS, AIFMD, SFDR 8/9) and US/Cayman frameworks (Delaware LPs, Cayman Segregated Portfolio Companies). Utilizing premium global vehicles, we architect compliant, tax-efficient platforms that unlock cross-border distribution and maximize international investor mobilization. We specialise in blended capital structures with catalytic capital, permanent or evergreen vehicles for long-term capital preservation and impact.",
     },
     {
       icon: "modelling",
-      title: "Advanced Financial Modelling & Valuation",
-      body: "Our combined global experience and deep local expertise in Africa, enables us to deliver robust, institutional-grade and dynamic financial models that translate complex business data into clear, actionable strategic insights tailored to African realities. By combining meticulous multi-scenario forecasting with industry-standard valuation methodologies (DCF, VC method, EV/EBITDA, EV/GMV, comparable companies, and precedent transactions), we help you accurately determine asset value, mitigate transactional risk, and optimize capital allocation. Whether you are navigating an M&A transaction, raising capital, or planning long-term corporate strategy, our precise financial architecture provides the clarity needed to execute high-stakes decisions with absolute confidence.",
+      title: "Financial Modelling & Valuation",
+      body: "Our global experience and deep African expertise let us build robust, institutional-grade financial models. We turn complex data into clear, actionable insights tailored to Africa, using multi-scenario forecasting and standard valuation methods (DCF, VC, EV/EBITDA, EV/GMV, comparables, precedent transactions). This helps you accurately value assets, reduce risk, and optimize capital—whether you’re navigating an M&A, investment, or strategic decision.",
     },
     {
       icon: "cfo",
@@ -377,7 +379,7 @@ export const advisoryDetail: ServiceDetail = {
     },
     {
       icon: "risk",
-      title: "Risk Management & Advisory",
+      title: "Risk Management & Risk Advisory",
       body: "Protect your company or fund from systemic volatility and unexpected financial threats. We identify, quantify, and mitigate complex balance sheet or fund investments risks, liquidity constraints, and operational vulnerabilities. Our team builds proactive mitigation frameworks that ensure capital preservation, business continuity, and regulatory compliance. We have experience in family office, funds, fund of funds and sovereign wealth funds risk and portfolio management.",
     },
     {
@@ -389,8 +391,8 @@ export const advisoryDetail: ServiceDetail = {
 };
 
 export const managementDetail: ServiceDetail = {
-  eyebrow: "Alternative Investments",
-  headline: "Alternative Investments Across Our Platforms",
+  eyebrow: "Alternatives & Impact",
+  headline: "Alternative Investments & Impact Solutions across our Platforms",
   items: [
     {
       icon: "overview",
@@ -487,7 +489,7 @@ export const aboutContent = {
     "Aerial view of precision agricultural machines working across green crop fields",
   vision: {
     label: "Vision",
-    body: "Unleash Africa’s potential",
+    body: "Gateway to Africa’s Potential",
   },
   mission: {
     label: "Mission",
@@ -523,6 +525,7 @@ export interface HighlightedWorkItem {
   description: string;
   href: string;
   image: string;
+  id?: string;
 }
 
 export const highlightedWorkIntro = {
@@ -546,7 +549,7 @@ export const caseStudies: CaseStudy[] = [
     media: "spheres",
   },
   {
-    category: "Alternative Investments",
+    category: "Alternatives & Impact",
     question: "How can costs be sustainably optimized to create positive impact?",
     href: "#apply",
     media: "turbine",
@@ -607,6 +610,7 @@ export const highlightedWork: HighlightedWorkItem[] = [
     description: "Leadership development and technical assistance for founders navigating capital markets.",
     href: "#capabilities",
     image: "/images/work/06.jpg",
+    id: "executive-training",
   },
 ];
 
@@ -633,18 +637,33 @@ export type ByTheNumbersIcon = "waves" | "orbit" | "star";
 
 export const byTheNumbers = [
   {
-    value: "4+",
-    caption: "capital platforms spanning venture, credit, angel investing, and advisory",
+    value: "12+",
+    caption: "Years of experience.",
     icon: "waves" as ByTheNumbersIcon,
   },
   {
-    value: "54",
-    caption: "markets reached across Africa",
+    value: "$2.5bn+",
+    caption: "Value of investments supported.",
     icon: "orbit" as ByTheNumbersIcon,
   },
   {
-    value: "3",
-    caption: "core focus areas in inclusion, impact, and investment advisory",
+    value: "$400M+",
+    caption: "Managed over the past 12 years, with $120M directly raised by our team. $1.2bn+ advised in total over the past 15 years across Africa.",
+    icon: "star" as ByTheNumbersIcon,
+  },
+  {
+    value: "6",
+    caption: "sectors of expertise, covering Financial Services, Healthcare, Agribusiness & Agritech, Climate & Renewable Energy Finance, Islamic Finance & Shariah compliant investments, and Infrastructure & Development Finance.",
+    icon: "waves" as ByTheNumbersIcon,
+  },
+  {
+    value: "37+",
+    caption: "Countries in Africa where we have networks to support our clients across Francophone, Lusophone and Anglophone countries in East Africa, West Africa, Central Africa and Southern Africa.",
+    icon: "orbit" as ByTheNumbersIcon,
+  },
+  {
+    value: "4,000+",
+    caption: "Investment opportunities screened.",
     icon: "star" as ByTheNumbersIcon,
   },
 ];
@@ -1245,7 +1264,7 @@ export const offices: Office[] = [
 export const footerNav = {
   platform: [
     "Climate & Impact",
-    "Alternative Investments",
+    "Alternatives & Impact",
     "AI Systems",
     "M&A Advisory",
     "Executive Training",

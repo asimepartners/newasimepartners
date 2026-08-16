@@ -19,6 +19,7 @@ export default function HighlightedWork() {
           {highlightedWork.map((item, index) => (
             <StaggerItem key={item.title} index={index}>
               <PhotoCard
+                id={item.id}
                 href={item.href}
                 image={item.image}
                 category={item.platform}

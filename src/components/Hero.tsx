@@ -100,7 +100,13 @@ export default function Hero() {
           </FadeUp>
 
           <FadeUp index={1}>
-            <p className="wf-hero-sub wf-hero-sub--advisory">{heroContent.subheadline}</p>
+            <p className="wf-hero-sub wf-hero-sub--advisory">
+              {heroContent.subheadlineLines.map((line) => (
+                <span key={line} className="wf-hero-sub-line">
+                  {line}
+                </span>
+              ))}
+            </p>
           </FadeUp>
 
           <FadeUp index={2}>
