@@ -506,7 +506,8 @@ a { text-decoration: none; color: inherit; }
 
 .wf-mega-email {
   font-size: clamp(1rem, 1.6vw, 1.125rem);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
   .wf-cookie-shell {
@@ -4259,6 +4260,12 @@ body.wf-privacy-root {
   align-items: stretch;
 }
 
+.wf-lines-foot {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+}
+
 @media (max-width: 960px) {
   .wf-lines-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -4842,6 +4849,19 @@ body.wf-privacy-root {
   line-height: 1.35;
   color: #fff !important;
   white-space: nowrap;
+}
+
+.wf-work-intro {
+  margin: 0 auto;
+  max-width: 54rem;
+  font-family: var(--font-body);
+  font-size: clamp(0.98rem, 1.35vw, 1.12rem);
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.72);
+  white-space: normal;
 }
 
 .wf-work-cards {

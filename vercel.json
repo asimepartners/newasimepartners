@@ -6,7 +6,8 @@
   "rewrites": [
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/stages", "destination": "/stages.html" },
-    { "source": "/training", "destination": "/training.html" }
+    { "source": "/training", "destination": "/training.html" },
+    { "source": "/work", "destination": "/work.html" }
   ],
   "headers": [
     {

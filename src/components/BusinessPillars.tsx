@@ -1,3 +1,5 @@
+import { HugeiconsIcon } from '@hugeicons/react'
+import { ArrowRight01Icon } from '@hugeicons/core-free-icons'
 import { businessLines } from '@/data/content'
 import { AnimatedSection, FadeUp, StaggerParent, StaggerItem } from './Motion'
 import PhotoCard from './PhotoCard'
@@ -35,6 +37,13 @@ export default function BusinessPillars() {
             </StaggerItem>
           ))}
         </StaggerParent>
+
+        <FadeUp className="wf-lines-foot" index={1}>
+          <a href="/work.html" className="wf-platform-cta">
+            Our Work
+            <HugeiconsIcon icon={ArrowRight01Icon} size={18} strokeWidth={2.4} />
+          </a>
+        </FadeUp>
       </div>
     </AnimatedSection>
   )

@@ -190,19 +190,9 @@ export const navGroups = [
     children: [
       { label: "Our Values", href: "#our-values" },
       { label: "Our People", href: "#team" },
-      { label: "Our Work", href: "#our-work" },
-      { label: "Join Us", href: "/contact.html" },
+      { label: "Our Work", href: "/work.html" },
+      { label: "Contact Us", href: "/contact.html" },
       { label: "Work with Us", href: "#apply" },
-    ],
-  },
-  {
-    label: "Platform",
-    href: "#platform",
-    children: [
-      { label: "Private Markets", href: "#private-markets" },
-      { label: "Health & Bio", href: "#health-bio" },
-      { label: "Real Estate", href: "#real-estate" },
-      { label: "Public Markets", href: "#public-markets" },
     ],
   },
   {
@@ -212,12 +202,14 @@ export const navGroups = [
       { label: "Advisory", href: "#advisory" },
       { label: "Alternatives", href: "#management" },
       { label: "Tech & AI", href: "#technology" },
+      { label: "Executive Training", href: "/training.html" },
     ],
   },
   {
     label: "Scope",
     href: "#sectors",
     children: [
+      { label: "Platform", href: "#platform" },
       { label: "Sectors", href: "#sectors" },
       { label: "Geographies", href: "#geographies" },
       { label: "Stage", href: "/stages.html" },
@@ -228,8 +220,7 @@ export const navGroups = [
     href: "#insights",
     children: [
       { label: "Media", href: "/media.html" },
-      { label: "Highlighted work", href: "#our-work" },
-      { label: "Executive Training", href: "/training.html" },
+      { label: "Highlighted work", href: "/work.html" },
     ],
   },
 ] as const;
@@ -473,7 +464,7 @@ export const aboutContent = {
   eyebrow: "ABOUT US",
   title: "Unveiling Our Identity, Vision and Values",
   subheading:
-    "We are an Africa focused alternative investment fund adviser committed to driving positive financial, social and economic change across Anglophone and Francophone Africa",
+    "We are an Africa focused impact and alternative investments adviser committed to driving positive financial, social and economic change across Anglophone and Francophone Africa",
   image: "/images/about-agritech.jpg",
   imageAlt:
     "Aerial view of precision agricultural machines working across green crop fields",
@@ -524,6 +515,14 @@ export const highlightedWorkIntro = {
   headlineAccent: "at the heart of our missions",
 };
 
+export const ourWorkPage = {
+  title: "Our Work",
+  heroImage: "/images/work/our-work-hero.png",
+  trackRecordEyebrow: "Track Record",
+  trackRecordIntro:
+    "Our platform, advisory and tech & AI services have been highlighted in various publications. We serve clients through the breadth and depth of African investment opportunities. We’re also an experienced executive training organisation.",
+};
+
 export interface CaseStudy {
   category: string;
   question: string;
@@ -554,53 +553,76 @@ export const caseStudies: CaseStudy[] = [
 
 export const highlightedWork: HighlightedWorkItem[] = [
   {
-    platform: "Investment Advisory",
-    country: "Ghana",
-    title: "Gender Smart SME Fund Structuring & Capital Mobilization",
-    description: "Advisory support for impact investors deploying capital into gender inclusive SMEs across West Africa.",
+    platform: "Advisory",
+    country: "West Africa",
+    title: "West Africa Fund of Funds Financial Modelling",
+    description:
+      "We advised a target multi-million dollar West African fund of funds on the advanced financial modelling of their blended capital structure. The fund of funds raised substantial capital from local pension funds and international investors.",
     href: "#advisory",
     image: "/images/work/01.jpg",
   },
   {
-    platform: "Chale Fund",
+    platform: "Impact Fund",
+    country: "Africa",
+    title: "Global Impact Fund",
+    description:
+      "We advised a global impact fund on the ideation, design, financial modelling and initial testing of pan-African blended capital facility to provide working capital instruments for companies in Agribusiness, Renewable Energy and Healthcare in East and West Africa. This included potential currency catalytic first loss shares.",
+    href: "#management",
+    image: "/images/work/06.jpg",
+  },
+  {
+    platform: "Angel Investing",
     country: "Ghana",
-    title: "Impact Investment for Inclusive SME Growth",
-    description: "Mobilizing and managing capital for ventures that advance women's economic empowerment.",
+    title: "African Angel Academy & Accra Angels",
+    description:
+      "The African Angel Academy trained 900+ angel investors across Africa, including at the Accra Angels Networks in Ghana. We are part of the expert trainers, notably on non-tech / SME / SGB type of investments, syndication courses and other fundamentals of Angel Investing.",
     href: "#apply",
-    image: "/images/work/02.jpg",
+    image: "/images/work/angel-connect.png",
   },
   {
-    platform: "Venture Capital",
-    country: "Nigeria",
-    title: "Tech Enabled Ventures in Climate & Digital Solutions",
-    description: "Venture backing for startups leveraging AI and climate resilient models in African markets.",
-    href: "#apply",
-    image: "/images/work/03.jpg",
-  },
-  {
-    platform: "Investment Advisory",
-    country: "Kenya",
-    title: "M&A and Transaction Advisory for Growth Stage SMEs",
-    description: "End to end deal support including diligence, valuation, and structuring for cross border transactions.",
-    href: "#advisory",
-    image: "/images/work/04.jpg",
+    platform: "Platform",
+    country: "Africa",
+    title: "Jaza Rift - digital health, medtech and biotech investment holding",
+    description:
+      "Our platform holds Jaza Rift, an impact-focused venture capital firm that invests in early-stage healthcare, medtech, and biotech startups across Africa. The healthcare platform has a portfolio of investments (see portfolio).",
+    href: "/portfolio.html",
+    image: "/images/platform/02-jaza-rift.jpg",
   },
   {
     platform: "Private Credit",
-    country: "Senegal",
-    title: "Working Capital Solutions for Scaling MSMEs",
-    description: "Private credit facilities supporting operational growth for established small businesses.",
-    href: "#apply",
-    image: "/images/work/05.jpg",
+    country: "Africa",
+    title: "Private Credit for Capital Allocators",
+    description:
+      "We advise various investment committees of capital allocators targeting emerging markets and Africa. We provide recommendations on private credit, sovereign debt and other credit products. Our team has deep experience in derivatives, exotic products and credit risk solutions across Europe and Africa.",
+    href: "#management",
+    image: "/images/work/04.jpg",
   },
   {
-    platform: "Investment Advisory",
-    country: "South Africa",
-    title: "Executive Training & Capacity Building Programs",
-    description: "Leadership development and technical assistance for founders navigating capital markets.",
-    href: "#capabilities",
-    image: "/images/work/06.jpg",
-    id: "executive-training",
+    platform: "Executive Training",
+    country: "Ghana",
+    title: "Executive Training and Capacity Building",
+    description:
+      "ANDE - Aspen Investment Manager Training held in Accra, Ghana. Lead trainer for the week long executive training delivered on behalf of ANDE West Africa.",
+    href: "/training.html",
+    image: "/images/work/ande-aspen-training.png",
+  },
+  {
+    platform: "Executive Training",
+    country: "Ghana",
+    title: "Executive mentorship & Media",
+    description:
+      "Asaase Radio (Ghana) regular engagement as speaker on business coaching, leadership coaching and angel investments.",
+    href: "/training.html",
+    image: "/images/work/asaase-business.png",
+  },
+  {
+    platform: "Tech & AI",
+    country: "Africa",
+    title: "Workflow automation and AI Systems",
+    description:
+      "We supported Ethos Verity, a startup focused on establishing trust and safety in AI systems through comprehensive assessments and expertise identification. Disruptive & Resilient. We also design process automation and AI systems for SMEs and startups with our partner Data Leap Technologies.",
+    href: "#technology",
+    image: "/sectors/ai.jpg",
   },
 ];
 
@@ -718,6 +740,7 @@ export const footerColumns = {
     { label: "Home", href: "/" },
     { label: "Platform", href: "/#platform" },
     { label: "Capabilities", href: "/#our-capabilities" },
+    { label: "Our Work", href: "/work.html" },
     { label: "Insights", href: "/#insights" },
   ],
   connect: [
@@ -1135,7 +1158,7 @@ export const insightsIntro = {
   headlineRest: "That Ignite Growth",
   body: "Discover ideas, tips, and inspiration to fuel your learning journey and professional success",
   readMoreLabel: "Read more",
-  readMoreHref: "https://linkedin.com/company/asimepartners",
+  readMoreHref: 'https://www.google.com/search?q=%22Asime+Partners%22',
 };
 
 export interface InsightCard {
@@ -1188,6 +1211,27 @@ export const insightCards: InsightCard[] = [
     date: "February 18, 2026",
     title: "Why AI systems are reshaping decision making for growing businesses",
     href: "#technology",
+  },
+  {
+    image: "/images/more/SME.jpg",
+    platform: "SME Growth",
+    date: "January 30, 2026",
+    title: "What African SMEs need most from investors beyond the capital cheque",
+    href: "#",
+  },
+  {
+    image: "/sectors/Investment.jpg",
+    platform: "Climate & Impact",
+    date: "January 12, 2026",
+    title: "Climate finance trends reshaping opportunity across frontier African markets",
+    href: "#",
+  },
+  {
+    image: "/sectors/MA.jpg",
+    platform: "M&A Advisory",
+    date: "December 8, 2025",
+    title: "Five diligence lessons from recent cross border transactions in West Africa",
+    href: "#",
   },
 ];
 

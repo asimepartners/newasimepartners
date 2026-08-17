@@ -20,7 +20,6 @@ export default function OurPlatform() {
             <StaggerItem key={item.title} index={index}>
               <PhotoCard
                 id={item.id}
-                href={item.href}
                 image={item.image}
                 category={item.category}
                 title={item.title}

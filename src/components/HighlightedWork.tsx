@@ -2,17 +2,33 @@ import { highlightedWork, highlightedWorkIntro } from '@/data/content'
 import { AnimatedSection, FadeUp, StaggerParent, StaggerItem } from './Motion'
 import PhotoCard from './PhotoCard'
 
-export default function HighlightedWork() {
+type HighlightedWorkProps = {
+  eyebrow?: string
+  headline?: string
+  headlineAccent?: string
+  intro?: string
+}
+
+export default function HighlightedWork({
+  eyebrow = highlightedWorkIntro.eyebrow,
+  headline = highlightedWorkIntro.headline,
+  headlineAccent = highlightedWorkIntro.headlineAccent,
+  intro,
+}: HighlightedWorkProps) {
   return (
     <AnimatedSection id="our-work" className="wf-work">
       <div className="wf-work-grid-lines" aria-hidden="true" />
 
       <div className="wf-work-inner">
         <FadeUp className="wf-work-head">
-          <span className="wf-work-eyebrow">{highlightedWorkIntro.eyebrow}</span>
-          <h2 className="wf-work-title">
-            {highlightedWorkIntro.headline} {highlightedWorkIntro.headlineAccent}
-          </h2>
+          <span className="wf-work-eyebrow">{eyebrow}</span>
+          {intro ? (
+            <p className="wf-work-intro">{intro}</p>
+          ) : (
+            <h2 className="wf-work-title">
+              {headline} {headlineAccent}
+            </h2>
+          )}
         </FadeUp>
 
         <StaggerParent className="wf-work-cards">

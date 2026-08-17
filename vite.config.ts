@@ -82,6 +82,7 @@ export default defineConfig(({ mode }) => {
           contact: path.resolve(__dirname, 'contact.html'),
           stages: path.resolve(__dirname, 'stages.html'),
           training: path.resolve(__dirname, 'training.html'),
+          work: path.resolve(__dirname, 'work.html'),
         },
       },
     },

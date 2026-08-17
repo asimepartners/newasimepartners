@@ -20,12 +20,10 @@ export default function Insights() {
           {insightCards.map((card, index) => (
             <StaggerItem key={card.title} index={index}>
               <PhotoCard
-                href={card.href}
                 image={card.image}
                 category={card.platform}
                 meta={card.date}
                 title={card.title}
-                cta="Read more"
               />
             </StaggerItem>
           ))}

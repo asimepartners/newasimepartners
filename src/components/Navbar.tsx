@@ -35,6 +35,7 @@ export default function Navbar({ variant = 'home' }: NavbarProps) {
       const path = window.location.pathname
       if (path.includes('media')) setActiveHref('/media.html')
       else if (path.includes('training')) setActiveHref('/training.html')
+      else if (path.includes('work')) setActiveHref('/work.html')
       return
     }
 
@@ -222,8 +223,8 @@ export default function Navbar({ variant = 'home' }: NavbarProps) {
             </div>
 
             <div className="wf-mega-panel-foot">
-              <a href={`mailto:${siteBrand.email}`} className="wf-mega-email" onClick={closeMenu}>
-                {siteBrand.email}
+              <a href="/terms.html" className="wf-mega-email" onClick={closeMenu}>
+                Terms of Service
               </a>
             </div>
           </motion.aside>
