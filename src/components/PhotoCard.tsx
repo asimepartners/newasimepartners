@@ -11,7 +11,7 @@ type PhotoCardProps = {
   category?: string
   meta?: string
   title: string
-  description?: string
+  description?: ReactNode
   cta?: string
   onClick?: () => void
   titleAs?: 'h2' | 'h3'

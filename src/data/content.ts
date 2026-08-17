@@ -499,6 +499,10 @@ export const aboutContent = {
   ],
 };
 
+export type HighlightedWorkDescriptionPart =
+  | { type: "text"; value: string }
+  | { type: "link"; label: string; href: string };
+
 export interface HighlightedWorkItem {
   platform: string;
   country: string;
@@ -507,6 +511,7 @@ export interface HighlightedWorkItem {
   href: string;
   image: string;
   id?: string;
+  descriptionParts?: HighlightedWorkDescriptionPart[];
 }
 
 export const highlightedWorkIntro = {
@@ -576,6 +581,19 @@ export const highlightedWork: HighlightedWorkItem[] = [
     title: "African Angel Academy & Accra Angels",
     description:
       "The African Angel Academy trained 900+ angel investors across Africa, including at the Accra Angels Networks in Ghana. We are part of the expert trainers, notably on non-tech / SME / SGB type of investments, syndication courses and other fundamentals of Angel Investing.",
+    descriptionParts: [
+      {
+        type: "text",
+        value:
+          "The African Angel Academy trained 900+ angel investors across Africa, including at the ",
+      },
+      { type: "link", label: "Accra Angels", href: "http://www.accraangels.org" },
+      {
+        type: "text",
+        value:
+          " Networks in Ghana. We are part of the expert trainers, notably on non-tech / SME / SGB type of investments, syndication courses and other fundamentals of Angel Investing.",
+      },
+    ],
     href: "#apply",
     image: "/images/work/angel-connect.png",
   },
@@ -585,6 +603,17 @@ export const highlightedWork: HighlightedWorkItem[] = [
     title: "Jaza Rift - digital health, medtech and biotech investment holding",
     description:
       "Our platform holds Jaza Rift, an impact-focused venture capital firm that invests in early-stage healthcare, medtech, and biotech startups across Africa. The healthcare platform has a portfolio of investments (see portfolio).",
+    descriptionParts: [
+      { type: "text", value: "Our platform holds " },
+      { type: "link", label: "Jaza Rift", href: "http://www.jazarift.com" },
+      {
+        type: "text",
+        value:
+          ", an impact-focused venture capital firm that invests in early-stage healthcare, medtech, and biotech startups across Africa. The healthcare platform has a portfolio of investments ",
+      },
+      { type: "link", label: "(see portfolio)", href: "http://www.jazarift.com" },
+      { type: "text", value: "." },
+    ],
     href: "/portfolio.html",
     image: "/images/platform/02-jaza-rift.jpg",
   },
@@ -621,6 +650,17 @@ export const highlightedWork: HighlightedWorkItem[] = [
     title: "Workflow automation and AI Systems",
     description:
       "We supported Ethos Verity, a startup focused on establishing trust and safety in AI systems through comprehensive assessments and expertise identification. Disruptive & Resilient. We also design process automation and AI systems for SMEs and startups with our partner Data Leap Technologies.",
+    descriptionParts: [
+      { type: "text", value: "We supported " },
+      { type: "link", label: "Ethos Verity", href: "http://www.ethosverity.ai" },
+      {
+        type: "text",
+        value:
+          ", a startup focused on establishing trust and safety in AI systems through comprehensive assessments and expertise identification. Disruptive & Resilient. We also design process automation and AI systems for SMEs and startups with our partner ",
+      },
+      { type: "link", label: "Data Leap Technologies", href: "http://www.dataleapgh.com" },
+      { type: "text", value: "." },
+    ],
     href: "#technology",
     image: "/sectors/ai.jpg",
   },

@@ -4864,6 +4864,12 @@ body.wf-privacy-root {
   white-space: normal;
 }
 
+.wf-work .wf-photo-card-desc {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
 .wf-work-cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -4986,6 +4992,18 @@ body.wf-privacy-root {
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
+}
+
+.wf-photo-card-desc-link {
+  color: var(--hero-lime, #FCD116);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  transition: color 0.2s ease;
+}
+
+.wf-photo-card-desc-link:hover {
+  color: #ffe066;
 }
 
 .wf-photo-card-cta {

@@ -1,4 +1,4 @@
-import { highlightedWork, highlightedWorkIntro } from '@/data/content'
+import { highlightedWork, highlightedWorkIntro, type HighlightedWorkItem } from '@/data/content'
 import { AnimatedSection, FadeUp, StaggerParent, StaggerItem } from './Motion'
 import PhotoCard from './PhotoCard'
 
@@ -7,6 +7,30 @@ type HighlightedWorkProps = {
   headline?: string
   headlineAccent?: string
   intro?: string
+}
+
+function renderDescription(item: HighlightedWorkItem) {
+  if (!item.descriptionParts?.length) return item.description
+
+  return (
+    <>
+      {item.descriptionParts.map((part, index) =>
+        part.type === 'text' ? (
+          <span key={index}>{part.value}</span>
+        ) : (
+          <a
+            key={index}
+            href={part.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="wf-photo-card-desc-link"
+          >
+            {part.label}
+          </a>
+        ),
+      )}
+    </>
+  )
 }
 
 export default function HighlightedWork({
@@ -39,7 +63,7 @@ export default function HighlightedWork({
                 image={item.image}
                 category={item.platform}
                 title={item.title}
-                description={item.description}
+                description={renderDescription(item)}
               />
             </StaggerItem>
           ))}
