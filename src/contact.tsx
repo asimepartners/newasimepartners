@@ -1,7 +1,7 @@
 import { StrictMode, useEffect, useRef, useState, type FormEvent } from 'react'
 import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { contactPage, siteBrand } from '@/data/content'
+import { contactPage } from '@/data/content'
 import { dismissPreloader } from '@/utils/dismissPreloader'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -121,14 +121,8 @@ function ContactPage() {
             <h2 id="contact-heading" className="wf-contact-heading">
               {contactPage.heading}
             </h2>
-            <p className="wf-contact-intro">
-              {contactPage.intro}{' '}
-              <a href={`mailto:${siteBrand.email}`}>{siteBrand.email}</a>.
-            </p>
-            <p className="wf-contact-intro">
-              {contactPage.complaints}{' '}
-              <a href={`mailto:${siteBrand.email}`}>{siteBrand.email}</a>.
-            </p>
+            <p className="wf-contact-intro">{contactPage.intro}</p>
+            <p className="wf-contact-intro">{contactPage.complaints}</p>
 
             <h3 className="wf-contact-form-title">{contactPage.formTitle}</h3>
 
@@ -219,7 +213,7 @@ function ContactPage() {
                     <h3 className="wf-contact-office-city">{office.city}</h3>
                     {office.lines.map((line) => (
                       <p key={line} className="wf-contact-office-line">
-                        {line.includes('@') ? <a href={`mailto:${line}`}>{line}</a> : line}
+                        {line}
                       </p>
                     ))}
                   </article>

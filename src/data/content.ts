@@ -139,7 +139,7 @@ export interface PlatformCard {
 
 export const platformIntro = {
   title: "Our Platform",
-  body: "We’re a multi-strategy impact and alternative investment platform for Africa.",
+  body: "We’re a multi-strategy impact and alternative investment platform for Africa",
   ctaLabel: "Explore our portfolio",
   ctaHref: "/portfolio.html",
 };
@@ -258,15 +258,15 @@ export const businessLines = {
     imageAlt: "Investment management",
   },
   tech: {
-    eyebrow: "Technology and AI",
-    title: "Workflow automation and AI systems",
+    eyebrow: "Technology & AI",
+    title: "Workflow automation & AI systems",
     summary: "Intelligent systems for modern investing",
     description:
       "Our technology and AI Systems advisory offers a structured, expert-led engagement that helps you assess, plan, and implement AI and other advanced technology systems in a way that aligns with your strategic goals, risk tolerance, and operational realities. It starts with process mapping and automation, and combines technical domain expertise with business acumen to guide decision-making, governance, and execution to get to AI agents design and orchestration.",
     href: "#technology",
     cta: "Read More",
     image: "/sectors/ai.jpg",
-    imageAlt: "Technology and AI systems",
+    imageAlt: "Technology & AI systems",
   },
 };
 
@@ -355,8 +355,7 @@ export interface ServiceDetail {
 
 export const advisoryDetail: ServiceDetail = {
   eyebrow: "Advisory",
-  headline:
-    "Since 2015, our business and financial advisory team has been designing innovative and solution-driven financial structures in multiple geographies stages and sectors across Africa and other frontier and emerging markets, combining local insights with global expertise.",
+  headline: "Since 2015, our business and financial advisory team has been designing innovative and solution-driven financial structures",
   items: [
     {
       icon: "fund",
@@ -406,24 +405,19 @@ export const managementDetail: ServiceDetail = {
       body: "We advise African and international family offices, funds, fund of funds, corporate ventures, pension funds and governments on alternative investment opportunities in Africa and beyond. We have a track record spanning Europe, the GCC and Africa across private markets (private equity, private debt, venture capital, venture debt, angel investments etc.), digital assets & finance, Islamic finance, green finance, climate finance and more.",
     },
     {
+      icon: "impact",
+      title: "Impact Investing",
+      body: "Impact investing focuses on generating both financial returns and positive social or environmental impact. It supports startups and SMEs addressing societal challenges like climate change or inequality. Investors prioritize companies with measurable impact metrics alongside financial performance, aiming to create a sustainable and equitable future.",
+    },
+    {
       icon: "venture",
-      title: "Venture Capital",
-      body: "Venture Capital (VC) is funding provided to startups and SMEs with high growth potential. It involves private investors exchanging capital for an ownership stake, aiming for substantial returns through company growth or acquisition. VC firms offer not only capital but also expertise and networks to support business development.",
+      title: "Private Equity & Venture Capital",
+      body: "As part of Private Markets, Private Equity (PE) and Venture Capital (VC) provides risk capital to SMEs/SGBs (with stable cashflows) and startups (software/AI driven with high growth potential). We advise private investors on achieving risk-adjusted returns in Africa through company growth or acquisition. Both PE and VC firms offer not only capital but also expertise and networks to support business development, commercial growth and exit opportunities.",
     },
     {
       icon: "credit",
       title: "Private Credit",
       body: "Private Credit is non bank lending to startups and SMEs. It offers alternative financing options, often providing more flexibility and quicker access to funds compared to traditional bank loans. Private Credit investors exchange capital for debt instruments, expecting returns through interest payments.",
-    },
-    {
-      icon: "angel",
-      title: "Angel Investing & Syndicates",
-      body: "Angel investing involves individual investors providing seed capital to early stage startups. Angel syndicates are groups of angel investors who pool resources and expertise to co invest in promising ventures. This funding stage often precedes larger VC investments, offering crucial support for startups to validate their business model and achieve initial growth milestones.",
-    },
-    {
-      icon: "impact",
-      title: "Impact Investing",
-      body: "Impact investing focuses on generating both financial returns and positive social or environmental impact. It supports startups and SMEs addressing societal challenges like climate change or inequality. Investors prioritize companies with measurable impact metrics alongside financial performance, aiming to create a sustainable and equitable future.",
     },
     {
       icon: "islamic",
@@ -452,11 +446,6 @@ export const techDetail: ServiceDetail = {
       title: "AI Systems",
       body: "We provide AI systems for SMEs and startups. We deploy intelligent AI agents that connect departments, automate complex tasks, and work continuously to drive unprecedented efficiency and innovation. Our AI systems include AI chatbots, AI marketing automation, AI no code workflows, AI data governance, and AI cloud credits. We work with you to identify the specific needs of your organization and develop a customized plan to meet those needs.",
     },
-    {
-      icon: "ai-talent",
-      title: "AI Talent",
-      body: "We provide outsourced AI talent. Our other services include AI talent development, AI talent management, AI talent retention, and AI talent assessment. We work with you to identify the specific skills and competencies needed for your organization and develop a customized plan to meet those needs.",
-    },
   ],
 };
 
@@ -484,7 +473,7 @@ export const aboutContent = {
   eyebrow: "ABOUT US",
   title: "Unveiling Our Identity, Vision and Values",
   subheading:
-    "We are an Africa focused alternative investment fund manager committed to driving positive financial, social and economic change across Anglophone and Francophone Africa.",
+    "We are an Africa focused alternative investment fund adviser committed to driving positive financial, social and economic change across Anglophone and Francophone Africa",
   image: "/images/about-agritech.jpg",
   imageAlt:
     "Aerial view of precision agricultural machines working across green crop fields",
@@ -531,7 +520,7 @@ export interface HighlightedWorkItem {
 
 export const highlightedWorkIntro = {
   eyebrow: "Highlighted Work",
-  headline: "Our case studies:",
+  headline: "Our case studies",
   headlineAccent: "at the heart of our missions",
 };
 
@@ -687,7 +676,7 @@ export const capabilitiesIntro = {
 export const sectorsIntro = {
   eyebrow: "Sectors",
   headline: "Where we invest and advise",
-  lead: "Our expertise spans multiple sectors across Africa, drawing on the team’s deep networks and experience across 37+ countries.",
+  lead: "Our expertise spans multiple sectors across Africa, drawing on the team’s deep networks and experience across 37+ countries",
 };
 
 export const advisoryIntro = {
@@ -705,7 +694,7 @@ export const footerLead = {
 export const newsletterContent = {
   eyebrow: "Join the impact revolution",
   heading: "Subscribe to our newsletter",
-  body: "Be the first to receive insights, updates, and expert perspectives on investing and building across Africa.",
+  body: "Be the first to receive insights, updates, and expert perspectives on investing and building across Africa",
   placeholder: "Enter your email",
   button: "Subscribe",
   finePrintLead: "By subscribing you agree to our",
@@ -742,9 +731,9 @@ export const contactPage = {
   title: "Contact Us",
   heading: "Contact us",
   intro:
-    "To get in touch, please fill out the general enquiries form below, or send an email to",
+    "To get in touch, please fill out the general enquiries form below.",
   complaints:
-    "Any general or whistleblower complaints should be reported to",
+    "Any general or whistleblower complaints should be reported through the form below.",
   formTitle: "General Enquiries",
   nameLabel: "Full Name",
   emailLabel: "Email Address",
@@ -753,9 +742,9 @@ export const contactPage = {
   submitLabel: "Submit",
   submittingLabel: "Sending…",
   sentTitle: "Message sent",
-  sentLabel: "Thank you. Your message has been sent to info@asimepartners.com. We will get back to you shortly.",
+  sentLabel: "Thank you. Your message has been sent. We will get back to you shortly.",
   sentCloseLabel: "Close",
-  sendErrorLabel: "Something went wrong. Please try again or email info@asimepartners.com.",
+  sendErrorLabel: "Something went wrong. Please try again.",
   captchaErrorLabel: "Please wait a moment and try sending again.",
   recaptchaSiteKey: "6Ldu6YctAAAAADpu35RVprURheZ4hn4w3KkQbqzS",
   heroImage: "/images/platform/03-reit.jpg",
@@ -763,12 +752,12 @@ export const contactPage = {
   offices: [
     {
       city: "Accra",
-      lines: ["Asime Partners", "Accra, Ghana", "info@asimepartners.com"],
+      lines: ["Asime Partners", "Accra, Ghana"],
       pin: { left: 49.2, top: 59.34 },
     },
     {
       city: "Nairobi",
-      lines: ["Asime Partners", "Nairobi, Kenya", "info@asimepartners.com"],
+      lines: ["Asime Partners", "Nairobi, Kenya"],
       pin: { left: 59.81, top: 62.55 },
     },
   ],
@@ -1050,13 +1039,13 @@ export interface GeoLocation {
 export const geoContent = {
   eyebrow: "Geographies",
   headline: "A global network for African opportunity",
-  lead: "From West Africa to Europe and East Asia, we connect capital and expertise across borders to unlock growth in frontier markets.",
+  lead: "From West Africa to Europe and East Asia, we connect capital and expertise across borders to unlock growth in frontier markets",
   mapSrc: "/images/dotted-world.svg",
   locations: [
     { key: "ghana", label: "Ghana", color: "#F5A623", left: 49.2, top: 59.34, z: 3, size: "sm" },
     { key: "kenya", label: "Kenya", color: "#3FB53F", left: 59.81, top: 62.55, z: 1 },
     { key: "luxemburg", label: "Luxemburg", color: "#3B7DED", left: 51.4, top: 30.47, z: 1 },
-    { key: "us", label: "US", color: "#F0403D", left: 21.96, top: 38.49, z: 1 },
+    { key: "us", label: "US", color: "#F0403D", left: 28.2, top: 36.9, z: 1 },
     { key: "southafrica", label: "South Africa", color: "#3FD4E8", left: 56.3, top: 80.5, z: 1 },
   ] as GeoLocation[],
 };
@@ -1074,7 +1063,7 @@ export interface TeamMember {
 export const teamContent = {
   eyebrow: "Our Team",
   headline: "The people behind Asime Partners",
-  lead: "A mission driven team with deep investment, advisory, and technology expertise across Africa and beyond.",
+  lead: "A mission driven team with deep investment, advisory, and technology expertise across Africa and beyond",
   members: [
     {
       name: "Sewu-Steve Tawia",
@@ -1144,7 +1133,7 @@ export const teamContent = {
 export const insightsIntro = {
   headlineAccent: "Insights",
   headlineRest: "That Ignite Growth",
-  body: "Discover ideas, tips, and inspiration to fuel your learning journey and professional success.",
+  body: "Discover ideas, tips, and inspiration to fuel your learning journey and professional success",
   readMoreLabel: "Read more",
   readMoreHref: "https://linkedin.com/company/asimepartners",
 };
@@ -1244,7 +1233,7 @@ export const faqItems: FaqItem[] = [
 export const applyCta = {
   eyebrow: "Work With Us",
   headline: "Trust and Bond",
-  body: "We build relationships based on trust and bond with people, not processes.",
+  body: "We build relationships based on trust and bond with people, not processes",
   buttonLabel: "Contact Us",
   buttonHref: "mailto:info@asimepartners.com",
 };

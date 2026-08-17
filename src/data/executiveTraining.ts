@@ -1,6 +1,8 @@
 export const executiveTrainingPage = {
   title: 'Executive Training',
   heroImage: '/images/platform/Asime Partners - Acumen Workshops_15.jpg',
+  intro:
+    'Our suite of executive training for mid-level to senior C-suite investment, government and ecosystem development professionals has been tried and tested. We also advise sovereign wealth funds, pension funds and other capital allocators on bespoke executive education.',
   certifications: [
     {
       name: 'CAIA',

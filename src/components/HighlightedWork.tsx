@@ -20,10 +20,8 @@ export default function HighlightedWork() {
             <StaggerItem key={item.title} index={index}>
               <PhotoCard
                 id={item.id}
-                href={item.href}
                 image={item.image}
                 category={item.platform}
-                meta={item.country}
                 title={item.title}
                 description={item.description}
               />

@@ -41,6 +41,7 @@ function TrainingPage() {
         <section className="wf-work wf-training-work" aria-label="Executive training programs">
           <div className="wf-work-grid-lines" aria-hidden="true" />
           <div className="wf-work-inner">
+            <p className="wf-training-intro">{executiveTrainingPage.intro}</p>
             <StaggerParent className="wf-work-cards">
               {executiveTrainingPage.items.map((item, index) => (
                 <StaggerItem key={item.title} index={index}>

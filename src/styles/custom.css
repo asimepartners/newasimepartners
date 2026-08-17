@@ -764,7 +764,7 @@ a { text-decoration: none; color: inherit; }
   width: 100%;
   background: #fff;
   border-block: 1px solid rgba(255, 255, 255, 0.08);
-  padding: clamp(1.25rem, 2.5vw, 1.75rem) 0;
+  padding: clamp(2rem, 3.5vw, 2.75rem) 0;
 }
 
 .wf-awards-marquee {
@@ -801,7 +801,7 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: clamp(3.5rem, 6vw, 4.5rem);
+  min-height: clamp(4.5rem, 7.5vw, 5.75rem);
   padding: 0.25rem 0.35rem;
   background: transparent;
   border-radius: 0;
@@ -811,8 +811,8 @@ a { text-decoration: none; color: inherit; }
 .wf-awards-logo {
   display: block;
   width: auto;
-  height: clamp(2.5rem, 4vw, 3.5rem);
-  max-width: min(10rem, 28vw);
+  height: clamp(3.25rem, 5vw, 4.5rem);
+  max-width: min(11rem, 30vw);
   object-fit: contain;
   background: transparent;
   opacity: 0.95;
@@ -3409,9 +3409,12 @@ a { text-decoration: none; color: inherit; }
 }
 
 .wf-wwu-paths--full {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(1.15rem, 2vw, 1.5rem);
   width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  justify-content: center;
 }
 
 @media (max-width: 1199.98px) {
@@ -4489,7 +4492,10 @@ body.wf-privacy-root {
   letter-spacing: 0;
   text-align: justify;
   text-justify: inter-word;
-  hyphens: auto;
+  hyphens: none;
+  -webkit-hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
   white-space: normal;
   color: var(--about-body);
 }
@@ -7397,6 +7403,18 @@ body.wf-contact-root {
 .wf-training-work {
   padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(3.5rem, 7vw, 5.5rem);
   background: #000;
+}
+
+.wf-training-intro {
+  margin: 0 auto clamp(2rem, 4vw, 2.75rem);
+  max-width: 54rem;
+  font-family: var(--font-body);
+  font-size: clamp(0.98rem, 1.35vw, 1.12rem);
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .wf-training-work .wf-photo-card-desc {

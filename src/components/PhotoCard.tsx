@@ -17,6 +17,7 @@ type PhotoCardProps = {
   titleAs?: 'h2' | 'h3'
   mediaOverlay?: ReactNode
   className?: string
+  openInNewTab?: boolean
 }
 
 export default function PhotoCard({
@@ -33,6 +34,7 @@ export default function PhotoCard({
   titleAs = 'h3',
   mediaOverlay,
   className = '',
+  openInNewTab = false,
 }: PhotoCardProps) {
   const TitleTag = titleAs
   const content = (
@@ -84,7 +86,12 @@ export default function PhotoCard({
 
   if (href) {
     return (
-      <motion.a href={href} id={id} {...motionProps}>
+      <motion.a
+        href={href}
+        id={id}
+        {...(openInNewTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+        {...motionProps}
+      >
         {content}
       </motion.a>
     )

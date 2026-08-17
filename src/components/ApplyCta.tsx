@@ -1,4 +1,4 @@
-import { applyCta, siteBrand } from '@/data/content'
+import { applyCta } from '@/data/content'
 import { AnimatedSection, FadeUp, StaggerParent, StaggerItem } from './Motion'
 import PhotoCard from './PhotoCard'
 
@@ -7,30 +7,27 @@ const workWithUsPaths: {
   hint: string
   href: string
   image: string
+  openInNewTab?: boolean
 }[] = [
   {
-    label: 'Partner With Us',
-    hint: 'Co-investments & strategic collaboration',
-    href: '#work-with-us',
+    label: 'Contact Us',
+    hint: 'Strategic collaboration',
+    href: '/contact.html',
     image: '/images/more/partner.jpg',
-  },
-  {
-    label: 'Apply to Chale Fund',
-    hint: 'Impact capital for qualifying ventures',
-    href: `mailto:${siteBrand.email}?subject=Chale%20Fund%20Application`,
-    image: '/images/more/apply.jpeg',
   },
   {
     label: 'Apply as Tech Startup',
     hint: 'Venture & angel investment pathways',
-    href: `mailto:${siteBrand.email}?subject=Tech%20Startup%20Application`,
+    href: 'https://docs.google.com/forms/d/e/1FAIpQLSfpzW1nZql7jUDlGI0vTgApR67ivszhv5C6rgzwesb9JspteA/viewform',
     image: '/images/more/startup.jpg',
+    openInNewTab: true,
   },
   {
     label: 'Apply SME/MSME/SGB',
     hint: 'Growth capital & advisory support',
-    href: `mailto:${siteBrand.email}?subject=SME%2FMSME%2FSGB%20Application`,
+    href: 'https://docs.google.com/forms/d/e/1FAIpQLSfR3MQGBpXJxTMy5wRbnE0CVNpitWWBoHebJ_WZ0mQr0tqAJw/viewform',
     image: '/images/more/SME.jpg',
+    openInNewTab: true,
   },
 ]
 
@@ -56,6 +53,7 @@ export default function ApplyCta() {
                     title={path.label}
                     description={path.hint}
                     cta="Learn more"
+                    openInNewTab={path.openInNewTab}
                   />
                 </StaggerItem>
               ))}

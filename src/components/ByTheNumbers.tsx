@@ -32,7 +32,7 @@ export default function ByTheNumbers() {
           <span className="wf-numbers-eyebrow">Impact</span>
           <h2 className="wf-numbers-title">By The Numbers</h2>
           <p className="wf-numbers-sub">
-            Scale across platforms, markets, and focus areas that define how we partner across Africa.
+            Scale across platforms, markets, and focus areas that define how we partner across Africa
           </p>
         </FadeUp>
 
