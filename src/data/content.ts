@@ -387,8 +387,8 @@ export const managementDetail: ServiceDetail = {
   items: [
     {
       icon: "overview",
-      title: "Alternative Investment Landscape",
-      body: "Alternative investments or alternative assets (not stocks, bonds, or cash) differ from traditional investment because they aren’t easily sold or converted into cash, such as private equity, private credit, real assets, digital assets, hedge funds, art collections, real estate investments and trusts (REITs), structured products etc. Africa's alternative investment landscape exceeds US $2 trillion in institutional capital, driven by private equity and venture capital, infrastructure and climate finance, real estate and agribusiness, and high-growth sectors like renewable energy and private credit.",
+      title: "Alternative Investment",
+      body: "Alternative investments or alternative assets (not stocks, bonds, or cash) differ from traditional investment because they aren’t easily sold or converted into cash, such as private equity, private credit, real assets, digital assets, hedge funds, art collections, real estate investments and trusts (REITs), structured products etc. Africa's alternative investment market exceeds US $2 trillion in institutional capital, driven by private equity and venture capital, infrastructure and climate finance, real estate and agribusiness, and high-growth sectors like renewable energy and private credit.",
     },
     {
       icon: "advisory",
@@ -557,7 +557,7 @@ export const highlightedWork: HighlightedWorkItem[] = [
     country: "West Africa",
     title: "West Africa Fund of Funds Financial Modelling",
     description:
-      "We advised a target multi-million dollar West African fund of funds on the advanced financial modelling of their blended capital structure. The fund of funds raised substantial capital from local pension funds and international investors.",
+      "We advised a global impact fund manager to set up a target $50 million blended capital structure for a working capital debt fund. The facility intends to raise substantial capital from international impact investors and development partners.",
     href: "#advisory",
     image: "/images/work/01.jpg",
   },
