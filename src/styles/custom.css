@@ -2362,6 +2362,14 @@ a { text-decoration: none; color: inherit; }
   height: 100%;
 }
 
+.wf-sec2 .wf-photo-card-desc {
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
 .wf-photo-card-grid > * {
   display: flex;
   min-width: 0;

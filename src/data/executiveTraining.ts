@@ -38,6 +38,35 @@ export const executiveTrainingPage = {
       title: 'Certification Training',
       image: '/images/Investor/analyzing-business-activity.jpg',
       body: 'Professionals of all walks of life can get prepared for certifications such as CFA (Investments), CAIA (Alternative Investments), CIFE (Islamic Finance), CDFP (Digital Finance & Crypto/Web3), PRINCE2 (Project Management), FMVA (via the Corporate Finance Institute). We also support many others via our Customised Training.',
+      bodyParts: [
+        {
+          type: 'text' as const,
+          value:
+            'Professionals of all walks of life can get prepared for certifications such as ',
+        },
+        { type: 'link' as const, label: 'CFA', href: 'http://www.cfainstitute.org' },
+        { type: 'text' as const, value: ' (Investments), ' },
+        { type: 'link' as const, label: 'CAIA', href: 'http://www.caia.org' },
+        { type: 'text' as const, value: ' (Alternative Investments), ' },
+        { type: 'link' as const, label: 'CIFE', href: 'http://www.ethica.institute' },
+        { type: 'text' as const, value: ' (Islamic Finance), ' },
+        {
+          type: 'link' as const,
+          label: 'CDFP',
+          href: 'https://digitalfrontiersinstitute.org/',
+        },
+        { type: 'text' as const, value: ' (Digital Finance & Crypto/Web3), PRINCE2 (Project Management), ' },
+        {
+          type: 'link' as const,
+          label: 'FMVA',
+          href: 'https://corporatefinanceinstitute.com/certifications/financial-modeling-valuation-analyst-fmva-program/',
+        },
+        {
+          type: 'text' as const,
+          value:
+            ' (via the Corporate Finance Institute). We also support many others via our Customised Training.',
+        },
+      ],
     },
     {
       title: 'Investment Manager Training',

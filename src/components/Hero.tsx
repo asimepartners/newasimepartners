@@ -57,7 +57,7 @@ export default function Hero() {
           const prev = i === prevSlide && i !== activeSlide
           return (
             <img
-              key={src}
+              key={`${src}-${i}`}
               src={src}
               alt=""
               className={`wf-hero-photo${active ? ' is-active' : ''}${prev ? ' is-prev' : ''}`}
@@ -73,7 +73,7 @@ export default function Hero() {
           <div className="wf-hero-slider-dots">
             {slides.map((src, i) => (
               <button
-                key={src}
+                key={`${src}-${i}`}
                 type="button"
                 className={`wf-hero-slider-dot${i === activeSlide ? ' is-active' : ''}`}
                 onClick={() => goTo(i)}

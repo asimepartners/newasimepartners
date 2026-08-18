@@ -67,8 +67,8 @@ export const heroContent = {
   slides: [
     "/images/sliders/hero-platform.jpg?v=2",
     "/images/sliders/01.jpg?v=5",
-    "/images/sliders/02.jpg?v=5",
     "/images/sliders/03.jpg?v=5",
+    "/images/sliders/tech-ai.jpg?v=1",
   ],
 };
 
@@ -233,7 +233,7 @@ export const businessLines = {
       "Our professional services help organisations improve business and financial performance, manage growth, and achieve strategic objectives by integrating financial analysis with operational and strategic guidance. We support organisations to design, structure and launch funds of all types, including blended capital structures, impact funds and more complex investment vehicles.",
     href: "#advisory",
     cta: "Read More",
-    image: "/images/advisory-card.jpg",
+    image: "/images/sliders/hero-platform.jpg?v=2",
     imageAlt: "Investment advisory",
   },
   management: {
@@ -255,7 +255,7 @@ export const businessLines = {
       "Our technology and AI Systems advisory offers a structured, expert-led engagement that helps you assess, plan, and implement AI and other advanced technology systems in a way that aligns with your strategic goals, risk tolerance, and operational realities. It starts with process mapping and automation, and combines technical domain expertise with business acumen to guide decision-making, governance, and execution to get to AI agents design and orchestration.",
     href: "#technology",
     cta: "Read More",
-    image: "/sectors/ai.jpg",
+    image: "/images/sliders/tech-ai.jpg?v=1",
     imageAlt: "Technology & AI systems",
   },
 };
@@ -805,11 +805,11 @@ export const footerColumns = {
 
 export const contactPage = {
   title: "Contact Us",
-  heading: "Contact us",
+  heading: "Let’s collaborate",
   intro:
-    "To get in touch, please fill out the general enquiries form below.",
+    "Get in touch with us if you would like to partner, collaborate or support our initiatives. You can also fill out the general enquiries form below.",
   complaints:
-    "Any general or whistleblower complaints should be reported through the form below.",
+    "Any general or whistleblower complaints should also be reported through the form below.",
   formTitle: "General Enquiries",
   nameLabel: "Full Name",
   emailLabel: "Email Address",

@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode, type ReactNode } from 'react'
 import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { executiveTrainingPage } from '@/data/executiveTraining'
@@ -13,6 +13,37 @@ import './styles/custom.css'
 import './styles/typography.css'
 import './styles/theme-dark.css'
 import './styles/refine.css'
+
+type TrainingBodyPart =
+  | { type: 'text'; value: string }
+  | { type: 'link'; label: string; href: string }
+
+function renderTrainingBody(item: {
+  body: string
+  bodyParts?: TrainingBodyPart[]
+}): ReactNode {
+  if (!item.bodyParts?.length) return item.body
+
+  return (
+    <>
+      {item.bodyParts.map((part, index) =>
+        part.type === 'text' ? (
+          <span key={index}>{part.value}</span>
+        ) : (
+          <a
+            key={index}
+            href={part.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="wf-photo-card-desc-link"
+          >
+            {part.label}
+          </a>
+        ),
+      )}
+    </>
+  )
+}
 
 function TrainingPage() {
   return (
@@ -48,7 +79,7 @@ function TrainingPage() {
                   <PhotoCard
                     image={item.image}
                     title={item.title}
-                    description={item.body}
+                    description={renderTrainingBody(item)}
                     titleAs="h2"
                   />
                 </StaggerItem>
