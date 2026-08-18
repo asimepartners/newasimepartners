@@ -14,11 +14,8 @@ import { useSmoothScroll } from './hooks/useSmoothScroll'
 import { advisoryDetail, managementDetail, techDetail } from './data/content'
 
 const OurPeople = lazy(() => import('./components/OurPeople'))
-const HighlightedWork = lazy(() => import('./components/HighlightedWork'))
-const Capabilities = lazy(() => import('./components/Capabilities'))
 const Geographies = lazy(() => import('./components/Geographies'))
 const Team = lazy(() => import('./components/Team'))
-const Insights = lazy(() => import('./components/Insights'))
 const ApplyCta = lazy(() => import('./components/ApplyCta'))
 const Footer = lazy(() => import('./components/Footer'))
 const CookieBanner = lazy(() => import('./components/CookieBanner'))
@@ -28,11 +25,8 @@ function LazyBelowFold() {
     <Suspense fallback={null}>
       <OurPeople />
       <Team />
-      <HighlightedWork />
-      <Capabilities />
       <Geographies />
       <ApplyCta />
-      <Insights />
     </Suspense>
   )
 }

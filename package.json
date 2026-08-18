@@ -7,7 +7,7 @@
   },
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 5174 --strictPort --force",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint ."

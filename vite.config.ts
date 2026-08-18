@@ -83,6 +83,7 @@ export default defineConfig(({ mode }) => {
           stages: path.resolve(__dirname, 'stages.html'),
           training: path.resolve(__dirname, 'training.html'),
           work: path.resolve(__dirname, 'work.html'),
+          sectors: path.resolve(__dirname, 'sectors.html'),
         },
       },
     },
@@ -90,6 +91,10 @@ export default defineConfig(({ mode }) => {
       alias: {
         '@': path.resolve(__dirname, './src'),
       },
+    },
+    server: {
+      port: 5174,
+      strictPort: true,
     },
   }
 })

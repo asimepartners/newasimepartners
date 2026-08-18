@@ -190,9 +190,8 @@ export const navGroups = [
     children: [
       { label: "Our Values", href: "#our-values" },
       { label: "Our People", href: "#team" },
-      { label: "Our Work", href: "/work.html" },
       { label: "Contact Us", href: "/contact.html" },
-      { label: "Work with Us", href: "#apply" },
+      { label: "Work With Us", href: "#apply" },
     ],
   },
   {
@@ -207,17 +206,17 @@ export const navGroups = [
   },
   {
     label: "Scope",
-    href: "#sectors",
+    href: "/sectors.html",
     children: [
       { label: "Platform", href: "#platform" },
-      { label: "Sectors", href: "#sectors" },
+      { label: "Sectors", href: "/sectors.html" },
       { label: "Geographies", href: "#geographies" },
       { label: "Stage", href: "/stages.html" },
     ],
   },
   {
     label: "Insights",
-    href: "#insights",
+    href: "/work.html",
     children: [
       { label: "Media", href: "/media.html" },
       { label: "Highlighted work", href: "/work.html" },
@@ -741,6 +740,11 @@ export const sectorsIntro = {
   lead: "Our expertise spans multiple sectors across Africa, drawing on the team’s deep networks and experience across 37+ countries",
 };
 
+export const sectorsPage = {
+  title: "Sectors",
+  heroImage: "/images/sliders/02.jpg",
+};
+
 export const advisoryIntro = {
   eyebrow: "Investment Advisory",
   headline: "Trusted advisors across the capital stack",
@@ -781,7 +785,7 @@ export const footerColumns = {
     { label: "Platform", href: "/#platform" },
     { label: "Capabilities", href: "/#our-capabilities" },
     { label: "Our Work", href: "/work.html" },
-    { label: "Insights", href: "/#insights" },
+    { label: "Insights", href: "/work.html" },
   ],
   connect: [
     { label: "Team", href: "/#team" },

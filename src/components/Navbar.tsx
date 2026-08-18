@@ -36,6 +36,7 @@ export default function Navbar({ variant = 'home' }: NavbarProps) {
       if (path.includes('media')) setActiveHref('/media.html')
       else if (path.includes('training')) setActiveHref('/training.html')
       else if (path.includes('work')) setActiveHref('/work.html')
+      else if (path.includes('sectors')) setActiveHref('/sectors.html')
       return
     }
 

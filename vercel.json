@@ -7,7 +7,8 @@
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/stages", "destination": "/stages.html" },
     { "source": "/training", "destination": "/training.html" },
-    { "source": "/work", "destination": "/work.html" }
+    { "source": "/work", "destination": "/work.html" },
+    { "source": "/sectors", "destination": "/sectors.html" }
   ],
   "headers": [
     {
