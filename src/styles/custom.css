@@ -2977,6 +2977,7 @@ a { text-decoration: none; color: inherit; }
   --news2-muted: rgba(255, 255, 255, 0.55);
   background: #000;
   padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+  scroll-margin-top: 5.5rem;
 }
 
 .wf-news2-inner {
@@ -7005,15 +7006,15 @@ body.wf-media-root {
 /* ── Contact page ───────────────────────────────────────────── */
 html.wf-contact-root,
 body.wf-contact-root {
-  background: #f4f1ea !important;
-  color: #14181f !important;
+  background: #000 !important;
+  color: #fff !important;
 }
 
 .wf-contact-page {
   min-height: 100vh;
   min-height: 100dvh;
-  background: #f4f1ea;
-  color: #14181f;
+  background: #000;
+  color: #fff;
 }
 
 .wf-contact-root .wf-nav--scrolled {
@@ -7045,7 +7046,7 @@ body.wf-contact-root {
 .wf-contact-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.42) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.72) 100%);
 }
 
 .wf-contact-hero-title {
@@ -7061,7 +7062,7 @@ body.wf-contact-root {
 }
 
 .wf-contact-panel {
-  background: #f4f1ea;
+  background: #000;
   padding: clamp(1.75rem, 4vw, 2.5rem) 0 clamp(1.5rem, 3vw, 2rem);
 }
 
@@ -7076,24 +7077,24 @@ body.wf-contact-root {
   font-size: clamp(1.45rem, 2.6vw, 1.85rem);
   font-weight: 600;
   letter-spacing: -0.03em;
-  color: #14181f;
+  color: #fff;
 }
 
 .wf-contact-intro {
   margin: 0 0 0.45rem;
   font-size: 0.92rem;
   line-height: 1.5;
-  color: rgba(20, 24, 31, 0.78);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .wf-contact-intro a {
-  color: #14181f;
+  color: var(--hero-lime, #FCD116);
   text-decoration: underline;
   text-underline-offset: 0.18em;
 }
 
 .wf-contact-intro a:hover {
-  color: #000;
+  color: #ffe066;
 }
 
 .wf-contact-form-title {
@@ -7102,7 +7103,7 @@ body.wf-contact-root {
   font-size: clamp(1.1rem, 1.8vw, 1.3rem);
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: #14181f;
+  color: #fff;
 }
 
 .wf-contact-form {
@@ -7126,16 +7127,16 @@ body.wf-contact-root {
 .wf-contact-field span {
   font-size: 0.82rem;
   font-weight: 600;
-  color: #14181f;
+  color: #fff;
 }
 
 .wf-contact-field input,
 .wf-contact-field textarea {
   width: 100%;
-  border: 1px solid rgba(20, 24, 31, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 2px;
-  background: #fff;
-  color: #14181f;
+  background: #111;
+  color: #fff;
   font-family: inherit;
   font-size: 0.92rem;
   padding: 0.5rem 0.7rem;
@@ -7157,7 +7158,7 @@ body.wf-contact-root {
   margin: 0;
   font-size: 0.75rem;
   line-height: 1.45;
-  color: rgba(20, 24, 31, 0.55);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .wf-contact-recaptcha-note a {
@@ -7211,7 +7212,7 @@ body.wf-contact-root {
 .wf-contact-error {
   margin: 0.15rem 0 0;
   font-size: 0.88rem;
-  color: #9b1c1c;
+  color: #ff6b6b;
 }
 
 .wf-contact-modal {
@@ -7227,7 +7228,7 @@ body.wf-contact-root {
   position: absolute;
   inset: 0;
   border: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.7);
   cursor: pointer;
 }
 
@@ -7236,9 +7237,10 @@ body.wf-contact-root {
   z-index: 1;
   width: min(100%, 26rem);
   padding: 1.5rem 1.4rem 1.35rem;
-  background: #f4f1ea;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 6px;
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.5);
 }
 
 .wf-contact-modal-title {
@@ -7247,20 +7249,20 @@ body.wf-contact-root {
   font-size: 1.35rem;
   font-weight: 600;
   letter-spacing: -0.03em;
-  color: #14181f;
+  color: #fff;
 }
 
 .wf-contact-modal-body {
   margin: 0 0 1.1rem;
   font-size: 0.92rem;
   line-height: 1.5;
-  color: rgba(20, 24, 31, 0.78);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .wf-contact-sent {
   margin: 0.35rem 0 0;
   font-size: 0.95rem;
-  color: rgba(20, 24, 31, 0.7);
+  color: rgba(255, 255, 255, 0.68);
 }
 
 @media (max-width: 700px) {
@@ -7270,7 +7272,7 @@ body.wf-contact-root {
 }
 
 .wf-contact-offices {
-  background: #fff;
+  background: #000;
   padding: clamp(1.5rem, 3.5vw, 2.25rem) 0;
 }
 
@@ -7292,7 +7294,7 @@ body.wf-contact-root {
   display: block;
   width: 100%;
   height: auto;
-  opacity: 0.72;
+  opacity: 0.85;
 }
 
 .wf-contact-offices-pin {
@@ -7301,7 +7303,7 @@ body.wf-contact-root {
   height: auto;
   aspect-ratio: 28 / 40;
   translate: -50% -88%;
-  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.18));
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.45));
   pointer-events: none;
 }
 
@@ -7314,7 +7316,7 @@ body.wf-contact-root {
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.04em;
-  color: #1b2430;
+  color: #fff;
 }
 
 .wf-contact-offices-title {
@@ -7323,7 +7325,7 @@ body.wf-contact-root {
   font-size: clamp(1.45rem, 2.6vw, 1.85rem);
   font-weight: 600;
   letter-spacing: -0.03em;
-  color: #1b2430;
+  color: #fff;
 }
 
 .wf-contact-offices-grid {
@@ -7339,14 +7341,14 @@ body.wf-contact-root {
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(27, 36, 48, 0.45);
+  color: var(--hero-lime, #FCD116);
 }
 
 .wf-contact-office-line {
   margin: 0;
   font-size: 0.88rem;
   line-height: 1.4;
-  color: rgba(27, 36, 48, 0.78);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .wf-contact-office-line a {

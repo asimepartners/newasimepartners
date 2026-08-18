@@ -35,11 +35,11 @@ function WorkPage() {
           </h1>
         </section>
 
+        <Insights />
         <HighlightedWork
           eyebrow={ourWorkPage.trackRecordEyebrow}
           intro={ourWorkPage.trackRecordIntro}
         />
-        <Insights />
       </main>
 
       <Footer />

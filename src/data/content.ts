@@ -211,12 +211,12 @@ export const navGroups = [
       { label: "Platform", href: "#platform" },
       { label: "Sectors", href: "/sectors.html" },
       { label: "Geographies", href: "#geographies" },
-      { label: "Stage", href: "/stages.html" },
+      { label: "Stages", href: "/stages.html" },
     ],
   },
   {
     label: "Insights",
-    href: "/work.html",
+    href: "/work.html#insights",
     children: [
       { label: "Media", href: "/media.html" },
       { label: "Highlighted work", href: "/work.html" },
@@ -563,7 +563,7 @@ export const highlightedWork: HighlightedWorkItem[] = [
     description:
       "We advised a global impact fund manager to set up a target $50 million blended capital structure for a working capital debt fund. The facility intends to raise substantial capital from international impact investors and development partners.",
     href: "#advisory",
-    image: "/images/work/01.jpg",
+    image: "/images/work/west-africa-fund-of-funds.png",
   },
   {
     platform: "Impact Fund",
@@ -572,7 +572,7 @@ export const highlightedWork: HighlightedWorkItem[] = [
     description:
       "We advised a global impact fund on the ideation, design, financial modelling and initial testing of pan-African blended capital facility to provide working capital instruments for companies in Agribusiness, Renewable Energy and Healthcare in East and West Africa. This included potential currency catalytic first loss shares.",
     href: "#management",
-    image: "/images/work/06.jpg",
+    image: "/images/work/global-impact-fund.png",
   },
   {
     platform: "Angel Investing",
@@ -662,6 +662,15 @@ export const highlightedWork: HighlightedWorkItem[] = [
     ],
     href: "#technology",
     image: "/sectors/ai.jpg",
+  },
+  {
+    platform: "Advisory",
+    country: "Qatar",
+    title: "Sovereign Wealth Fund - Africa Market Entry",
+    description:
+      "We presented the African investment landscape and opportunities to Middle Eastern audiences in partnership with HEC Qatar, Qatar Universities. This included case studies of the European vs. African vs. Middle Eastern tech landscape and market development strategies for returns and impact.",
+    href: "#advisory",
+    image: "/images/work/sovereign-wealth-fund.png",
   },
 ];
 
@@ -785,7 +794,7 @@ export const footerColumns = {
     { label: "Platform", href: "/#platform" },
     { label: "Capabilities", href: "/#our-capabilities" },
     { label: "Our Work", href: "/work.html" },
-    { label: "Insights", href: "/work.html" },
+    { label: "Insights", href: "/work.html#insights" },
   ],
   connect: [
     { label: "Team", href: "/#team" },
@@ -1106,7 +1115,7 @@ export interface GeoLocation {
 export const geoContent = {
   eyebrow: "Geographies",
   headline: "A global network for African opportunity",
-  lead: "From West Africa to Europe and East Asia, we connect capital and expertise across borders to unlock growth in frontier markets",
+  lead: "From North America, Europe and Africa, we connect capital and expertise across borders to unlock growth in frontier markets",
   mapSrc: "/images/dotted-world.svg",
   locations: [
     { key: "ghana", label: "Ghana", color: "#F5A623", left: 49.2, top: 59.34, z: 3, size: "sm" },
