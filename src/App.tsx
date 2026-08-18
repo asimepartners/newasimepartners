@@ -45,9 +45,17 @@ export default function App() {
         <ByTheNumbers />
         <OurPlatform />
         <BusinessPillars />
-        <AdvisoryDetail id="advisory" content={advisoryDetail} />
+        <AdvisoryDetail
+          id="advisory"
+          content={advisoryDetail}
+          cta={{ label: 'Sectors', href: '/sectors.html' }}
+        />
         <AdvisoryDetail id="management" content={managementDetail} />
-        <AdvisoryDetail id="technology" content={techDetail} />
+        <AdvisoryDetail
+          id="technology"
+          content={techDetail}
+          cta={{ label: 'Stages', href: '/stages.html' }}
+        />
         <DeferredMount>
           <LazyBelowFold />
         </DeferredMount>

@@ -460,7 +460,7 @@ export const ourPeopleStatements: MissionStatement[] = [
 ];
 
 export const aboutContent = {
-  eyebrow: "ABOUT US",
+  eyebrow: "About Us",
   title: "Unveiling Our Identity, Vision and Values",
   subheading:
     "We are an Africa focused impact and alternative investments adviser committed to driving positive financial, social and economic change across Anglophone and Francophone Africa",

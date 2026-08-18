@@ -17,6 +17,7 @@ import {
   UserStar01Icon,
   ChartIncreaseIcon,
   FlowConnectionIcon,
+  ArrowRight01Icon,
 } from '@hugeicons/core-free-icons'
 import type { ServiceDetail } from '@/data/content'
 import { FadeUp, StaggerParent, StaggerItem, motion } from './Motion'
@@ -44,7 +45,15 @@ const ICONS: Record<string, typeof AnalyticsUpIcon> = {
   'ai-talent': UserStar01Icon,
 }
 
-export default function AdvisoryDetail({ id, content }: { id: string; content: ServiceDetail }) {
+export default function AdvisoryDetail({
+  id,
+  content,
+  cta,
+}: {
+  id: string
+  content: ServiceDetail
+  cta?: { label: string; href: string }
+}) {
   return (
     <section id={id} className="wf-adv">
       <div className="wf-adv-inner">
@@ -71,6 +80,15 @@ export default function AdvisoryDetail({ id, content }: { id: string; content: S
             </StaggerItem>
           ))}
         </StaggerParent>
+
+        {cta ? (
+          <FadeUp className="wf-adv-foot" index={1}>
+            <a href={cta.href} className="wf-platform-cta">
+              {cta.label}
+              <HugeiconsIcon icon={ArrowRight01Icon} size={18} strokeWidth={2.4} />
+            </a>
+          </FadeUp>
+        ) : null}
       </div>
     </section>
   )

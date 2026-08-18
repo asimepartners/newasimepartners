@@ -2917,6 +2917,12 @@ a { text-decoration: none; color: inherit; }
   gap: clamp(1rem, 1.8vw, 1.5rem);
 }
 
+.wf-adv-foot {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+}
+
 .wf-adv-card {
   display: flex;
   flex-direction: column;
