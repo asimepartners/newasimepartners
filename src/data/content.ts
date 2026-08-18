@@ -61,11 +61,11 @@ export const heroContent = {
   scrollLabel: "SCROLL DOWN",
   focusAreas:
     "Climate & Impact | Alternatives & Impact | AI Systems | M&A Advisory | Executive Training",
-  image: "/images/sliders/04.jpg?v=5",
+  image: "/images/sliders/hero-platform.jpg?v=2",
   imageAlt:
     "Asime Partners team and partners across advisory, industry, and technology",
   slides: [
-    "/images/sliders/04.jpg?v=5",
+    "/images/sliders/hero-platform.jpg?v=2",
     "/images/sliders/01.jpg?v=5",
     "/images/sliders/02.jpg?v=5",
     "/images/sliders/03.jpg?v=5",
@@ -219,7 +219,7 @@ export const navGroups = [
     href: "/work.html#insights",
     children: [
       { label: "Media", href: "/media.html" },
-      { label: "Highlighted work", href: "/work.html" },
+      { label: "Our Work", href: "/work.html#our-work" },
     ],
   },
 ] as const;
@@ -522,7 +522,7 @@ export const highlightedWorkIntro = {
 export const ourWorkPage = {
   title: "Our Work",
   heroImage: "/images/work/our-work-hero.png",
-  trackRecordEyebrow: "Track Record",
+  trackRecordEyebrow: "Our Work",
   trackRecordIntro:
     "Our platform, advisory and tech & AI services have been highlighted in various publications. We serve clients through the breadth and depth of African investment opportunities. We’re also an experienced executive training organisation.",
 };
@@ -614,7 +614,7 @@ export const highlightedWork: HighlightedWorkItem[] = [
       { type: "text", value: "." },
     ],
     href: "/portfolio.html",
-    image: "/images/platform/02-jaza-rift.jpg",
+    image: "/images/work/jaza-rift.png",
   },
   {
     platform: "Private Credit",
@@ -623,7 +623,7 @@ export const highlightedWork: HighlightedWorkItem[] = [
     description:
       "We advise various investment committees of capital allocators targeting emerging markets and Africa. We provide recommendations on private credit, sovereign debt and other credit products. Our team has deep experience in derivatives, exotic products and credit risk solutions across Europe and Africa.",
     href: "#management",
-    image: "/images/work/04.jpg",
+    image: "/images/work/private-credit.png",
   },
   {
     platform: "Executive Training",

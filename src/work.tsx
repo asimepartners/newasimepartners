@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { ourWorkPage } from '@/data/content'
 import { dismissPreloader } from '@/utils/dismissPreloader'
+import { useSmoothScroll } from '@/hooks/useSmoothScroll'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ScrollToTop from '@/components/ScrollToTop'
@@ -14,6 +15,8 @@ import './styles/theme-dark.css'
 import './styles/refine.css'
 
 function WorkPage() {
+  useSmoothScroll()
+
   return (
     <div className="wf-stages-page">
       <Navbar variant="solid" />
