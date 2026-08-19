@@ -48,13 +48,21 @@ export default function App() {
         <AdvisoryDetail
           id="advisory"
           content={advisoryDetail}
-          cta={{ label: 'Sectors', href: '/sectors.html' }}
+          cta={{
+            label: 'We advise companies in a wide variety of sectors',
+            href: '/sectors.html',
+            variant: 'link',
+          }}
         />
         <AdvisoryDetail id="management" content={managementDetail} />
         <AdvisoryDetail
           id="technology"
           content={techDetail}
-          cta={{ label: 'Stages', href: '/stages.html' }}
+          cta={{
+            label: 'Our engagements span early to mature project stages',
+            href: '/stages.html',
+            variant: 'link',
+          }}
         />
         <DeferredMount>
           <LazyBelowFold />

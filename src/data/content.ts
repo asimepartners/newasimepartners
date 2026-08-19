@@ -150,7 +150,7 @@ export const platformCards: PlatformCard[] = [
     title: "Asime Ventures",
     category: "Private Markets",
     description:
-      "A diversified portfolio of 30+ initial angel investments. See our portfolio section. We have opportunities across infrastructure, Climate, Fintech, Mobility and Agribusiness.",
+      "A diversified portfolio of 30+ initial angel investments. We have opportunities across infrastructure, Climate, Fintech, Mobility and Agribusiness.",
     href: "#our-work",
     image: "/images/platform/01-asime-ventures.jpg",
   },
@@ -209,8 +209,9 @@ export const navGroups = [
     href: "/sectors.html",
     children: [
       { label: "Platform", href: "#platform" },
+      { label: "Portfolio", href: "/portfolio.html" },
       { label: "Sectors", href: "/sectors.html" },
-      { label: "Our presence", href: "#geographies" },
+      { label: "Geographies", href: "#geographies" },
       { label: "Stages", href: "/stages.html" },
     ],
   },
@@ -799,7 +800,7 @@ export const footerColumns = {
   connect: [
     { label: "Team", href: "/#team" },
     { label: "Contact", href: "/contact.html" },
-    { label: "Contact Us", href: "/contact.html" },
+    { label: "Work With Us", href: "/#apply" },
   ],
 };
 

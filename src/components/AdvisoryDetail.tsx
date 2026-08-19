@@ -18,6 +18,7 @@ import {
   ChartIncreaseIcon,
   FlowConnectionIcon,
   ArrowRight01Icon,
+  ArrowDown01Icon,
 } from '@hugeicons/core-free-icons'
 import type { ServiceDetail } from '@/data/content'
 import { FadeUp, StaggerParent, StaggerItem, motion } from './Motion'
@@ -52,7 +53,7 @@ export default function AdvisoryDetail({
 }: {
   id: string
   content: ServiceDetail
-  cta?: { label: string; href: string }
+  cta?: { label: string; href: string; text?: string; variant?: 'button' | 'link' }
 }) {
   return (
     <section id={id} className="wf-adv">
@@ -83,9 +84,19 @@ export default function AdvisoryDetail({
 
         {cta ? (
           <FadeUp className="wf-adv-foot" index={1}>
-            <a href={cta.href} className="wf-platform-cta">
+            {cta.text ? <p className="wf-adv-foot-text">{cta.text}</p> : null}
+            <a
+              href={cta.href}
+              className={cta.variant === 'link' ? 'wf-about-cta' : 'wf-platform-cta'}
+            >
               {cta.label}
-              <HugeiconsIcon icon={ArrowRight01Icon} size={18} strokeWidth={2.4} />
+              {cta.variant === 'link' ? (
+                <span className="wf-about-cta-arrow" aria-hidden="true">
+                  <HugeiconsIcon icon={ArrowDown01Icon} size={18} strokeWidth={2.4} />
+                </span>
+              ) : (
+                <HugeiconsIcon icon={ArrowRight01Icon} size={18} strokeWidth={2.4} />
+              )}
             </a>
           </FadeUp>
         ) : null}
