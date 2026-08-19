@@ -5020,7 +5020,6 @@ body.wf-privacy-root {
 }
 
 .wf-main #advisory .wf-adv-title,
-.wf-main #management .wf-adv-title,
 .wf-main .wf-adv-card-body,
 .wf-main .wf-about-sub,
 .wf-main .wf-about .wf-ab3-card-body,
@@ -5029,6 +5028,22 @@ body.wf-privacy-root {
   text-align: left;
   text-justify: auto;
   hyphens: none;
+}
+
+.wf-main #management .wf-adv-title {
+  max-width: none;
+  margin-inline: auto;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  text-align: center;
+  text-justify: auto;
+  hyphens: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 1200px) {
+  .wf-main #management .wf-adv-title {
+    white-space: normal;
+  }
 }
 
 .wf-news2 .wf-photo-card-desc {

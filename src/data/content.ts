@@ -383,7 +383,7 @@ export const advisoryDetail: ServiceDetail = {
 
 export const managementDetail: ServiceDetail = {
   eyebrow: "Alternatives & Impact",
-  headline: "Alternative Investments & Impact Solutions across our Platforms",
+  headline: "We advise capital allocators on capturing uncorrelated African alpha through high-growth African alternative assets and impact-driven & ESG strategies",
   items: [
     {
       icon: "overview",
