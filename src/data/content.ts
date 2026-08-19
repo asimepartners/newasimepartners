@@ -210,7 +210,7 @@ export const navGroups = [
     children: [
       { label: "Platform", href: "#platform" },
       { label: "Sectors", href: "/sectors.html" },
-      { label: "Geographies", href: "#geographies" },
+      { label: "Our presence", href: "#geographies" },
       { label: "Stages", href: "/stages.html" },
     ],
   },
@@ -238,10 +238,10 @@ export const businessLines = {
   },
   management: {
     eyebrow: "Alternatives & Impact",
-    title: "Allocate from 5% to 25% to African Alpha",
+    title: "Alternative Investments & Impact Investments",
     summary: "Capital deployed through focused platforms",
     description:
-      "We offer professional services to high-net-worth individuals, family offices, or institutional clients to design, manage, and execute strategies involving non-traditional asset classes beyond public equities, bonds, and cash. These can include: Private Equity, Private Credit, Real Assets, Digital Assets and other Structured Products.",
+      "We advise capital allocators on capturing uncorrelated African alpha through high-growth African alternative assets and impact-driven & ESG strategies.",
     href: "#management",
     cta: "Read More",
     image: "/images/02.jpg",
@@ -386,13 +386,13 @@ export const managementDetail: ServiceDetail = {
   items: [
     {
       icon: "overview",
-      title: "Alternative Investment",
+      title: "Alternative Investments",
       body: "Alternative investments or alternative assets (not stocks, bonds, or cash) differ from traditional investment because they aren’t easily sold or converted into cash, such as private equity, private credit, real assets, digital assets, hedge funds, art collections, real estate investments and trusts (REITs), structured products etc. Africa's alternative investment market exceeds US $2 trillion in institutional capital, driven by private equity and venture capital, infrastructure and climate finance, real estate and agribusiness, and high-growth sectors like renewable energy and private credit.",
     },
     {
       icon: "advisory",
-      title: "Strategic Investment Advisory",
-      body: "We advise African and international family offices, funds, fund of funds, corporate ventures, pension funds and governments on alternative investment opportunities in Africa and beyond. We have a track record spanning Europe, the GCC and Africa across private markets (private equity, private debt, venture capital, venture debt, angel investments etc.), digital assets & finance, Islamic finance, green finance, climate finance and more.",
+      title: "Climate Finance",
+      body: "We are a specialized strategic intelligence firm helping investors navigate Africa’s $300 billion annual climate funding gap. Our practice is the gateway to African carbon markets, structuring blended finance vehicles to derisk capital, and identifying scalable commercial opportunities across mitigation and adaptation infrastructure. We translate complex regulatory frameworks, country-level risk profiles, and sovereign macro-trends into bankable, climate-conscious investment strategies that yield both commercial alpha and measurable ESG impact.",
     },
     {
       icon: "impact",
@@ -419,7 +419,7 @@ export const managementDetail: ServiceDetail = {
 
 export const techDetail: ServiceDetail = {
   eyebrow: "Technology & AI",
-  headline: "Intelligent Systems for Modern Businesses",
+  headline: "We assess, re-organise and accelerate organisations thanks to our process and workflow automation expertise and AI system engineering.",
   items: [
     {
       icon: "workflow",
@@ -463,7 +463,7 @@ export const aboutContent = {
   eyebrow: "About Us",
   title: "Unveiling Our Identity, Vision and Values",
   subheading:
-    "We are an Africa focused impact and alternative investments adviser committed to driving positive financial, social and economic change across Anglophone and Francophone Africa",
+    'Asime means "in the hand" or "the market" in Ewe, a West African language. By extension, the expression "Asi le Asime" means hand in hand, therefore a relationship based on Trust and Bond, in a way "my Word is my Bond" and the handshake seals the relationship. We are an Africa focused impact and alternative investments adviser committed to driving positive financial, social and economic change across Anglophone and Francophone Africa.',
   image: "/images/about-agritech.jpg",
   imageAlt:
     "Aerial view of precision agricultural machines working across green crop fields",
@@ -799,7 +799,7 @@ export const footerColumns = {
   connect: [
     { label: "Team", href: "/#team" },
     { label: "Contact", href: "/contact.html" },
-    { label: "Join Us", href: "/#apply" },
+    { label: "Contact Us", href: "/contact.html" },
   ],
 };
 
@@ -925,7 +925,7 @@ export const thesisAreas: ThesisArea[] = [
     title: "Healthcare",
     description:
       "We’re a leading advisor on Healthtech (Digital Health), Medtech (medical devices) & Biotech (and techbio) covering drug development, genetic engineering, cell therapies and diagnostics in Africa. We support organisations and startups to navigate regulatory approvals (local FDA, US FDA, CE Mark, WHO Prequalification, ISO 15189, ISO 20387, ISO 17043), market fit analysis, go-to-market strategies and funding mix (grants, equity, debt) adequate for each stage.",
-    image: "/images/platform/02-jaza-rift.jpg",
+    image: "/sectors/healthcare-africa.png",
   },
   {
     icon: "🌾",
@@ -939,7 +939,7 @@ export const thesisAreas: ThesisArea[] = [
     title: "Climate & Renewable Energy Finance",
     description:
       "We have managed more than $180M worth of programs in Climate and Renewable Energy, and advised a wide range of clients from strategic, financial and operational to technology focused challenges for climate and renewable energy (including off-grid and on-grid energy solutions). This includes delivering strategic policy insights on climate resilience and climate mitigation, and identifying and securing investment opportunities across emerging and frontier markets.",
-    image: "/images/engieer.jpg",
+    image: "/sectors/climate-finance-2024.png",
   },
   {
     icon: "🕌",
@@ -1113,9 +1113,9 @@ export interface GeoLocation {
 }
 
 export const geoContent = {
-  eyebrow: "Geographies",
+  eyebrow: "Our presence",
   headline: "A global network for African opportunity",
-  lead: "From North America, Europe and Africa, we connect capital and expertise across borders to unlock growth in frontier markets",
+  lead: "We serve our global clients’ cross-border investment needs through our deep networks across 37+ countries in Africa.",
   mapSrc: "/images/dotted-world.svg",
   locations: [
     { key: "ghana", label: "Ghana", color: "#F5A623", left: 49.2, top: 59.34, z: 3, size: "sm" },
@@ -1162,7 +1162,7 @@ export const teamContent = {
     {
       name: "Abena Opoku Acquah",
       role: "Principal, West Africa",
-      image: "/images/Team/Abena.jpg",
+      image: "/images/Team/Abena.jpg?v=2",
       linkedin: "https://www.linkedin.com/in/abenaopokuacquah/",
     },
     {
@@ -1219,22 +1219,25 @@ export interface InsightCard {
   platform: string;
   date: string;
   title: string;
+  description?: string;
   href: string;
 }
 
 export const insightCards: InsightCard[] = [
   {
-    image: "/news/1.jpeg",
-    platform: "Chale Fund",
+    image: "/images/work/chale-fund.png",
+    platform: "Platform",
     date: "May 12, 2026",
-    title: "Asime Partners expands Chale Fund mandate across West Africa",
+    title: "Asime Partners was appointed Fund Manager of a youth-focused, cedi-based fund for Ghana through a competitive bid, with expected anchor funding from the World Bank.",
     href: "#apply",
   },
   {
-    image: "/news/02.jpeg",
+    image: "/images/work/african-infrastructure-alternative-investments.png",
     platform: "Venture Capital",
     date: "April 23, 2026",
-    title: "Inspired Evolution backs gender smart venture growth through new investment",
+    title: "Financing African Infrastructure through Alternative Investments",
+    description:
+      "Alternative financing is essential for Africa’s infrastructure development. With CNBC Africa's Akin Obakeye at the Africa Prosperity Dialogues in Accra, Ghana, we emphasized the need for innovative financial instruments as well as the urgent need for policy harmonization to attract local and international investors.",
     href: "#management",
   },
   {

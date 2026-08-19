@@ -1,5 +1,6 @@
 export const stagesPage = {
   title: 'Stages',
+  heroImage: '/images/more/startup.jpg',
   intro:
     'We invest and advise across the company lifecycle, from idea-stage founders to large corporates and infrastructure projects.',
   items: [

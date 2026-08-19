@@ -24,6 +24,7 @@ export default function Insights() {
                 category={card.platform}
                 meta={card.date}
                 title={card.title}
+                description={card.description}
               />
             </StaggerItem>
           ))}

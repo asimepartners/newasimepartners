@@ -17,7 +17,8 @@ export default function BusinessPillars() {
         <FadeUp className="wf-lines-intro">
           <span className="wf-lines-intro-eyebrow">Our Capabilities</span>
           <h2 className="wf-lines-intro-title">
-            Advisory & Capital Platforms Built for African Growth
+            Our team has deep expertise spanning Advisory, Alternative Investments & Impact, and
+            Technology & AI.
           </h2>
         </FadeUp>
 

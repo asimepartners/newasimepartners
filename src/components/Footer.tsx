@@ -1,6 +1,6 @@
 import { HugeiconsIcon } from '@hugeicons/react'
-import { CircleArrowRight01Icon, Linkedin01Icon } from '@hugeicons/core-free-icons'
-import { footerColumns, footerLegal, newsletterContent, siteBrand } from '@/data/content'
+import { Linkedin01Icon } from '@hugeicons/core-free-icons'
+import { footerColumns, footerLegal, siteBrand } from '@/data/content'
 import { FadeIn } from './Motion'
 
 export default function Footer() {
@@ -8,46 +8,6 @@ export default function Footer() {
     <FadeIn>
       <footer className="wf-ft">
         <div className="wf-ft-wrapper">
-          <div className="wf-news-card">
-            <div className="wf-news-media" aria-hidden="true">
-              <img
-                src={newsletterContent.image}
-                alt=""
-                className="wf-news-media-img"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="wf-news-overlay" />
-            </div>
-
-            <div className="wf-news-left">
-              <span className="wf-news-eyebrow">{newsletterContent.eyebrow}</span>
-              <h2 className="wf-news-title">{newsletterContent.heading}</h2>
-              <p className="wf-news-body">{newsletterContent.body}</p>
-            </div>
-
-            <div className="wf-news-right">
-              <form className="wf-news-row" onSubmit={(e) => e.preventDefault()}>
-                <input
-                  className="wf-news-input"
-                  type="email"
-                  placeholder={newsletterContent.placeholder}
-                  aria-label="Email address"
-                />
-                <button type="submit" className="wf-news-btn">
-                  <span className="wf-news-btn-icon" aria-hidden="true">
-                    <HugeiconsIcon icon={CircleArrowRight01Icon} size={20} strokeWidth={2} />
-                  </span>
-                  <span>{newsletterContent.button}</span>
-                </button>
-              </form>
-              <span className="wf-news-fine">
-                {newsletterContent.finePrintLead}{' '}
-                <a href={newsletterContent.privacyHref}>{newsletterContent.privacyLabel}</a>
-              </span>
-            </div>
-          </div>
-
           <div className="wf-ft-lower">
             <div className="wf-ft-brand-block">
               <a href="#" className="wf-ft-brand">
