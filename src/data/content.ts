@@ -56,11 +56,11 @@ export const heroContent = {
   ],
   ctaPrimary: { label: "GET IN TOUCH", href: "#apply" },
   ctaNav: { label: "Apply Now", href: "#apply" },
-  typingText: "Platform, Alternative Investments & Impact Investments, Advisory, Technology & AI",
-  typingPhrases: ["Platform", "Alternative Investments & Impact Investments", "Advisory", "Technology & AI"],
+  typingText: "Platform, Alternatives & Impact, Advisory, Technology & AI",
+  typingPhrases: ["Platform", "Alternatives & Impact", "Advisory", "Technology & AI"],
   scrollLabel: "SCROLL DOWN",
   focusAreas:
-    "Climate & Impact | Alternative Investments & Impact Investments | AI Systems | M&A Advisory | Executive Training",
+    "Climate & Impact | Alternatives & Impact | AI Systems | M&A Advisory | Executive Training",
   image: "/images/sliders/hero-platform.jpg?v=2",
   imageAlt:
     "Asime Partners team and partners across advisory, industry, and technology",

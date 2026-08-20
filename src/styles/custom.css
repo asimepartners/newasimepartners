@@ -3374,7 +3374,7 @@ a { text-decoration: none; color: inherit; }
 
 .wf-wwu-title {
   margin: 0 0 1.25rem;
-  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
   font-weight: 500;
   max-width: none;
   line-height: 1.35;
@@ -5041,19 +5041,13 @@ body.wf-privacy-root {
 }
 
 .wf-main #management .wf-adv-title {
-  max-width: none;
+  max-width: 72rem;
   margin-inline: auto;
-  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
   text-align: center;
   text-justify: auto;
   hyphens: none;
-  white-space: nowrap;
-}
-
-@media (max-width: 1200px) {
-  .wf-main #management .wf-adv-title {
-    white-space: normal;
-  }
+  white-space: normal;
 }
 
 .wf-news2 .wf-photo-card-desc {
@@ -5244,7 +5238,7 @@ body.wf-privacy-root {
   letter-spacing: -0.02em;
   line-height: 1.35;
   text-align: center;
-  color: rgba(255, 255, 255, 0.78);
+  color: #fff;
   white-space: nowrap;
 }
 
@@ -7507,8 +7501,12 @@ body.wf-contact-root {
   padding-top: clamp(2rem, 4vw, 3rem) !important;
 }
 
+.wf-stages-page .wf-awards {
+  padding-bottom: 0;
+}
+
 .wf-training-work {
-  padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(3.5rem, 7vw, 5.5rem);
+  padding: clamp(1.1rem, 2vw, 1.5rem) 0 clamp(3.5rem, 7vw, 5.5rem);
   background: #000;
 }
 
