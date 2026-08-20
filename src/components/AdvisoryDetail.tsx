@@ -87,7 +87,11 @@ export default function AdvisoryDetail({
             {cta.text ? <p className="wf-adv-foot-text">{cta.text}</p> : null}
             <a
               href={cta.href}
-              className={cta.variant === 'link' ? 'wf-about-cta' : 'wf-platform-cta'}
+              className={
+                cta.variant === 'link'
+                  ? 'wf-about-cta'
+                  : 'wf-platform-cta wf-adv-section-cta'
+              }
             >
               {cta.label}
               {cta.variant === 'link' ? (

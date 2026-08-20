@@ -51,7 +51,7 @@ export default function App() {
           cta={{
             label: 'We advise companies in a wide variety of sectors',
             href: '/sectors.html',
-            variant: 'link',
+            variant: 'button',
           }}
         />
         <AdvisoryDetail id="management" content={managementDetail} />
@@ -61,7 +61,7 @@ export default function App() {
           cta={{
             label: 'Our engagements span early to mature project stages',
             href: '/stages.html',
-            variant: 'link',
+            variant: 'button',
           }}
         />
         <DeferredMount>

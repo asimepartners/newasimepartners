@@ -56,11 +56,11 @@ export const heroContent = {
   ],
   ctaPrimary: { label: "GET IN TOUCH", href: "#apply" },
   ctaNav: { label: "Apply Now", href: "#apply" },
-  typingText: "Platform, Alternatives & Impact, Advisory, Technology & AI",
-  typingPhrases: ["Platform", "Alternatives & Impact", "Advisory", "Technology & AI"],
+  typingText: "Platform, Alternative Investments & Impact Investments, Advisory, Technology & AI",
+  typingPhrases: ["Platform", "Alternative Investments & Impact Investments", "Advisory", "Technology & AI"],
   scrollLabel: "SCROLL DOWN",
   focusAreas:
-    "Climate & Impact | Alternatives & Impact | AI Systems | M&A Advisory | Executive Training",
+    "Climate & Impact | Alternative Investments & Impact Investments | AI Systems | M&A Advisory | Executive Training",
   image: "/images/sliders/hero-platform.jpg?v=2",
   imageAlt:
     "Asime Partners team and partners across advisory, industry, and technology",
@@ -238,7 +238,7 @@ export const businessLines = {
     imageAlt: "Investment advisory",
   },
   management: {
-    eyebrow: "Alternatives & Impact",
+    eyebrow: "Alternative Investments & Impact Investments",
     title: "Alternative Investments & Impact Investments",
     summary: "Capital deployed through focused platforms",
     description:
@@ -382,7 +382,7 @@ export const advisoryDetail: ServiceDetail = {
 };
 
 export const managementDetail: ServiceDetail = {
-  eyebrow: "Alternatives & Impact",
+  eyebrow: "Alternative Investments & Impact Investments",
   headline: "We advise capital allocators on capturing uncorrelated African alpha through high-growth African alternative assets and impact-driven & ESG strategies",
   items: [
     {
@@ -543,7 +543,7 @@ export const caseStudies: CaseStudy[] = [
     media: "spheres",
   },
   {
-    category: "Alternatives & Impact",
+    category: "Alternative Investments & Impact Investments",
     question: "How can costs be sustainably optimized to create positive impact?",
     href: "#apply",
     media: "turbine",
@@ -781,7 +781,11 @@ export const newsletterContent = {
 
 export const footerLegal = {
   copyright:
-    "Copyright © 2026 Asime Partners. All Rights reserved. Website design & build by Data Leap Technologies.",
+    "Copyright © 2026 Asime Partners. All Rights reserved. Website design & build by",
+  credit: {
+    label: "Data Leap Technologies.",
+    href: "https://www.dataleapgh.com",
+  },
   paragraphs: [
     "This website is operated and issued by Asime Partners Limited. No company in the Asime Partners is registered as an investment adviser in the United States, and this website should not be viewed as a solicitation of prospective investment advisory clients or investors from the United States.",
     "The information contained in this website is for general information purposes only. The information is provided by Asime Partners Limited, and whilst we endeavour to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk. In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.",
@@ -1355,7 +1359,7 @@ export const offices: Office[] = [
 export const footerNav = {
   platform: [
     "Climate & Impact",
-    "Alternatives & Impact",
+    "Alternative Investments & Impact Investments",
     "AI Systems",
     "M&A Advisory",
     "Executive Training",

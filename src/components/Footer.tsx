@@ -58,7 +58,17 @@ export default function Footer() {
           </div>
 
           <div className="wf-ft-baseline">
-            <span className="wf-ft-copy">{footerLegal.copyright}</span>
+            <span className="wf-ft-copy">
+              {footerLegal.copyright}{' '}
+              <a
+                href={footerLegal.credit.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="wf-ft-copy-link wf-ft-credit-link"
+              >
+                {footerLegal.credit.label}
+              </a>
+            </span>
             <div className="wf-ft-legal-links">
               <a href="/privacy.html" className="wf-ft-copy-link">Privacy Policy</a>
               <a href="/terms.html" className="wf-ft-copy-link">Terms of Service</a>

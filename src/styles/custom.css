@@ -2936,6 +2936,11 @@ a { text-decoration: none; color: inherit; }
   color: rgba(255, 255, 255, 0.72);
 }
 
+.wf-adv-section-cta,
+.wf-adv-section-cta:hover {
+  color: #fff;
+}
+
 .wf-adv-card {
   display: flex;
   flex-direction: column;
@@ -3937,6 +3942,11 @@ a { text-decoration: none; color: inherit; }
 
 .wf-ft-copy-link:hover {
   color: var(--ft-heading);
+}
+
+.wf-ft-credit-link {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 .wf-ft-legal {
