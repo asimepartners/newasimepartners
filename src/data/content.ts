@@ -75,7 +75,7 @@ export const heroContent = {
 /* ── Awards & recognition ────────────────────────────────── */
 
 export const awardsContent = {
-  title: "They Trusted Us",
+  title: "Clients & Partners",
   items: [
     {
       name: "Mastercard",
@@ -841,6 +841,11 @@ export const contactPage = {
       lines: ["Asime Partners", "Nairobi, Kenya"],
       pin: { left: 59.81, top: 62.55 },
     },
+    {
+      city: "New York",
+      lines: ["Asime Partners", "New York, USA"],
+      pin: { left: 21.875, top: 26.64 },
+    },
   ],
   mapSrc: "/images/dotted-world.svg",
 };
@@ -1148,13 +1153,13 @@ export const teamContent = {
   members: [
     {
       name: "Sewu-Steve Tawia",
-      role: "Global MD & West Africa",
+      role: "Global MD, Lead Facilitator - Africa",
       image: "/images/Team/Sewu.jpg",
       linkedin: "https://www.linkedin.com/in/stevetawia",
     },
     {
-      name: "Benson Njiru",
-      role: "MD East Africa",
+      name: "Benson Njriru",
+      role: "Lead Facilitator, East Africa Director",
       image: "/images/Team/Benson.jpg",
       linkedin: "https://www.linkedin.com/in/benson-njiru-njagi/",
     },
@@ -1165,8 +1170,8 @@ export const teamContent = {
       linkedin: "https://www.linkedin.com/in/freda-egyir-4408161a1/",
     },
     {
-      name: "Abena Opoku Acquah",
-      role: "Principal, West Africa",
+      name: "Abena Opoku-Acquah",
+      role: "Lead Facilitator, West Africa Director",
       image: "/images/Team/Abena.jpg?v=2",
       linkedin: "https://www.linkedin.com/in/abenaopokuacquah/",
     },

@@ -1,0 +1,92 @@
+/* Match the homepage hero's left-aligned heading, copy and action rhythm. */
+:root :is(.ap-page-hero, .ap-about-hero, .ap-case-hero, .ap-careers-hero, .ap-partners-hero, .ap-partners-v2-hero, .ap-partners-banner, .ap-research-hero, .ap-events-hero, .ap-publication-hero, .ap-family-hero, .ap-alt-hero, .wf-contact-hero, .wf-training-hero, .wf-media-hero, .wf-portfolio-hero) { text-align: left; }
+:root :is(.ap-page-hero, .ap-about-hero, .ap-case-hero, .ap-careers-hero, .ap-partners-hero, .ap-partners-v2-hero, .ap-partners-banner, .ap-research-hero, .ap-events-hero, .ap-publication-hero, .ap-family-hero, .ap-alt-hero, .wf-contact-hero, .wf-training-hero, .wf-media-hero, .wf-portfolio-hero) :is(.ap-wrap, .ap-alt-hero-copy) {
+  width: 100%;
+  max-width: 1600px;
+  margin-inline: auto;
+  padding-inline: 5vw;
+  text-align: left;
+}
+:root :is(.ap-page-hero, .ap-about-hero, .ap-case-hero, .ap-careers-hero, .ap-partners-hero, .ap-partners-v2-hero, .ap-partners-banner, .ap-research-hero, .ap-events-hero, .ap-publication-hero, .ap-family-hero, .ap-alt-hero, .wf-contact-hero, .wf-training-hero, .wf-media-hero, .wf-portfolio-hero) :is(h1, .ap-partners-hero-bottom h2) {
+  width: 100%;
+  max-width: 960px;
+  margin: 0;
+  font-size: clamp(32px, 4vw, 64px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -.025em;
+  text-align: left;
+  text-wrap: pretty;
+  white-space: normal;
+}
+:root :is(.ap-page-hero, .ap-about-hero, .ap-case-hero, .ap-careers-hero, .ap-partners-hero, .ap-partners-v2-hero, .ap-partners-banner, .ap-research-hero, .ap-events-hero, .ap-publication-hero, .ap-family-hero, .ap-alt-hero, .wf-contact-hero, .wf-training-hero, .wf-media-hero, .wf-portfolio-hero) p {
+  width: 100%;
+  max-width: 48ch;
+  margin: 18px 0 0;
+  font-size: clamp(18px, 1.6vw, 25px);
+  font-weight: 400;
+  line-height: 1.45;
+  text-align: left;
+  text-wrap: pretty;
+}
+:root :is(.ap-page-hero, .ap-about-hero, .ap-case-hero, .ap-careers-hero, .ap-partners-hero, .ap-partners-v2-hero, .ap-partners-banner, .ap-research-hero, .ap-events-hero, .ap-publication-hero, .ap-family-hero, .ap-alt-hero, .wf-contact-hero, .wf-training-hero, .wf-media-hero, .wf-portfolio-hero) .ap-buttons { justify-content: flex-start; margin-top: clamp(16px, 2vw, 28px); }
+:root :is(.ap-page-hero, .ap-about-hero, .ap-case-hero, .ap-careers-hero, .ap-partners-hero, .ap-partners-v2-hero, .ap-partners-banner, .ap-research-hero, .ap-events-hero, .ap-publication-hero, .ap-family-hero, .ap-alt-hero, .wf-contact-hero, .wf-training-hero, .wf-media-hero, .wf-portfolio-hero) :is(.ap-academy-programmes-cta, .ap-events-cta, .ap-publication-cta,
+.ap-research-button, .ap-partners-banner-link) { margin-top: clamp(16px, 2vw, 28px); }
+:root :is(.ap-page-hero, .ap-about-hero, .ap-case-hero, .ap-careers-hero, .ap-partners-hero, .ap-partners-v2-hero, .ap-partners-banner, .ap-research-hero, .ap-events-hero, .ap-publication-hero, .ap-family-hero, .ap-alt-hero, .wf-contact-hero, .wf-training-hero, .wf-media-hero, .wf-portfolio-hero) :is(.ap-eyebrow, .ap-breadcrumb, .ap-partners-banner-label) { margin-bottom: 18px; }
+:root .ap-careers-hero-content { padding-block: 0; }
+:root .ap-family-hero-copy { max-width: 1600px; }
+:root :is(.wf-contact-hero, .wf-training-hero, .wf-media-hero, .wf-portfolio-hero) {
+  justify-items: stretch;
+  align-content: center;
+  padding-inline: max(5vw, calc((100vw - 1600px) / 2 + 5vw));
+}
+:root :is(.wf-contact-hero-title, .wf-training-hero-title, .wf-media-hero-title, .wf-portfolio-hero-title) { padding: 0; }
+@media (max-width: 700px) {
+  :root :is(.ap-page-hero, .ap-about-hero, .ap-case-hero, .ap-careers-hero, .ap-partners-hero, .ap-partners-v2-hero, .ap-partners-banner, .ap-research-hero, .ap-events-hero, .ap-publication-hero, .ap-family-hero, .ap-alt-hero, .wf-contact-hero, .wf-training-hero, .wf-media-hero, .wf-portfolio-hero) :is(.ap-wrap, .ap-alt-hero-copy) { padding-inline: 6vw; }
+  :root :is(.ap-page-hero, .ap-about-hero, .ap-case-hero, .ap-careers-hero, .ap-partners-hero, .ap-partners-v2-hero, .ap-partners-banner, .ap-research-hero, .ap-events-hero, .ap-publication-hero, .ap-family-hero, .ap-alt-hero, .wf-contact-hero, .wf-training-hero, .wf-media-hero, .wf-portfolio-hero) :is(h1, .ap-partners-hero-bottom h2) { font-size: clamp(28px, 7.2vw, 44px); }
+  :root :is(.ap-page-hero, .ap-about-hero, .ap-case-hero, .ap-careers-hero, .ap-partners-hero, .ap-partners-v2-hero, .ap-partners-banner, .ap-research-hero, .ap-events-hero, .ap-publication-hero, .ap-family-hero, .ap-alt-hero, .wf-contact-hero, .wf-training-hero, .wf-media-hero, .wf-portfolio-hero) p { font-size: 16px; margin-top: 12px; }
+  :root :is(.ap-page-hero, .ap-about-hero, .ap-case-hero, .ap-careers-hero, .ap-partners-hero, .ap-partners-v2-hero, .ap-partners-banner, .ap-research-hero, .ap-events-hero, .ap-publication-hero, .ap-family-hero, .ap-alt-hero, .wf-contact-hero, .wf-training-hero, .wf-media-hero, .wf-portfolio-hero) .ap-buttons { margin-top: 12px; }
+  :root :is(.ap-page-hero, .ap-about-hero, .ap-case-hero, .ap-careers-hero, .ap-partners-hero, .ap-partners-v2-hero, .ap-partners-banner, .ap-research-hero, .ap-events-hero, .ap-publication-hero, .ap-family-hero, .ap-alt-hero, .wf-contact-hero, .wf-training-hero, .wf-media-hero, .wf-portfolio-hero) :is(.ap-academy-programmes-cta, .ap-events-cta, .ap-publication-cta,
+  .ap-research-button, .ap-partners-banner-link) { margin-top: 12px; }
+  :root :is(.wf-contact-hero, .wf-training-hero, .wf-media-hero, .wf-portfolio-hero) { padding-inline: 6vw; }
+}
+/* The shared container supplies the gutter; avoid a second banner inset. */
+:root .ap-partners-banner { padding-inline: 0; }
+
+/* Every page opens with a full viewport; let long content grow naturally. */
+:root .ap-site :is(.ap-carousel, .ap-page-hero, .ap-about-hero, .ap-case-hero,
+  .ap-careers-hero, .ap-partners-hero, .ap-partners-v2-hero, .ap-partners-banner,
+  .ap-research-hero, .ap-events-hero, .ap-publication-hero, .ap-family-hero,
+  .ap-alt-hero, .wf-contact-hero, .wf-training-hero, .wf-media-hero,
+  .wf-portfolio-hero, .wf-insight-hero) {
+  box-sizing: border-box;
+  height: auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+:root .ap-site :is(.ap-page-hero, .ap-partners-banner) {
+  display: flex;
+  align-items: center;
+}
+:root .ap-site :is(.wf-contact-hero, .wf-training-hero, .wf-media-hero,
+  .wf-portfolio-hero, .wf-insight-hero) {
+  padding-block: 120px 48px;
+}
+:root .ap-site .ap-carousel-wrap {
+  min-height: calc(100vh - var(--hero-top) - var(--hero-bottom));
+  min-height: calc(100dvh - var(--hero-top) - var(--hero-bottom));
+}
+:root .ap-site .ap-carousel-copy { flex: 1; }
+:root .ap-site .ap-carousel-footer { margin-top: auto; }
+
+/* Place Family Offices copy at the same level as the other page heroes. */
+:root .ap-site .ap-family-hero {
+  display: flex;
+  align-items: center;
+  aspect-ratio: auto;
+  padding-block: clamp(112px, 10vw, 144px) clamp(40px, 5vw, 64px);
+}
+:root .ap-site .ap-family-hero-copy { width: 100%; margin-inline: auto; padding-block: 0; }
+@media (max-width: 700px) {
+  :root .ap-site .ap-family-hero { padding-block: 104px 36px; }
+}

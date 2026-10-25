@@ -1,0 +1,75 @@
+.ap-people{background:#f5f3ed}
+.ap-people-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:48px;margin-bottom:48px}
+.ap-people-heading h2{margin:0;max-width:780px}
+.ap-people-heading h2 span{color:#6f7d71}
+.ap-people-heading>p{max-width:400px;margin:0 0 4px;font-size:clamp(18px,1.5vw,22px);color:#52605b}
+.ap-people-leader{display:grid;grid-template-columns: .85fr 1.15fr;background:#123c36;color:#fff}
+.ap-people-leader-photo{position:relative;min-width:0;overflow:hidden}
+.ap-people-leader-photo img{display:block;width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top}
+.ap-people-leader-photo>span{position:absolute;bottom:24px;left:24px;background:#f5f3ed;color:#123c36;padding:10px 16px;text-transform:uppercase;font-size:10px;letter-spacing:.16em}
+.ap-people-leader-copy{padding:clamp(28px,4vw,64px);align-self:center}
+.ap-people-leader-copy .ap-eyebrow{color:#e0b999;margin-bottom:20px}
+.ap-people-leader-copy h3{font-size:clamp(2rem,3vw,3.2rem);margin:0 0 24px}
+.ap-people-leader-copy p{font-size:14px;color:#cedbd4}
+.ap-people-leader-copy .ap-people-intro{font-size:18px;color:#fff;line-height:1.65}
+.ap-people-profile{display:flex;width:fit-content;align-items:center;gap:36px;border-bottom:1px solid #bda184;padding:12px 0;margin-top:24px;font-size:12px;font-weight:600}
+.ap-people-profile span{font-size:22px;color:#e0b999}
+.ap-people-divider{display:flex;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid #c8cdc3;margin:64px 0 28px;padding-top:24px}
+.ap-people-divider>span{text-transform:uppercase;font-size:11px;font-weight:600;letter-spacing:.16em}
+.ap-people-divider p{margin:0;font-size:13px;color:#52605b}
+.ap-people-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 24px}
+.ap-person{min-width:0;background:#fff;display:flex;flex-direction:column}
+.ap-person-photo{overflow:hidden;background:#e4e7de}
+.ap-person-photo img{display:block;width:100%;aspect-ratio:4/4.5;object-fit:cover;object-position:center top;transition:transform .4s ease}
+.ap-person:hover .ap-person-photo img{transform:scale(1.025)}
+.ap-person-info{padding:24px;display:flex;flex-direction:column;flex:1;border-bottom:2px solid #bda184}
+.ap-person-info h3{font-size:1.3rem;margin:0 0 10px}
+.ap-person-info p{margin:0 0 24px;font-size:12px;line-height:1.7;color:#52605b}
+.ap-person-info a{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:16px;border-top:1px solid #e4e7de;font-size:11px;font-weight:600}
+.ap-person-info a span{font-size:20px;color:#875337}
+@media(max-width:1000px){.ap-people-heading{display:block}.ap-people-heading>p{max-width:540px;margin-top:24px}.ap-people-leader{grid-template-columns:1fr 1.15fr}.ap-people-leader-copy .ap-people-intro{font-size:16px}.ap-people-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.ap-people-leader{grid-template-columns:1fr}.ap-people-leader-photo img{aspect-ratio:4/4.2}.ap-people-heading{margin-bottom:32px}.ap-people-divider{display:block;margin-top:40px}.ap-people-divider p{margin-top:12px}.ap-people-grid{grid-template-columns:1fr;gap:24px}.ap-person-photo img{aspect-ratio:4/4.2}}
+@media(prefers-reduced-motion:reduce){.ap-person-photo img{transition:none}.ap-person:hover .ap-person-photo img{transform:none}}
+.ap-people .ap-people-heading h2,.ap-people .ap-person-info h3,.ap-people .ap-person-info a{color:#123c36}
+.ap-people .ap-people-leader-copy h3,.ap-people .ap-people-profile{color:#fff}
+
+/* Compact team profiles, four across on desktop. */
+.ap-people-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:32px 24px}
+.ap-person{background:transparent}
+.ap-person-photo img{aspect-ratio:1;transition:none}
+.ap-person:hover .ap-person-photo img{transform:none}
+.ap-person-info{padding:18px 0 0;border:0}
+.ap-person-info h3{font-size:1.1rem;margin-bottom:8px}
+.ap-person-info p{margin-bottom:14px}
+.ap-person-info a{justify-content:flex-start;gap:12px;border:0;padding-top:0;width:fit-content}
+@media(max-width:1000px){.ap-people-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.ap-people-grid{grid-template-columns:1fr}.ap-person-photo img{aspect-ratio:1}}
+
+/* Dark background for the Our people section. */
+.ap-people{background:#000;color:#f5f3ed}
+.ap-people .ap-eyebrow{color:#FCD116}
+.ap-people .ap-people-heading h2,.ap-people .ap-person-info h3,.ap-people .ap-person-info a{color:#f5f3ed}
+.ap-people-heading h2 span{color:#FCD116}
+.ap-people-heading>p,.ap-people-divider p,.ap-person-info p{color:#cedbd4}
+.ap-people-divider{border-color:#ffffff35}
+.ap-people-divider>span,.ap-people-divider p{color:#FCD116;font-size:clamp(16px,1.5vw,22px)}
+.ap-person-info a span{color:#FCD116}
+.ap-person-placeholder-photo{aspect-ratio:1;display:grid;place-items:center;background:#202020;color:#555}
+.ap-person-placeholder-photo svg{width:45%;height:45%}
+
+/* Circular portraits for team members and placeholder profiles. */
+.ap-person-photo{border-radius:50%;aspect-ratio:1;overflow:hidden}
+.ap-person-photo img{width:100%;height:100%;aspect-ratio:1;object-fit:cover}
+
+/* Centered team profiles with larger portraits. */
+.ap-people-grid{gap:28px 32px}
+.ap-person{width:100%;max-width:260px;justify-self:center}
+.ap-person-photo{width:100%;max-width:240px;align-self:center}
+.ap-person-info{padding-top:14px}
+.ap-person-info h3{font-size:1rem}
+.ap-person-info p{font-size:11px;margin-bottom:10px}
+
+.ap-person-info{text-align:center;align-items:center}
+.ap-person-info a{justify-content:center}
+
+.ap-person-photo{border:2px solid #FCD116}

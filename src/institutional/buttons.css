@@ -1,0 +1,81 @@
+/* One CTA treatment shared by every page entry point. */
+:root {
+  --ap-button-fill: #fcd116;
+  --ap-button-hover: #ffe16a;
+  --ap-button-ink: #050908;
+}
+.ap-site .ap-final-cta .ap-button {
+  --ap-button-fill: #000;
+  --ap-button-hover: #000;
+  --ap-button-ink: #fff;
+}
+:is(.ap-button, .ap-carousel-cta, .ap-header-cta,
+.ap-academy-programmes-cta, .ap-events-cta, .ap-publication-cta,
+.ap-research-button, .ap-partners-banner-link,
+.wf-contact-submit, .ap-filter-button,
+.ap-cookie-actions button, .ap-research-empty button) {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 14px !important;
+  width: fit-content;
+  max-width: 100%;
+  min-width: 0 !important;
+  min-height: 58px !important;
+  padding: 14px 32px !important;
+  border: 1px solid var(--ap-button-fill) !important;
+  border-radius: 999px !important;
+  background: var(--ap-button-fill) !important;
+  color: var(--ap-button-ink) !important;
+  font-family: Poppins, sans-serif !important;
+  font-size: clamp(16px, 1.3vw, 20px) !important;
+  font-weight: 700 !important;
+  line-height: 1.5 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  white-space: normal;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+:is(.ap-button, .ap-carousel-cta, .ap-header-cta,
+.ap-academy-programmes-cta, .ap-events-cta, .ap-publication-cta,
+.ap-research-button, .ap-partners-banner-link,
+.wf-contact-submit, .ap-filter-button, .ap-cookie-actions button,
+.ap-research-empty button):hover {
+  background: var(--ap-button-hover) !important;
+  border-color: var(--ap-button-hover) !important;
+}
+.ap-filter-button[aria-pressed=true] {
+  box-shadow: inset 0 0 0 2px var(--ap-button-ink);
+}
+:is(.ap-button, .ap-carousel-cta, .ap-header-cta, .wf-contact-submit,
+.ap-filter-button, .ap-cookie-actions button):focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+.wf-contact-submit:disabled { opacity: .55; cursor: wait; }
+.ap-site .ap-work-filters { display: flex; flex-wrap: wrap; gap: 10px; }
+.ap-site .ap-work-filters .ap-filter-button {
+  min-height: 38px !important;
+  padding: 8px 16px !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+}
+.ap-header .ap-header-cta { min-height: 48px !important; padding: 10px 22px !important; font-size: 13px !important; }
+@media (max-width: 700px) {
+  :is(.ap-button, .ap-carousel-cta, .ap-academy-programmes-cta,
+  .ap-events-cta, .ap-publication-cta, .ap-research-button,
+  .ap-partners-banner-link, .wf-contact-submit,
+  .ap-filter-button, .ap-cookie-actions button,
+  .ap-research-empty button) {
+    min-height: 52px !important;
+    padding: 12px 22px !important;
+    font-size: 16px !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(.ap-button, .ap-carousel-cta) { transition: none; }
+}

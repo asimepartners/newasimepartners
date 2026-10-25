@@ -1,0 +1,225 @@
+[
+  {
+    "id": "african-pension-alternatives-academy",
+    "title": "African Pension Alternatives Academy",
+    "audience": "Trustees, CIOs and pension managers",
+    "format": "3–5 day executive programme; institutional cohorts",
+    "body": "Build institutional capability in private markets.",
+    "modules": [
+      "Institutional portfolio construction",
+      "Private equity and venture capital",
+      "Private credit and infrastructure",
+      "Manager selection and due diligence",
+      "Governance and investment policy"
+    ],
+    "image": "/images/academy/african-pension-alternatives.jpeg",
+    "imageAlt": "High-rise buildings beneath a clear blue sky"
+  },
+  {
+    "id": "african-lp-academy",
+    "title": "African Investor Academy",
+    "audience": "Pension fund trustees, pension fund managers, university endowment funds, corporate VCs and private foundations",
+    "format": "Pension Funds & Trustees",
+    "body": "Build institutional capacity in private markets. Build and defend a real institutional alternatives portfolio through an applied capstone.\n\nWe provide executive training to pension funds and trustees through our flagship 5-day, case studies and expert facilitator practical training.\n\nWe also provide a 9-months hand-on programme, with embedded experts to support actual implementation and hand-over.",
+    "modules": [
+      "Institutional portfolio construction",
+      "Private equity",
+      "Venture capital",
+      "Private credit",
+      "Infrastructure",
+      "Real estate",
+      "Hedge funds",
+      "Islamic finance",
+      "Blended finance",
+      "Manager selection",
+      "Operational due diligence",
+      "Portfolio construction",
+      "Commitment pacing",
+      "FX / currency risk",
+      "Valuation",
+      "ESG / impact",
+      "GP negotiations",
+      "IC decision-making"
+    ],
+    "image": "/images/work/ande-aspen-training.png",
+    "imageAlt": "Investment management training in Accra",
+    "cta": "Invest in alternatives in confidence."
+  },
+  {
+    "id": "cio-alternatives-programme",
+    "title": "CIO Alternatives Programme",
+    "audience": "CIOs and senior investment teams",
+    "format": "Executive intensive / bespoke",
+    "body": "Advanced portfolio construction, manager selection and alternatives strategy.",
+    "modules": [
+      "Strategic asset allocation",
+      "Liquidity and commitment pacing",
+      "Manager selection",
+      "Risk and portfolio monitoring"
+    ],
+    "image": "/images/sliders/hero-platform.jpg",
+    "imageAlt": "Contemporary architecture in Ghana"
+  },
+  {
+    "id": "investment-committee-academy",
+    "title": "Investment Committee Academy",
+    "audience": "IC members and trustees",
+    "format": "1–3 day governance and alternatives programme",
+    "body": "Improve the quality, governance and effectiveness of investment decisions.",
+    "modules": [
+      "IC governance and decision-making",
+      "Investment policy",
+      "Investment due diligence",
+      "Risk oversight"
+    ],
+    "image": "/images/sliders/01.jpg",
+    "imageAlt": "Investment professionals in discussion"
+  },
+  {
+    "id": "gp-academy",
+    "title": "Emerging Manager GP Academy",
+    "audience": "First- and second-time fund managers",
+    "format": "Fund Managers",
+    "body": "A structured fund manager Institutional Readiness Programme. From thesis design, investment strategy and processes, LP engagement and the actual business of managing an institutional investment platform at scale.",
+    "modules": [
+      "Fund strategy and architecture",
+      "GP and management company economics",
+      "Investment thesis",
+      "IC governance",
+      "Portfolio construction",
+      "ESG",
+      "Valuation",
+      "Fund operations",
+      "LP due diligence",
+      "Fundraising",
+      "Data rooms and DDQ",
+      "LP communications",
+      "First close and anchor investors",
+      "Local institutional LPs",
+      "Fund-of-funds and co-investment",
+      "Continuation vehicles and exits",
+      "Fund strategy",
+      "Institutional readiness",
+      "Governance and reporting",
+      "Fundraising preparation"
+    ],
+    "image": "/images/sliders/02.jpg",
+    "imageAlt": "Professionals gathered at an Asime event",
+    "cta": "Become institutional-grade"
+  },
+  {
+    "id": "emerging-manager-programme",
+    "title": "Emerging Manager Programme",
+    "audience": "First- and second-time funds",
+    "format": "Cohort-based programme",
+    "body": "Develop the processes and institutional foundations needed to progress from Fund I to institutional scale.",
+    "modules": [
+      "Fund strategy",
+      "Institutional readiness",
+      "Governance and reporting",
+      "Fundraising preparation"
+    ],
+    "image": "/images/sliders/02.jpg",
+    "imageAlt": "Professionals gathered at an Asime event"
+  },
+  {
+    "id": "private-markets-academy",
+    "title": "Private Markets & CAIA",
+    "audience": "Non-investment professionals, development partners and ecosystem actors",
+    "format": "CAIA-linked specialist track",
+    "body": "Distinguish yourself in the global asset and investment management industry by mastering the alternative investment landscape. The Chartered Alternative Investment Analyst (CAIA) designation is the global benchmark for professionals navigating private equity, hedge funds, venture capital, real estate, and structured products. Developed for elite professionals, this self-paced, two-level curriculum equips you with the advanced analytical tools and ethical frameworks required to optimize modern institutional portfolios. You will join a network of over 14,000 charter-holders across more than 100 countries and 35 chapters, employed by leading investments firms globally and in Africa.",
+    "modules": [
+      "Private equity and venture capital",
+      "Private credit and real assets",
+      "Fund-of-funds and co-investment",
+      "Manager selection and due diligence",
+      "Institutional needs assessment",
+      "Tailored curriculum",
+      "Applied investment workshops",
+      "Capability review"
+    ],
+    "image": "/images/sliders/03.jpg",
+    "imageAlt": "Participants at an investment education event"
+  },
+  {
+    "id": "islamic-finance",
+    "title": "Islamic Finance & CIFE",
+    "audience": "Investment professionals and institutions",
+    "format": "Individual Professionals",
+    "body": "This globally recognized, 100% online program bridges the gap between academic theory and real-world banking practice on Islamic Finance. Fully aligned with international AAOIFI Shariah standards, the curriculum equips you with an advanced, applied understanding of Islamic commercial banking, financial contracts, accounting, and Takaful (Islamic insurance).",
+    "modules": [
+      "Islamic private equity and venture capital",
+      "Sukuk",
+      "Shariah-compliant private credit",
+      "Islamic infrastructure finance",
+      "Waqf and innovative structures",
+      "Blended Islamic finance",
+      "Gulf–Africa investment"
+    ],
+    "image": "/images/platform/04-listed-digital.jpg",
+    "imageAlt": "Doha skyline at night",
+    "cta": "Apply Islamic Finance and get certified"
+  },
+  {
+    "id": "digital-assets",
+    "title": "Digital Assets & CDFP",
+    "audience": "Investment professionals",
+    "format": "Individual Professionals",
+    "body": "Lead the future of financial services with the Certified Digital Finance Professional (CDFP) designation. This premier program equips you with the strategic frameworks and practical insights needed to master emerging tech, from blockchain and AI to mobile money ecosystems and regulatory tech (RegTech). Designed for forward-thinking professionals, the curriculum bridges the gap between traditional banking and cutting-edge fintech innovation.",
+    "modules": [
+      "Cryptoassets and stablecoins",
+      "Tokenisation and DeFi",
+      "Digital money and blockchain infrastructure",
+      "Digital-asset risk",
+      "Institutional portfolio applications"
+    ],
+    "image": "/images/professionals/image7.png",
+    "imageAlt": "Digital infrastructure in a server room",
+    "cta": "Apply Digital Finance and get certified"
+  },
+  {
+    "id": "custom-institutional-programmes",
+    "title": "Custom Institutional Programmes",
+    "audience": "Pension funds, DFIs and GPs",
+    "format": "Bespoke / onsite / regional",
+    "body": "A curriculum shaped around your institution’s objectives, starting capability and market context.",
+    "modules": [
+      "Institutional needs assessment",
+      "Tailored curriculum",
+      "Applied investment workshops",
+      "Capability review"
+    ],
+    "image": "/images/sliders/03.jpg",
+    "imageAlt": "Asime professional learning community"
+  },
+  {
+    "id": "climate-carbon-finance-academy",
+    "title": "Climate & Carbon Finance Academy",
+    "format": "Individual Professionals",
+    "body": "Practitioner-led custom-made training program based on international standards and metrics.\n\nOn-demand masterclass delivery on varied subjects such as:\n• green and climate finance\n• renewable energy (PUE, Off-grid, infrastructure etc.)\n• climate renewable energy\n• climate-resilient infrastructure\n• carbon markets\n• nature-based initiatives.",
+    "audience": "Non-investment professionals, development partners and ecosystem actors",
+    "modules": [
+      "Renewable energy and climate-resilient infrastructure",
+      "Carbon markets",
+      "Nature-based initiatives"
+    ],
+    "image": "/images/sliders/climate-carbon-finance.jpeg",
+    "imageAlt": "Globe and trees growing from stacks of coins",
+    "cta": "Advance your alternative-investment expertise."
+  },
+  {
+    "id": "impact-investing-aimt",
+    "title": "Impact Investing & AIMT",
+    "audience": "Trustees, CIOs and pension managers",
+    "format": "Impact Investment Manager Track",
+    "body": "Drive sustainable economic growth by mastering the end-to-end process of deploying catalytic capital into SMEs and SGBs. Grounded in real-world case studies, this interactive curriculum equips you with the framework to navigate deal sourcing, due diligence, and exit strategies while embedding rigorous impact measurement and management. You will get a deeper understanding of global impact investing best practices complemented with local expertise and case studies. The AIMT builds on the global nature of impact investing and prepares you for success on an international and pan-African scale. The defunct ANDE’s IMT has trained over 400 IMT alumni in seven countries with over 15 training sessions. Asime Partners’ team has trained over 90 professionals over the past 4 years.",
+    "modules": [
+      "Impact investment strategy",
+      "Deal sourcing and due diligence",
+      "Impact measurement and management",
+      "Exit strategies"
+    ],
+    "image": "/images/professionals/image6.jpeg",
+    "imageAlt": "Investment management training in Accra"
+  }
+]

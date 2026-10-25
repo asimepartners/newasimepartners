@@ -1,0 +1,162 @@
+.ap-carousel {
+  position: relative;
+  isolation: isolate;
+  background: #050908;
+  color: #fff;
+  min-height: 100vh;
+  min-height: 100dvh;
+  --hero-top: clamp(110px, 14dvh, 160px);
+  --hero-bottom: clamp(20px, 4dvh, 44px);
+  padding: var(--hero-top) 0 var(--hero-bottom);
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+.ap-carousel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, #020605f5 0%, #020605d9 34%, #02060580 72%, #0206054d), linear-gradient(0deg, #020605b3, transparent 40%);
+}
+.ap-carousel-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 700ms ease;
+}
+.ap-carousel-image.is-active { opacity: 1; }
+.ap-carousel-wrap {
+  width: 100%;
+  max-width: 1600px;
+  min-height: calc(100vh - var(--hero-top) - var(--hero-bottom));
+  min-height: calc(100dvh - var(--hero-top) - var(--hero-bottom));
+  margin: auto;
+  padding: 0 5vw;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 5dvh, 56px);
+}
+/* Stack whole slides so the tallest sets the space without combining text rows. */
+.ap-carousel-copy { display: grid; flex: 1; align-items: center; min-width: 0; }
+.ap-carousel-panel {
+  grid-area: 1 / 1;
+  display: grid;
+  align-items: center;
+  gap: clamp(24px, 4vw, 64px);
+  min-width: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.ap-carousel-text { width: 100%; max-width: 960px; min-width: 0; }
+.ap-carousel-panel-credentials { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+.ap-carousel-panel.is-active { visibility: visible; pointer-events: auto; }
+.ap-site .ap-carousel-heading {
+  width: 100%;
+  max-width: 100%;
+  font-size: clamp(32px, 4vw, 64px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -.025em;
+  margin: 0;
+  text-wrap: pretty;
+  text-shadow: 0 2px 16px #0005;
+}
+.ap-site .ap-carousel-body {
+  width: 100%;
+  max-width: 48ch;
+  font-size: clamp(18px, 1.6vw, 25px);
+  font-weight: 400;
+  line-height: 1.45;
+  margin: 18px 0 0;
+  text-wrap: pretty;
+  color: #fff;
+  text-shadow: 0 2px 8px #0008;
+}
+.ap-carousel .ap-carousel-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: start;
+  gap: 14px;
+  min-height: 58px;
+  max-width: 100%;
+  min-width: 0;
+  padding: 14px 42px;
+  margin-top: clamp(16px, 2vw, 28px);
+  border: 1px solid #fcd116;
+  border-radius: 999px;
+  background: #fcd116;
+  color: #050908;
+  font-size: clamp(16px, 1.3vw, 20px);
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+}
+.ap-carousel-cta span { font-size: 1.3em; line-height: 1; }
+.ap-carousel-cta:hover { background: #ffe16a; border-color: #ffe16a; }
+.ap-carousel-footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: auto; flex-wrap: wrap; }
+.ap-carousel-platforms { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: clamp(12px, 1.1vw, 16px); color: #c2c4c3; }
+.ap-carousel-platforms a:hover { color: #fff; }
+.ap-carousel-navigation { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.ap-carousel-navigation button { font-family: inherit; cursor: pointer; color: #fff; background: transparent; border: 0; min-height: 44px; }
+.ap-carousel-arrows { display: flex; }
+.ap-carousel-arrow { width: 36px; font-size: 32px; font-weight: 700; }
+.ap-carousel-dots { display: flex; }
+.ap-carousel-dots button { display: grid; place-items: center; width: 30px; padding: 0; }
+.ap-carousel-dots span { width: 12px; height: 12px; border-radius: 50%; background: #8a8d8c; }
+.ap-carousel-dots [aria-current=true] span { width: 16px; height: 16px; background: #fcd116; }
+.ap-carousel-navigation .ap-carousel-pause { padding: 6px 22px; border: 1px solid #b1b7b6; font-size: 14px; min-width: 140px; }
+.ap-carousel-navigation button:hover { background: #ffffff1a; }
+.ap-carousel :is(a, button):focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+.ap-carousel-credentials { width: 100%; min-width: 0; }
+.ap-site .ap-carousel-credentials > p { color: #fcd116; text-transform: uppercase; letter-spacing: .15em; font-size: clamp(12px, 1vw, 15px); font-weight: 700; margin: 0 0 16px; }
+.ap-carousel-logo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.ap-carousel-logo { background: #fff; aspect-ratio: 2.2; padding: 15px; display: flex; align-items: center; justify-content: center; }
+.ap-carousel-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.ap-carousel-logo-inverse { filter: invert(1); }
+
+@media (max-width: 1150px) {
+  .ap-carousel-footer { align-items: flex-start; flex-direction: column; gap: 18px; }
+  .ap-carousel-navigation { align-self: flex-end; }
+  .ap-carousel-logo { padding: 10px; }
+}
+@media (max-width: 700px) {
+  .ap-carousel { --hero-top: 104px; --hero-bottom: 20px; }
+  .ap-carousel-wrap { padding-inline: 6vw; gap: 24px; }
+  .ap-carousel-panel { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .ap-site .ap-carousel-heading { width: 100%; font-size: clamp(28px, 7.2vw, 44px); }
+  .ap-site .ap-carousel-body { width: 100%; font-size: 16px; margin-top: 12px; }
+  .ap-site .ap-carousel-panel-credentials :is(.ap-carousel-heading, .ap-carousel-body) { width: 100%; }
+  .ap-carousel .ap-carousel-cta { min-width: 0; padding: 12px 22px; margin-top: 12px; font-size: 17px; min-height: 52px; }
+  .ap-carousel-credentials { max-width: 420px; }
+  .ap-site .ap-carousel-credentials > p { margin-bottom: 10px; }
+  .ap-carousel-logo { height: 56px; aspect-ratio: auto; padding: 8px; }
+  .ap-carousel-footer { gap: 12px; }
+  .ap-carousel-platforms { gap: 8px; font-size: 12px; }
+  .ap-carousel-navigation { align-self: stretch; justify-content: space-between; gap: 4px; flex-wrap: wrap; }
+  .ap-carousel-navigation .ap-carousel-pause { min-width: 115px; padding: 6px 12px; }
+  .ap-carousel-arrow { width: 30px; }
+  .ap-carousel-dots button { width: 27px; }
+}
+@media (prefers-reduced-motion: reduce) { .ap-carousel-image { transition: none; } }
+
+/* Short windows retain readable content and can scroll when needed. */
+@media (max-height: 700px) and (min-width: 701px) {
+  .ap-carousel { --hero-top: 104px; --hero-bottom: 20px; }
+  .ap-carousel-wrap { gap: 24px; }
+  .ap-site .ap-carousel-heading { font-size: clamp(30px, 3.4vw, 48px); }
+  .ap-site .ap-carousel-body { font-size: 18px; margin-top: 12px; }
+  .ap-carousel .ap-carousel-cta { margin-top: 18px; min-height: 48px; padding: 10px 28px; }
+}
+
+.ap-hero-particles{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.ap-hero-particles canvas{display:block;width:100%;height:100%}
+.ap-carousel-wrap{position:relative;z-index:1}
+@media(max-width:700px),(prefers-reduced-motion:reduce){.ap-hero-particles{display:none}}

@@ -1,18 +1,19 @@
+import SmoothScroll from '@/components/SmoothScroll'
 import { StrictMode, useEffect, useRef, useState, type FormEvent } from 'react'
 import { createRoot } from 'react-dom/client'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import { contactPage } from '@/data/content'
+import { navigation } from '@/institutional/content'
 import { dismissPreloader } from '@/utils/dismissPreloader'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { executeRecaptchaV3 } from '@/components/RecaptchaV3'
-import ScrollToTop from '@/components/ScrollToTop'
-import './styles/custom.css'
-import './styles/typography.css'
-import './styles/theme-dark.css'
-import './styles/refine.css'
+import CookieBanner from '@/components/CookieBanner'
+import { installAnalytics, track } from '@/institutional/analytics'
+import '@/institutional/site.css'
+import '@/institutional/contact-compact.css'
 
 function ContactPage() {
+  const interest = new URLSearchParams(window.location.search).get('interest') || ''
   const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
@@ -30,15 +31,18 @@ function ContactPage() {
   useEffect(() => {
     if (!sent) return
     const previousOverflow = document.body.style.overflow
+    const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null
     document.body.style.overflow = 'hidden'
     closeRef.current?.focus()
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setSent(false)
+      if (event.key === 'Tab') { event.preventDefault(); closeRef.current?.focus() }
     }
     window.addEventListener('keydown', onKeyDown)
     return () => {
       document.body.style.overflow = previousOverflow
+      previousFocus?.focus()
       window.removeEventListener('keydown', onKeyDown)
     }
   }, [sent])
@@ -51,7 +55,7 @@ function ContactPage() {
     const data = new FormData(form)
     const name = String(data.get('name') ?? '').trim()
     const email = String(data.get('email') ?? '').trim()
-    const message = String(data.get('message') ?? '').trim()
+    const message = [`Organisation: ${String(data.get('organisation') ?? '').trim()}`, `Audience: ${String(data.get('audience') ?? '').trim()}`, `Interest: ${String(data.get('interest') ?? '').trim()}`, '', String(data.get('message') ?? '').trim()].join('\n')
     const honey = String(data.get('_honey') ?? '').trim()
 
     if (honey) {
@@ -86,6 +90,7 @@ function ContactPage() {
       const ok = response.ok && (result.success === true || result.success === 'true')
       if (!ok) throw new Error(result.message || 'Send failed')
 
+      track('enquiry_submitted', { interest: String(data.get('interest') ?? 'General enquiry') })
       form.reset()
       setSent(true)
     } catch {
@@ -96,10 +101,10 @@ function ContactPage() {
   }
 
   return (
-    <div className="wf-contact-page">
+    <div className="wf-contact-page ap-site">
       <Navbar variant="solid" />
 
-      <main className="wf-contact-main">
+      <main id="main-content" className="wf-contact-main">
         <section className="wf-contact-hero" aria-labelledby="contact-hero-title">
           <div className="wf-contact-hero-media" aria-hidden="true">
             <img
@@ -112,19 +117,18 @@ function ContactPage() {
             <div className="wf-contact-hero-overlay" />
           </div>
           <h1 id="contact-hero-title" className="wf-contact-hero-title">
-            {contactPage.title}
+            Talk to Asime
           </h1>
         </section>
 
         <section className="wf-contact-panel" aria-labelledby="contact-heading">
           <div className="wf-contact-inner">
             <h2 id="contact-heading" className="wf-contact-heading">
-              {contactPage.heading}
+              Build the next generation of <span style={{ color: '#fcd116' }}>African alternative capital.</span>
             </h2>
-            <p className="wf-contact-intro">{contactPage.intro}</p>
-            <p className="wf-contact-intro">{contactPage.complaints}</p>
+            <p className="wf-contact-intro">Tell us about your institution and the capability, strategy or capital challenge you want to address.</p>
 
-            <h3 className="wf-contact-form-title">{contactPage.formTitle}</h3>
+            <h3 className="wf-contact-form-title">Start a conversation</h3>
 
             <form className="wf-contact-form" onSubmit={onSubmit}>
               <input
@@ -146,13 +150,18 @@ function ContactPage() {
                 </label>
               </div>
 
+              <div className="wf-contact-form-row">
+                <label className="wf-contact-field"><span>Organisation</span><input type="text" name="organisation" autoComplete="organization" required /></label>
+                <label className="wf-contact-field"><span>I represent</span><select name="audience" required defaultValue=""><option value="" disabled>Select an audience</option>{[...navigation.find(group => group.title === 'Who We Serve')!.links.map(link => link.label), 'Others'].map(x=><option key={x}>{x}</option>)}</select></label>
+              </div>
+              <label className="wf-contact-field"><span>Programme or service of interest</span><input name="interest" defaultValue={interest} list="asime-interests" placeholder="Select or describe your interest" required/><datalist id="asime-interests">{['Academy','Advisory','Capital Solutions','Intelligence','Institutional Capital Network','Careers'].map(x=><option key={x} value={x}/>)}</datalist></label>
               <label className="wf-contact-field">
                 <span>{contactPage.messageLabel}</span>
                 <textarea
                   name="message"
                   rows={4}
                   required
-                  placeholder={contactPage.messagePlaceholder}
+                  placeholder="Tell us about your objectives, timing and preferred programme or service."
                 />
               </label>
 
@@ -180,27 +189,12 @@ function ContactPage() {
         <section className="wf-contact-offices" aria-labelledby="contact-offices-title">
           <div className="wf-contact-offices-inner">
             <div className="wf-contact-offices-map">
-              <img
-                className="wf-contact-offices-map-img"
-                src={contactPage.mapSrc}
-                alt="Dotted world map showing Asime Partners offices"
-                loading="lazy"
-                decoding="async"
-              />
-              {contactPage.offices.map((office) => (
-                <span
-                  key={office.city}
-                  className="wf-contact-offices-pin"
-                  style={{ left: `${office.pin.left}%`, top: `${office.pin.top}%` }}
-                >
-                  <svg viewBox="0 0 28 40" width="100%" height="100%" aria-hidden="true">
-                    <ellipse cx="14" cy="34" rx="8" ry="4.2" fill="#FCD116" opacity="0.95" />
-                    <rect x="12.6" y="16" width="2.8" height="16" rx="1.2" fill="#1b2430" />
-                    <circle cx="14" cy="12" r="8" fill="#1b2430" />
-                  </svg>
-                  <span className="wf-contact-offices-pin-label">{office.city}</span>
-                </span>
-              ))}
+              <img className="wf-contact-offices-map-img" src="/images/markets-world-map.jpeg" alt="Dotted world map" width="1600" height="886" loading="lazy"/>
+              <svg className="wf-contact-map-locations" viewBox="0 0 1600 886" role="img" aria-label="Office locations: Accra, Ghana; Nairobi, Kenya; New York, USA">
+                <g><circle cx="727" cy="427" r="14"/><path d="M727 427 682 475H535"/><text x="535" y="510">Accra, Ghana</text></g>
+                <g><circle cx="901" cy="472" r="14"/><path d="m901 472 55 40h177"/><text x="965" y="548">Nairobi, Kenya</text></g>
+                <g><circle cx="350" cy="236" r="14"/><path d="m350 236 50 48h170"/><text x="410" y="320">New York, USA</text></g>
+              </svg>
             </div>
 
             <div className="wf-contact-offices-copy">
@@ -225,13 +219,14 @@ function ContactPage() {
       </main>
 
       <Footer />
-      <ScrollToTop />
+      <CookieBanner />
 
       {sent ? (
         <div className="wf-contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-success-title">
           <button
             type="button"
             className="wf-contact-modal-backdrop"
+            tabIndex={-1}
             aria-label="Close"
             onClick={() => setSent(false)}
           />
@@ -256,9 +251,15 @@ function ContactPage() {
 }
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+  <StrictMode><SmoothScroll>
     <ContactPage />
-  </StrictMode>,
+  </SmoothScroll></StrictMode>,
 )
 
 dismissPreloader()
+
+installAnalytics()
+
+import './institutional/buttons.css'
+
+import './institutional/hero-layout.css'

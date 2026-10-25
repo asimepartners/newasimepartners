@@ -1,19 +1,13 @@
-import { StrictMode } from 'react'
+import SmoothScroll from '@/components/SmoothScroll'
+import { lazy, StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'lenis/dist/lenis.css'
-import './styles/custom.css'
-import './styles/theme-dark.css'
-import './styles/typography.css'
-import './styles/refine.css'
-import App from './App'
-import { dismissPreloader } from './utils/dismissPreloader'
+import PageSkeleton, { PageLoadBoundary } from './components/PageSkeleton'
+const App = lazy(() => import('./App'))
+import { installAnalytics } from './institutional/analytics'
+import './institutional/site.css'
+createRoot(document.getElementById('root')!).render(<StrictMode><SmoothScroll><PageLoadBoundary><Suspense fallback={<PageSkeleton />}><App /></Suspense></PageLoadBoundary></SmoothScroll></StrictMode>)
+installAnalytics()
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+import './institutional/buttons.css'
 
-dismissPreloader()
-
+import './institutional/hero-layout.css'

@@ -4,11 +4,34 @@
   "outputDirectory": "dist",
   "installCommand": "npm ci",
   "rewrites": [
-    { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/stages", "destination": "/stages.html" },
-    { "source": "/training", "destination": "/training.html" },
-    { "source": "/work", "destination": "/work.html" },
-    { "source": "/sectors", "destination": "/sectors.html" }
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/stages",
+      "destination": "/stages.html"
+    },
+    {
+      "source": "/training",
+      "destination": "/training.html"
+    },
+    {
+      "source": "/work",
+      "destination": "/work.html"
+    },
+    {
+      "source": "/sectors",
+      "destination": "/sectors.html"
+    },
+    {
+      "source": "/work-with-us",
+      "destination": "/work-with-us.html"
+    },
+    {
+      "source": "/pension-funds",
+      "destination": "/pension-funds.html"
+    }
   ],
   "headers": [
     {
@@ -23,10 +46,31 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/careers.html",
+      "destination": "/work-with-us.html",
+      "permanent": true
+    },
+    {
+      "source": "/institutional-investors.html",
+      "destination": "/pension-funds.html",
+      "permanent": true
     }
   ]
 }

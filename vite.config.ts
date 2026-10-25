@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv, type Plugin, type ViteDevServer } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
+import { readdirSync } from 'node:fs'
 import type { IncomingMessage, ServerResponse } from 'http'
 import { processContact } from './api/contact'
 
@@ -69,22 +70,12 @@ export default defineConfig(({ mode }) => {
       react(),
       contactApiPlugin(
         env.RECAPTCHA_SECRET_KEY || '',
-        env.CONTACT_EMAIL || 'info@asimepartners.com',
+        env.CONTACT_EMAIL || 'contact@asimepartners.com',
       ),
     ],
     build: {
       rollupOptions: {
-        input: {
-          main: path.resolve(__dirname, 'index.html'),
-          privacy: path.resolve(__dirname, 'privacy.html'),
-          portfolio: path.resolve(__dirname, 'portfolio.html'),
-          media: path.resolve(__dirname, 'media.html'),
-          contact: path.resolve(__dirname, 'contact.html'),
-          stages: path.resolve(__dirname, 'stages.html'),
-          training: path.resolve(__dirname, 'training.html'),
-          work: path.resolve(__dirname, 'work.html'),
-          sectors: path.resolve(__dirname, 'sectors.html'),
-        },
+        input: Object.fromEntries(readdirSync(process.cwd()).filter(file => file.endsWith('.html')).map(file => [file.replace('.html', ''), path.resolve(process.cwd(), file)])),
       },
     },
     resolve: {

@@ -1,7 +1,24 @@
 import { HugeiconsIcon } from '@hugeicons/react'
 import { Linkedin01Icon } from '@hugeicons/core-free-icons'
-import { footerColumns, footerLegal, siteBrand } from '@/data/content'
+import { footerLegal, siteBrand } from '@/data/content'
 import { FadeIn } from './Motion'
+import '@/institutional/site.css'
+import '@/institutional/site-polish.css'
+
+const footerColumns = {
+  explore: [
+    { label: 'Academy', href: '/academy.html' },
+    { label: 'Advisory', href: '/advisory.html' },
+    { label: 'Capital Solutions', href: '/capital-solutions.html' },
+    { label: 'Intelligence', href: '/intelligence.html' },
+    { label: 'Our Work', href: '/work.html' },
+  ],
+  connect: [
+    { label: 'About Asime', href: '/about.html' },
+    { label: 'Clients & Partners', href: '/partners.html' },
+    { label: 'Talk to Asime', href: '/contact.html' },
+  ],
+}
 
 export default function Footer() {
   return (
@@ -10,10 +27,10 @@ export default function Footer() {
         <div className="wf-ft-wrapper">
           <div className="wf-ft-lower">
             <div className="wf-ft-brand-block">
-              <a href="#" className="wf-ft-brand">
+              <a href="/" className="wf-ft-brand">
                 <img src="/asime-logo-white.png" alt={siteBrand.name} className="wf-ft-logo" />
               </a>
-              <p className="wf-ft-desc">{siteBrand.tagline}</p>
+              <p className="wf-ft-desc">Alternative Investments. Impact Investments. Blended Finance</p>
               <div className="wf-ft-socials">
                 <a
                   href={siteBrand.linkedin}
@@ -39,21 +56,21 @@ export default function Footer() {
             </div>
 
             <div className="wf-ft-columns">
-              <div className="wf-ft-col">
+              <nav className="wf-ft-col" aria-label="Footer capabilities"><h2 className="wf-ft-col-label">Explore</h2>
                 {footerColumns.explore.map((item) => (
                   <a key={item.label} href={item.href} className="wf-ft-link">
                     {item.label}
                   </a>
                 ))}
-              </div>
+              </nav>
 
-              <div className="wf-ft-col">
+              <nav className="wf-ft-col" aria-label="Footer company"><h2 className="wf-ft-col-label">Connect</h2>
                 {footerColumns.connect.map((item) => (
                   <a key={item.label} href={item.href} className="wf-ft-link">
                     {item.label}
                   </a>
                 ))}
-              </div>
+              </nav>
             </div>
           </div>
 

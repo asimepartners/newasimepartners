@@ -92,7 +92,7 @@ export default async function handler(
   const result = await processContact(
     payload ?? {},
     secret,
-    process.env.CONTACT_EMAIL || 'info@asimepartners.com',
+    process.env.CONTACT_EMAIL || 'contact@asimepartners.com',
   )
   res.status(result.status).json(result.body)
 }

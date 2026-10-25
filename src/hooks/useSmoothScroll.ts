@@ -1,130 +1,68 @@
-import { useEffect } from 'react'
-import Lenis from 'lenis'
+'use client';
 
-const HASH_ALIASES: Record<string, string> = {
-  '#advisory-detail': '#advisory',
-  '#management-detail': '#management',
-  '#tech-detail': '#technology',
-  '#tech': '#technology',
-}
+import { useGSAP } from '@gsap/react';
+import { useLenis } from 'lenis/react';
+import type Lenis from 'lenis';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import 'lenis/dist/lenis.css';
 
-function resolveHash(hash: string) {
-  return HASH_ALIASES[hash] ?? hash
-}
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+type ScrollWindow = Window & { __lenis?: Lenis };
 
-function getNavOffset() {
-  const header = document.querySelector<HTMLElement>('.wf-nav-header')
-  const height = header?.getBoundingClientRect().height ?? 96
-  return Math.round(Math.max(height - 36, 48))
-}
-
-function findByHash(hash: string): HTMLElement | null {
-  const id = decodeURIComponent(hash.replace(/^#/, ''))
-  if (!id) return null
-  const el = document.getElementById(id)
-  return el instanceof HTMLElement ? el : null
-}
-
-function waitForTarget(hash: string, timeoutMs = 2500): Promise<HTMLElement | null> {
-  const existing = findByHash(hash)
-  if (existing) return Promise.resolve(existing)
-
-  window.dispatchEvent(new Event('asime:mount-deferred'))
-
-  return new Promise((resolve) => {
-    const started = performance.now()
-
-    const tryFind = () => {
-      const el = findByHash(hash)
-      if (el) {
-        resolve(el)
-        return
-      }
-      if (performance.now() - started >= timeoutMs) {
-        resolve(null)
-        return
-      }
-      requestAnimationFrame(tryFind)
-    }
-
-    tryFind()
-  })
-}
-
-function alignTarget(target: HTMLElement, lenis?: Lenis | null) {
-  const offset = getNavOffset()
-
-  if (lenis) {
-    lenis.start()
-    lenis.scrollTo(target, { offset: -offset, duration: 1.05 })
-    return
-  }
-
-  const top = target.getBoundingClientRect().top + window.scrollY - offset
-  window.scrollTo({ top, behavior: 'smooth' })
-}
-
-async function scrollToHash(hash: string, lenis?: Lenis | null) {
-  const resolved = resolveHash(hash)
-  const target = await waitForTarget(resolved)
-  if (!target) return
-
-  history.pushState(null, '', resolved)
-
-  await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
-  alignTarget(target, lenis)
-
-  window.setTimeout(() => alignTarget(target, lenis), 180)
-  window.setTimeout(() => alignTarget(target, lenis), 480)
-}
-
+/** One clock drives desktop smoothing and scroll reveals; touch keeps native scrolling. */
 export function useSmoothScroll() {
-  useEffect(() => {
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const coarsePointer = window.matchMedia('(pointer: coarse), (max-width: 991.98px)').matches
-    const useLenis = !reducedMotion && !coarsePointer
-
-    let lenis: Lenis | null = null
-    if (useLenis) {
-      lenis = new Lenis({
-        duration: 0.9,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smoothWheel: true,
-        wheelMultiplier: 1,
-        touchMultiplier: 1.4,
-        syncTouch: false,
-        autoRaf: true,
-      })
-      ;(window as Window & { __lenis?: Lenis }).__lenis = lenis
-    }
-
-    const handleAnchorClick = (event: MouseEvent) => {
-      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey) return
-      const anchor = (event.target as HTMLElement | null)?.closest<HTMLAnchorElement>('a[href*="#"]')
-      if (!anchor) return
-
-      const url = new URL(anchor.href, window.location.href)
-      if (url.pathname !== window.location.pathname || !url.hash || url.hash === '#') return
-
-      event.preventDefault()
-      document.body.style.overflow = ''
-      lenis?.start()
-      void scrollToHash(url.hash, lenis)
-    }
-
-    document.addEventListener('click', handleAnchorClick)
-
-    if (window.location.hash && window.location.hash !== '#') {
-      void scrollToHash(window.location.hash, lenis)
-    }
-
-    return () => {
-      document.removeEventListener('click', handleAnchorClick)
-      if (lenis) {
-        const win = window as Window & { __lenis?: Lenis }
-        if (win.__lenis === lenis) delete win.__lenis
-        lenis.destroy()
-      }
-    }
-  }, [])
+    const lenis = useLenis();
+    useGSAP(() => {
+        if (!lenis) return;
+        const win = window as ScrollWindow;
+        win.__lenis = lenis;
+        const tick = (seconds: number) => lenis.raf(seconds * 1000);
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add(tick);
+        const navigateAnchor = (event: MouseEvent) => {
+            if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            const anchor = event.target instanceof Element ? event.target.closest<HTMLAnchorElement>('a[href]') : null;
+            if (!anchor || anchor.download || (anchor.target && anchor.target !== '_self')) return;
+            const url = new URL(anchor.href, location.href);
+            if (url.origin !== location.origin || url.pathname !== location.pathname || url.search !== location.search || !url.hash || url.hash === '#') return;
+            let target: HTMLElement | null;
+            try { target = document.getElementById(decodeURIComponent(url.hash.slice(1))); } catch { return; }
+            if (!target) return;
+            event.preventDefault();
+            const offset = (document.querySelector('header')?.getBoundingClientRect().height ?? 96) + 16;
+            history.pushState(null, '', url.hash);
+            const focus = () => {
+                const previous = target.getAttribute('tabindex');
+                if (previous === null) target.setAttribute('tabindex', '-1');
+                target.focus({ preventScroll: true });
+                if (previous === null) target.addEventListener('blur', () => target.removeAttribute('tabindex'), { once: true });
+            };
+            if (lenis) {
+                lenis.resize();
+                lenis.start();
+                lenis.scrollTo(target.getBoundingClientRect().top + scrollY - offset, { onComplete: focus, immediate: matchMedia('(prefers-reduced-motion: reduce)').matches });
+            } else {
+                window.scrollTo({ top: target.getBoundingClientRect().top + scrollY - offset, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+                focus();
+            }
+        };
+        const syncLock = () => {
+            if (document.hidden || document.body.style.overflow === 'hidden') lenis?.stop();
+            else lenis?.start();
+        };
+        const locks = new MutationObserver(syncLock);
+        locks.observe(document.body, { attributes: true, attributeFilter: ['style'] });
+        document.addEventListener('visibilitychange', syncLock);
+        syncLock();
+        document.addEventListener('click', navigateAnchor);
+        return () => {
+            document.removeEventListener('click', navigateAnchor);
+            locks.disconnect();
+            document.removeEventListener('visibilitychange', syncLock);
+            gsap.ticker.remove(tick);
+            lenis.off('scroll', ScrollTrigger.update);
+            if (win.__lenis === lenis) delete win.__lenis;
+        };
+    }, { dependencies: [lenis], revertOnUpdate: true });
 }

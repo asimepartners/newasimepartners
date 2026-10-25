@@ -1,0 +1,69 @@
+{
+  "levels": [
+    {
+      "title": "CAIA Level I: Foundations of Alternative Investments",
+      "items": [
+        "Ethics and Professionalism: Proprietary CAIA Ethical Principles and fiduciary responsibilities (replacing prior CFA standards).",
+        "Introduction to Alternative Investments: Industry structure, buy-side/sell-side participants, and baseline investment environments.",
+        "Real Assets: Real estate, infrastructure, commodities, and inflation-sensitive assets.",
+        "Private Equity & Private Debt: Venture capital, growth equity, buyouts, secondaries, and private lending.",
+        "Hedge Funds: Macro strategies, quantitative/systematic frameworks, relative value, and short selling.",
+        "Digital Assets: Cryptocurrencies, tokenization, blockchain, and allocation frameworks.",
+        "Foundational Tools: Quantitative analysis, financial economics, and statistical methods."
+      ]
+    },
+    {
+      "title": "CAIA Level II: Application and Portfolio Management",
+      "items": [
+        "Ethics, Professionalism, and Fiduciary Responsibilities: Case-study and essay-integrated ethical behavior.",
+        "Institutional Asset Owners: Sovereign wealth funds, pension funds, endowments, and family offices.",
+        "Asset Allocation: Modern portfolio theory, active management, rebalancing, and the total portfolio approach.",
+        "Risk and Risk Management: Stress testing, value-at-risk (VaR), liquidity management, and hedging.",
+        "Methods and Models: Pricing, factor models, valuation, and private asset analysis.",
+        "Accessing Alternative Investments: Direct investments, co-investments, and fund-of-funds structures.",
+        "Due Diligence and Selecting Managers: Operational due diligence, manager evaluation, and qualitative/quantitative screening.",
+        "Volatility and Complex Strategies: Structured products, derivatives, volatility trading, and complex strategies.",
+        "Universal Investment Considerations: Environmental, social, and governance (ESG) factors, geopolitics, regulation, and long-term goals.",
+        "Emerging Topics: Climate finance, Web3, decentralized finance (DeFi), and artificial intelligence in investing."
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "impact-investing-aimt",
+      "title": "Impact Investing & AIMT",
+      "category": "Impact Investment Manager Track",
+      "body": "Drive sustainable economic growth by mastering the end-to-end process of deploying catalytic capital into SMEs and SGBs. Grounded in real-world case studies, this interactive curriculum equips you with the framework to navigate deal sourcing, due diligence, and exit strategies while embedding rigorous impact measurement and management. You will get a deeper understanding of global impact investing best practices complemented with local expertise and case studies. The AIMT builds on the global nature of impact investing and prepares you for success on an international and pan-African scale. The defunct ANDE’s IMT has trained over 400 IMT alumni in seven countries with over 15 training sessions. Asime Partners’ team has trained over 90 professionals over the past 4 years.",
+      "image": "/images/professionals/image6.jpeg",
+      "cta": "Go Beyond Financial Returns. Master Impact Investing.",
+      "badge": null
+    },
+    {
+      "id": "private-markets-academy",
+      "title": "Private Markets & CAIA",
+      "category": "CAIA-linked specialist track",
+      "body": "Distinguish yourself in the global asset and investment management industry by mastering the alternative investment landscape. The Chartered Alternative Investment Analyst (CAIA) designation is the global benchmark for professionals navigating private equity, hedge funds, venture capital, real estate, and structured products. Developed for elite professionals, this self-paced, two-level curriculum equips you with the advanced analytical tools and ethical frameworks required to optimize modern institutional portfolios. You will join a network of over 14,000 charter-holders across more than 100 countries and 35 chapters, employed by leading investments firms globally and in Africa.",
+      "image": "/images/sliders/03.jpg",
+      "cta": "Go Beyond Traditional Asset Classes. Become a CAIA Charterholder.",
+      "badge": "/images/professionals/image4.png"
+    },
+    {
+      "id": "islamic-finance",
+      "title": "Islamic Finance & CIFE",
+      "category": "CIFE-linked specialist track",
+      "body": "This globally recognized, 100% online program bridges the gap between academic theory and real-world banking practice on Islamic Finance. Fully aligned with international AAOIFI Shariah standards, the curriculum equips you with an advanced, applied understanding of Islamic commercial banking, financial contracts, accounting, and Takaful (Islamic insurance).",
+      "image": "/images/platform/04-listed-digital.jpg",
+      "cta": "Advance Your Career Now",
+      "badge": "/images/professionals/image5.png"
+    },
+    {
+      "id": "digital-assets",
+      "title": "Digital Assets & CDFP",
+      "category": "CDFP-linked specialist track",
+      "body": "Lead the future of financial services with the Certified Digital Finance Professional (CDFP) designation. This premier program equips you with the strategic frameworks and practical insights needed to master emerging tech, from blockchain and AI to mobile money ecosystems and regulatory tech (RegTech). Designed for forward-thinking professionals, the curriculum bridges the gap between traditional banking and cutting-edge fintech innovation.",
+      "image": "/images/professionals/image7.png",
+      "cta": "Master Fintech & Digital Banking. Earn Your CDFP.",
+      "badge": null
+    }
+  ]
+}

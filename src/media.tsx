@@ -1,3 +1,4 @@
+import SmoothScroll from '@/components/SmoothScroll'
 import { StrictMode, useEffect, useId, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -102,7 +103,7 @@ function MediaPage() {
     <div className="wf-media-page">
       <Navbar variant="solid" />
 
-      <main className="wf-media-main">
+      <main id="main-content" className="wf-media-main">
         <section className="wf-media-hero" aria-labelledby="media-title">
           <div className="wf-media-hero-media" aria-hidden="true">
             <img
@@ -168,9 +169,13 @@ function MediaPage() {
 }
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+  <StrictMode><SmoothScroll>
     <MediaPage />
-  </StrictMode>,
+  </SmoothScroll></StrictMode>,
 )
 
 dismissPreloader()
+
+import './institutional/buttons.css'
+
+import './institutional/hero-layout.css'

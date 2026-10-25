@@ -8,6 +8,7 @@ import {
   useTransform,
   useMotionValue,
   useInView,
+  useReducedMotion,
 } from 'motion/react'
 
 /* ── Re-export core primitives for use across the app ───── */
@@ -89,12 +90,13 @@ interface AnimateProps extends HTMLMotionProps<'div'> {
 }
 
 export function FadeUp({ children, className, index = 0, ...rest }: AnimateProps) {
+  const reduceMotion = useReducedMotion()
   return (
     <motion.div
       className={className}
       variants={fadeUp}
-      initial="hidden"
-      whileInView="visible"
+      initial={reduceMotion ? false : "hidden"}
+      whileInView={reduceMotion ? undefined : "visible"}
       viewport={{ once: true, amount: 0.12 }}
       custom={index}
       {...rest}
@@ -105,12 +107,13 @@ export function FadeUp({ children, className, index = 0, ...rest }: AnimateProps
 }
 
 export function FadeIn({ children, className, ...rest }: AnimateProps) {
+  const reduceMotion = useReducedMotion()
   return (
     <motion.div
       className={className}
       variants={fadeIn}
-      initial="hidden"
-      whileInView="visible"
+      initial={reduceMotion ? false : "hidden"}
+      whileInView={reduceMotion ? undefined : "visible"}
       viewport={{ once: true, amount: 0.12 }}
       {...rest}
     >
@@ -120,12 +123,13 @@ export function FadeIn({ children, className, ...rest }: AnimateProps) {
 }
 
 export function BlurIn({ children, className, ...rest }: AnimateProps) {
+  const reduceMotion = useReducedMotion()
   return (
     <motion.div
       className={className}
       variants={blurIn}
-      initial="hidden"
-      whileInView="visible"
+      initial={reduceMotion ? false : "hidden"}
+      whileInView={reduceMotion ? undefined : "visible"}
       viewport={{ once: true, amount: 0.15 }}
       {...rest}
     >
@@ -135,12 +139,13 @@ export function BlurIn({ children, className, ...rest }: AnimateProps) {
 }
 
 export function SlideLeft({ children, className, ...rest }: AnimateProps) {
+  const reduceMotion = useReducedMotion()
   return (
     <motion.div
       className={className}
       variants={slideLeft}
-      initial="hidden"
-      whileInView="visible"
+      initial={reduceMotion ? false : "hidden"}
+      whileInView={reduceMotion ? undefined : "visible"}
       viewport={{ once: true, amount: 0.15 }}
       {...rest}
     >
@@ -150,12 +155,13 @@ export function SlideLeft({ children, className, ...rest }: AnimateProps) {
 }
 
 export function SlideRight({ children, className, ...rest }: AnimateProps) {
+  const reduceMotion = useReducedMotion()
   return (
     <motion.div
       className={className}
       variants={slideRight}
-      initial="hidden"
-      whileInView="visible"
+      initial={reduceMotion ? false : "hidden"}
+      whileInView={reduceMotion ? undefined : "visible"}
       viewport={{ once: true, amount: 0.15 }}
       {...rest}
     >
@@ -165,12 +171,13 @@ export function SlideRight({ children, className, ...rest }: AnimateProps) {
 }
 
 export function StaggerParent({ children, className, ...rest }: AnimateProps) {
+  const reduceMotion = useReducedMotion()
   return (
     <motion.div
       className={className}
       variants={stagger}
-      initial="hidden"
-      whileInView="visible"
+      initial={reduceMotion ? false : "hidden"}
+      whileInView={reduceMotion ? undefined : "visible"}
       viewport={{ once: true, amount: 0.06 }}
       {...rest}
     >
@@ -180,12 +187,13 @@ export function StaggerParent({ children, className, ...rest }: AnimateProps) {
 }
 
 export function ScaleIn({ children, className, ...rest }: AnimateProps) {
+  const reduceMotion = useReducedMotion()
   return (
     <motion.div
       className={className}
       variants={scaleIn}
-      initial="hidden"
-      whileInView="visible"
+      initial={reduceMotion ? false : "hidden"}
+      whileInView={reduceMotion ? undefined : "visible"}
       viewport={{ once: true, amount: 0.15 }}
       {...rest}
     >
@@ -195,8 +203,9 @@ export function ScaleIn({ children, className, ...rest }: AnimateProps) {
 }
 
 export function StaggerItem({ children, className, index = 0, ...rest }: AnimateProps) {
+  const reduceMotion = useReducedMotion()
   return (
-    <motion.div className={className} variants={fadeUp} custom={index} {...rest}>
+    <motion.div className={className} variants={reduceMotion ? undefined : fadeUp} custom={index} {...rest}>
       {children}
     </motion.div>
   )
@@ -208,13 +217,14 @@ export function AnimatedSection({
   id,
   ...rest
 }: AnimateProps & { id?: string }) {
+  const reduceMotion = useReducedMotion()
   return (
     <motion.section
       id={id}
       className={className}
       variants={fadeUp}
-      initial="hidden"
-      whileInView="visible"
+      initial={reduceMotion ? false : "hidden"}
+      whileInView={reduceMotion ? undefined : "visible"}
       viewport={{ once: true, amount: 0.06 }}
       {...rest}
     >

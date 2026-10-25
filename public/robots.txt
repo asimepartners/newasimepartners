@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://newasimepartners.vercel.app/sitemap.xml

@@ -1,7 +1,9 @@
+import SkeletonImage from '@/components/SkeletonImage';
 import type { ReactNode } from 'react'
 import { HugeiconsIcon } from '@hugeicons/react'
 import { ArrowRight01Icon } from '@hugeicons/core-free-icons'
 import { motion } from './Motion'
+import { useReducedMotion } from 'motion/react'
 
 type PhotoCardProps = {
   href?: string
@@ -36,11 +38,12 @@ export default function PhotoCard({
   className = '',
   openInNewTab = false,
 }: PhotoCardProps) {
+  const reduceMotion = useReducedMotion()
   const TitleTag = titleAs
   const content = (
     <>
       <div className="wf-photo-card-media">
-        <img
+        <SkeletonImage
           src={image}
           alt={imageAlt}
           className="wf-photo-card-img"
@@ -57,7 +60,7 @@ export default function PhotoCard({
           </div>
         )}
         <TitleTag className="wf-photo-card-title">{title}</TitleTag>
-        {description ? <p className="wf-photo-card-desc">{description}</p> : null}
+        {description ? <div className="wf-photo-card-desc">{description}</div> : null}
         {cta ? (
           <span className="wf-photo-card-cta">
             <span>{cta}</span>
@@ -72,7 +75,7 @@ export default function PhotoCard({
 
   const motionProps = {
     className: `wf-photo-card${className ? ` ${className}` : ''}`,
-    whileHover: { y: -4 },
+    whileHover: reduceMotion ? undefined : { y: -4 },
     transition: { type: 'spring' as const, stiffness: 320, damping: 26 },
   }
 

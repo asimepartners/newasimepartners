@@ -1,3 +1,4 @@
+import SmoothScroll from '@/components/SmoothScroll'
 import { StrictMode, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -25,7 +26,7 @@ function TermsPage() {
     <div className="wf-privacy-page">
       <Navbar variant="solid" />
 
-      <main className="wf-privacy-main">
+      <main id="main-content" className="wf-privacy-main">
         <div className="wf-privacy-container">
           <article className="wf-privacy-content">
             <h1 className="wf-privacy-title">{termsOfService.title}</h1>
@@ -50,9 +51,13 @@ function TermsPage() {
 }
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+  <StrictMode><SmoothScroll>
     <TermsPage />
-  </StrictMode>,
+  </SmoothScroll></StrictMode>,
 )
 
 dismissPreloader()
+
+import './institutional/buttons.css'
+
+import './institutional/hero-layout.css'
