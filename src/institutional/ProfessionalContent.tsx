@@ -29,24 +29,24 @@ const challenges = [
 ];
 const challengeImages = [
     {
-        "src": "/images/professionals/unsplash-black-team.jpg",
-        "alt": "Professionals learning together during a team discussion"
+        "src": "/images/professionals-skills-gap.jpg",
+        "alt": "Illustration of professionals crossing a cliff gap on a book bridge, labelled Identifying skill gaps"
     },
     {
         "src": "/images/professionals/unsplash-credentials.jpg",
         "alt": "Graduate celebrating an educational qualification"
     },
     {
-        "src": "/images/professionals/unsplash-markets.jpg",
-        "alt": "Financial market data displayed on a screen"
+        "src": "/images/professionals-curricula-elsewhere.jpg",
+        "alt": "Graphic reading Alternative Investments in 2026: What's changing in the CAIA curriculum, with a rising bar chart"
     },
     {
-        "src": "/images/professionals/unsplash-digital-finance.jpg",
-        "alt": "Digital market analysis on a smartphone"
+        "src": "/images/professionals-specialist-areas.jpg",
+        "alt": "Graphic reading Islamic Finance and Crypto Insights: Navigating Ethical Digital Assets"
     },
     {
-        "src": "/images/professionals/unsplash-black-professional.jpg",
-        "alt": "Professional working with a tablet"
+        "src": "/images/professionals-little-time.jpg",
+        "alt": "Cover of The Intelligent Investor, the definitive book on value investing"
     },
     {
         "src": "/images/professionals/unsplash-black-network.jpg",

@@ -33,7 +33,7 @@ const challengeImages = [
         "alt": "Investment professional reviewing financial charts and portfolio data on a laptop"
     },
     {
-        "src": "/images/fund-manager-unfunded-runway.png",
+        "src": "/images/fund-manager-unfunded-runway.jpg",
         "alt": "Laptop, calculator and financial charts used for budget planning"
     },
     {

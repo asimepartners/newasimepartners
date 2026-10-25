@@ -9,20 +9,20 @@ const challenges = [
 ];
 const challengeImages = [
     {
-        "src": "/images/professionals/unsplash-black-team.jpg",
-        "alt": "Professionals collaborating at a computer in Lagos"
+        "src": "/images/pension-trustee-knowledge-gap.jpg",
+        "alt": "Finance and Investment Summit poster featuring four speakers"
     },
     {
         "src": "/images/professionals/unsplash-markets.jpg",
         "alt": "Financial market data on a trading screen"
     },
     {
-        "src": "/images/professionals/unsplash-black-professional.jpg",
-        "alt": "Professional working with a tablet"
+        "src": "/images/pension-fiduciary-exposure.jpg",
+        "alt": "Notebook reading Fiduciary Duty with a fountain pen resting on it"
     },
     {
-        "src": "/images/professionals/unsplash-digital-finance.jpg",
-        "alt": "Digital financial analysis on a smartphone"
+        "src": "/images/pension-manager-liquidity-risk.jpg",
+        "alt": "Open hand beneath a risk gauge graphic with warning icons"
     }
 ];
 const serviceIcons = [

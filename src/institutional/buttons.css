@@ -79,3 +79,26 @@
 @media (prefers-reduced-motion: reduce) {
   :is(.ap-button, .ap-carousel-cta) { transition: none; }
 }
+
+/* Compact cookie banner */
+.ap-site .ap-cookie, .ap-cookie {
+  left: 16px;
+  bottom: 16px;
+  width: min(360px, calc(100vw - 32px));
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ap-cookie p { margin: 0; font-size: 12px; line-height: 1.5; }
+.ap-cookie-actions { gap: 8px; }
+.ap-cookie .ap-cookie-actions button {
+  min-height: 32px !important;
+  padding: 6px 16px !important;
+  gap: 0 !important;
+  font-size: 12px !important;
+  line-height: 1.2 !important;
+}
+@media (max-width: 700px) {
+  .ap-cookie .ap-cookie-actions button { min-height: 32px !important; padding: 6px 16px !important; font-size: 12px !important; }
+}

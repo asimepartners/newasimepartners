@@ -4408,7 +4408,7 @@ html:has(.ap-advisory-page) { scroll-behavior: smooth; }
   background: linear-gradient(180deg, rgba(5, 24, 19, .94) 0%, rgba(5, 24, 19, .86) 42%, rgba(5, 24, 19, .55) 72%, rgba(5, 24, 19, .35) 100%);
 }
 
-.ap-site .ap-fund-managers-hero { background: linear-gradient(90deg, rgba(0, 15, 12, .86), rgba(0, 15, 12, .62) 65%, rgba(0, 15, 12, .4)), url('/images/fund-managers-hero.jpeg') center 40% / cover no-repeat; }
+.ap-site .ap-fund-managers-hero { background: linear-gradient(90deg, rgba(0, 15, 12, .86), rgba(0, 15, 12, .62) 65%, rgba(0, 15, 12, .4)), url('/images/fund-managers-hero-new.jpg') center 68% / cover no-repeat; }
 
 .ap-site .ap-fund-managers-hero h1 { color: #fff; }
 .ap-fund-managers-title-accent { color: #fcd116; }

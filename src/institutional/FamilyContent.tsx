@@ -21,20 +21,20 @@ const challenges = [
 ];
 const challengeImages = [
     {
-        "src": "/images/professionals/unsplash-black-network.jpg",
-        "alt": "Professionals sharing ideas in a business conversation"
+        "src": "/images/family-offices-where-to-start.jpg",
+        "alt": "Panel discussion at an investment roundtable with a speaker holding a microphone"
     },
     {
         "src": "/images/professionals/unsplash-markets.jpg",
         "alt": "Financial market data on a trading screen"
     },
     {
-        "src": "/images/professionals/unsplash-black-professional.jpg",
-        "alt": "Professional working with a tablet"
+        "src": "/images/family-offices-access-context.jpg",
+        "alt": "Illustration of diverse hands reaching toward a globe held in open palms"
     },
     {
-        "src": "/images/professionals/unsplash-black-team.jpg",
-        "alt": "Professionals collaborating at a computer in Lagos"
+        "src": "/images/family-offices-thin-capacity.jpg",
+        "alt": "Family office services diagram covering wealth preservation, legacy planning, strategic philanthropy and business structuring"
     }
 ];
 const serviceIcons = [

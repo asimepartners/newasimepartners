@@ -29,28 +29,28 @@ const challenges = [
 ];
 const challengeImages = [
     {
-        "src": "/images/professionals/unsplash-black-team.jpg",
-        "alt": "Professionals collaborating in Lagos"
+        "src": "/images/development-capital-without-capacity.jpg",
+        "alt": "Illustration of a balance scale weighing limited resources against unlimited human wants"
     },
     {
         "src": "/images/professionals/unsplash-mentoring.jpg",
         "alt": "Colleagues learning together at a laptop"
     },
     {
-        "src": "/images/professionals/unsplash-markets.jpg",
-        "alt": "Financial market indicators"
+        "src": "/images/development-results-hard-to-show.jpg",
+        "alt": "Line chart with blue and red shaded bands showing diverging results over time"
     },
     {
         "src": "/images/professionals/unsplash-focused-work.jpg",
         "alt": "Professional working independently in Nigeria"
     },
     {
-        "src": "/images/professionals/unsplash-digital-finance.jpg",
-        "alt": "Financial analysis on a mobile device"
+        "src": "/images/development-poor-context-fit.jpg",
+        "alt": "Hands holding US dollar notes beside bundles of local currency notes"
     },
     {
-        "src": "/images/professionals/unsplash-black-network.jpg",
-        "alt": "Professionals discussing ideas"
+        "src": "/images/development-local-capital-sidelines.jpg",
+        "alt": "Africa Pension Supervisors Association logo"
     }
 ];
 const serviceIcons = [
