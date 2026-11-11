@@ -49,14 +49,11 @@ The explicit implementation brief takes precedence over conflicting later brains
 
 ## Enquiries
 
-`src/contact.tsx` preserves the existing reCAPTCHA and `/api/contact` delivery integration and adds organisation, audience and service/programme interest. CTA links prefill interest. Those fields are included in the submitted message. Validation prevents empty required fields, failures retain the draft, and success appears only after a successful API response.
+`src/contact.tsx` submits contact enquiries to `/api/contact` without reCAPTCHA. A hidden honeypot field provides basic automated spam filtering. Organisation, audience and service/programme interest are included in the submitted message; CTA links prefill interest. Validation prevents empty required fields, failures retain the draft, and success appears only after a successful API response.
 
 Server environment:
 
-- `RECAPTCHA_SECRET_KEY`: required by the existing backend.
 - `CONTACT_EMAIL`: receiving mailbox; defaults to `contact@asimepartners.com`. An existing deployment override continues to take precedence.
-
-The existing reCAPTCHA site key is retained. Production domain registration, receiving-mailbox activation and delivery must be verified in the owner's accounts. Automated QA mocks both successful and failed delivery and does not send real messages.
 
 ## Analytics and consent
 

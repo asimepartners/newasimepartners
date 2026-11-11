@@ -6,7 +6,6 @@ import { navigation } from '@/institutional/content'
 import { dismissPreloader } from '@/utils/dismissPreloader'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { executeRecaptchaV3 } from '@/components/RecaptchaV3'
 import CookieBanner from '@/components/CookieBanner'
 import { installAnalytics, track } from '@/institutional/analytics'
 import '@/institutional/site.css'
@@ -69,13 +68,6 @@ function ContactPage() {
     setError('')
 
     try {
-      const localHostnames = ['localhost', '127.0.0.1', '::1']
-      const isLocalhost = localHostnames.includes(window.location.hostname)
-      const token = isLocalhost
-        ? ''
-        : await executeRecaptchaV3(contactPage.recaptchaSiteKey, 'contact')
-      if (!token && !isLocalhost) throw new Error('captcha')
-
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -86,7 +78,6 @@ function ContactPage() {
           name,
           email,
           message,
-          token,
         }),
       })
 
@@ -169,18 +160,6 @@ function ContactPage() {
                   placeholder="Tell us about your objectives, timing and preferred programme or service."
                 />
               </label>
-
-              <p className="wf-contact-recaptcha-note">
-                This site is protected by reCAPTCHA and the Google{' '}
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">
-                  Privacy Policy
-                </a>{' '}
-                and{' '}
-                <a href="https://policies.google.com/terms" target="_blank" rel="noreferrer">
-                  Terms of Service
-                </a>{' '}
-                apply.
-              </p>
 
               <button type="submit" className="wf-contact-submit" disabled={sending}>
                 {sending ? contactPage.submittingLabel : contactPage.submitLabel}

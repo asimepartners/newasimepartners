@@ -21,7 +21,7 @@ function readJsonBody(req: IncomingMessage): Promise<unknown> {
   })
 }
 
-function contactApiPlugin(secret: string, toEmail: string): Plugin {
+function contactApiPlugin(toEmail: string): Plugin {
   const handle = async (req: IncomingMessage, res: ServerResponse, next: () => void) => {
     const url = req.url?.split('?')[0]
     if (url !== '/api/contact') {
@@ -38,18 +38,9 @@ function contactApiPlugin(secret: string, toEmail: string): Plugin {
 
     try {
       const payload = (await readJsonBody(req)) as Parameters<typeof processContact>[0]
-      const host = req.headers.host?.toLowerCase().replace(/:\d+$/, '')
-      const remoteAddress = req.socket.remoteAddress
-      const isLoopbackHost = host === 'localhost' || host === '127.0.0.1' || host === '[::1]'
-      const isLoopbackConnection = remoteAddress === '::1'
-        || remoteAddress === '127.0.0.1'
-        || remoteAddress?.startsWith('::ffff:127.') === true
-      const bypassCaptcha = isLoopbackHost && isLoopbackConnection
       const result = await processContact(
         payload ?? {},
-        secret,
         toEmail,
-        bypassCaptcha,
         getContactPageUrl(req.headers, Boolean(req.socket.encrypted)),
       )
       res.statusCode = result.status
@@ -81,10 +72,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [
       react(),
-      contactApiPlugin(
-        env.RECAPTCHA_SECRET_KEY || '',
-        env.CONTACT_EMAIL || 'contact@asimepartners.com',
-      ),
+      contactApiPlugin(env.CONTACT_EMAIL || 'contact@asimepartners.com'),
     ],
     build: {
       rollupOptions: {

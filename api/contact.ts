@@ -2,7 +2,6 @@ type ContactPayload = {
   name?: string
   email?: string
   message?: string
-  token?: string
   honey?: string
 }
 
@@ -48,9 +47,7 @@ export function getContactPageUrl(headers: ContactRequestHeaders, encrypted = fa
 
 export async function processContact(
   payload: ContactPayload,
-  secret: string,
   toEmail: string,
-  bypassCaptcha = false,
   formUrl?: string,
 ): Promise<ContactResult> {
   if (payload.honey) {
@@ -60,30 +57,9 @@ export async function processContact(
   const name = String(payload.name ?? '').trim()
   const email = String(payload.email ?? '').trim()
   const message = String(payload.message ?? '').trim()
-  const token = String(payload.token ?? '').trim()
 
-  if (!name || !email || !message || (!token && !bypassCaptcha)) {
+  if (!name || !email || !message) {
     return { status: 400, body: { success: false, message: 'Missing fields' } }
-  }
-
-  if (!bypassCaptcha) {
-    const verifyResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({
-        secret,
-        response: token,
-      }),
-    })
-
-    const captcha = (await verifyResponse.json()) as {
-      success?: boolean
-      score?: number
-      action?: string
-    }
-    if (!captcha.success || (captcha.action && captcha.action !== 'contact') || (captcha.score ?? 0) < 0.5) {
-      return { status: 400, body: { success: false, message: 'Captcha failed' } }
-    }
   }
 
   const mailResponse = await fetch(`https://formsubmit.co/ajax/${toEmail}`, {
@@ -123,18 +99,10 @@ export default async function handler(
     return
   }
 
-  const secret = process.env.RECAPTCHA_SECRET_KEY ?? ''
-  if (!secret) {
-    res.status(500).json({ success: false, message: 'Missing reCAPTCHA secret' })
-    return
-  }
-
   const payload = (typeof req.body === 'string' ? JSON.parse(req.body) : req.body) as ContactPayload
   const result = await processContact(
     payload ?? {},
-    secret,
     process.env.CONTACT_EMAIL || 'contact@asimepartners.com',
-    false,
     getContactPageUrl(req.headers ?? {}, req.socket?.encrypted ?? false),
   )
   res.status(result.status).json(result.body)
