@@ -62,26 +62,38 @@ export async function processContact(
     return { status: 400, body: { success: false, message: 'Missing fields' } }
   }
 
-  const mailResponse = await fetch(`https://formsubmit.co/ajax/${toEmail}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-      ...(formUrl ? { Referer: formUrl, Origin: new URL(formUrl).origin } : {}),
-    },
-    body: JSON.stringify({
-      name,
-      email,
-      message,
-      _subject: `Website enquiry from ${name}`,
-      _replyto: email,
-      _template: 'table',
-      _captcha: 'false',
-      ...(formUrl ? { _url: formUrl } : {}),
-    }),
-  })
+  let mailResponse: Response
+  try {
+    mailResponse = await fetch(`https://formsubmit.co/ajax/${toEmail}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        ...(formUrl ? { Referer: formUrl, Origin: new URL(formUrl).origin } : {}),
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        message,
+        _subject: `Website enquiry from ${name}`,
+        _replyto: email,
+        _template: 'table',
+        _captcha: 'false',
+        ...(formUrl ? { _url: formUrl } : {}),
+      }),
+    })
+  } catch (error) {
+    console.error('Contact email provider request failed', error)
+    return { status: 502, body: { success: false, message: 'Unable to reach the email service' } }
+  }
 
-  const mail = (await mailResponse.json()) as { success?: boolean | string; message?: string }
+  let mail: { success?: boolean | string; message?: string }
+  try {
+    mail = (await mailResponse.json()) as { success?: boolean | string; message?: string }
+  } catch (error) {
+    console.error('Contact email provider returned a non-JSON response', error)
+    return { status: 502, body: { success: false, message: 'The email service returned an invalid response' } }
+  }
   const ok = mailResponse.ok && (mail.success === true || mail.success === 'true')
   if (!ok) {
     return { status: 502, body: { success: false, message: mail.message || 'Send failed' } }
@@ -99,11 +111,16 @@ export default async function handler(
     return
   }
 
-  const payload = (typeof req.body === 'string' ? JSON.parse(req.body) : req.body) as ContactPayload
-  const result = await processContact(
-    payload ?? {},
-    process.env.CONTACT_EMAIL || 'contact@asimepartners.com',
-    getContactPageUrl(req.headers ?? {}, req.socket?.encrypted ?? false),
-  )
-  res.status(result.status).json(result.body)
+  try {
+    const payload = (typeof req.body === 'string' ? JSON.parse(req.body) : req.body) as ContactPayload
+    const result = await processContact(
+      payload ?? {},
+      process.env.CONTACT_EMAIL || 'contact@asimepartners.com',
+      getContactPageUrl(req.headers ?? {}, req.socket?.encrypted ?? false),
+    )
+    res.status(result.status).json(result.body)
+  } catch (error) {
+    console.error('Contact API request failed', error)
+    res.status(500).json({ success: false, message: 'Unable to process the contact request' })
+  }
 }
