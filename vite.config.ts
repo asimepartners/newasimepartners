@@ -22,7 +22,7 @@ function readJsonBody(req: IncomingMessage): Promise<unknown> {
 }
 
 function contactApiPlugin(secret: string, toEmail: string): Plugin {
-  const handle = async (req: IncomingMessage, res: ServerResponse, next: () => void, isDevelopmentServer: boolean) => {
+  const handle = async (req: IncomingMessage, res: ServerResponse, next: () => void) => {
     const url = req.url?.split('?')[0]
     if (url !== '/api/contact') {
       next()
@@ -38,9 +38,13 @@ function contactApiPlugin(secret: string, toEmail: string): Plugin {
 
     try {
       const payload = (await readJsonBody(req)) as Parameters<typeof processContact>[0]
-      const host = req.headers.host?.replace(/:\d+$/, '')
-      const isLoopbackRequest = host === 'localhost' || host === '127.0.0.1' || host === '[::1]'
-      const bypassCaptcha = isLoopbackRequest && isDevelopmentServer
+      const host = req.headers.host?.toLowerCase().replace(/:\d+$/, '')
+      const remoteAddress = req.socket.remoteAddress
+      const isLoopbackHost = host === 'localhost' || host === '127.0.0.1' || host === '[::1]'
+      const isLoopbackConnection = remoteAddress === '::1'
+        || remoteAddress === '127.0.0.1'
+        || remoteAddress?.startsWith('::ffff:127.') === true
+      const bypassCaptcha = isLoopbackHost && isLoopbackConnection
       const result = await processContact(payload ?? {}, secret, toEmail, bypassCaptcha)
       res.statusCode = result.status
       res.setHeader('Content-Type', 'application/json')
@@ -53,9 +57,8 @@ function contactApiPlugin(secret: string, toEmail: string): Plugin {
   }
 
   const attach = (server: ViteDevServer) => {
-    const isDevelopmentServer = server.config.command === 'serve' && server.config.mode === 'development'
     server.middlewares.use((req, res, next) => {
-      void handle(req, res, next, isDevelopmentServer)
+      void handle(req, res, next)
     })
   }
 
