@@ -24,6 +24,9 @@ export function getContactPageUrl(headers: ContactRequestHeaders, encrypted = fa
     try {
       const url = new URL(referer)
       if (url.protocol === 'http:' || url.protocol === 'https:') {
+        if (['localhost', '127.0.0.1', '[::1]'].includes(url.hostname)) {
+          return `https://newasimepartners.vercel.app${url.pathname}`
+        }
         url.search = ''
         url.hash = ''
         return url.toString()
@@ -35,6 +38,9 @@ export function getContactPageUrl(headers: ContactRequestHeaders, encrypted = fa
 
   const host = headers['x-forwarded-host']?.split(',')[0]?.trim() || headers.host
   if (!host) return undefined
+  if (['localhost', '127.0.0.1', '[::1]'].includes(host.replace(/:\d+$/, '').toLowerCase())) {
+    return 'https://newasimepartners.vercel.app/contact.html'
+  }
   const forwardedProtocol = headers['x-forwarded-proto']?.split(',')[0]?.trim()
   const protocol = forwardedProtocol === 'https' || (!forwardedProtocol && encrypted) ? 'https' : 'http'
   return `${protocol}://${host}/contact.html`
@@ -85,6 +91,7 @@ export async function processContact(
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json',
+      ...(formUrl ? { Referer: formUrl, Origin: new URL(formUrl).origin } : {}),
     },
     body: JSON.stringify({
       name,
