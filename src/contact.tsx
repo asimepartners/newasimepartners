@@ -92,13 +92,14 @@ function ContactPage() {
 
       const result = (await response.json()) as { success?: boolean | string; message?: string }
       const ok = response.ok && (result.success === true || result.success === 'true')
-      if (!ok) throw new Error(result.message || 'Send failed')
+      if (!ok) throw new Error(result.message?.trim() || 'Send failed')
 
       track('enquiry_submitted', { interest: String(data.get('interest') ?? 'General enquiry') })
       form.reset()
       setSent(true)
-    } catch {
-      setError(contactPage.sendErrorLabel)
+    } catch (cause) {
+      const reason = cause instanceof Error ? cause.message : ''
+      setError(reason && reason !== 'Send failed' && reason !== 'Server error' ? reason : contactPage.sendErrorLabel)
     } finally {
       setSending(false)
     }
