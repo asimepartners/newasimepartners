@@ -21,7 +21,7 @@ function readJsonBody(req: IncomingMessage): Promise<unknown> {
   })
 }
 
-function contactApiPlugin(secret: string, toEmail: string): Plugin {
+function contactApiPlugin(secret: string, toEmail: string, bypassCaptcha: boolean): Plugin {
   const handle = async (req: IncomingMessage, res: ServerResponse, next: () => void) => {
     const url = req.url?.split('?')[0]
     if (url !== '/api/contact') {
@@ -38,7 +38,7 @@ function contactApiPlugin(secret: string, toEmail: string): Plugin {
 
     try {
       const payload = (await readJsonBody(req)) as Parameters<typeof processContact>[0]
-      const result = await processContact(payload ?? {}, secret, toEmail)
+      const result = await processContact(payload ?? {}, secret, toEmail, bypassCaptcha)
       res.statusCode = result.status
       res.setHeader('Content-Type', 'application/json')
       res.end(JSON.stringify(result.body))
@@ -71,6 +71,7 @@ export default defineConfig(({ mode }) => {
       contactApiPlugin(
         env.RECAPTCHA_SECRET_KEY || '',
         env.CONTACT_EMAIL || 'contact@asimepartners.com',
+        mode === 'development',
       ),
     ],
     build: {

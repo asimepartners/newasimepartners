@@ -15,6 +15,7 @@ export async function processContact(
   payload: ContactPayload,
   secret: string,
   toEmail: string,
+  bypassCaptcha = false,
 ): Promise<ContactResult> {
   if (payload.honey) {
     return { status: 200, body: { success: true } }
@@ -25,26 +26,28 @@ export async function processContact(
   const message = String(payload.message ?? '').trim()
   const token = String(payload.token ?? '').trim()
 
-  if (!name || !email || !message || !token) {
+  if (!name || !email || !message || (!token && !bypassCaptcha)) {
     return { status: 400, body: { success: false, message: 'Missing fields' } }
   }
 
-  const verifyResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({
-      secret,
-      response: token,
-    }),
-  })
+  if (!bypassCaptcha) {
+    const verifyResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        secret,
+        response: token,
+      }),
+    })
 
-  const captcha = (await verifyResponse.json()) as {
-    success?: boolean
-    score?: number
-    action?: string
-  }
-  if (!captcha.success || (captcha.action && captcha.action !== 'contact') || (captcha.score ?? 0) < 0.5) {
-    return { status: 400, body: { success: false, message: 'Captcha failed' } }
+    const captcha = (await verifyResponse.json()) as {
+      success?: boolean
+      score?: number
+      action?: string
+    }
+    if (!captcha.success || (captcha.action && captcha.action !== 'contact') || (captcha.score ?? 0) < 0.5) {
+      return { status: 400, body: { success: false, message: 'Captcha failed' } }
+    }
   }
 
   const mailResponse = await fetch(`https://formsubmit.co/ajax/${toEmail}`, {
