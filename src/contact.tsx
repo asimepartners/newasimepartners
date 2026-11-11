@@ -69,8 +69,12 @@ function ContactPage() {
     setError('')
 
     try {
-      const token = await executeRecaptchaV3(contactPage.recaptchaSiteKey, 'contact')
-      if (!token) throw new Error('captcha')
+      const localHostnames = ['localhost', '127.0.0.1', '::1']
+      const isLocalhost = localHostnames.includes(window.location.hostname)
+      const token = isLocalhost
+        ? ''
+        : await executeRecaptchaV3(contactPage.recaptchaSiteKey, 'contact')
+      if (!token && !isLocalhost) throw new Error('captcha')
 
       const response = await fetch('/api/contact', {
         method: 'POST',
