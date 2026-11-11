@@ -11,11 +11,41 @@ type ContactResult = {
   body: { success: boolean; message?: string }
 }
 
+type ContactRequestHeaders = {
+  host?: string
+  referer?: string
+  'x-forwarded-host'?: string
+  'x-forwarded-proto'?: string
+}
+
+export function getContactPageUrl(headers: ContactRequestHeaders, encrypted = false): string | undefined {
+  const referer = headers.referer
+  if (referer) {
+    try {
+      const url = new URL(referer)
+      if (url.protocol === 'http:' || url.protocol === 'https:') {
+        url.search = ''
+        url.hash = ''
+        return url.toString()
+      }
+    } catch {
+      // Fall back to the request host if the referer is malformed.
+    }
+  }
+
+  const host = headers['x-forwarded-host']?.split(',')[0]?.trim() || headers.host
+  if (!host) return undefined
+  const forwardedProtocol = headers['x-forwarded-proto']?.split(',')[0]?.trim()
+  const protocol = forwardedProtocol === 'https' || (!forwardedProtocol && encrypted) ? 'https' : 'http'
+  return `${protocol}://${host}/contact.html`
+}
+
 export async function processContact(
   payload: ContactPayload,
   secret: string,
   toEmail: string,
   bypassCaptcha = false,
+  formUrl?: string,
 ): Promise<ContactResult> {
   if (payload.honey) {
     return { status: 200, body: { success: true } }
@@ -64,6 +94,7 @@ export async function processContact(
       _replyto: email,
       _template: 'table',
       _captcha: 'false',
+      ...(formUrl ? { _url: formUrl } : {}),
     }),
   })
 
@@ -77,7 +108,7 @@ export async function processContact(
 }
 
 export default async function handler(
-  req: { method?: string; body?: unknown },
+  req: { method?: string; body?: unknown; headers?: ContactRequestHeaders; socket?: { encrypted?: boolean } },
   res: { status: (code: number) => { json: (body: unknown) => void } },
 ) {
   if (req.method !== 'POST') {
@@ -96,6 +127,8 @@ export default async function handler(
     payload ?? {},
     secret,
     process.env.CONTACT_EMAIL || 'contact@asimepartners.com',
+    false,
+    getContactPageUrl(req.headers ?? {}, req.socket?.encrypted ?? false),
   )
   res.status(result.status).json(result.body)
 }

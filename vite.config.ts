@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 import { readdirSync } from 'node:fs'
 import type { IncomingMessage, ServerResponse } from 'http'
-import { processContact } from './api/contact'
+import { getContactPageUrl, processContact } from './api/contact'
 
 function readJsonBody(req: IncomingMessage): Promise<unknown> {
   return new Promise((resolve, reject) => {
@@ -45,7 +45,13 @@ function contactApiPlugin(secret: string, toEmail: string): Plugin {
         || remoteAddress === '127.0.0.1'
         || remoteAddress?.startsWith('::ffff:127.') === true
       const bypassCaptcha = isLoopbackHost && isLoopbackConnection
-      const result = await processContact(payload ?? {}, secret, toEmail, bypassCaptcha)
+      const result = await processContact(
+        payload ?? {},
+        secret,
+        toEmail,
+        bypassCaptcha,
+        getContactPageUrl(req.headers, Boolean(req.socket.encrypted)),
+      )
       res.statusCode = result.status
       res.setHeader('Content-Type', 'application/json')
       res.end(JSON.stringify(result.body))
