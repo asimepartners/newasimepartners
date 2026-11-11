@@ -21,8 +21,8 @@ function readJsonBody(req: IncomingMessage): Promise<unknown> {
   })
 }
 
-function contactApiPlugin(secret: string, toEmail: string, bypassCaptcha: boolean): Plugin {
-  const handle = async (req: IncomingMessage, res: ServerResponse, next: () => void) => {
+function contactApiPlugin(secret: string, toEmail: string): Plugin {
+  const handle = async (req: IncomingMessage, res: ServerResponse, next: () => void, isDevelopmentServer: boolean) => {
     const url = req.url?.split('?')[0]
     if (url !== '/api/contact') {
       next()
@@ -38,6 +38,9 @@ function contactApiPlugin(secret: string, toEmail: string, bypassCaptcha: boolea
 
     try {
       const payload = (await readJsonBody(req)) as Parameters<typeof processContact>[0]
+      const host = req.headers.host?.replace(/:\d+$/, '')
+      const isLoopbackRequest = host === 'localhost' || host === '127.0.0.1' || host === '[::1]'
+      const bypassCaptcha = isLoopbackRequest && isDevelopmentServer
       const result = await processContact(payload ?? {}, secret, toEmail, bypassCaptcha)
       res.statusCode = result.status
       res.setHeader('Content-Type', 'application/json')
@@ -50,8 +53,9 @@ function contactApiPlugin(secret: string, toEmail: string, bypassCaptcha: boolea
   }
 
   const attach = (server: ViteDevServer) => {
+    const isDevelopmentServer = server.config.command === 'serve' && server.config.mode === 'development'
     server.middlewares.use((req, res, next) => {
-      void handle(req, res, next)
+      void handle(req, res, next, isDevelopmentServer)
     })
   }
 
@@ -71,7 +75,6 @@ export default defineConfig(({ mode }) => {
       contactApiPlugin(
         env.RECAPTCHA_SECRET_KEY || '',
         env.CONTACT_EMAIL || 'contact@asimepartners.com',
-        mode === 'development',
       ),
     ],
     build: {
